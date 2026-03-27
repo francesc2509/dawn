@@ -25,6 +25,17 @@
             "desktop_open": true
           }
         },
+        "collapsible_tab_UbVCj4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Useful links",
+            "icon": "none",
+            "content": "",
+            "page": "",
+            "collapsible_row_link_list": "explore-support",
+            "desktop_open": false
+          }
+        },
         "brand_information_j6ngWY": {
           "type": "brand_information",
           "settings": {
@@ -34,6 +45,7 @@
       },
       "block_order": [
         "collapsible_tab_cFJLtT",
+        "collapsible_tab_UbVCj4",
         "brand_information_j6ngWY"
       ],
       "settings": {
