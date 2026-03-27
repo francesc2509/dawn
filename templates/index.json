@@ -69,12 +69,23 @@
             "link_label": "",
             "link": ""
           }
+        },
+        "column_kFyUcj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/food_and_rural_affairs_6975bb51-a81e-426e-977c-a8809d68a7e9.jpg",
+            "title": "⚖️ <strong>UK Safety & Compliance</strong>",
+            "text": "<p>We handle the red tape. Every product is fully vetted for <strong>UK Food Safety and allergen compliance</strong>, ensuring your shop is always audit-ready and professional.</p>",
+            "link_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "column_mwmk4N",
         "column_wwJ9DT",
-        "column_dq7cRP"
+        "column_dq7cRP",
+        "column_kFyUcj"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
