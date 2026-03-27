@@ -265,6 +265,65 @@
     },
     "image_list_RGBbkP": {
       "type": "image-list",
+      "blocks": {
+        "image_rcAfkJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Passion_Fruit_Tea.png",
+            "url": "shopify://products/passion-fruit-coconut-jelly",
+            "title": "Passion Fruit Tea",
+            "heading_size": "h1"
+          }
+        },
+        "image_YmxxGm": {
+          "type": "image",
+          "settings": {
+            "url": "",
+            "title": "",
+            "heading_size": "h1"
+          }
+        },
+        "image_CLNAbJ": {
+          "type": "image",
+          "settings": {
+            "url": "",
+            "title": "",
+            "heading_size": "h1"
+          }
+        },
+        "image_8nmXVc": {
+          "type": "image",
+          "settings": {
+            "url": "",
+            "title": "",
+            "heading_size": "h1"
+          }
+        },
+        "image_JA4GrN": {
+          "type": "image",
+          "settings": {
+            "url": "",
+            "title": "",
+            "heading_size": "h1"
+          }
+        },
+        "image_Q936fT": {
+          "type": "image",
+          "settings": {
+            "url": "",
+            "title": "",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "image_rcAfkJ",
+        "image_YmxxGm",
+        "image_CLNAbJ",
+        "image_8nmXVc",
+        "image_JA4GrN",
+        "image_Q936fT"
+      ],
       "name": "Media List",
       "settings": {
         "heading": "",
