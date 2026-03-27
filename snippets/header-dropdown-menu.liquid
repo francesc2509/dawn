@@ -28,11 +28,11 @@
     position: relative;
   }
   
-  .list-menu-highlighted.hot {
+  .list-menu-badge.hot {
     background: #e56d6d;
   }
 
-  .list-menu-highlighted.featured {
+  .list-menu-badge.featured {
     background: #f89619;
   }
 
@@ -123,7 +123,7 @@
           >
             {% assign customization = shop.metaobjects.menu_item_customization.values | where: "menu_url", link.url | first %}
             {% if customization.badge_type != blank %}
-            <span class="list-menu-highlighted {{ customization.badge_type }}">{{ customization.badge_type }}</span>
+            <span class="list-menu-badge {{ customization.badge_type }}">{{ customization.badge_type }}</span>
             {% endif %}
             <span
               {%- if link.current %}
