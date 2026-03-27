@@ -90,7 +90,7 @@
     "contact_form_Mt4rNm": {
       "type": "contact-form",
       "custom_css": [
-        "div {margin: 48px 0;}"
+        "shopify-section {margin: 48px 0;}"
       ],
       "name": "t:sections.contact-form.presets.name",
       "settings": {
