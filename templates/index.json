@@ -262,6 +262,17 @@
         "padding_top": 48,
         "padding_bottom": 48
       }
+    },
+    "image_list_RGBbkP": {
+      "type": "image-list",
+      "name": "Media List",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -270,6 +281,7 @@
     "collection_list_VtYKTt",
     "featured_collection_XVDMX9",
     "slideshow_GD6NBq",
-    "featured_collection_adJ8Jc"
+    "featured_collection_adJ8Jc",
+    "image_list_RGBbkP"
   ]
 }
