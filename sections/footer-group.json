@@ -19,18 +19,10 @@
           "settings": {
             "show_social": true
           }
-        },
-        "footer-2": {
-          "type": "text",
-          "settings": {
-            "heading": "<strong>Our Mission</strong>",
-            "subtext": "<p></p><p>WeChat/WhatsApp Business: +44 7512 896659</p><p>Info@bubblecrushsupplier.com</p><p>Arch 64, Parkside Business Estate, Blackhorse Road, London, SE8 5JA, UK</p><p></p><p><br/></p><p><br/></p><p></p>"
-          }
         }
       },
       "block_order": [
-        "brand_information_j6ngWY",
-        "footer-2"
+        "brand_information_j6ngWY"
       ],
       "settings": {
         "color_scheme": "scheme-1",
