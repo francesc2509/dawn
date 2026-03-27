@@ -67,9 +67,10 @@
                 </span>
                 {{- 'icon-caret.svg' | inline_asset_content -}}
               </summary>
+              <div class="list-menu--disclosure">
               <ul
                 id="HeaderMenu-MenuList-{{ forloop.index }} d-flex"
-                class="header__submenu  list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
+                class="header__submenu  list-menu color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
                 role="list"
                 tabindex="-1"
               >
@@ -121,6 +122,7 @@
                 {%- endfor -%}
               </ul>
               <div class="header__submenu-image-container">
+              </div>
               </div>
             </details>
           </header-menu>
