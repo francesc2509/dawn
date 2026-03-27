@@ -43,6 +43,109 @@
     "
     style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
   >
+    <style>
+      .card-collection-link-container {
+        position: absolute;
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-radius: var(--collection-card-corner-radius);
+      }
+
+     .card-collection-link {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background: rgba(0, 0, 0, 0.1);
+        color: rgb(var(--color-background));
+        box-sizing: border-box;
+        padding: 1em;
+        border-radius: var(--collection-card-corner-radius);
+
+        animation: cardFadeUp 0.8s ease forwards;
+      }
+
+      /* Children animate slightly after */
+      .card-collection-link > * {
+        color: inherit;
+        margin: 0;
+        padding: 0;
+        text-shadow: 0 0 10px rgba(var(--color-background), 0.25);
+
+        opacity: 0;
+        transform: translateY(10px);
+        animation: textFadeUp 0.8s ease forwards;
+      }
+
+      .card-collection-link > .card-collection-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding-bottom: 0.25em;
+        animation-delay: 1s;
+      }
+
+      .card-collection-link .card-collection-cta {
+        border: 1px solid white;
+        border-radius: var(--buttons-radius);
+        font-size: 1.25em;
+        align-self: flex-start;
+        animation-delay: 0.75s;
+        height: 2em;
+        width: 6em;
+        text-align: center;
+      }
+
+      @media(max-width: 768px) {
+        .card-collection-link > .card-collection-title {
+          font-size: 1.25em;
+        }
+
+        .card-collection-link .card-collection-cta {
+          font-size: 1em;
+        }
+      }
+
+      /* Card animation */
+      @keyframes cardFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.97);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* Text animation */
+      @keyframes textFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    <div class="card-collection-link-container">
+      <a
+        class="full-unstyled-link card-collection-link"
+        {% if card_collection == blank %}
+          role="link" aria-disabled="true"
+        {% else %}
+          href="{{ card_collection.url }}"
+        {% endif %}
+      >
+        <h3 class="card-collection-title">{{ collection_label | default: card_collection.title }}</h3>
+        <span class="card-collection-cta">{{ collection_cta_label | default: 'Shop now' }}</span>
+      </a>
+    </div>
     <div
       class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
@@ -67,7 +170,7 @@
                 (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
                 calc(100vw - 3rem)
               "
-              alt="{{ card_collection.featured_image.alt | escape }}"
+              alt=""
               height="{{ card_collection.featured_image.height }}"
               width="{{ card_collection.featured_image.width }}"
               loading="lazy"
@@ -92,24 +195,22 @@
                 {% endif %}
                 class="full-unstyled-link"
               >
-                {%- if card_collection.title != blank -%}
-                  {{- card_collection.title | escape -}}
-                {%- else -%}
-                  {{ 'onboarding.collection_title' | t }}
-                {%- endif -%}
-                {%- if card_collection.description == blank -%}
-                  <span class="icon-wrap">
-                    {{- 'icon-arrow.svg' | inline_asset_content -}}
-                  </span>
-                {%- endif %}
+                {% comment %}
+                  {%- if card_collection.title != blank -%}
+                    {{- card_collection.title | escape -}}
+                  {%- else -%}
+                    {{ 'onboarding.collection_title' | t }}
+                  {%- endif -%}
+                  {%- if card_collection.description == blank -%}
+                    <span class="icon-wrap">{% render 'icon-arrow' %}</span>
+                  {%- endif %}
+                {% endcomment %}
               </a>
             </h3>
             {%- if card_collection.description != blank -%}
               <p class="card__caption">
                 {{- card_collection.description | strip_html | truncatewords: 12 -}}
-                <span class="icon-wrap">
-                  {{- 'icon-arrow.svg' | inline_asset_content -}}
-                </span>
+                <span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>
               </p>
             {%- endif -%}
           </div>
@@ -118,37 +219,35 @@
     </div>
     {%- if card_collection != blank and card_style == 'card' or card_collection.featured_image -%}
       <div class="card__content">
-        <div class="card__information">
-          <h3 class="card__heading">
-            <a
-              {% if card_collection == blank %}
-                role="link" aria-disabled="true"
-              {% else %}
-                href="{{ card_collection.url }}"
-              {% endif %}
-              class="full-unstyled-link"
-            >
-              {%- if card_collection.title != blank -%}
-                {{- card_collection.title | escape -}}
-              {%- else -%}
-                {{ 'onboarding.collection_title' | t }}
-              {%- endif -%}
-              {%- if card_collection.featured_image or card_collection.description == blank -%}
-                <span class="icon-wrap">
-                  {{- 'icon-arrow.svg' | inline_asset_content -}}
-                </span>
-              {%- endif %}
-            </a>
-          </h3>
-          {%- if card_collection.featured_image == null and card_collection.description != blank -%}
-            <p class="card__caption">
-              {{- card_collection.description | strip_html | truncatewords: 12 -}}
-              <span class="icon-wrap">
-                {{- 'icon-arrow.svg' | inline_asset_content -}}
-              </span>
-            </p>
-          {%- endif -%}
-        </div>
+        {% comment %}
+          <div class="card__information">
+            <h3 class="card__heading">
+              <a
+                {% if card_collection == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ card_collection.url }}"
+                {% endif %}
+                class="full-unstyled-link"
+              >
+                {%- if card_collection.title != blank -%}
+                  {{- card_collection.title | escape -}}
+                {%- else -%}
+                  {{ 'onboarding.collection_title' | t }}
+                {%- endif -%}
+                {%- if card_collection.featured_image or card_collection.description == blank -%}
+                  <span class="icon-wrap">{% render 'icon-arrow' %}</span>
+                {%- endif %}
+              </a>
+            </h3>
+            {%- if card_collection.featured_image == null and card_collection.description != blank -%}
+              <p class="card__caption">
+                {{- card_collection.description | strip_html | truncatewords: 12 -}}
+                <span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>
+              </p>
+            {%- endif -%}
+          </div>
+        {% endcomment %}
       </div>
     {%- endif -%}
     {%- if card_collection == blank -%}
@@ -157,9 +256,7 @@
           <h3 class="card__heading card__heading--placeholder">
             <a role="link" aria-disabled="true" class="full-unstyled-link">
               {{ 'onboarding.collection_title' | t }}
-              <span class="icon-wrap">
-                {{- 'icon-arrow.svg' | inline_asset_content -}}
-              </span>
+              <span class="icon-wrap">{% render 'icon-arrow' %}</span>
             </a>
           </h3>
         </div>
