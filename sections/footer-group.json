@@ -14,6 +14,17 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "collapsible_tab_cFJLtT": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Categories",
+            "icon": "none",
+            "content": "",
+            "page": "",
+            "collapsible_row_link_list": "categories",
+            "desktop_open": true
+          }
+        },
         "brand_information_j6ngWY": {
           "type": "brand_information",
           "settings": {
@@ -22,6 +33,7 @@
         }
       },
       "block_order": [
+        "collapsible_tab_cFJLtT",
         "brand_information_j6ngWY"
       ],
       "settings": {
