@@ -6,6 +6,10 @@
 {% endcomment %}
 
 <style>
+  .header__submenu.d-flex {
+  
+  }
+
   .list-menu-badge{
     display: block;
     position: absolute;
@@ -64,7 +68,7 @@
               </summary>
               <ul
                 id="HeaderMenu-MenuList-{{ forloop.index }}"
-                class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
+                class="header__submenu d-flex list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
                 role="list"
                 tabindex="-1"
               >
