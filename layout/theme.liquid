@@ -248,6 +248,24 @@
         font-weight: var(--font-body-weight);
       }
 
+      .whatsapp-container {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 1000;
+      }
+
+      .whatsapp-container svg {
+          width: 60px; /* Adjust size */
+          height: 60px;
+          fill: #25D366; /* WhatsApp Green */
+          transition: transform 0.3s ease;
+      }
+
+      .whatsapp-container svg:hover {
+          transform: scale(1.1); /* Slight pop on hover */
+      }
+
       @media screen and (min-width: 750px) {
         body {
           font-size: 1.6rem;
@@ -302,6 +320,12 @@
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
+
+    <div class="whatsapp-container"> 
+      <a href="https://wa.me/+447512896659?text=Hello, I'd%20like%20to%20order%20some%20ingredients%20from%20Bubble%20Crush">
+        {% render 'icon-whatsapp' %}
+      </a>
+    </div>
 
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}

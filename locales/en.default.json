@@ -57,6 +57,9 @@
       "name": "Slider"
     }
   },
+  "date_formats": {
+    "month_year": "%B %Y"
+  },
   "newsletter": {
     "label": "Email",
     "success": "Thanks for subscribing",
@@ -97,7 +100,9 @@
       "back_to_blog": "Back to blog",
       "share": "Share this article",
       "success": "Your comment was posted successfully! Thank you!",
-      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated."
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "title_blog": "RECENT ARTICLES",
+      "tags_blog": "Tags" 
     }
   },
   "onboarding": {
@@ -107,7 +112,7 @@
   "products": {
     "product": {
       "add_to_cart": "Add to cart",
-      "choose_options": "Choose options",
+      "choose_options": "Quick add",
       "choose_product_options": "Choose options for {{ product_name }}",
       "description": "Description",
       "inventory_in_stock": "In stock",

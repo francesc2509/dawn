@@ -601,6 +601,56 @@
         "name": "Collage"
       }
     },
+    "image-list": {
+      "name": "Image list",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        }
+      },
+      "blocks": {
+        "image": {
+          "name": "Image",
+          "settings": {
+            "image": {
+              "label": "Image"
+            }
+          }
+        },
+        "video": {
+          "name": "Video",
+          "settings": {
+            "cover_image": {
+              "label": "Cover image"
+            },
+            "video_url": {
+              "label": "URL",
+              "info": "Video plays in a pop-up if the section contains other blocks.",
+              "placeholder": "Use a YouTube or Vimeo URL"
+            },
+            "description": {
+              "label": "Video alt text",
+              "info": "Describe the video for customers using screen readers. [Learn more](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Image list"
+      }
+    },
+    "visitor-counter": {
+      "name": "Visitor counter",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        }
+      },
+      "blocks": {},
+      "presets": {
+        "name": "Image list"
+      }
+    },
     "collection-list": {
       "name": "Collection list",
       "settings": {
@@ -866,6 +916,9 @@
         },
         "quantity_selector": {
           "name": "Quantity selector"
+        },
+        "visitor_counter": {
+          "name": "Visitor counter"
         },
         "variant_picker": {
           "name": "Variant picker",
@@ -1976,6 +2029,9 @@
         },
         "quantity_selector": {
           "name": "Quantity selector"
+        },
+        "visitor_counter": {
+          "name": "Visitor counter"
         },
         "variant_picker": {
           "name": "Variant picker",
