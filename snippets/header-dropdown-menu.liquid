@@ -94,7 +94,10 @@
               {% endif %}
             >
               {% assign customization = shop.metaobjects.menu_item_customization.values | where: "menu_url", link.url | first %}
-              {{ customization.badge_type  }}-{{- link.title | escape -}}
+              {% if customization.badge_type != blank %}
+              {{ customization.badge_type  }}
+              {% endif %}
+              {{- link.title | escape -}}
             </span>
           </a>
         {%- endif -%}
