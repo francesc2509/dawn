@@ -17,8 +17,8 @@
         "footer-2": {
           "type": "text",
           "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+            "heading": "<strong>Our Mission</strong>",
+            "subtext": "<ul><li>WhatsApp Business:+44 7512 896659</li><li>Info@bubblecrushsupplier.com</li><li>Address: Arch 64, Parkside Business Estate, Blackhorse Road, London, SE8 5JA, UK</li></ul><p></p><p><br/></p><p><br/></p><p></p>"
           }
         }
       },
