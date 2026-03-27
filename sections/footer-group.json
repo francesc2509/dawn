@@ -14,6 +14,12 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "brand_information_j6ngWY": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
         "collapsible_tab_UbVCj4": {
           "type": "collapsible_tab",
           "settings": {
@@ -35,18 +41,12 @@
             "collapsible_row_link_list": "categories",
             "desktop_open": true
           }
-        },
-        "brand_information_j6ngWY": {
-          "type": "brand_information",
-          "settings": {
-            "show_social": true
-          }
         }
       },
       "block_order": [
+        "brand_information_j6ngWY",
         "collapsible_tab_UbVCj4",
-        "collapsible_tab_cFJLtT",
-        "brand_information_j6ngWY"
+        "collapsible_tab_cFJLtT"
       ],
       "settings": {
         "color_scheme": "scheme-1",
