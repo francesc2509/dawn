@@ -73,6 +73,9 @@
     },
     "video_E3LHLH": {
       "type": "video",
+      "custom_css": [
+        "video {margin: 48px 0;}"
+      ],
       "name": "t:sections.video.presets.name",
       "settings": {
         "heading": "How to Brew Tea for Bubble Tea | Jasmine, Assam & Oolong – Temperature & Ratio Guide",
