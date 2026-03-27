@@ -93,7 +93,8 @@
                 class="header__active-menu-item"
               {% endif %}
             >
-              {{- link.title | escape -}}
+              {% assign customization = shop.metaobjects.menu_item_customization.values | where: "menu_url", link.url | first %}
+              {{ customization.badge_type  }}-{{- link.title | escape -}}
             </span>
           </a>
         {%- endif -%}
