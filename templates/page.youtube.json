@@ -12,7 +12,7 @@
     "main": {
       "type": "main-page",
       "settings": {
-        "padding_top": 0,
+        "padding_top": 48,
         "padding_bottom": 0
       }
     },
@@ -127,6 +127,41 @@
         "mobile_content_alignment": "center",
         "show_text_below": true
       }
+    },
+    "rich_text_DBMy3E": {
+      "type": "rich-text",
+      "blocks": {
+        "text_fc6cNg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Get Your Business Started with Bubble Crush</p>"
+          }
+        },
+        "button_DN7n7A": {
+          "type": "button",
+          "settings": {
+            "button_label": "Explore Our Full Range",
+            "button_link": "shopify://collections",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_fc6cNg",
+        "button_DN7n7A"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -137,6 +172,7 @@
     "video_E3LHLH",
     "contact_form_Mt4rNm",
     "custom_liquid_ecGrgn",
-    "image_banner_Q3LEcL"
+    "image_banner_Q3LEcL",
+    "rich_text_DBMy3E"
   ]
 }
