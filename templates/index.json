@@ -100,37 +100,49 @@
         "featured_collection_aNkf6h": {
           "type": "featured_collection",
           "settings": {
-            "collection": "powder"
+            "collection": "powder",
+            "collection_label": "Powder Series",
+            "collection_cta_label": "Shop now"
           }
         },
         "featured_collection_Vgym9z": {
           "type": "featured_collection",
           "settings": {
-            "collection": "syrup-and-jam-for-bubble-tea"
+            "collection": "syrup-and-jam-for-bubble-tea",
+            "collection_label": "Syrup & Jam",
+            "collection_cta_label": "Shop now"
           }
         },
         "featured_collection_mFJ8ig": {
           "type": "featured_collection",
           "settings": {
-            "collection": "topping"
+            "collection": "topping",
+            "collection_label": "Topping",
+            "collection_cta_label": "Shop now"
           }
         },
         "featured_collection_trYQDD": {
           "type": "featured_collection",
           "settings": {
-            "collection": "tea"
+            "collection": "tea",
+            "collection_label": "Tea",
+            "collection_cta_label": "Shop now"
           }
         },
         "featured_collection_LDLRQk": {
           "type": "featured_collection",
           "settings": {
-            "collection": "beverage-bases-coconut-milk-supplier-bubble-crush"
+            "collection": "beverage-bases-coconut-milk-supplier-bubble-crush",
+            "collection_label": "Milk Base",
+            "collection_cta_label": "Shop now"
           }
         },
         "featured_collection_6BbUMB": {
           "type": "featured_collection",
           "settings": {
-            "collection": "packaging"
+            "collection": "packaging",
+            "collection_label": "Packaging",
+            "collection_cta_label": "Shop now"
           }
         }
       },
