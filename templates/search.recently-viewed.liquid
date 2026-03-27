@@ -1,0 +1,13 @@
+{% layout none %}
+
+<ul class="grid product-grid grid--4-col-desktop grid--2-col-tablet-down">
+  {% for product in search.results limit: 8 %}
+    <li class="grid__item">
+      {% render 'card-product',
+        card_product: product,
+        media_aspect_ratio: 'square',
+        show_secondary_image: true
+      %}
+    </li>
+  {% endfor %}
+</ul>

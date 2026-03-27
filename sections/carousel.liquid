@@ -1,0 +1,427 @@
+<style>
+      .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])) + main > section > .carousel-container:first-of-type {
+        margin-top: calc(-1 * var(--header-height));
+      }
+
+      .carousel-container {
+          position: relative;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+      }
+
+     .carousel {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        flex-wrap: nowrap;
+        display: flex;
+        left: 0%;
+        background: transparent;
+        transition: transform 0.4s ease;
+     }
+
+     .dawn-carousel-item {
+        flex: 1;
+        min-height: 100%;
+        min-width: 100%;
+        position: relative;
+     }
+
+     .carousel-curtain {
+        min-height: 100%;
+        min-width: 100%;
+        background: #000000;
+        background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        color: white !important;
+        flex-direction: row;
+        box-sizing: border-box;
+        padding: 2em 0.5em;
+    }
+
+     .dawn-carousel-item img, .dawn-carousel-item > video {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+     }
+
+    .dawn-carousel-item.left img, .dawn-carousel-item.left > video {
+      object-position: left;
+     }
+
+    .dawn-carousel-item.right img, .dawn-carousel-item.right > video {
+      object-position: right;
+    }
+
+    .dawn-carousel-item.fill img, .dawn-carousel-item.fill > video {
+      object-fit: fill;
+     }
+
+    .carousel-nav-container {
+      width: 100%;
+      height: 25px;
+      position: absolute;
+      z-index: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      top: 15vh;
+      left: 0%;
+    }
+
+    .carousel-nav {
+      flex: 0 0 5em;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: 0.25em 0;
+      flex-wrap: nowrap;
+      overflow: auto;
+      align-items: center;
+      gap: 0.25em;
+    }
+
+    .carousel-nav-item {
+      flex: 0 0 10px;
+      display: block !important;
+      height: 10px;
+      background: rgba(1, 1, 1, 0.5);
+      border-radius: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+    }
+
+    .carousel-nav-item.active {
+      background: rgba(255, 255, 255, 1);
+      border: 1px solid rgba(1, 1, 1, 0.5);
+      cursor: default;
+    }
+
+    .carousel-hero {
+      text-align: left;
+      color: rgb(var(--color-foreground));
+      text-shadow: 0 0 10px rgba(0,0,0,0.9);
+      max-width: 65%;
+    }
+
+    .carousel-hero > h2, .carousel-hero > .hero-subtitle {
+      color: inherit;
+      text-align: center;
+    }
+
+    .carousel-hero > .carousel-hero > .hero-subtitle {
+      font-size: 0.75em;
+    }
+
+    .hero-main {
+      text-align: center;
+    }
+
+    .carousel-hero > p {
+      word-break: keep-all;
+    }
+
+    .carousel-hero > .carousel-hero-cta-container {
+      display: flex;
+      justify-content: center;
+      text-shadow: none;
+      text-align: center;
+      padding: 1em;
+      box-sizing: border-box;
+    }
+
+    .carousel-hero > .carousel-hero-cta-container a {
+      min-height: 4em;
+      flex: 1;
+    }
+
+    .carousel-hero, .carousel-hero p {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: reveal 0.5s ease-in forwards;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes reveal {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+    @media (max-width: 1279px) {
+    }
+
+    @media (max-width: 768px) {
+      .carousel-curtain {
+        padding-bottom: 36px;
+        justify-content: flex-start;
+      }
+
+      .carousel-hero > h2 {
+        font-size: 1.5em;
+      }
+
+      .carousel-hero > .hero-subtitle {
+        font-size: 0.75em;
+      }
+
+      .carousel-hero {
+        max-width: initial;
+        width: 100%;
+      }
+
+      .carousel-container .carousel-hero {
+        transition: padding 1s ease;
+      }
+
+      .shopify-section.shopify-section-group-header-group.section-header:not(.scrolled-past-header) + main > section > .carousel-container .carousel-hero {
+        padding-bottom: 2vh;
+        transition: padding 0.5s ease;
+      }
+
+      .carousel-hero > .carousel-hero-cta-container a {
+        flex: 1;
+      }
+    }
+</style>
+
+<div class="carousel-container">
+  <div class="carousel">
+    {% for block in section.blocks %}
+      <div
+        class="dawn-carousel-item{% if block.settings.slide_position %} {{ block.settings.slide_position }}{% endif %}{% if block.settings.slide_fit %} {{ block.settings.slide_fit }}{% endif %} color-{{ block.settings.color_scheme }}"
+        {% if block.settings.slide_duration %}
+          data-duration="{{ block.settings.slide_duration }}"
+        {% endif %}
+      >
+        {% if block.settings.video -%}
+          
+          <video muted playsinline>
+            {% if block.settings.video_mobile %}
+              <source
+                src="{{ block.settings.video_mobile.sources.last.url }}"
+                type="video/mp4"
+                media="(max-width: 768px)"
+              >
+            {% endif %}
+
+            {% assign desktop_video = block.settings.video %}
+          {% if desktop_video != blank %}
+            {% assign mp4_source = desktop_video.sources | where: "format", "mp4" | first %}
+            {% if mp4_source %}
+              <source src="{{ mp4_source.url }}" type="video/mp4">
+            {% endif %}
+          {% endif %}
+          </video>
+        {% elsif block.settings.image %}
+          <picture>
+            {% if block.settings.image_mobile %}
+              <source
+                media="(max-width: 768px)"
+                srcset="{{ block.settings.image_mobile | image_url: width: 768 }}"
+              >
+            {% endif %}
+
+            <img
+              src="{{ block.settings.image | image_url: width: 1440 }}"
+              alt="{{ block.settings.image.alt | escape }}"
+              loading="lazy"
+              width="{{ block.settings.image.width }}"
+              height="{{ block.settings.image.height }}"
+            >
+          </picture>
+        {% endif %}
+        <div class="carousel-curtain" style="background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, {{ block.settings.slide_overlay_alpha }}) 100%);">
+          <div class="carousel-hero">
+            {% if block.settings.hero_title != blank %}
+              <h2>{{ block.settings.hero_title }}</h2>
+            {% endif %}
+
+            {% if block.settings.hero_main != blank %}
+              <div class="hero-main">
+                {{ block.settings.hero_main }}
+              </div>
+            {% endif %}
+
+            {% if block.settings.hero_subtitle != blank %}
+              <div class="hero-subtitle">
+                {{ block.settings.hero_subtitle }}
+              </div>
+            {% endif %}
+
+            {% if block.settings.hero_cta_url  != blank %}
+            <div class="carousel-hero-cta-container">
+              <a
+                href="{{ block.settings.hero_cta_url }}"
+                class="button button--primary"
+              >
+                {{ block.settings.hero_cta_label }}
+              </a>
+            </div>
+            {% endif %}
+            {% if block.settings.hero_secondary_cta_url  != blank %}
+            <div class="carousel-hero-cta-container">
+              <a
+                href="{{ block.settings.hero_secondary_cta_url }}"
+                class="link link--text"
+              >
+                {{ block.settings.hero_secondary_cta_label }}
+              </a>
+            </div>
+            {% endif %}
+            
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="carousel-nav-container hidden">
+    <div class="carousel-nav">
+      {% for block in section.blocks %}
+        <div class="carousel-nav-item {% if forloop.index == 1 %} active{% endif %}"></div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'carousel.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Carousel",
+  "tag": "section",
+  "class": "section",
+  "presets": [{ "name": "Carousel" }],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "t:sections.slideshow.blocks.slide.name",
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "info": "t:sections.all.colors.has_cards_info",
+          "default": "background-1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.slideshow.blocks.slide.settings.image.label"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "t:sections.video.settings.video.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image mobile"
+        },
+        {
+          "type": "video",
+          "id": "video_mobile",
+          "label": "Vidéo mobile"
+        },
+        {
+          "type": "number",
+          "id": "slide_duration",
+          "label": "Duration (secondes)"
+        },
+        {
+          "type": "select",
+          "id": "slide_fit",
+          "options": [
+            {
+              "value": "fill",
+              "label": "Fill"
+            },
+            {
+              "value": "cover",
+              "label": "Cover"
+            }
+          ],
+          "default": "cover",
+          "label": "t:sections.collage.settings.desktop_layout.label"
+        },
+        {
+          "type": "select",
+          "id": "slide_position",
+          "options": [
+            {
+              "value": "center",
+              "label": "Centre"
+            },
+            {
+              "value": "left",
+              "label": "t:sections.collage.settings.desktop_layout.options__1.label"
+            },
+            {
+              "value": "right",
+              "label": "t:sections.collage.settings.desktop_layout.options__2.label"
+            }
+          ],
+          "default": "left",
+          "label": "t:sections.collage.settings.desktop_layout.label"
+        },
+        {
+          "type": "range",
+          "id": "slide_overlay_alpha",
+          "label": "Overlay alpha",
+          "default": 0.3,
+          "min": 0,
+          "max": 1,
+          "step": 0.1,
+          "unit": "%"
+        },
+        {
+          "type": "richtext",
+          "id": "hero_title",
+          "label": "Section hero titre"
+        },
+        {
+          "type": "richtext",
+          "id": "hero_subtitle",
+          "label": "Section hero sous-titre"
+        },
+        {
+          "type": "richtext",
+          "id": "hero_main",
+          "label": "Section hero"
+        },
+        {
+          "type": "richtext",
+          "id": "hero_cta_label",
+          "label": "Section hero CTA étiquette"
+        },
+        {
+          "type": "url",
+          "id": "hero_cta_url",
+          "label": "Section hero CTA"
+        },
+        {
+          "type": "richtext",
+          "id": "hero_secondary_cta_label",
+          "label": "Section hero secondary CTA étiquette"
+        },
+        {
+          "type": "url",
+          "id": "hero_secondary_cta_url",
+          "label": "Section hero secondary CTA"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

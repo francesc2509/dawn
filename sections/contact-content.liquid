@@ -1,0 +1,264 @@
+<style>
+
+    .contact-from-wrap .field {
+      margin: 0.5em 2em;
+    }
+
+    .contact-content{
+        margin-top: 40px;
+        padding: 0 15px;
+    }
+
+    .left-content-contact{
+        padding-right: 30px;
+    }
+    .gmap-iframe {
+      margin-bottom: 30px;
+    }
+  
+    .gmap-iframe .gmap_canvas,
+    .gmap-iframe .mapouter,
+    .gmap-iframe iframe {
+      width: 100%!important
+    }
+  
+    @media (max-width:767px) {
+      .gmap-iframe .gmap_canvas,
+      .gmap-iframe .mapouter,
+      .gmap-iframe iframe {
+        height: 350px!important
+      }
+      .contact_our{
+        margin-top: 20px;
+    }
+    }
+  
+    .contact-page__info li {
+      padding: 2px 0;
+      line-height: 33px
+    }
+
+  
+    .contact-page__info .icon,
+    .contact-page__info [class^=icon-] {
+      width: auto;
+      margin-right: 10px;
+      height: 18px;
+    }
+  
+    .rtl .contact-page__info .icon {
+        vertical-align: text-bottom
+    }
+  
+    .contact-page__info i {
+      margin-right: 8px;
+    }
+  
+    .more-info img{
+      max-width: 90px;
+    }
+
+    .contact-from-wrap .col-md-8, .contact-from-wrap .col-md-4{
+      padding: 0 15px;
+    }
+
+    .our-staff{
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .our-staff img{
+      margin-right: 15px;
+    }
+
+    .our-staff-header{
+      font-size: 20px;
+    }
+
+    .title-contact_our{
+      font-size: 32px;
+      font-weight: 500;
+    }
+  
+    @media (min-width:992px){
+      .contact-from-wrap{
+        padding: 40px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .contact-details-map {
+      width: 50%;
+    }
+
+    .left-content-contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @media(max-width: 768px) {
+      .contact-details {
+        flex-direction: column;
+      }
+
+      .contact-details-map {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+  {{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+  <!-- contact-content.liquid -->
+  <div>
+    <div class="contact-content">
+      <div class="contact-details">
+        <div class="left-content-contact">
+          <div class="contact-details-info">
+            {%- if section.settings.contact_title != blank -%}
+            <h2 class="contact-title">
+              {{section.settings.contact_title}}
+            </h2>
+            {%- endif -%}
+            {%- if section.settings.contact_des != blank -%}
+            <div class="contact-page__des" >{{section.settings.contact_des}}</div>
+            {%- endif -%}
+            <ul class="list-unstyled contact-page__info">
+              <li>
+                {%- render 'icon-home' -%}
+                <span class="contact-page__info-label">{% if section.settings.contact_address != blank %}
+                  {{section.settings.contact_address}}
+                {% else %}
+                  {{ shop.address | format_address | replace: '<br>', ", " | replace: '<p>', '' | replace: '</p>' }}
+                {% endif %}</span>
+              </li>
+              <li>
+                {%- render 'icon-mobile-phone' -%}<span class="contact-page__info-label">{{section.settings.contact_phone | default: shop.phone }}</span>
+              </li>
+              <li>
+                {%- render 'icon-envelope' -%}<span class="contact-page__info-label">{{ section.settings.contact_mail | default: shop.email }}</span>
+              </li>
+              <li>
+                {%- render 'icon-globe-europe' -%}<span class="contact-page__info-label">{{section.settings.contact_web | default: shop.domain }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {%- if section.settings.gmap and section.settings.gmap_iframe != blank -%}
+        <div class="contact-details-map">
+          <div class="gmap-iframe">
+            {{section.settings.gmap_iframe}}
+          </div>
+        </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+  {% schema %}
+  {
+    "name": "t:sections.contact-us.name",
+    "class": "page-section",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.contact-us.settings.header.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "gmap",
+        "label": "t:sections.contact-us.settings.gmap.label",
+        "default": true
+      },
+      {
+        "type": "textarea",
+        "id": "gmap_iframe",
+        "label": "t:sections.contact-us.settings.gmap_iframe.label",
+        "info": "💡 [Get iframe code here](https:\/\/www.embedgooglemap.net\/)"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.contact-us.settings.header_2.content"
+      },
+      {
+        "type": "text",
+        "id": "contact_title",
+        "label": "t:sections.contact-us.settings.contact_title.label",
+        "default": "Visit one of our agency locations or contact us today."
+      },
+      {
+        "type": "textarea",
+        "id": "contact_des",
+        "label": "t:sections.contact-us.settings.contact_des.label",
+        "default": "Have a question? Give us a call or fill out the contact form. We’d love to hear from you"
+      },
+      {
+        "type": "text",
+        "id": "contact_address",
+        "label": "t:sections.contact-us.settings.contact_address.label",
+        "default": "123 Sky Tower, West 21th Street, Suite 721, NY"
+      },
+      {
+        "type": "text",
+        "id": "contact_phone",
+        "label": "t:sections.contact-us.settings.contact_phone.label",
+        "default": "+844 123 456 789"
+      },
+      {
+        "type": "text",
+        "id": "contact_mail",
+        "label": "t:sections.contact-us.settings.contact_mail.label",
+        "default": "sale@yourcompany.com"
+      },
+      {
+        "type": "text",
+        "id": "contact_web",
+        "label": "t:sections.contact-us.settings.contact_web.label",
+        "default": "www.example.com"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.contact-us.settings.header_3.content"
+      },
+      {
+        "type": "text",
+        "id": "moreinfo_title",
+        "label": "t:sections.contact-us.settings.moreinfo_title.label",
+        "default": "Our staff"
+      }
+    ],
+    "blocks": [
+    {
+      "type": "information",
+      "name": "t:sections.contact-us.blocks.information.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "t:sections.contact-us.blocks.information.settings.icon.label"
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "t:sections.contact-us.blocks.information.settings.title.label",
+          "default": "Service heading"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "t:sections.contact-us.blocks.information.settings.description.label",
+          "default": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis."
+        }
+      ]
+    }
+  ]
+  }
+  {% endschema %}
