@@ -175,6 +175,34 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "rich_text_mBreD9": {
+      "type": "rich-text",
+      "blocks": {
+        "button_NJcJXi": {
+          "type": "button",
+          "settings": {
+            "button_label": "Start Your Wholesale Journey",
+            "button_link": "shopify://pages/request-a-quote",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_NJcJXi"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -187,6 +215,7 @@
     "custom_liquid_ecGrgn",
     "image_banner_Q3LEcL",
     "rich_text_DBMy3E",
-    "custom_liquid_aYfmpg"
+    "custom_liquid_aYfmpg",
+    "rich_text_mBreD9"
   ]
 }
