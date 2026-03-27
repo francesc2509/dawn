@@ -14,6 +14,12 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "brand_information_j6ngWY": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
         "footer-2": {
           "type": "text",
           "settings": {
@@ -23,6 +29,7 @@
         }
       },
       "block_order": [
+        "brand_information_j6ngWY",
         "footer-2"
       ],
       "settings": {
