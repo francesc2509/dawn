@@ -36,9 +36,109 @@
       ],
       "name": "Carousel",
       "settings": {}
+    },
+    "multicolumn_bGj3Ji": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_mwmk4N": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_z2kkp7z2kkp7z2kk.webp",
+            "title": "🚚<strong> UK Warehouse & Fast Dispatch</strong>",
+            "text": "<p>Reliable next-day delivery from our UK warehouses — keeping your business stocked and running smoothly.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wwJ9DT": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/asian_brands_eea237c7-9cec-4b53-ac42-5789f1965993.jpg",
+            "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
+            "text": "<p>Partnering with leading Asian suppliers to bring premium ingredients to the UK and help trusted brands go global.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dq7cRP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/uk_partners_19a5d76a-de75-4c2a-abdb-612e7edfcc1f.jpg",
+            "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
+            "text": "<p>Join 200+ retail and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_mwmk4N",
+        "column_wwJ9DT",
+        "column_dq7cRP"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Why partner shops and cafés choose Bubble Crush",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "collection_list_VtYKTt": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_aNkf6h": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "powder"
+          }
+        },
+        "featured_collection_Vgym9z": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_mFJ8ig": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_aNkf6h",
+        "featured_collection_Vgym9z",
+        "featured_collection_mFJ8ig"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Crafting your Bubble Tea kits",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "carousel_tbDAmM"
+    "carousel_tbDAmM",
+    "multicolumn_bGj3Ji",
+    "collection_list_VtYKTt"
   ]
 }
