@@ -263,6 +263,50 @@
         "padding_bottom": 48
       }
     },
+    "multicolumn_7VD4PL": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_U79ya9": {
+          "type": "column",
+          "settings": {
+            "title": "Alena, London",
+            "text": "<p>“Just enjoyed the most delicious bubble tea delivered right to my doorstep!  Huge thanks to Bubble Crush for their seamless online ordering and speedy service.”</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Umgde9": {
+          "type": "column",
+          "settings": {
+            "title": "James, UK",
+            "text": "<p>“Ordering was a breeze and the delivery was super fast! Great service and even better boba - 5 stars all around!”</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_U79ya9",
+        "column_Umgde9"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "What our partners say",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "image_list_RGBbkP": {
       "type": "image-list",
       "blocks": {
@@ -346,6 +390,7 @@
     "featured_collection_XVDMX9",
     "slideshow_GD6NBq",
     "featured_collection_adJ8Jc",
+    "multicolumn_7VD4PL",
     "image_list_RGBbkP"
   ]
 }
