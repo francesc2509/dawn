@@ -89,6 +89,9 @@
     },
     "contact_form_Mt4rNm": {
       "type": "contact-form",
+      "custom_css": [
+        "div {margin: 48px 0;}"
+      ],
       "name": "t:sections.contact-form.presets.name",
       "settings": {
         "heading": "Fill in the form below to receive our latest price list, customized quotes, or information about Franchising & Training.",
