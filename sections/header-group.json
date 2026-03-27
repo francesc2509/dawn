@@ -50,7 +50,7 @@
         "announcement_3NfFK8"
       ],
       "settings": {
-        "auto_rotate": false,
+        "auto_rotate": true,
         "change_slides_speed": 5,
         "color_scheme": "scheme-3bcdc089-fa06-4656-a4bc-8ee87e98a920",
         "show_line_separator": true,
