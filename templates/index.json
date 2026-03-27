@@ -106,20 +106,41 @@
         "featured_collection_Vgym9z": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "bubble-tea-drink-jams-bubble-crush"
           }
         },
         "featured_collection_mFJ8ig": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "bubble-tea-dessert-toppings-tapioca-pearls-jellies-bubble-crush"
+          }
+        },
+        "featured_collection_trYQDD": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "tea"
+          }
+        },
+        "featured_collection_LDLRQk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beverage-bases-coconut-milk-supplier"
+          }
+        },
+        "featured_collection_6BbUMB": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "equipments"
           }
         }
       },
       "block_order": [
         "featured_collection_aNkf6h",
         "featured_collection_Vgym9z",
-        "featured_collection_mFJ8ig"
+        "featured_collection_mFJ8ig",
+        "featured_collection_trYQDD",
+        "featured_collection_LDLRQk",
+        "featured_collection_6BbUMB"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
