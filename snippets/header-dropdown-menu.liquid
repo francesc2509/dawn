@@ -5,6 +5,39 @@
   {% render 'header-dropdown-menu' %}
 {% endcomment %}
 
+<style>
+  .list-menu-highlighted {
+    display: block;
+    position: absolute;
+    bottom: 75%;
+    font-weight: bold;
+    min-width: 50%;
+    text-decoration: none !important;
+    padding: 0.25em 0.5em;
+    border-radius: 1.25em;
+    text-align: center;
+    font-size: 0.75em;
+    text-transform: uppercase;
+  }
+
+  .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])) .list-menu-highlighted {
+    color: rgb(var(--color-background)) !important;
+  }
+
+  .header__menu-item {
+    position: relative;
+  }
+  
+  .list-menu-highlighted.hot {
+    background: #e56d6d;
+  }
+
+  .list-menu-highlighted.featured {
+    background: #f89619;
+  }
+
+</style>
+
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
@@ -88,15 +121,15 @@
               aria-current="page"
             {% endif %}
           >
+            {% assign customization = shop.metaobjects.menu_item_customization.values | where: "menu_url", link.url | first %}
+            {% if customization.badge_type != blank %}
+            <span class="list-menu-highlighted {{ customization.badge_type }}">Hot</span>
+            {% endif %}
             <span
               {%- if link.current %}
                 class="header__active-menu-item"
               {% endif %}
             >
-              {% assign customization = shop.metaobjects.menu_item_customization.values | where: "menu_url", link.url | first %}
-              {% if customization.badge_type != blank %}
-              {{ customization.badge_type  }}
-              {% endif %}
               {{- link.title | escape -}}
             </span>
           </a>
