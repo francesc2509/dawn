@@ -183,10 +183,10 @@
           "settings": {
             "button_label_1": "Delivery policy",
             "button_link_1": "shopify://pages/delivery-shipping",
-            "button_style_secondary_1": false,
+            "button_style_secondary_1": true,
             "button_label_2": "Purchase policy",
             "button_link_2": "shopify://pages/policies-customer-information",
-            "button_style_secondary_2": false
+            "button_style_secondary_2": true
           }
         }
       },
