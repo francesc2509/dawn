@@ -63,7 +63,7 @@
       ],
       "custom_css": [
         ".footer .contact-details {font-size: 0.75em;}",
-        ".contact-details-container .contact-details {max-width: 100%;}"
+        ".contact-details-container .contact-details {max-width: 100%; padding: 0;}"
       ],
       "settings": {
         "color_scheme": "scheme-1",
