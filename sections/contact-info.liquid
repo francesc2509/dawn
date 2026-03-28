@@ -1,6 +1,6 @@
 
 
-{% render 'contact-details', iframe_enabled: true  %}
+{% render 'contact-details', iframe_enabled: true, title: section.settings  %}
 {% schema %}
 {
   "name": "Contact information",
@@ -16,8 +16,14 @@
       "default": "background-1"
     },
     {
-      "type": "header",
-      "content": "t:sections.image-with-text.settings.header.content"
+      "type": "text",
+      "id": "contact_info_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "contact_info_subtitle",
+      "label": "Sub-title"
     },
     {
       "type": "text",
