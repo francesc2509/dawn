@@ -34,8 +34,7 @@
           "type": "slide",
           "settings": {
             "color_scheme": "scheme-33fb2062-685b-44d4-b28d-a277c4ef70d2",
-            "image": "shopify://shop_images/3531761133844_.pic_hd.png",
-            "image_mobile": "shopify://shop_images/5dccbb0e-1ca1-4aa9-87b7-7522ae81f627.jpg",
+            "video": "shopify://files/videos/ezgif-690b5480f790e242.mp4",
             "slide_fit": "cover",
             "slide_position": "left",
             "slide_overlay_alpha": 0.4,
