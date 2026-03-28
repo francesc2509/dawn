@@ -45,6 +45,10 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "visitor_counter_UyiJp6": {
+          "type": "visitor_counter",
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -70,6 +74,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        "visitor_counter_UyiJp6",
         "buy_buttons",
         "description",
         "share"
