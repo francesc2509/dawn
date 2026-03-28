@@ -247,8 +247,8 @@
         "text_r79dny": {
           "type": "text",
           "settings": {
-            "text": "<p>Spend £500 or more – Get 5% OFF</p><p>Spend £1,000 or more – Get 8% OFF</p><p>Spend £2,000 or more – Get 10% OFF</p>",
-            "text_style": "caption-with-letter-spacing"
+            "text": "<p></p><h4><strong>Tiers</strong></h4><p>Spend £500 or more – Get 5% OFF</p><p>Spend £1,000 or more – Get 8% OFF</p><p>Spend £2,000 or more – Get 10% OFF</p>",
+            "text_style": "body"
           }
         },
         "buttons_fDhLcb": {
@@ -275,7 +275,7 @@
         "image_height": "medium",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "show_text_box": false,
         "color_scheme": "scheme-171e1f28-38da-4af1-b2e0-a2267f7a07d8",
         "stack_images_on_mobile": true,
