@@ -161,6 +161,7 @@
             </a>
           </h3>
           <div class="card-information">
+            {{ card_product.selected_or_first_available_variant.title }}
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
               <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
@@ -203,8 +204,6 @@
                 </span>
               </p>
             {%- endif -%}
-
-            {{ card_product.selected_or_first_available_variant.title }}
 
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
             {%- if card_product.quantity_price_breaks_configured? -%}
