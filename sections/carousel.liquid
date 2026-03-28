@@ -260,26 +260,25 @@
               </div>
             {% endif %}
 
-            {% if block.settings.hero_cta_url  != blank %}
             <div class="carousel-hero-cta-container">
-              <a
-                href="{{ block.settings.hero_cta_url }}"
-                class="button button--primary"
-              >
-                {{ block.settings.hero_cta_label }}
-              </a>
+              {% if block.settings.hero_cta_url  != blank %}
+                <a
+                  href="{{ block.settings.hero_cta_url }}"
+                  class="button button--primary"
+                >
+                  {{ block.settings.hero_cta_label }}
+                </a>
+              {% endif %}
+              {% if block.settings.hero_secondary_cta_url  != blank %}
+                <a
+                    href="{{ block.settings.hero_secondary_cta_url }}"
+                    class="link link--text"
+                  >
+                    {{ block.settings.hero_secondary_cta_label }}
+                </a>
+              {% endif %}
             </div>
-            {% endif %}
-            {% if block.settings.hero_secondary_cta_url  != blank %}
-            <div class="carousel-hero-cta-container">
-              <a
-                href="{{ block.settings.hero_secondary_cta_url }}"
-                class="link link--text"
-              >
-                {{ block.settings.hero_secondary_cta_label }}
-              </a>
-            </div>
-            {% endif %}
+            
             
           </div>
         </div>
