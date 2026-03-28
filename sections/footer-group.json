@@ -27,6 +27,18 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "contact_information_UPcTa8": {
+          "type": "contact_information",
+          "settings": {
+            "color_scheme": "background-1",
+            "contact_info_phone": "",
+            "contact_info_email": "",
+            "contact_info_address": "",
+            "contact_info_map": "static",
+            "contact_info_static_map_image_cta": "",
+            "contact_info_interactive_map_url": ""
+          }
+        },
         "brand_information_j6ngWY": {
           "type": "brand_information",
           "disabled": true,
@@ -58,6 +70,7 @@
         }
       },
       "block_order": [
+        "contact_information_UPcTa8",
         "brand_information_j6ngWY",
         "collapsible_tab_UbVCj4",
         "collapsible_tab_cFJLtT"
