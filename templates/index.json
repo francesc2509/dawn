@@ -14,7 +14,6 @@
       "blocks": {
         "slide_WPNnPg": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "color_scheme": "scheme-33fb2062-685b-44d4-b28d-a277c4ef70d2",
             "image": "shopify://shop_images/3531761133844_.pic_hd.png",
@@ -33,6 +32,7 @@
         },
         "slide_96cpta": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "color_scheme": "scheme-33fb2062-685b-44d4-b28d-a277c4ef70d2",
             "video": "shopify://files/videos/ezgif-690b5480f790e242.mp4",
