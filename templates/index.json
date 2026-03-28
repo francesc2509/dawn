@@ -135,6 +135,43 @@
         "show_text_below": false
       }
     },
+    "image_banner_akp4Yh": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_JgqMx4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Professional Bubble Tea Training",
+            "heading_size": "h2"
+          }
+        },
+        "text_j74Dd7": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Empower your business</strong></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_JgqMx4",
+        "text_j74Dd7"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/a-warehouse-with-delivery-boxes-with-the-https-bubblecrushsupplier-com-logo.png",
+        "image_overlay_opacity": 60,
+        "image_height": "small",
+        "image_behavior": "ambient",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
     "collection_list_VtYKTt": {
       "type": "collection-list",
       "blocks": {
@@ -247,7 +284,7 @@
           "settings": {
             "image": "shopify://shop_images/Bubble_Tea_staff.png",
             "image_overlay_opacity": 40,
-            "heading": "Professional Bubble Tea  Training",
+            "heading": "Professional Bubble Tea Training",
             "heading_size": "h2",
             "subheading": "Empower Your Business",
             "button_label": "Book a session",
@@ -430,6 +467,7 @@
     "carousel_tbDAmM",
     "multicolumn_bGj3Ji",
     "image_banner_Rekq6Q",
+    "image_banner_akp4Yh",
     "collection_list_VtYKTt",
     "featured_collection_XVDMX9",
     "slideshow_GD6NBq",

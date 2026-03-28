@@ -16,6 +16,7 @@
       "blocks": {
         "brand_information_j6ngWY": {
           "type": "brand_information",
+          "disabled": true,
           "settings": {
             "show_social": false
           }
