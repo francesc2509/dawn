@@ -267,20 +267,27 @@
             {% endif %}
 
             <div class="carousel-hero-cta-container">
-              {% if block.settings.hero_cta_url  != blank %}
+              {% assign hero_cta_url = block.settings.hero_cta_url  %}
+              {% assign hero_cta_label = block.settings.hero_cta_label  %}
+              {% assign hero_secondary_cta_url = block.settings.hero_secondary_cta_url  %}
+              {% assign hero_secondary_cta_label = block.settings.hero_secondary_cta_label  %}
+              
+              {% if customer %}
+              {% endif %}
+              {% if hero_cta_url  != blank %}
                 <a
                   href="{{ block.settings.hero_cta_url }}"
                   class="button button--primary"
                 >
-                  {{ block.settings.hero_cta_label }}
+                  {{ hero_cta_label }}
                 </a>
               {% endif %}
-              {% if block.settings.hero_secondary_cta_url  != blank %}
+              {% if hero_secondary_cta_url  != blank %}
                 <a
                     href="{{ block.settings.hero_secondary_cta_url }}"
                     class="link link--text"
                   >
-                    {{ block.settings.hero_secondary_cta_label }}
+                    {{ hero_secondary_cta_label }}
                 </a>
               {% endif %}
             </div>
@@ -409,7 +416,7 @@
         {
           "type": "richtext",
           "id": "hero_cta_label",
-          "label": "Section hero CTA étiquette"
+          "label": "Section hero CTA label"
         },
         {
           "type": "url",
@@ -418,13 +425,33 @@
         },
         {
           "type": "richtext",
+          "id": "signed_in_hero_cta_label",
+          "label": "Signed-in section hero CTA label"
+        },
+        {
+          "type": "url",
+          "id": "signed_in_hero_cta_url",
+          "label": "Signed-in section hero CTA"
+        },
+        {
+          "type": "richtext",
           "id": "hero_secondary_cta_label",
-          "label": "Section hero secondary CTA étiquette"
+          "label": "Section hero secondary CTA label"
         },
         {
           "type": "url",
           "id": "hero_secondary_cta_url",
           "label": "Section hero secondary CTA"
+        },
+        {
+          "type": "richtext",
+          "id": "signed_in_hero_secondary_cta_label",
+          "label": "Signed-in section hero secondary CTA label"
+        },
+        {
+          "type": "url",
+          "id": "signed_in_hero_secondary_cta_url",
+          "label": "Signed-in section hero secondary CTA"
         }
       ]
     }
