@@ -1,5 +1,10 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
 {%- style -%}
+
+  .main-page-title {
+    display: none;
+  }
+  
   .contact-details-container {
     display: flex;
     flex-direction: row;
@@ -57,6 +62,7 @@
   }
 {%- endstyle -%}
   <div class="contact-details-container">
+    
     <div class="contact-details">
       <h1>{{ title }}</h1>
       <ul>
