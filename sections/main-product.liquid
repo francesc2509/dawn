@@ -711,6 +711,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     {% render 'product-media-modal', variant_images: variant_images %}
 
+    {% if section.settings.enable_recently_viewed %}
+    {% render 'recently-viewed' %}
+    {% endif %}
+
     {% assign popups = section.blocks | where: 'type', 'popup' %}
     {%- for block in popups -%}
       <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
