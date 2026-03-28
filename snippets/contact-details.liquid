@@ -69,12 +69,7 @@
     
     <div class="contact-details">
       <h1>{{ title }}</h1>
-      <ul>
-        <li><span class="contact-info-icon"></span><a href="https://wa.me/+447512896659">{{ shop.phone }}</a></li>
-        <li><span class="contact-info-icon"></span><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
-        <li><span class="contact-info-icon"></span><a href="https://{{ shop.domain }}">www.{{ shop.domain }}</a></li>
-        <li><span class="contact-info-icon"></span>
-        {% capture address_string %}
+      {% capture address_string %}
           {{ shop.address.address1 }}|
           {{ shop.address.address2 }}|
           {{ shop.address.zip }}|
@@ -86,7 +81,11 @@
           | map: "strip" 
           | compact 
           | join: ", " }}
-        </li>
+      <ul>
+        <li><span class="contact-info-icon"></span><a href="https://wa.me/+447512896659">{{ shop.phone }}</a></li>
+        <li><span class="contact-info-icon"></span><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
+        <li><span class="contact-info-icon"></span><a href="https://{{ shop.domain }}">www.{{ shop.domain }}</a></li>
+        <li><span class="contact-info-icon"></span>{{ address_string }}</li>
       </ul>
     </div>
     {% assign hq_location = shop.metaobjects.hq_location.values | first %}
