@@ -14,6 +14,19 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "brand_information_pP94EK": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "brand_information_HpPdmf": {
+          "type": "brand_information",
+          "disabled": true,
+          "settings": {
+            "show_social": true
+          }
+        },
         "contact_information_UPcTa8": {
           "type": "contact_information",
           "settings": {
@@ -24,13 +37,6 @@
             "contact_info_map": "static",
             "contact_info_static_map_image_cta": "",
             "contact_info_interactive_map_url": ""
-          }
-        },
-        "brand_information_j6ngWY": {
-          "type": "brand_information",
-          "disabled": true,
-          "settings": {
-            "show_social": false
           }
         },
         "collapsible_tab_UbVCj4": {
@@ -57,8 +63,9 @@
         }
       },
       "block_order": [
+        "brand_information_pP94EK",
+        "brand_information_HpPdmf",
         "contact_information_UPcTa8",
-        "brand_information_j6ngWY",
         "collapsible_tab_UbVCj4",
         "collapsible_tab_cFJLtT"
       ],
