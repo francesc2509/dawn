@@ -94,6 +94,7 @@
       </iframe>
     {% else %}
       {% assign hq_location = shop.metaobjects.hq_location.values | first %}
+      {{ hq_location | json }}
       <a class="contact-details-map" href="https://www.google.com/maps/place/NWADRI/@36.7598987,2.985504,713m/data=!3m1!1e3!4m6!3m5!1s0x128fb100912d49d5:0xf6747ad38752e3a9!8m2!3d36.7613573!4d2.9855043!16s%2Fg%2F11n4vpxmm3?hl=en&entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D">
         <span>Visiter showroom</span>
         {{ hq_location.location_static_image | image_url: width: 400 | image_tag: loading: 'lazy' }}
