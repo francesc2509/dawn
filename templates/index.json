@@ -186,7 +186,7 @@
             "button_style_secondary_1": false,
             "button_label_2": "Purchase policy",
             "button_link_2": "shopify://pages/policies-customer-information",
-            "button_style_secondary_2": true
+            "button_style_secondary_2": false
           }
         }
       },
