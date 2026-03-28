@@ -68,7 +68,6 @@
     {% if iframe_enabled %}
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2413.4186364093844!2d-0.040075900000000005!3d51.48400590000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487602e4b0f07d2b%3A0xd91b9fb82d55302a!2sParkside%20Business%20Estate%2C%20Blackhorse%20Rd%2C%20London%20SE8%205HZ!5e1!3m2!1sen!2suk!4v1774725593393!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     {% else %}
-      
       <a class="contact-details-map" href="{{ hq_location.location_static_image_link }}">
         <span>{{ hq_location.location_static_image_text  }}&nbsp;{% render 'icon-arrow' %}</span>
         {{ hq_location.location_static_image | image_url: width: 400 | image_tag: loading: 'lazy' }}

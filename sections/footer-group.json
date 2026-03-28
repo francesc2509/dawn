@@ -11,19 +11,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "contact_info_bACQYV": {
-      "type": "contact-info",
-      "name": "Contact Information",
-      "settings": {
-        "color_scheme": "",
-        "contact_info_phone": "",
-        "contact_info_email": "",
-        "contact_info_address": "",
-        "contact_info_map": "static",
-        "contact_info_static_map_image_cta": "",
-        "contact_info_interactive_map_url": ""
-      }
-    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -92,7 +79,6 @@
     }
   },
   "order": [
-    "contact_info_bACQYV",
     "footer"
   ]
 }
