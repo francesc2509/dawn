@@ -74,14 +74,18 @@
         <li><span class="contact-info-icon"></span><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
         <li><span class="contact-info-icon"></span><a href="https://{{ shop.domain }}">www.{{ shop.domain }}</a></li>
         <li><span class="contact-info-icon"></span>
-        {% assign address_parts = "" | split: "" %}
-        {% assign address_parts = address_parts | push: shop.address.address1 %}
-        {% assign address_parts = address_parts | push: shop.address.address2 %}
-        {% assign address_parts = address_parts | push: shop.address.zip %}
-        {% assign address_parts = address_parts | push: shop.address.city %}
-        {% assign address_parts = address_parts | push: shop.address.country_code %}
-
-        {{ address_parts | compact | join: ", " }}
+        {% capture address_string %}
+          {{ shop.address.address1 }}|
+          {{ shop.address.address2 }}|
+          {{ shop.address.zip }}|
+          {{ shop.address.city }}|
+          {{ shop.address.country_code }}
+        {% endcapture %}
+        {{ address_string 
+          | split: "|" 
+          | map: "strip" 
+          | compact 
+          | join: ", " }}
         </li>
       </ul>
     </div>
