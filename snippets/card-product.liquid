@@ -204,7 +204,7 @@
               </p>
             {%- endif -%}
 
-            {{ card_product.selected_or_first_available_variant.title | t }}
+            {{ card_product.selected_or_first_available_variant.title }}
 
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
             {%- if card_product.quantity_price_breaks_configured? -%}
