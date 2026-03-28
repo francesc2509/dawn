@@ -151,22 +151,34 @@
             "text": "<p><strong>Empower your business</strong></p>",
             "text_style": "body"
           }
+        },
+        "buttons_PPTeXm": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Book a session",
+            "button_link_1": "shopify://pages/bubble-tea-training-partnership-uk",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
         }
       },
       "block_order": [
         "heading_JgqMx4",
-        "text_j74Dd7"
+        "text_j74Dd7",
+        "buttons_PPTeXm"
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/a-warehouse-with-delivery-boxes-with-the-https-bubblecrushsupplier-com-logo.png",
-        "image_overlay_opacity": 60,
+        "image": "shopify://shop_images/only-one-glass.png",
+        "image_overlay_opacity": 30,
         "image_height": "small",
         "image_behavior": "ambient",
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
         "show_text_box": false,
-        "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
+        "color_scheme": "scheme-171e1f28-38da-4af1-b2e0-a2267f7a07d8",
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
         "show_text_below": false
