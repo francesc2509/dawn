@@ -69,19 +69,17 @@
     
     <div class="contact-details">
       <h1>{{ title }}</h1>
-      {% capture address_string %}
-          {{ shop.address.address1 }}|
-          {{ shop.address.address2 }}|
-          {{ shop.address.zip }}|
-          {{ shop.address.city }}|
-          {{ shop.address.country_code }}
-        {% endcapture %}
-        {{ address_string | split: "|" | map: "strip" | compact | join: ", " }}
       <ul>
         <li><span class="contact-info-icon"></span><a href="https://wa.me/+447512896659">{{ shop.phone }}</a></li>
         <li><span class="contact-info-icon"></span><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
         <li><span class="contact-info-icon"></span><a href="https://{{ shop.domain }}">www.{{ shop.domain }}</a></li>
-        <li><span class="contact-info-icon"></span>{{ address_string }}</li>
+        <li><span class="contact-info-icon"></span>
+        {% if shop.address.address1 != blank %}{{ shop.address.address1 }}, {% endif %}
+        {% if shop.address.address2 != blank %}{{ shop.address.address2 }}, {% endif %}
+        {% if shop.address.zip != blank %}{{ shop.address.zip }}, {% endif %}
+        {% if shop.address.city != blank %}{{ shop.address.city }}, {% endif %}
+        {{ shop.address.country_code }}
+        </li>
       </ul>
     </div>
     {% assign hq_location = shop.metaobjects.hq_location.values | first %}
