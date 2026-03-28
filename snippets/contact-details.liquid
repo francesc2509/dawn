@@ -1,0 +1,103 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{%- style -%}
+  .footer {
+    margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+  }
+
+  .contact-details-container {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 1em 1em 1em;
+    gap: 1em;
+    justify-content: center;
+  }
+
+  .contact-details-container * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-details-container .contact-details-map {
+    max-width: 100%;
+    position: relative;
+    display: flex;
+  }
+
+  .contact-details-container a {
+    color: inherit;
+  }
+
+  .contact-details-container .contact-details-map > span {
+    position: absolute;
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+    padding: 0em 0.5em;
+    bottom: 0%;
+    box-sizing: border-box;
+  }
+
+  .contact-details-container .contact-details-map > img {
+    max-width: 100%;
+  }
+
+  .contact-details-container ul {
+    list-style-type: none;
+  }
+
+  .contact-details-container .contact-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .footer {
+      margin-top: {{ section.settings.margin_top }}px;
+    }
+
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .contact-details-container {
+      flex-direction: column;
+      gap: 1em;
+    }
+  }
+{%- endstyle -%}
+  <div class="contact-details-container">
+    <div class="contact-details">
+      <ul>
+        <li>{{ shop.address.address1 }}, {{ shop.address.zip }} {{ shop.address.city }}</li>
+        <li>{{ shop.phone }}</li>
+        <li><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
+        <li><a href="https://{{ shop.domain }}">www.{{ shop.domain }}</a></li>
+      </ul>
+    </div>
+    {% if iframe_enabled %}
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1076.926630809866!2d2.9843695748869057!3d36.76158838355113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fb100912d49d5%3A0xf6747ad38752e3a9!2sNWADRI!5e1!3m2!1sen!2suk!4v1772219551725!5m2!1sen!2suk"
+        width="400px"
+        height="300px"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    {% else %}
+      <a class="contact-details-map" href="https://www.google.com/maps/place/NWADRI/@36.7598987,2.985504,713m/data=!3m1!1e3!4m6!3m5!1s0x128fb100912d49d5:0xf6747ad38752e3a9!8m2!3d36.7613573!4d2.9855043!16s%2Fg%2F11n4vpxmm3?hl=en&entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D">
+        <span>Visiter showroom</span>
+        <img src="{{ 'nwadri_location.jpg' | file_url }}"
+            width="640px"
+            height="auto"
+            alt="Visiter notre showroom" />
+      </a>
+    {% endif %}
+  </div>
