@@ -1,0 +1,123 @@
+{% schema %}
+{
+  "name": "Contact info",
+  "tag": "section",
+  "class": "section",
+  "presets": [{ "name": "Carousel" }],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.slideshow.blocks.slide.settings.image.label"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "t:sections.video.settings.video.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobile"
+    },
+    {
+      "type": "video",
+      "id": "video_mobile",
+      "label": "Vidéo mobile"
+    },
+    {
+      "type": "number",
+      "id": "slide_duration",
+      "label": "Duration (secondes)"
+    },
+    {
+      "type": "select",
+      "id": "slide_fit",
+      "options": [
+        {
+          "value": "fill",
+          "label": "Fill"
+        },
+        {
+          "value": "cover",
+          "label": "Cover"
+        }
+      ],
+      "default": "cover",
+      "label": "t:sections.collage.settings.desktop_layout.label"
+    },
+    {
+      "type": "select",
+      "id": "slide_position",
+      "options": [
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "left",
+          "label": "t:sections.collage.settings.desktop_layout.options__1.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.collage.settings.desktop_layout.options__2.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.collage.settings.desktop_layout.label"
+    },
+    {
+      "type": "range",
+      "id": "slide_overlay_alpha",
+      "label": "Overlay alpha",
+      "default": 0.3,
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "unit": "%"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_title",
+      "label": "Section hero titre"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_subtitle",
+      "label": "Section hero sous-titre"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_main",
+      "label": "Section hero"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_cta_label",
+      "label": "Section hero CTA étiquette"
+    },
+    {
+      "type": "url",
+      "id": "hero_cta_url",
+      "label": "Section hero CTA"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_secondary_cta_label",
+      "label": "Section hero secondary CTA étiquette"
+    },
+    {
+      "type": "url",
+      "id": "hero_secondary_cta_url",
+      "label": "Section hero secondary CTA"
+    }
+  ]
+}
+{% endschema %}
