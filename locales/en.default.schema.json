@@ -610,6 +610,14 @@
         "name": "Collage"
       }
     },
+    "contact-info": {
+      "name": "Contact Information",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        }
+      }
+    },
     "image-list": {
       "name": "Image list",
       "settings": {
