@@ -76,6 +76,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
+        "enable_recently_viewed": true,
         "color_scheme": "",
         "media_size": "large",
         "constrain_to_viewport": true,
