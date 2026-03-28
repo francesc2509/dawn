@@ -69,6 +69,9 @@
         "collapsible_tab_UbVCj4",
         "collapsible_tab_cFJLtT"
       ],
+      "custom_css": [
+        ".footer .contact-details {font-size: 0.75em}"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
