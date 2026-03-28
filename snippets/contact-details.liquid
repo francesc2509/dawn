@@ -88,7 +88,7 @@
     {% else %}
       <a class="contact-details-map" href="{{ hq_location.location_static_image_link }}">
         <span>{{ hq_location.location_static_image_text  }}&nbsp;{% render 'icon-arrow' %}</span>
-        {{ hq_location.location_static_image | image_url: width: 400 | image_tag: loading: 'lazy' }}
+        {{ hq_location.location_static_image | image_url: width: 500 | image_tag: loading: 'lazy' }}
       </a>
     {% endif %}
   </div>
