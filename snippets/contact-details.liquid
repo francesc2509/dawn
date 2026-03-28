@@ -64,8 +64,9 @@
         <li>{{ shop.address.address1 }}, {{ shop.address.zip }}, {{ shop.address.city }}, {{ shop.address.country_code }}</li>
       </ul>
     </div>
+    {% assign hq_location = shop.metaobjects.hq_location.values | first %}
     {% if iframe_enabled %}
-      <iframe src=""
+      <iframe src="{{ hq_location.embedded_google_maps_link }}"
         width="640px"
         height="auto"
         style="border:0;"
@@ -74,7 +75,7 @@
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     {% else %}
-      {% assign hq_location = shop.metaobjects.hq_location.values | first %}
+      
       <a class="contact-details-map" href="{{ hq_location.location_static_image_link }}">
         <span>{{ hq_location.location_static_image_text  }}&nbsp;{% render 'icon-arrow' %}</span>
         {{ hq_location.location_static_image | image_url: width: 400 | image_tag: loading: 'lazy' }}
