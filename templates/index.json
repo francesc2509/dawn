@@ -234,6 +234,55 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "image_banner_Rekq6Q": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_CNBPet": {
+          "type": "heading",
+          "settings": {
+            "heading": "Free Delivery & Bulk Discounts",
+            "heading_size": "h1"
+          }
+        },
+        "text_r79dny": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_fDhLcb": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Delivery policy",
+            "button_link_1": "shopify://pages/delivery-shipping",
+            "button_style_secondary_1": false,
+            "button_label_2": "Purchase policy",
+            "button_link_2": "shopify://pages/policies-customer-information",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_CNBPet",
+        "text_r79dny",
+        "buttons_fDhLcb"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/a-warehouse-with-delivery-boxes-with-the-https-bubblecrushsupplier-com-logo.png",
+        "image_overlay_opacity": 50,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-171e1f28-38da-4af1-b2e0-a2267f7a07d8",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
     "featured_collection_adJ8Jc": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -389,6 +438,7 @@
     "collection_list_VtYKTt",
     "featured_collection_XVDMX9",
     "slideshow_GD6NBq",
+    "image_banner_Rekq6Q",
     "featured_collection_adJ8Jc",
     "multicolumn_7VD4PL",
     "image_list_RGBbkP"
