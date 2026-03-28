@@ -76,11 +76,7 @@
           {{ shop.address.city }}|
           {{ shop.address.country_code }}
         {% endcapture %}
-        {{ address_string 
-          | split: "|" 
-          | map: "strip" 
-          | compact 
-          | join: ", " }}
+        {{ address_string | split: "|" | map: "strip" | compact | join: ", " }}
       <ul>
         <li><span class="contact-info-icon"></span><a href="https://wa.me/+447512896659">{{ shop.phone }}</a></li>
         <li><span class="contact-info-icon"></span><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
