@@ -95,7 +95,7 @@
     {% else %}
       {% assign hq_location = shop.metaobjects.hq_location.values | first %}
       <a class="contact-details-map" href="{{ hq_location.location_static_image_link }}">
-        <span>Visiter showroom</span>
+        <span>{{ hq_location.location_static_image_text  }}</span>
         {{ hq_location.location_static_image | image_url: width: 400 | image_tag: loading: 'lazy' }}
       </a>
     {% endif %}
