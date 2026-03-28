@@ -17,7 +17,7 @@
         "brand_information_pP94EK": {
           "type": "brand_information",
           "settings": {
-            "show_social": true
+            "show_social": false
           }
         },
         "brand_information_HpPdmf": {
@@ -70,7 +70,7 @@
         "collapsible_tab_cFJLtT"
       ],
       "custom_css": [
-        ".footer .contact-details {font-size: 0.75em}"
+        ".footer .contact-details {font-size: 0.75em;}"
       ],
       "settings": {
         "color_scheme": "scheme-1",
