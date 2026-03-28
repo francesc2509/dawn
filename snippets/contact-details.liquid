@@ -68,7 +68,9 @@
   <div class="contact-details-container">
     
     <div class="contact-details">
-      <h1>{{ title }}</h1>
+      {% if title != blank %}
+        <h1>{{ title }}</h1>
+      {% endif %}
       <ul>
         <li><span class="contact-info-icon"></span><a href="https://wa.me/+447512896659">{{ shop.phone }}</a></li>
         <li><span class="contact-info-icon"></span><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
