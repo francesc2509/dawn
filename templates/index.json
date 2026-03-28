@@ -171,17 +171,10 @@
     "image_banner_Rekq6Q": {
       "type": "image-banner",
       "blocks": {
-        "heading_CNBPet": {
-          "type": "heading",
-          "settings": {
-            "heading": "Free Delivery & Bulk Discounts",
-            "heading_size": "h1"
-          }
-        },
         "text_r79dny": {
           "type": "text",
           "settings": {
-            "text": "<h4>Orders over £300  get free delivery</h4><p></p><h4><strong>Bulk Tiers</strong></h4><p>Spend £500 or more – Get 5% OFF</p><p>Spend £1,000 or more – Get 8% OFF</p><p>Spend £2,000 or more – Get 10% OFF</p><p></p><p></p>",
+            "text": "<h4><strong>Free delivery</strong></h4><p>Orders over £300  get free delivery</p><p></p><h4><strong>Bulk Tiers</strong></h4><p>Spend £500 or more – Get 5% OFF</p><p>Spend £1,000 or more – Get 8% OFF</p><p>Spend £2,000 or more – Get 10% OFF</p><p></p><p></p>",
             "text_style": "body"
           }
         },
@@ -193,12 +186,11 @@
             "button_style_secondary_1": false,
             "button_label_2": "Purchase policy",
             "button_link_2": "shopify://pages/policies-customer-information",
-            "button_style_secondary_2": false
+            "button_style_secondary_2": true
           }
         }
       },
       "block_order": [
-        "heading_CNBPet",
         "text_r79dny",
         "buttons_fDhLcb"
       ],
@@ -209,11 +201,11 @@
         "image_height": "small",
         "image_behavior": "ambient",
         "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "left",
+        "desktop_content_alignment": "center",
         "show_text_box": false,
         "color_scheme": "scheme-171e1f28-38da-4af1-b2e0-a2267f7a07d8",
         "stack_images_on_mobile": true,
-        "mobile_content_alignment": "left",
+        "mobile_content_alignment": "center",
         "show_text_below": false
       }
     },
