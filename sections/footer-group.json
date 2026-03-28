@@ -20,13 +20,6 @@
             "show_social": false
           }
         },
-        "brand_information_HpPdmf": {
-          "type": "brand_information",
-          "disabled": true,
-          "settings": {
-            "show_social": true
-          }
-        },
         "contact_information_UPcTa8": {
           "type": "contact_information",
           "settings": {
@@ -64,13 +57,13 @@
       },
       "block_order": [
         "brand_information_pP94EK",
-        "brand_information_HpPdmf",
         "contact_information_UPcTa8",
         "collapsible_tab_UbVCj4",
         "collapsible_tab_cFJLtT"
       ],
       "custom_css": [
-        ".footer .contact-details {font-size: 0.75em;}"
+        ".footer .contact-details {font-size: 0.75em;}",
+        ".contact-details-container .contact-details {max-width: 100%;}"
       ],
       "settings": {
         "color_scheme": "scheme-1",
