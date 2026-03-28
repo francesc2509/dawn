@@ -643,6 +643,69 @@ document.addEventListener("DOMContentLoaded", function () {
           "default": "center"
         }
       ]
+    },
+    {
+      "name": "Contact Information",
+      "type": "contact_information",
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "info": "t:sections.all.colors.has_cards_info",
+          "default": "background-1"
+        },
+        {
+          "type": "text",
+          "id": "contact_info_phone",
+          "label": "Phone"
+        },
+        {
+          "type": "text",
+          "id": "contact_info_email",
+          "label": "E-mail"
+        },
+        {
+          "type": "text",
+          "id": "contact_info_address",
+          "label": "Address"
+        },
+        {
+          "type": "select",
+          "id": "contact_info_map",
+          "options": [
+            {
+              "value": "static",
+              "label": "Static"
+            },
+            {
+              "value": "interactive",
+              "label": "Interactive"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ],
+          "default": "static",
+          "label": "Map"
+        },
+        {
+            "type": "image_picker",
+            "id": "contact_info_static_map_image",
+            "label": "Static map image"
+        },
+        {
+            "type": "text",
+            "id": "contact_info_static_map_image_cta",
+            "label": "Static map image cta"
+        },
+        {
+            "type": "text",
+            "id": "contact_info_interactive_map_url",
+            "label": "Google maps embed map URL"
+        }
+      ]
     }
   ],
   "settings": [
