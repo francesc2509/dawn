@@ -174,7 +174,7 @@
         "text_r79dny": {
           "type": "text",
           "settings": {
-            "text": "<h4><strong>Free delivery</strong></h4><p>Orders over £300  get free delivery</p><p></p><h4><strong>Bulk Tiers</strong></h4><p>Spend £500 or more – Get 5% OFF</p><p>Spend £1,000 or more – Get 8% OFF</p><p>Spend £2,000 or more – Get 10% OFF</p><p></p><p></p>",
+            "text": "<h4><strong>Free delivery</strong></h4><p>Orders over £300  get free delivery</p><p></p><h4><strong>Bulk Tiers</strong></h4><p>Spend £500 or more – Get 5% OFF</p><p>Spend £1,000 or more – Get 8% OFF</p><p>Spend £2,000 or more – Get 10% OFF</p><p></p><p></p><p></p>",
             "text_style": "body"
           }
         },
