@@ -675,9 +675,9 @@
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
               {%- when 'visitor_counter' -%}
-                {% render 'visitor-counter',
-                  block: block
-                %}
+              {% render 'visitor-counter',
+                block: block
+              %}
               {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -966,12 +966,6 @@
       "type": "collapsible_tab",
       "name": "t:sections.main-product.blocks.collapsible_tab.name",
       "settings": [
-        {
-      "type": "checkbox",
-          "id": "enable_recently_viewed",
-          "default": false,
-          "label": "t:sections.main-product.settings.enable_sticky_info.label"
-        },
         {
           "type": "text",
           "id": "heading",
@@ -2105,6 +2099,11 @@
       "default": true,
       "label": "t:sections.main-product.settings.enable_sticky_info.label"
     },
+    {"type": "checkbox",
+          "id": "enable_recently_viewed",
+          "default": false,
+          "label": "t:sections.main-product.settings.enable_sticky_info.label"
+        },
     {
       "type": "color_scheme",
       "id": "color_scheme",
