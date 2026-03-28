@@ -119,7 +119,7 @@
         "text_r79dny": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>Free delivery</strong></h3><p>Orders over £300 can qualify for free delivery</p><p></p><p></p>",
+            "text": "<h3><strong>Free delivery</strong></h3><p>Orders over £300 can qualify for free delivery</p><p></p>",
             "text_style": "body"
           }
         },
@@ -137,18 +137,18 @@
         "text_cfQQqy": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>Bulk Tiers</strong></h3><p>Spend £500 or more – Get 5% OFF</p><p>Spend £1,000 or more – Get 8% OFF</p><p>Spend £2,000 or more – Get 10% OFF</p><p></p><p></p>",
+            "text": "<h3><strong>Bulk Tiers</strong></h3><p>Spend £500 or more – Get 5% OFF</p><p>Spend £1,000 or more – Get 8% OFF</p><p>Spend £2,000 or more – Get 10% OFF</p><p></p>",
             "text_style": "body"
           }
         },
         "buttons_fDhLcb": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Delivery policy",
-            "button_link_1": "shopify://pages/delivery-shipping",
+            "button_label_1": "Purchase policy",
+            "button_link_1": "shopify://pages/policies-customer-information",
             "button_style_secondary_1": true,
-            "button_label_2": "Purchase policy",
-            "button_link_2": "shopify://pages/policies-customer-information",
+            "button_label_2": "",
+            "button_link_2": "",
             "button_style_secondary_2": true
           }
         }
