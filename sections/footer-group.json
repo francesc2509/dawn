@@ -62,9 +62,9 @@
         "collapsible_tab_cFJLtT"
       ],
       "custom_css": [
-        ".footer .contact-details {font-size: 0.75em;}",
+        ".footer .contact-details {font-size: 0.5em;}",
         ".contact-details-container {padding: 0;}",
-        ".contact-details-container .contact-details {max-width: 100%; }"
+        ".contact-details-container .contact-details {max-width: 100%;}"
       ],
       "settings": {
         "color_scheme": "scheme-1",
