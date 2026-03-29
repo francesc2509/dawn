@@ -140,7 +140,7 @@
                     </div>
                   {%- when 'image' -%}
                   {%- when 'contact_information' -%}
-                    {% render 'contact-details', title: contact_info_title %}
+                    {% render 'contact-details', title: settings.contact_info_title %}
                 {%- endcase -%}
               </div>
             {%- endfor -%}
