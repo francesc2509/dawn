@@ -24,7 +24,7 @@
           "type": "contact_information",
           "settings": {
             "color_scheme": "background-1",
-            "contact_info_title": "<p>Hello</p>",
+            "contact_info_title": "<h4>Contact Details</h4>",
             "contact_info_subtitle": "",
             "contact_info_phone": "",
             "contact_info_email": "",
