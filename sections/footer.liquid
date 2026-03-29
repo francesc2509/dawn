@@ -140,7 +140,7 @@
                     </div>
                   {%- when 'image' -%}
                   {%- when 'contact_information' -%}
-                    {% render 'contact-details' %}
+                    {% render 'contact-details', header_tag: "h2" %}
                 {%- endcase -%}
               </div>
             {%- endfor -%}
