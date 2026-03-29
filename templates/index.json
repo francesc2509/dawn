@@ -33,33 +33,10 @@
             "signed_in_hero_secondary_cta_label": "<p>Manage my account</p>",
             "signed_in_hero_secondary_cta_url": ""
           }
-        },
-        "slide_96cpta": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "color_scheme": "scheme-33fb2062-685b-44d4-b28d-a277c4ef70d2",
-            "video": "shopify://files/videos/ezgif-690b5480f790e242.mp4",
-            "slide_fit": "cover",
-            "slide_position": "left",
-            "slide_overlay_alpha": 0.4,
-            "hero_title": "<p><strong>Don't just make Bubble Tea</strong></p><p><strong>Crush it!</strong></p>",
-            "hero_subtitle": "<p><em>UK warehouse | Fast delivery | Asian brands </em></p><p><em>B2B  wholesale pricing | Bulk order discounts</em></p>",
-            "hero_main": "<p><strong>From crystal pearls to taro powder — premium bubble tea ingredients sourced across Asia</strong></p>",
-            "hero_cta_label": "<p><strong>Shop Best Sellers</strong></p>",
-            "hero_cta_url": "shopify://collections/hot-seller",
-            "signed_in_hero_cta_label": "",
-            "signed_in_hero_cta_url": "",
-            "hero_secondary_cta_label": "<p><strong>Shop All</strong></p>",
-            "hero_secondary_cta_url": "shopify://collections/all",
-            "signed_in_hero_secondary_cta_label": "",
-            "signed_in_hero_secondary_cta_url": ""
-          }
         }
       },
       "block_order": [
-        "slide_WPNnPg",
-        "slide_96cpta"
+        "slide_WPNnPg"
       ],
       "name": "Carousel",
       "settings": {}
