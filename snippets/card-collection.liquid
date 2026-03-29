@@ -54,18 +54,18 @@
         border-radius: var(--collection-card-corner-radius);
       }
 
-     .card-collection-link {
+      .card-collection-link {
         height: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
         color: rgb(var(--color-background));
         box-sizing: border-box;
         padding: 1em;
         border-radius: var(--collection-card-corner-radius);
-        {% comment %} animation: cardFadeUp 0.8s ease forwards; {% endcomment %}
+        animation: cardFadeUp 0.8s ease forwards;
       }
 
       /* Children animate slightly after */
@@ -98,7 +98,7 @@
         text-align: center;
       }
 
-      @media(max-width: 768px) {
+      @media (max-width: 768px) {
         .card-collection-link > .card-collection-title {
           font-size: 1em;
         }
@@ -135,17 +135,17 @@
     <div class="card-collection-link-container">
       <a
         class="full-unstyled-link card-collection-link"
-        {% if card_collection == blank %}
+        {% if card_collection = blank %}
           role="link" aria-disabled="true"
         {% else %}
           href="{{ card_collection.url }}"
         {% endif %}
       >
         {% if collection_label != blank %}
-        <h3 class="card-collection-title">{{ collection_label }}</h3>
+          <h3 class="card-collection-title">{{ collection_label }}</h3>
         {% endif %}
         {% if collection_cta_label != blank %}
-        <span class="card-collection-cta">{{ collection_cta_label }}</span>
+          <span class="card-collection-cta">{{ collection_cta_label }}</span>
         {% endif %}
       </a>
     </div>
