@@ -141,8 +141,12 @@
           href="{{ card_collection.url }}"
         {% endif %}
       >
-        <h3 class="card-collection-title">{{ collection_label | default: card_collection.title }}</h3>
-        <span class="card-collection-cta">{{ collection_cta_label | default: 'Shop now' }}</span>
+        {% if collection_label != blank %}
+        <h3 class="card-collection-title">{{ collection_label }}</h3>
+        {% endif %}
+        {% if collection_cta_label != blank %}
+        <span class="card-collection-cta">{{ collection_cta_label }}</span>
+        {% endif %}
       </a>
     </div>
     <div
