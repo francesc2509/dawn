@@ -83,7 +83,7 @@
       {% endif %}
       <ul>
         <li><span class="contact-info-icon">{% render 'icon-mobile-phone' %}</span><a href="https://wa.me/+447512896659">{{ shop.phone }}</a></li>
-        <li><span class="contact-info-icon">{% render 'icon-mobile-phone' %}</span><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
+        <li><span class="contact-info-icon">{% render 'icon-envelope' %}</span><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
         <li><span class="contact-info-icon">{% render 'icon-mobile-phone' %}</span><a href="https://{{ shop.domain }}">www.{{ shop.domain }}</a></li>
         <li><span class="contact-info-icon">{% render 'icon-mobile-phone' %}</span>
         {% if shop.address.address1 != blank %}{{ shop.address.address1 }} {% endif %}
