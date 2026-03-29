@@ -1,0 +1,7 @@
+{% assign min = 1 %}
+{% assign max = 10 %}
+
+{% assign diff = max | minus: min | plus: 1 %}
+{% assign seed = 'now' | date: '%N' %}
+{% assign random = seed | modulo: diff | plus: min %}
+Currently there are approximately <span style="color: red;">{{ random }}</span> people are currently looking at this product

@@ -1,0 +1,41 @@
+{% if section.settings.margin_desktop != blank or section.settings.padding_desktop != blank or section.settings.margin_mobile != blank or section.settings.padding_mobile != blank or section.settings.background-color != blank %}
+<style>
+  {% if section.settings.margin_desktop != blank or section.settings.padding_desktop != blank or section.settings.background-color != blank %}
+    #shopify-section-{{ section.id }} {
+      {% if section.settings.margin_desktop != blank %}
+        margin: {{ section.settings.margin_desktop }};
+      {% endif %}
+      {% if section.settings.padding_desktop != blank %}
+        padding: {{ section.settings.padding_desktop }};
+      {% endif %}
+      {% if section.settings.background-color != blank %}
+      background-color: {{ section.settings.background-color }};
+      {% endif %}
+    }
+  {% endif %}
+  {% if section.settings.margin_tablets != blank or section.settings.padding_tablets != blank %}
+    @media(max-width: 1199px){
+      #shopify-section-{{ section.id }} {
+        {% if section.settings.margin_tablets != blank %}
+          margin: {{ section.settings.margin_tablets }};
+        {% endif %}
+        {% if section.settings.padding_tablets != blank %}
+          padding: {{ section.settings.padding_tablets }};
+        {% endif %}
+      }
+    }
+  {% endif %}
+  {% if section.settings.margin_mobile != blank or section.settings.padding_mobile != blank %}
+    @media(max-width: 767px){
+      #shopify-section-{{ section.id }} {
+        {% if section.settings.margin_mobile != blank %}
+          margin: {{ section.settings.margin_mobile }};
+        {% endif %}
+        {% if section.settings.padding_mobile != blank %}
+          padding: {{ section.settings.padding_mobile }};
+        {% endif %}
+      }
+    }
+  {% endif %}
+</style>
+{% endif %}

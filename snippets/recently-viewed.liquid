@@ -1,0 +1,21 @@
+<div id="recently-viewed" class="quick-add-hidden">
+    <h2 class="related-products__heading h2">Recently viewed</h2>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function () {
+  const container = document.getElementById("recently-viewed");
+  if (!container) return;
+
+  const handles = JSON.parse(localStorage.getItem("recently_viewed")) || [];
+
+  if (!handles.length) return;
+
+  const query = handles.slice(0, 4).map(h => `handle:${h}`).join(" OR ");
+
+  const res = await fetch(`/search?q=${encodeURIComponent(query)}&type=product&view=recently-viewed`);
+  const html = await res.text();
+
+  container.innerHTML += html;
+});
+</script>
