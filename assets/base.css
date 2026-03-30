@@ -3460,7 +3460,7 @@ details-disclosure>details {
 
   .animate--hover-vertical-lift .card-wrapper .card--card,
   .animate--hover-vertical-lift .card-wrapper .card--standard .card__inner {
-    /* transition: transform var(--duration-medium) var(--ease-out-slow); */
+    transition: transform var(--duration-medium) var(--ease-out-slow);
   }
 
   .animate--hover-vertical-lift .card-wrapper:hover .card--card,
