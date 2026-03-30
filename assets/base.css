@@ -3595,6 +3595,10 @@ li p {
   display: inline !important;
 }
 
+#header-h1-text {
+  color: transparent !important;
+}
+
 @keyframes indeterminateAnimation {
   0% {
     transform: translateX(-20%) scaleX(0);
