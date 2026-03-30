@@ -3465,7 +3465,7 @@ details-disclosure>details {
 
   .animate--hover-vertical-lift .card-wrapper:hover .card--card,
   .animate--hover-vertical-lift .card-wrapper:hover .card--standard .card__inner {
-    transform: translateY(-0.75rem);
+    /* transform: translateY(-0.75rem); */
   }
 
   .animate--hover-vertical-lift .card-wrapper:active .card--card,
