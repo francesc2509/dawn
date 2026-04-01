@@ -251,12 +251,14 @@
         {% endif %}
         <div class="carousel-curtain" style="background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, {{ block.settings.slide_overlay_alpha }}) 100%);">
           <div class="carousel-hero">
-            {% if block.settings.hero_title_seo != blank %}
-              {{ block.settings.hero_title_seo }}
-            {% endif %}
-            {% if block.settings.hero_title != blank %}
-              {{ block.settings.hero_title }}
-            {% endif %}
+            <div>
+              {% if block.settings.hero_title_seo != blank %}
+                {{ block.settings.hero_title_seo }}
+              {% endif %}
+              {% if block.settings.hero_title != blank %}
+                {{ block.settings.hero_title }}
+              {% endif %}
+            </div>
 
             {% if block.settings.hero_main != blank %}
               <div class="hero-main">
