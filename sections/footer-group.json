@@ -20,14 +20,6 @@
             "show_social": false
           }
         },
-        "image_RKeLit": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/IMG_9835.jpg",
-            "image_width": 50,
-            "alignment": "right"
-          }
-        },
         "contact_information_UPcTa8": {
           "type": "contact_information",
           "settings": {
@@ -67,7 +59,6 @@
       },
       "block_order": [
         "brand_information_pP94EK",
-        "image_RKeLit",
         "contact_information_UPcTa8",
         "collapsible_tab_UbVCj4",
         "collapsible_tab_cFJLtT"
