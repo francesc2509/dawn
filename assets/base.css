@@ -3596,7 +3596,9 @@ li p {
 }
 
 #header-h1-text {
-  font-size: 0.25em;
+  color: transparent !important;
+  position: absolute;
+  top: 0;
 }
 
 @keyframes indeterminateAnimation {
