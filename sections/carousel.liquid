@@ -251,8 +251,11 @@
         {% endif %}
         <div class="carousel-curtain" style="background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, {{ block.settings.slide_overlay_alpha }}) 100%);">
           <div class="carousel-hero">
+            {% if block.settings.hero_title_seo %}
+              {{ block.settings.hero_title_seo }}
+            {% endif %}
             {% if block.settings.hero_title != blank %}
-              <h2>{{ block.settings.hero_title }}</h2>
+              {{ block.settings.hero_title }}
             {% endif %}
 
             {% if block.settings.hero_main != blank %}
@@ -398,6 +401,11 @@
           "max": 1,
           "step": 0.1,
           "unit": "%"
+        },
+        {
+          "type": "richtext",
+          "id": "hero_title_seo",
+          "label": "Section hero titre"
         },
         {
           "type": "richtext",
