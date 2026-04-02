@@ -105,7 +105,7 @@
     </div>
     {% endif %}
     {% assign hq_location = shop.metaobjects.hq_location.values | first %}
-    {% if iframe_enabled && settings.brand_maps_iframe_url %}
+    {% if iframe_enabled and settings.brand_maps_iframe_url %}
       <iframe src="{{ hq_location.embedded_google_maps_link }}"
         width="600"
         height="450" style="border:0; max-width: 100%;"
