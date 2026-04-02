@@ -1356,6 +1356,11 @@
         "id": "social_vimeo_link",
         "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_wechat_qr",
+        "label": "WeChat QR code",
       }
     ]
   },
