@@ -108,8 +108,8 @@
     {% assign hq_location = shop.metaobjects.hq_location.values | first %}
     {% if iframe_enabled and settings.brand_maps_iframe_url %}
       <iframe src="{{ hq_location.embedded_google_maps_link }}"
-        width="300"
-        height="225" style="border:0; max-width: 100%;"
+        width="450"
+        height="337" style="border:0; max-width: 100%;"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
