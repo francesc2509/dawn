@@ -79,11 +79,18 @@
   }
 {%- endstyle -%}
   <div class="contact-details-container">
-    
-    <div class="contact-details">
-      {% if title != blank %}
+    {% if title != blank %}
         {{ title }}
       {% endif %}
+    {% if settings.social_wechat_qr %}
+    <div style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div>
+        <div>WeChat</div>
+        {{ settings.social_wechat_qr | image_url: width: 200 | image_tag: loading: 'lazy', alt: settings.social_wechat_qr.alt }}
+      </div>
+    </div>
+    {% endif %}
+    <div class="contact-details">
       <ul>
         <li><span class="contact-info-icon">{% render 'icon-mobile-phone' %}</span><a href="https://wa.me/+447512896659">{{ shop.phone }}</a></li>
         <li><span class="contact-info-icon">{% render 'icon-envelope' %}</span><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
