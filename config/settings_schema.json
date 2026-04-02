@@ -1297,6 +1297,21 @@
         "default": 100,
         "unit": "px",
         "label": "t:settings_schema.brand_information.settings.brand_image_width.label"
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_maps_image",
+        "label": "Brand image map"
+      },
+      {
+        "type": "url",
+        "id": "brand_maps_url",
+        "label": "Brand map url"
+      },
+      {
+        "type": "url",
+        "id": "brand_maps_iframe_url",
+        "label": "Brand maps iframe"
       }
     ]
   },
