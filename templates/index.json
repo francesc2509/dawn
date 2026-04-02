@@ -21,7 +21,7 @@
             "slide_fit": "cover",
             "slide_position": "left",
             "slide_overlay_alpha": 0.6,
-            "hero_title_seo": "<h1>Wholesale & B2B Bubble Tea supplier in the UK</h1>",
+            "hero_title_seo": "<h1>Your trusted UK wholesale Bubble Tea ingredients supplier</h1>",
             "hero_title": "<h2><strong>Don't just make Bubble Tea</strong></h2><h2><strong>Crush it!</strong></h2>",
             "hero_subtitle": "<p><em>UK warehouse | Fast delivery | Asian brands </em></p><p><em>B2B  wholesale pricing | Bulk order discounts </em></p><p><em>200+ UK partners</em></p>",
             "hero_main": "<p>Premium bubble tea ingredients sourced across Asia — from crystal pearls to taro powder — available for B2B supply and wholesale partners in the UK.</p>",
@@ -179,7 +179,7 @@
         "text_r79dny": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>Free delivery</strong></h3><p>Orders over £300 can qualify for free delivery</p><p></p><p></p>",
+            "text": "<h3><strong>Free delivery</strong></h3><p>Orders over £300 can qualify for free delivery</p>",
             "text_style": "body"
           }
         },
