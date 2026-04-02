@@ -87,7 +87,7 @@
     {% if settings.social_wechat_qr %}
     <div style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
       <div>
-        <div>WeChat</div>
+        <div>Chat on WeChat</div>
         {{ settings.social_wechat_qr | image_url: width: 200 | image_tag: loading: 'lazy', alt: settings.social_wechat_qr.alt }}
       </div>
     </div>
