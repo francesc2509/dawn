@@ -116,8 +116,8 @@
       {% if settings.brand_maps_url != blank %}
       <a class="contact-details-map" href="{{ hq_location.location_static_image_link }}">
       {% endif %}
-        {% if settings.brand_maps_image_label != blank  %}
-        <span>{{ settings.brand_maps_image_label  }}&nbsp;{% render 'icon-arrow' %}</span>
+        {% if settings.brand_maps_url_label != blank  %}
+        <span>{{ settings.brand_maps_url_label  }}&nbsp;{% render 'icon-arrow' %}</span>
         {% endif %}
         {% if settings.brand_maps_image %}
         {{ settings.brand_maps_image | image_url: width: 500 | image_tag: loading: 'lazy' }}
