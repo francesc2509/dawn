@@ -78,10 +78,11 @@
     }
   }
 {%- endstyle -%}
-  <div class="contact-details-container">
-    {% if title != blank %}
+{% if title != blank %}
         {{ title }}
       {% endif %}
+  <div class="contact-details-container">
+    
     {% if settings.social_wechat_qr %}
     <div style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
       <div>
