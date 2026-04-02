@@ -112,11 +112,19 @@
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
-    {% elsif settings.brand_maps_image %}
+    {% elsif settings.brand_maps_image != blank %}
+      {% if settings.brand_maps_url != blank %}
       <a class="contact-details-map" href="{{ hq_location.location_static_image_link }}">
+      {% endif %}
+        {% if settings.brand_maps_image_label != blank  %}
         <span>{{ settings.brand_maps_image_label  }}&nbsp;{% render 'icon-arrow' %}</span>
+        {% endif %}
+        {% if settings.brand_maps_image %}
         {{ settings.brand_maps_image | image_url: width: 500 | image_tag: loading: 'lazy' }}
+        {% endif %}
+      {% if settings.brand_maps_url != blank %}
       </a>
+      {% endif %}
     {% endif %}
     
   </div>
