@@ -1,1 +1,107 @@
-{"name":"t:sections.header.name","type":"header","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement_fwJaRX":{"type":"announcement","settings":{"text":"🚚 Free UK Shipping on orders over £300","link":""}},"announcement_iwjBM4":{"type":"announcement","settings":{"text":"200+ Trusted UK Partners","link":""}},"announcement_ezjVrM":{"type":"announcement","settings":{"text":"Leading Brand Partnerships","link":""}},"announcement_3NfFK8":{"type":"announcement","settings":{"text":"Professional Bubble Tea training","link":""}}},"block_order":["announcement_fwJaRX","announcement_iwjBM4","announcement_ezjVrM","announcement_3NfFK8"],"settings":{"auto_rotate":true,"change_slides_speed":5,"color_scheme":"scheme-3bcdc089-fa06-4656-a4bc-8ee87e98a920","show_line_separator":true,"show_social":true,"enable_country_selector":false,"enable_language_selector":false}},"header":{"type":"header","blocks":{"wishlist_hero_header_icon_LHGckd":{"type":"shopify:\/\/apps\/wishlist-hero\/blocks\/header-icon\/a9a5079b-59e8-47cb-b659-ecf1c60b9b72","settings":{"customThemeName":"~","useCustomHeaderColor":false,"customHeaderColor":"","useCustomHeaderSize":false,"customHeaderIconSize":22,"additionalIconCssClassNames":"","additionalIconStyle":"","additionalContainerClasses":"","additionalContainerStyle":"","replaceExistingClasses":false}}},"block_order":["wishlist_hero_header_icon_LHGckd"],"settings":{"logo_position":"middle-left","mobile_logo_position":"center","menu":"header","menu_type_desktop":"dropdown","sticky_header_type":"on-scroll-up","show_line_separator":true,"color_scheme":"scheme-1","menu_color_scheme":"","enable_country_selector":false,"enable_language_selector":false,"enable_customer_avatar":true,"margin_bottom":0,"padding_top":16,"padding_bottom":0}}},"order":["announcement-bar","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_fwJaRX": {
+          "type": "announcement",
+          "settings": {
+            "text": "🚚 Free UK Shipping on orders over £300",
+            "link": ""
+          }
+        },
+        "announcement_iwjBM4": {
+          "type": "announcement",
+          "settings": {
+            "text": "200+ Trusted UK Partners",
+            "link": ""
+          }
+        },
+        "announcement_ezjVrM": {
+          "type": "announcement",
+          "settings": {
+            "text": "Leading Brand Partnerships",
+            "link": ""
+          }
+        },
+        "announcement_3NfFK8": {
+          "type": "announcement",
+          "settings": {
+            "text": "Professional Bubble Tea training",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_fwJaRX",
+        "announcement_iwjBM4",
+        "announcement_ezjVrM",
+        "announcement_3NfFK8"
+      ],
+      "settings": {
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "color_scheme": "scheme-3bcdc089-fa06-4656-a4bc-8ee87e98a920",
+        "show_line_separator": true,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "wishlist_hero_header_icon_LHGckd": {
+          "type": "shopify://apps/wishlist-hero/blocks/header-icon/a9a5079b-59e8-47cb-b659-ecf1c60b9b72",
+          "settings": {
+            "customThemeName": "~",
+            "useCustomHeaderColor": false,
+            "customHeaderColor": "",
+            "useCustomHeaderSize": false,
+            "customHeaderIconSize": 22,
+            "additionalIconCssClassNames": "",
+            "additionalIconStyle": "",
+            "additionalContainerClasses": "",
+            "additionalContainerStyle": "",
+            "replaceExistingClasses": false
+          }
+        }
+      },
+      "block_order": [
+        "wishlist_hero_header_icon_LHGckd"
+      ],
+      "settings": {
+        "logo_position": "middle-left",
+        "mobile_logo_position": "center",
+        "menu": "header",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "",
+        "header_title": "",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_customer_avatar": true,
+        "margin_bottom": 0,
+        "padding_top": 16,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}
