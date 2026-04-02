@@ -1301,17 +1301,22 @@
       {
         "type": "image_picker",
         "id": "brand_maps_image",
-        "label": "Brand image map"
+        "label": "Brand Maps image"
+      },
+      {
+        "type": "text",
+        "id": "brand_maps_url_label",
+        "label": "Brand map url label"
       },
       {
         "type": "url",
         "id": "brand_maps_url",
-        "label": "Brand map url"
+        "label": "Brand Maps url"
       },
       {
         "type": "url",
         "id": "brand_maps_iframe_url",
-        "label": "Brand maps iframe"
+        "label": "Brand Maps iframe"
       }
     ]
   },
