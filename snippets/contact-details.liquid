@@ -112,10 +112,10 @@
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
-    {% else %}
+    {% elsif settings.brand_maps_image %}
       <a class="contact-details-map" href="{{ hq_location.location_static_image_link }}">
-        <span>{{ hq_location.location_static_image_text  }}&nbsp;{% render 'icon-arrow' %}</span>
-        {{ hq_location.location_static_image | image_url: width: 500 | image_tag: loading: 'lazy' }}
+        <span>{{ settings.brand_maps_image_label  }}&nbsp;{% render 'icon-arrow' %}</span>
+        {{ settings.brand_maps_image | image_url: width: 500 | image_tag: loading: 'lazy' }}
       </a>
     {% endif %}
     
