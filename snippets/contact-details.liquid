@@ -114,9 +114,8 @@
         </li>
       </ul>
     </div>
-    {% assign hq_location = shop.metaobjects.hq_location.values | first %}
     {% if iframe_enabled and settings.brand_maps_iframe_url %}
-      <iframe src="{{ hq_location.embedded_google_maps_link }}"
+      <iframe src="{{ settings.brand_maps_iframe_url }}"
         class=""
         style="border:0; min-width: 40%; max-width: 100%;"
         allowfullscreen=""
