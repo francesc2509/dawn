@@ -204,6 +204,11 @@
         align-items: normal;
       }
     }
+
+    .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])) + main > section > .carousel-container:first-of-type {
+        margin-top: calc(-1 * var(--header-height));
+        transition: margin 250ms;
+      }
 </style>
 
 <div class="carousel-container">
