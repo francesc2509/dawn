@@ -209,6 +209,33 @@
         margin-top: calc(-1 * var(--header-height));
         transition: margin 250ms;
       }
+
+      .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper :not(#header-h1-text) {
+    color: rgb(var(--color-background));
+    fill: rgb(var(--color-background));
+    stroke: rgb(var(--color-background));
+  }
+
+  .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper header,
+  .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper {
+    background: linear-gradient(180deg,rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.0) 100%);
+    color: rgb(var(--color-background));
+    fill: rgb(var(--color-background));
+    stroke: rgb(var(--color-background));
+  }
+
+  .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper svg,
+  .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper a {
+    filter: drop-shadow(0 2px 6px rgba(150, 150, 150, 0.25));
+  }
+
+  .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper .header__submenu svg,
+  .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper .header__submenu a,
+  .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper .header__submenu * {
+    color: rgb(var(--color-foreground)) !important;
+    fill: rgb(var(--color-foreground)) !important;
+    stroke: rgb(var(--color-foreground)) !important;
+  }
 </style>
 
 <div class="carousel-container">
