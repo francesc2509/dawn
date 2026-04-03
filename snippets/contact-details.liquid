@@ -73,7 +73,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 0.75em;
+    font-size: 0.5em;
   }
 
   @media screen and (max-width: 900px) {
@@ -124,7 +124,7 @@
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     {% elsif settings.brand_maps_image != blank %}
       {% if settings.brand_maps_url != blank %}
-      <a class="contact-details-map" href="{{ hq_location.location_static_image_link }}">
+      <a class="contact-details-map" href="{{ settings.brand_maps_url }}">
       {% endif %}
         {% if settings.brand_maps_url_label != blank  %}
         <span>{{ settings.brand_maps_url_label  }}&nbsp;{% render 'icon-arrow' %}</span>
