@@ -207,7 +207,7 @@
 
   
 
-  .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper :not(#header-h1-text) {
+  {% comment %} .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper :not(#header-h1-text) {
     color: rgb(var(--color-background));
     fill: rgb(var(--color-background));
     stroke: rgb(var(--color-background));
@@ -237,7 +237,7 @@
   .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])) + main > section > .carousel-container:first-of-type {
       margin-top: calc(-1 * var(--header-height));
       transition: margin 250ms;
-    }
+    } {% endcomment %}
 </style>
 
 <div class="carousel-container">
