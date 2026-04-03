@@ -1,96 +1,214 @@
 <style>
-  /* 1. Prevent Layout Shift: Reserve space immediately */
-  .carousel-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background-color: #000; /* Fallback for slow-loading images */
-    contain: layout size;   /* Performance hint for browser */
-  }
+      .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])) + main > section > .carousel-container:first-of-type {
+        margin-top: calc(-1 * var(--header-height));
+        transition: margin 700ms;
+      }
 
-  /* 2. Optimize Header Integration */
-  .shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])) + main > section > .carousel-container:first-of-type {
-    margin-top: calc(-1 * var(--header-height));
-    /* Use transform for better performance if possible, but margin is fine here */
-  }
+      .carousel-container {
+          position: relative;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+      }
 
-  .carousel {
-    position: absolute;
-    inset: 0; /* Modern shorthand for top/bottom/left/right: 0 */
-    display: flex;
-    flex-wrap: nowrap;
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform; /* GPU Acceleration */
-  }
+     .carousel {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        flex-wrap: nowrap;
+        display: flex;
+        left: 0%;
+        background: transparent;
+        transition: transform 0.4s ease;
+     }
 
-  .dawn-carousel-item {
-    flex: 0 0 100%; /* More robust than flex: 1 for sliders */
-    min-height: 100%;
-    position: relative;
-  }
+     .dawn-carousel-item {
+        flex: 1;
+        min-height: 100%;
+        min-width: 100%;
+        position: relative;
+     }
 
-  /* 3. Media Handling: Using object-fit efficiently */
-  .dawn-carousel-item img, 
-  .dawn-carousel-item video {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .dawn-carousel-item.left img, .dawn-carousel-item.left video { object-position: left; }
-  .dawn-carousel-item.right img, .dawn-carousel-item.right video { object-position: right; }
-  .dawn-carousel-item.fill img, .dawn-carousel-item.fill video { object-fit: fill; }
-
-  /* 4. Overlay/Curtain */
-  .carousel-curtain {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 1rem;
-    color: #fff;
-    box-sizing: border-box;
-    pointer-events: none; /* Allows clicking through to video controls if needed */
-  }
-  
-  .carousel-hero { pointer-events: auto; } /* Re-enable clicks for buttons */
-
-  /* 5. Animation Optimization */
-  @media (prefers-reduced-motion: no-preference) {
-    .carousel-hero {
-      opacity: 0;
-      transform: translateY(15px);
-      animation: reveal 0.5s ease-out forwards 0.3s;
+     .carousel-curtain {
+        min-height: 100%;
+        min-width: 100%;
+        background: #000000;
+        background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        color: white !important;
+        flex-direction: row;
+        box-sizing: border-box;
+        padding: 2em 0.5em;
     }
-  }
 
-  @keyframes reveal {
-    to { opacity: 1; transform: translateY(0); }
-  }
+     .dawn-carousel-item img, .dawn-carousel-item > video {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+     }
 
-  /* 6. Navigation items */
-  .carousel-nav-item {
-    width: 10px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  
-  .carousel-nav-item.active { background: #fff; }
+    .dawn-carousel-item.left img, .dawn-carousel-item.left > video {
+      object-position: left;
+     }
 
-  /* Mobile Tweaks */
-  @media (max-width: 768px) {
-    .carousel-curtain { justify-content: flex-end; padding-bottom: 5rem; }
-    .carousel-hero { max-width: 100%; width: 100%; text-align: center; }
-  }
+    .dawn-carousel-item.right img, .dawn-carousel-item.right > video {
+      object-position: right;
+    }
+
+    .dawn-carousel-item.fill img, .dawn-carousel-item.fill > video {
+      object-fit: fill;
+     }
+
+    .carousel-nav-container {
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      z-index: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      top: var(--header-height);
+      left: 0%;
+    }
+
+    .carousel-nav {
+      flex: 0 0 5em;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: 0.25em 0;
+      flex-wrap: nowrap;
+      overflow: auto;
+      align-items: center;
+      gap: 0.25em;
+    }
+
+    .carousel-nav-item {
+      flex: 0 0 10px;
+      display: block !important;
+      height: 10px;
+      background: rgba(1, 1, 1, 0.5);
+      border-radius: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+    }
+
+    .carousel-nav-item.active {
+      background: rgba(255, 255, 255, 1);
+      border: 1px solid rgba(1, 1, 1, 0.5);
+      cursor: default;
+    }
+
+    .carousel-hero {
+      text-align: left;
+      color: rgb(var(--color-foreground));
+      text-shadow: 0 0 10px rgba(0,0,0,0.9);
+      max-width: 65%;
+      margin-top: 2em;
+    }
+
+    .carousel-hero > .hero-title > h1 {
+      font-size: 0.75em;
+    }
+
+    .carousel-hero > .hero-title, .carousel-hero > .hero-subtitle {
+      color: inherit;
+      text-align: center;
+    }
+
+    .carousel-hero > .hero-subtitle {
+      font-size: 0.75em;
+    }
+
+    .hero-main {
+      text-align: center;
+    }
+
+    .carousel-hero > p {
+      word-break: keep-all;
+    }
+
+    .carousel-hero > .carousel-hero-cta-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-shadow: none;
+      text-align: center;
+      padding: 1em;
+      box-sizing: border-box;
+      align-items: center;
+    }
+
+    .carousel-hero > .carousel-hero-cta-container a {
+      min-height: 4em;
+      flex: 1;
+    }
+
+    .carousel-hero, .carousel-hero p {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: reveal 0.5s ease-in forwards;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes reveal {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+    @media (max-width: 1279px) {
+    }
+
+    @media (max-width: 768px) {
+      .carousel-curtain {
+        padding-bottom: 36px;
+        justify-content: flex-start;
+      }
+
+      .carousel-hero > .hero-title {
+        font-size: 1.5em;
+      }
+
+      .carousel-hero > .hero-title > h1 {
+        font-size: 0.5em;
+      }
+
+      .carousel-hero > .hero-subtitle {
+        font-size: 0.75em;
+      }
+
+      .carousel-hero {
+        max-width: initial;
+        width: 100%;
+      }
+
+      .carousel-container .carousel-hero {
+        transition: padding 1s ease;
+      }
+
+      .shopify-section.shopify-section-group-header-group.section-header:not(.scrolled-past-header) + main > section > .carousel-container .carousel-hero {
+        padding-bottom: 2vh;
+        transition: padding 0.5s ease;
+      }
+
+      .carousel-hero > .carousel-hero-cta-container a {
+        flex: 1;
+      }
+
+      .carousel-hero > .carousel-hero-cta-container {
+        align-items: normal;
+      }
+    }
 </style>
 
 <div class="carousel-container">
