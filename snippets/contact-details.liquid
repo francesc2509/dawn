@@ -124,7 +124,7 @@
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     {% elsif settings.brand_maps_image != blank %}
       {% if settings.brand_maps_url != blank %}
-      <a class="contact-details-map" href="{{ settings.brand_maps_url }}">
+      <a class="contact-details-map" href="{{ settings.brand_maps_url }}" target="_blank">
       {% endif %}
         {% if settings.brand_maps_url_label != blank  %}
         <span>{{ settings.brand_maps_url_label  }}&nbsp;{% render 'icon-arrow' %}</span>
