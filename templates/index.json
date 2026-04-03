@@ -21,7 +21,7 @@
             "slide_fit": "cover",
             "slide_position": "left",
             "slide_overlay_alpha": 0.6,
-            "hero_title_seo": "<h1>Your trusted UK B2B wholesale Bubble Tea ingredients supplier</h1>",
+            "hero_title_seo": "<h1>Your trusted UK B2B wholesale Bubble Tea  supplier</h1>",
             "hero_title": "<h2><strong>Don't just make Bubble Tea</strong></h2><h2><strong>Crush it!</strong></h2>",
             "hero_subtitle": "<p><em>UK warehouse | Fast delivery | Asian brands </em></p><p><em>B2B wholesale pricing | Bulk order discounts </em></p><p><em>200+ UK partners</em></p>",
             "hero_main": "<p>Premium bubble tea ingredients sourced across Asia.</p><p>From tapioca and crystal pearls to taro powder, plant-based milk and more.</p>",
@@ -45,12 +45,12 @@
     "multicolumn_bGj3Ji": {
       "type": "multicolumn",
       "blocks": {
-        "column_mwmk4N": {
+        "column_dq7cRP": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/unnamed_1_845e1240-75bc-4c09-b7ab-d6988334d820.jpg",
-            "title": "🚚<strong> UK Warehouse & Fast Dispatch</strong>",
-            "text": "<p>Reliable next-day delivery from our UK warehouses — keeping your business stocked and running smoothly.</p>",
+            "image": "shopify://shop_images/uk_partners.jpg",
+            "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
+            "text": "<p>Join 200+ retail and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
             "link_label": "",
             "link": ""
           }
@@ -65,21 +65,21 @@
             "link": ""
           }
         },
-        "column_dq7cRP": {
+        "column_mwmk4N": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/uk_partners.jpg",
-            "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
-            "text": "<p>Join 200+ retail and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
+            "image": "shopify://shop_images/unnamed_1_845e1240-75bc-4c09-b7ab-d6988334d820.jpg",
+            "title": "🚚<strong> UK Warehouse & Fast Dispatch</strong>",
+            "text": "<p>Reliable next-day delivery from our UK warehouses — keeping your business stocked and running smoothly.</p>",
             "link_label": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column_mwmk4N",
+        "column_dq7cRP",
         "column_wwJ9DT",
-        "column_dq7cRP"
+        "column_mwmk4N"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
