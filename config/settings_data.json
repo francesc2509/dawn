@@ -108,7 +108,8 @@
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "About Bubble Crush",
     "brand_description": "<p>We are a bubble tea wholesale and B2B supplier of premium ingredients, packaging, and equipment shipping from our UK warehouse.</p>",
-    "brand_image": "shopify://shop_images/bubble_crush_logo.png",
+    "brand_image": "shopify://shop_images/bubble_crush_logo_1cc3445c-9081-4cb7-8226-60cb3e0e1f33.png",
+    "brand_image_width": 235,
     "brand_maps_image": "shopify://shop_images/Screenshot_2026-03-29_at_15.52.41.png",
     "brand_maps_url_label": "Our warehouse",
     "brand_maps_url": "https://www.google.com/maps/place/Bubble+Crush+Supplier/@51.483605,-0.0389601,554m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487603ff570340bf:0x1727c5d05fdd62ac!8m2!3d51.483605!4d-0.0389601!16s%2Fg%2F11z20vq8dd?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D",
@@ -307,7 +308,7 @@
           "background": "#ffffff",
           "background_gradient": "",
           "text": "#ffffff",
-          "button": "#ffffff",
+          "button": "#32a7f3",
           "button_label": "#ffffff",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212"
