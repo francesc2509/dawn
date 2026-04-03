@@ -67,6 +67,10 @@
     box-sizing: border-box;
   }
 
+  .contact-details-instant-messaging {
+    text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  }
+
   @media screen and (max-width: 900px) {
     .contact-details-container {
       flex-direction: column;
@@ -85,9 +89,9 @@
   <div class="contact-details-container">
     
     {% if settings.social_wechat_qr %}
-    <div style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div class="contact-details-instant-messaging">
       <div>
-        <div>Scan our WeChat</div>
+        <div>Message us on WeChat</div>
         {{ settings.social_wechat_qr | image_url: width: 150 | image_tag: loading: 'lazy', alt: settings.social_wechat_qr.alt }}
       </div>
     </div>
