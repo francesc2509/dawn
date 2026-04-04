@@ -119,7 +119,7 @@
         "buttons_9Vfrfd": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Buy now",
+            "button_label_1": "Re-stock now",
             "button_link_1": "shopify://collections/matcha-powders-and-mixes",
             "button_style_secondary_1": false,
             "button_label_2": "",
