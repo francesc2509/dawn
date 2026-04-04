@@ -105,21 +105,21 @@
         "heading_D6Bbww": {
           "type": "heading",
           "settings": {
-            "heading": "Win the Matcha",
+            "heading": "Win the <em><strong>Matcha</strong></em>",
             "heading_size": "h1"
           }
         },
         "text_6BGLNf": {
           "type": "text",
           "settings": {
-            "text": "<p>Give your menu the \"Bubble Crush\" advantage with our bulk-buy matcha.</p>",
+            "text": "<p>Give your menu the \"<em>Bubble Crush</em>\" advantage with our bulk-buy matcha.</p>",
             "text_style": "body"
           }
         },
         "buttons_9Vfrfd": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Explore our Matcha selection",
+            "button_label_1": "Buy now",
             "button_link_1": "shopify://collections/matcha-powders-and-mixes",
             "button_style_secondary_1": false,
             "button_label_2": "",
@@ -137,7 +137,7 @@
       "settings": {
         "image": "shopify://shop_images/rp9hperp9hperp9h.png",
         "image_overlay_opacity": 40,
-        "image_height": "medium",
+        "image_height": "small",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
