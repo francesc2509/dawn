@@ -136,7 +136,7 @@
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/rp9hperp9hperp9h.png",
-        "image_overlay_opacity": 40,
+        "image_overlay_opacity": 60,
         "image_height": "small",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
