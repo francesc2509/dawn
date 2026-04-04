@@ -112,7 +112,7 @@
         "text_6BGLNf": {
           "type": "text",
           "settings": {
-            "text": "<p>Give your menu the <em>Bubble Crush</em> advantage with our matcha selection.</p>",
+            "text": "<p><strong>Give your menu the </strong><em><strong>Bubble Crush</strong></em><strong> advantage with our matcha selection.</strong></p>",
             "text_style": "body"
           }
         },
