@@ -106,14 +106,14 @@
   {% endif %}
   <div class="contact-details-container">
     
-    {% if settings.social_wechat_qr %}
     <div class="contact-details-instant-messaging">
+      {% if settings.social_wechat_qr %}
       <div>
         <div>Message us on WeChat</div>
         {{ settings.social_wechat_qr | image_url: width: 150 | image_tag: loading: 'lazy', alt: settings.social_wechat_qr.alt }}
       </div>
+      {% endif %}
     </div>
-    {% endif %}
     <div class="contact-details">
       <ul>
         <li><span class="contact-info-icon">{% render 'icon-mobile-phone' %}</span><a href="https://wa.me/+447512896659">{{ shop.phone }}</a></li>
