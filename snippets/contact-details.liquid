@@ -125,7 +125,7 @@
       <a class="contact-details-map" href="{{ settings.brand_maps_url }}" target="_blank">
       {% endif %}
         {% if settings.brand_maps_url_label != blank  %}
-        <span>Maps&nbsp;{% render 'icon-arrow' %}</span>
+        <span>Maps&nbsp;{% render 'icon-external-link' %}</span>
         {% endif %}
         {% if settings.brand_maps_image %}
         {{ settings.brand_maps_image | image_url: width: 500 | image_tag: loading: 'lazy' }}
