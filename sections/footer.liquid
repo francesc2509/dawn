@@ -319,8 +319,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleAccordion() {
     if (window.innerWidth > 768) { // Dawn desktop breakpoint
       accordions.forEach(acc => acc.setAttribute('open', true));
-    } else {
-      accordions.forEach(acc => acc.removeAttribute('open'));
     }
   }
 
