@@ -228,7 +228,7 @@
         "text_r79dny": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>Free delivery</strong></h3><p>Orders over £300 can qualify for free delivery</p>",
+            "text": "<h3><strong>Free delivery</strong></h3><p><strong>Orders over £300 can qualify for free delivery</strong></p>",
             "text_style": "body"
           }
         },
