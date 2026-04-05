@@ -114,6 +114,10 @@
       margin-top: 2em;
     }
 
+    .carousel-hero > .hero-title {
+      padding-top: 0.25em;
+    }
+
     .carousel-hero > .hero-title > h1 {
       font-size: 0.75em;
     }
