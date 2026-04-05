@@ -85,6 +85,51 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "custom_liquid_nVa6L6": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"boba-iwt page-width\">\n  <div class=\"boba-iwt__wrap\">\n    <div class=\"boba-iwt__media\">\n      <img\n        src=\"https://cdn.shopify.com/s/files/1/0782/7999/9817/files/b89d4682d790f368ab529fc960385640.png?v=1758032642\"\n        alt=\"Bubble Crush team\"\n        loading=\"lazy\"\n      >\n    </div>\n    <div class=\"boba-iwt__content\">\n      <h2 class=\"boba-iwt__eyebrow\">What We Offer?</h2>\n      <p class=\"boba-iwt__lead\">We supply the full range of bubble tea essentials, including:</p>\n      <ul class=\"boba-iwt__list\" role=\"list\">\n        <li>Tapioca pearls &amp; popping boba</li>\n        <li>Coconut jelly, grass jelly, and toppings</li>\n        <li>Premium tea leaves and powders</li>\n        <li>Flavored syrups and dairy products</li>\n        <li>Cups, straws, and packaging</li>\n        <li>Equipment and consumables</li>\n      </ul>\n      <p class=\"boba-iwt__note\">\n        Bubble Crush offers a one-stop solution for all bubble tea businesses in the UK,\n        whether you are running a small café or managing a multi-store chain.\n      </p>\n    </div>\n  </div>\n</div>\n\n<style>\n  .page-width { max-width: 1200px; margin: 0 auto; padding: 0 16px; }\n\n  .boba-iwt__wrap{\n    display:grid; gap: clamp(16px,3vw,28px);\n    grid-template-columns: 1fr; align-items:center;\n    padding: clamp(16px,3vw,28px);\n  }\n\n  .boba-iwt__media img{\n    width:100%; height:auto; display:block;\n    border-radius:12px;\n  }\n\n  .boba-iwt__eyebrow{\n    margin:0 0 6px; font-size: clamp(28px,3.2vw,36px);\n    font-weight:800; letter-spacing:-.02em; line-height:1.15;\n  }\n\n  .boba-iwt__lead{\n    margin:.3rem 0 1rem; color:#475569;\n    font-size: clamp(18px,1.2vw,24px); line-height:1.7;\n  }\n\n  /* 干净版序号列表 */\n  .boba-iwt__list{\n    counter-reset: boba-counter;\n    list-style:none;\n    padding:0;\n    margin:0 0 14px;\n    display:grid; gap:6px;\n  }\n  .boba-iwt__list li{\n    counter-increment: boba-counter;\n    position:relative;\n    padding-left:28px;\n    color:#0f172a;\n    font-size:clamp(15px,1.2vw,18px);\n    line-height:1.6;\n  }\n  .boba-iwt__list li::before{\n    content: counter(boba-counter) \".\";\n    position:absolute; left:0; top:0;\n    font-weight:700;\n    color:#475569; /* 紫色序号 */\n    font-size: 16px;\n  }\n\n  .boba-iwt__note{\n    margin:.25rem 0 0; color:#475569; font-size: clamp(18px,1vw,22px);\n  }\n\n  /* PC: 左图右文 & 列表两列 */\n  @media (min-width: 992px){\n    .boba-iwt__wrap{ grid-template-columns: 1.05fr 1fr; }\n    .boba-iwt__list{\n      grid-template-columns: 1fr 1fr;\n      gap:8px 20px;\n    }\n  }\n</style>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_NHP6cy": {
+      "type": "rich-text",
+      "blocks": {
+        "text_LnDjWc": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Get Your Business Started with Bubble Crush</h3>"
+          }
+        },
+        "button_6RLahK": {
+          "type": "button",
+          "settings": {
+            "button_label": "Explore Our Full Range",
+            "button_link": "shopify://collections",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_LnDjWc",
+        "button_6RLahK"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -92,6 +137,8 @@
     "image_banner_fUGEGU",
     "contact_info_LdPDMX",
     "custom_liquid_tJfFrV",
-    "rich_text_JWhcJq"
+    "rich_text_JWhcJq",
+    "custom_liquid_nVa6L6",
+    "rich_text_NHP6cy"
   ]
 }
