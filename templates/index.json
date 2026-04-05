@@ -39,7 +39,7 @@
       "block_order": [
         "slide_WPNnPg"
       ],
-      "name": "Carousel",
+      "name": "Hero",
       "settings": {}
     },
     "multicolumn_bGj3Ji": {
@@ -81,7 +81,7 @@
         "column_wwJ9DT",
         "column_mwmk4N"
       ],
-      "name": "t:sections.multicolumn.presets.name",
+      "name": "Trust",
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -134,7 +134,7 @@
         "buttons_9Vfrfd"
       ],
       "disabled": true,
-      "name": "t:sections.image-banner.presets.name",
+      "name": "Matcha banner",
       "settings": {
         "image": "shopify://shop_images/put-the-bubble-tea-in-a-disposable-cup-and-a-wider-cardboard-straw.png",
         "image_overlay_opacity": 40,
@@ -209,7 +209,7 @@
         "featured_collection_LDLRQk",
         "featured_collection_6BbUMB"
       ],
-      "name": "t:sections.collection-list.presets.name",
+      "name": "Categories",
       "settings": {
         "title": "Build Your Menu",
         "heading_size": "h1",
@@ -249,7 +249,7 @@
         "text_r79dny",
         "buttons_fDhLcb"
       ],
-      "name": "t:sections.image-banner.presets.name",
+      "name": "Purchase & Delivery banner",
       "settings": {
         "image": "shopify://shop_images/a-warehouse-with-delivery-boxes-with-the-https-bubblecrushsupplier-com-logo.png",
         "image_overlay_opacity": 60,
@@ -266,7 +266,7 @@
     },
     "featured_collection_XVDMX9": {
       "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
+      "name": "Best Sellers",
       "settings": {
         "collection": "hot-seller",
         "products_to_show": 8,
@@ -328,7 +328,7 @@
         "text_j74Dd7",
         "buttons_PPTeXm"
       ],
-      "name": "t:sections.image-banner.presets.name",
+      "name": "Bubble Tea Training",
       "settings": {
         "image": "shopify://shop_images/only-one-glass.png",
         "image_overlay_opacity": 30,
@@ -345,7 +345,7 @@
     },
     "featured_collection_adJ8Jc": {
       "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
+      "name": "Special Offers",
       "settings": {
         "collection": "sales",
         "products_to_show": 4,
@@ -399,7 +399,7 @@
         "column_U79ya9",
         "column_Umgde9"
       ],
-      "name": "t:sections.multicolumn.presets.name",
+      "name": "Reviews",
       "settings": {
         "title": "What our partners say",
         "heading_size": "h1",
@@ -420,7 +420,7 @@
     "featured_blog_M9iXcD": {
       "type": "featured-blog",
       "disabled": true,
-      "name": "t:sections.featured-blog.presets.name",
+      "name": "Latest news",
       "settings": {
         "blog": "news",
         "post_limit": 3,
@@ -502,7 +502,7 @@
         "image_JA4GrN",
         "image_Q936fT"
       ],
-      "name": "Media List",
+      "name": "Drinks gallery",
       "settings": {
         "heading": "",
         "heading_size": "h1",
