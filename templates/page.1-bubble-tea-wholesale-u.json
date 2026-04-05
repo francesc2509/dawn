@@ -130,6 +130,61 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "custom_liquid_kYN6bg": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"choose-boba page-width\">\n  <div class=\"choose-boba__wrap\">\n    <!-- 先写图片：移动端图在上 -->\n    <div class=\"choose-boba__media\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0782/7999/9817/files/a30c9f0acbdd8fe39367cfb039606f58_2ef8d3fe-50e8-4173-98ea-f8ba517136ac.png?v=1758033160\" alt=\"Why Choose Bubble Crush\" loading=\"lazy\">\n    </div>\n\n    <!-- 再写文字：移动端图下文上；PC 端通过 order 放到左侧 -->\n    <div class=\"choose-boba__content\">\n      <h2 class=\"choose-boba__title\">Why Choose Bubble Crush?</h2>\n      <ul class=\"choose-boba__list\">\n        <li><span class=\"icon\">✨</span><div><strong>100+ Trusted UK Partners</strong><br>Supplying hundreds of independent shops and well-known chains across the UK market.</div></li>\n        <li><span class=\"icon\">🚚</span><div><strong>Local London Warehouse</strong><br>On-hand inventory ensures fast delivery, stable supply, and peace of mind.</div></li>\n        <li><span class=\"icon\">🌏</span><div><strong>Direct Global Sourcing</strong><br>Imported from Taiwan and Mainland China, combining authenticity, quality, and cost-effectiveness.</div></li>\n        <li><span class=\"icon\">🤝</span><div><strong>Leading Brand Partnerships</strong><br>Official supplier of top manufacturers such as Freenow (菲诺) and Ice Blanc (冰勃朗).</div></li>\n        <li><span class=\"icon\">🎯</span><div><strong>Custom Solutions for Chains</strong><br>Tailored product development and private-label solutions for UK chain operators.</div></li>\n        <li><span class=\"icon\">📈</span><div><strong>Your Growth Partner</strong><br>We are more than a supplier – we are a long-term partner dedicated to your success.</div></li>\n      </ul>\n    </div>\n  </div>\n</div>\n\n<style>\n  .page-width { max-width: 1200px; margin: 0 auto; padding: 0 16px; }\n\n  /* 用 Flex，避免 Grid 自动布局造成的空列/留白 */\n  .choose-boba__wrap{\n    display: flex;\n    flex-direction: column;   /* 移动端：竖排，图片在上文字在下 */\n    gap: 24px;\n    align-items: center;\n  }\n\n  /* PC：横排，文字左、图片右（通过 order 控制） */\n  @media (min-width: 992px){\n    .choose-boba__wrap{\n      flex-direction: row;\n      gap: 40px;\n      align-items: center;\n    }\n    .choose-boba__content{ order: 1; flex: 1 1 0; min-width: 0; }\n    .choose-boba__media{ order: 2; flex: 1 1 0; min-width: 0; }\n  }\n\n  .choose-boba__title{\n    font-size: clamp(22px, 3vw, 32px);\n    font-weight: 800;\n    margin-bottom: 16px;\n    letter-spacing: -0.02em;\n  }\n\n  .choose-boba__list{\n    list-style: none; padding: 0; margin: 0;\n    display: grid; gap: 12px;   /* 紧凑的纵向间距 */\n  }\n\n  .choose-boba__list li{\n    display: flex; align-items: flex-start; gap: 10px;\n    font-size: clamp(15px, 1.2vw, 18px);\n    line-height: 1.6; color: #0f172a;\n  }\n  .choose-boba__list strong{ font-weight: 700; color: #111827; }\n  .choose-boba__list .icon{ font-size: 20px; line-height: 1; flex-shrink: 0; }\n\n  .choose-boba__media img{\n    width: 100%; height: auto; display: block;\n    border-radius: 12px;\n    box-shadow: 0 6px 20px rgba(0,0,0,0.08);\n  }\n</style>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_banner_aLBkRD": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/landing_page_3.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "image_banner_wQGCyt": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Image_5.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "contact_form_M3Lqzm": {
+      "type": "contact-form",
+      "name": "t:sections.contact-form.presets.name",
+      "settings": {
+        "heading": "Fill in the form below to receive our latest price list, customized quotes, or information about Franchising & Training.",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -139,6 +194,10 @@
     "custom_liquid_tJfFrV",
     "rich_text_JWhcJq",
     "custom_liquid_nVa6L6",
-    "rich_text_NHP6cy"
+    "rich_text_NHP6cy",
+    "custom_liquid_kYN6bg",
+    "image_banner_aLBkRD",
+    "image_banner_wQGCyt",
+    "contact_form_M3Lqzm"
   ]
 }
