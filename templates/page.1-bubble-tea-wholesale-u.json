@@ -16,11 +16,30 @@
         "padding_bottom": 0
       }
     },
+    "image_banner_fUGEGU": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Bubble_Tea_Wholesale_UK_Landing_Banner.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
     "contact_info_LdPDMX": {
       "type": "contact-info",
       "name": "Contact Information",
       "settings": {
         "color_scheme": "",
+        "contact_info_title": "",
+        "contact_info_subtitle": "",
         "contact_info_phone": "",
         "contact_info_email": "",
         "contact_info_address": "",
@@ -28,10 +47,51 @@
         "contact_info_static_map_image_cta": "",
         "contact_info_interactive_map_url": ""
       }
+    },
+    "custom_liquid_tJfFrV": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"about-bubblecrush-section\">\n  <div class=\"about-bubblecrush-content\">\n    <p>\n      Bubble Crush is a professional <strong>B2B bubble tea ingredient supplier</strong> headquartered in London, dedicated to serving businesses across the <strong>United Kingdom</strong>. We specialize in delivering <strong>authentic, high-quality, and cost-effective ingredients</strong>, sourced directly from <strong>Taiwan and Mainland China</strong> – bringing the best and most suitable products to the UK market.\n    </p>\n    <p>\n      With our London warehouse and efficient local logistics, we provide partners with fast delivery, consistent stock, and reduced supply risks. Today, Bubble Crush proudly works with <strong>over 100 independent bubble tea shops, cafés, and chain brands</strong> across the UK, offering reliable supply and long-term support.\n    </p>\n  </div>\n</div>\n\n<style>\n.about-bubblecrush-section {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0px auto;\n  padding: 20px 20px;\n  background-color: #f8f8f8; /* 可修改背景颜色 */\n  border-radius: 12px;\n  box-shadow: 0 4px 12px rgba(0,0,0,0.1);\n}\n\n.about-bubblecrush-content p {\n  font-size: 1.8rem;\n  line-height: 1.8;\n  color: #333;\n  margin-bottom: 10px;\n}\n\n.about-bubblecrush-content strong {\n  font-weight: 700;\n}\n\n@media (max-width: 768px) {\n  .about-bubblecrush-section {\n    padding: 10px 15px;\n  }\n\n  .about-bubblecrush-content p {\n    font-size: 1.6rem;\n    line-height: 1.6;\n  }\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_JWhcJq": {
+      "type": "rich-text",
+      "blocks": {
+        "button_68kTYi": {
+          "type": "button",
+          "settings": {
+            "button_label": "Our Story & Your Success",
+            "button_link": "shopify://pages/about-bubble-crush",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_68kTYi"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
-    "contact_info_LdPDMX"
+    "image_banner_fUGEGU",
+    "contact_info_LdPDMX",
+    "custom_liquid_tJfFrV",
+    "rich_text_JWhcJq"
   ]
 }

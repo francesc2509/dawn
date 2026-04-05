@@ -133,6 +133,7 @@
         "text_6BGLNf",
         "buttons_9Vfrfd"
       ],
+      "disabled": true,
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/rp9hperp9hperp9h.png",
@@ -418,6 +419,7 @@
     },
     "featured_blog_M9iXcD": {
       "type": "featured-blog",
+      "disabled": true,
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
         "blog": "news",
