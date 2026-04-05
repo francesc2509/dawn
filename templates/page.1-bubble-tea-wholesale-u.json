@@ -33,21 +33,6 @@
         "show_text_below": true
       }
     },
-    "contact_info_LdPDMX": {
-      "type": "contact-info",
-      "name": "Contact Information",
-      "settings": {
-        "color_scheme": "",
-        "contact_info_title": "",
-        "contact_info_subtitle": "",
-        "contact_info_phone": "",
-        "contact_info_email": "",
-        "contact_info_address": "",
-        "contact_info_map": "static",
-        "contact_info_static_map_image_cta": "",
-        "contact_info_interactive_map_url": ""
-      }
-    },
     "custom_liquid_tJfFrV": {
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
@@ -205,7 +190,6 @@
   "order": [
     "main",
     "image_banner_fUGEGU",
-    "contact_info_LdPDMX",
     "custom_liquid_tJfFrV",
     "rich_text_JWhcJq",
     "custom_liquid_nVa6L6",
