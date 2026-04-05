@@ -141,21 +141,36 @@
         "padding_bottom": 52
       }
     },
-    "image_banner_aLBkRD": {
-      "type": "image-banner",
-      "name": "t:sections.image-banner.presets.name",
+    "image_with_text_dWbwCU": {
+      "type": "image-with-text",
+      "blocks": {
+        "button_FwWqWR": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get a specialized pricing list for Ice Blanc & Freenow bulk orders",
+            "button_link": "shopify://collections/beverage-bases-coconut-milk-supplier",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "button_FwWqWR"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/landing_page_3.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "height": "adapt",
+        "desktop_image_width": "large",
+        "layout": "text_first",
         "image_behavior": "none",
-        "desktop_content_position": "middle-center",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
         "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "",
-        "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
-        "show_text_below": true
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "image_banner_wQGCyt": {
@@ -196,7 +211,7 @@
     "custom_liquid_nVa6L6",
     "rich_text_NHP6cy",
     "custom_liquid_kYN6bg",
-    "image_banner_aLBkRD",
+    "image_with_text_dWbwCU",
     "image_banner_wQGCyt",
     "contact_form_M3Lqzm"
   ]
