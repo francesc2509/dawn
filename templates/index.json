@@ -136,9 +136,9 @@
       "disabled": true,
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/rp9hperp9hperp9h.png",
+        "image": "shopify://shop_images/put-the-bubble-tea-in-a-disposable-cup-and-a-wider-cardboard-straw.png",
         "image_overlay_opacity": 60,
-        "image_height": "small",
+        "image_height": "medium",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
