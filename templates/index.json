@@ -99,56 +99,6 @@
         "padding_bottom": 48
       }
     },
-    "image_banner_QYMcLG": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_D6Bbww": {
-          "type": "heading",
-          "settings": {
-            "heading": "Win the <em><strong>Matcha</strong></em>",
-            "heading_size": "h1"
-          }
-        },
-        "text_6BGLNf": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Give your menu the <em>Bubble Crush</em> advantage with our matcha selection.</p>",
-            "text_style": "body"
-          }
-        },
-        "buttons_9Vfrfd": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Order Matcha Now",
-            "button_link_1": "shopify://collections/matcha-powders-and-mixes",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_D6Bbww",
-        "text_6BGLNf",
-        "buttons_9Vfrfd"
-      ],
-      "disabled": true,
-      "name": "Matcha banner",
-      "settings": {
-        "image": "shopify://shop_images/put-the-bubble-tea-in-a-disposable-cup-and-a-wider-cardboard-straw.png",
-        "image_overlay_opacity": 40,
-        "image_height": "medium",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-171e1f28-38da-4af1-b2e0-a2267f7a07d8",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
-      }
-    },
     "collection_list_VtYKTt": {
       "type": "collection-list",
       "blocks": {
@@ -343,6 +293,56 @@
         "show_text_below": false
       }
     },
+    "image_banner_QYMcLG": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_D6Bbww": {
+          "type": "heading",
+          "settings": {
+            "heading": "Win the <em><strong>Matcha</strong></em>",
+            "heading_size": "h1"
+          }
+        },
+        "text_6BGLNf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Give your menu the <em>Bubble Crush</em> advantage with our matcha selection.</p>",
+            "text_style": "body"
+          }
+        },
+        "buttons_9Vfrfd": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Order Matcha Now",
+            "button_link_1": "shopify://collections/matcha-powders-and-mixes",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_D6Bbww",
+        "text_6BGLNf",
+        "buttons_9Vfrfd"
+      ],
+      "disabled": true,
+      "name": "Matcha banner",
+      "settings": {
+        "image": "shopify://shop_images/put-the-bubble-tea-in-a-disposable-cup-and-a-wider-cardboard-straw.png",
+        "image_overlay_opacity": 40,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-171e1f28-38da-4af1-b2e0-a2267f7a07d8",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
     "featured_collection_adJ8Jc": {
       "type": "featured-collection",
       "name": "Special Offers",
@@ -515,11 +515,11 @@
   "order": [
     "carousel_tbDAmM",
     "multicolumn_bGj3Ji",
-    "image_banner_QYMcLG",
     "collection_list_VtYKTt",
     "image_banner_Rekq6Q",
     "featured_collection_XVDMX9",
     "image_banner_akp4Yh",
+    "image_banner_QYMcLG",
     "featured_collection_adJ8Jc",
     "multicolumn_7VD4PL",
     "featured_blog_M9iXcD",
