@@ -28,11 +28,8 @@
             "hero_cta_label": "<strong>Shop Best Sellers</strong>",
             "hero_cta_url": "shopify://collections/hot-seller",
             "signed_in_hero_cta_label": "",
-            "signed_in_hero_cta_url": "",
             "hero_secondary_cta_label": "<strong>View Full Catalog</strong>",
-            "hero_secondary_cta_url": "shopify://collections/all",
-            "signed_in_hero_secondary_cta_label": "<p>Manage my account</p>",
-            "signed_in_hero_secondary_cta_url": ""
+            "hero_secondary_cta_url": "shopify://collections/all"
           }
         }
       },
@@ -58,9 +55,9 @@
         "column_wwJ9DT": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/asian_brands_eea237c7-9cec-4b53-ac42-5789f1965993.jpg",
+            "image": "shopify://shop_images/b79bdce6-f1cd-45e7-9946-6af537bbd568.jpg",
             "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
-            "text": "<p>Partnering with leading Asian suppliers to bring premium ingredients to the UK and help trusted brands go global.</p>",
+            "text": "<p>Partnering with leading Asian suppliers such as <em>FreeNow</em>, <em>Ice Blanc</em> and more, to bring premium ingredients to the UK and help trusted brands go global.</p>",
             "link_label": "",
             "link": ""
           }
