@@ -198,7 +198,7 @@
       ],
       "name": "Purchase & Delivery banner",
       "settings": {
-        "image": "shopify://shop_images/a-warehouse-with-delivery-boxes-with-the-https-bubblecrushsupplier-com-logo.png",
+        "image": "shopify://shop_images/a-warehouse-with-delivery-boxes-with-the-https-bubblecrushsupplier-com-logo_1.webp",
         "image_overlay_opacity": 60,
         "image_height": "small",
         "image_behavior": "ambient",
@@ -277,7 +277,7 @@
       ],
       "name": "Bubble Tea Training",
       "settings": {
-        "image": "shopify://shop_images/only-one-glass.png",
+        "image": "shopify://shop_images/only-one-glass.webp",
         "image_overlay_opacity": 30,
         "image_height": "small",
         "image_behavior": "ambient",
