@@ -457,7 +457,7 @@
         "image_CLNAbJ": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Strawberry_Popping_Boba.png",
+            "image": "shopify://shop_images/Strawberry_Popping_Boba.webp",
             "url": "shopify://products/strawberry-popping-boba",
             "title": "Strawberry Fruit Tea",
             "heading_size": "h1"
@@ -466,7 +466,7 @@
         "image_8nmXVc": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Thai_Milk_Tea.png",
+            "image": "shopify://shop_images/Thai_Milk_Tea.webp",
             "url": "shopify://products/thai-milk-tea-powder",
             "title": "Thai Milk Tea",
             "heading_size": "h1"
@@ -475,7 +475,7 @@
         "image_JA4GrN": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/rp9hperp9hperp9h.png",
+            "image": "shopify://shop_images/rp9hperp9hperp9h_1.webp",
             "url": "shopify://products/matcha-powder",
             "title": "Matcha Latte",
             "heading_size": "h1"
@@ -484,7 +484,7 @@
         "image_Q936fT": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/500cc_PP_Cups_95mm.png",
+            "image": "shopify://shop_images/500cc_PP_Cups_95mm.webp",
             "url": "shopify://products/cup-700cc-95-clear",
             "title": "Disposable Cups",
             "heading_size": "h1"
