@@ -439,7 +439,7 @@
         "image_rcAfkJ": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Passion_Fruit_Tea.png",
+            "image": "shopify://shop_images/Passion_Fruit_Tea.webp",
             "url": "shopify://products/passion-fruit-coconut-jelly",
             "title": "Passion Fruit Tea",
             "heading_size": "h1"
