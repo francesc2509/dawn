@@ -51,7 +51,7 @@
       ],
       "settings": {
         "auto_rotate": true,
-        "change_slides_speed": 5,
+        "change_slides_speed": 7,
         "color_scheme": "scheme-3bcdc089-fa06-4656-a4bc-8ee87e98a920",
         "show_line_separator": true,
         "show_social": true,
