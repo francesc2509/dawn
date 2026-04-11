@@ -475,7 +475,7 @@
         "image_JA4GrN": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Matcha_Powder.png",
+            "image": "shopify://shop_images/matcha-latte.webp",
             "url": "shopify://products/matcha-powder",
             "title": "Matcha Latte",
             "heading_size": "h1"
