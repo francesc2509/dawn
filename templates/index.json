@@ -327,7 +327,6 @@
       "disabled": true,
       "name": "Matcha banner",
       "settings": {
-        "image": "shopify://shop_images/put-the-bubble-tea-in-a-disposable-cup-and-a-wider-cardboard-straw.png",
         "image_overlay_opacity": 40,
         "image_height": "medium",
         "image_behavior": "none",
@@ -475,7 +474,7 @@
         "image_JA4GrN": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/rp9hperp9hperp9h_1.webp",
+            "image": "shopify://shop_images/Matcha_Powder.png",
             "url": "shopify://products/matcha-powder",
             "title": "Matcha Latte",
             "heading_size": "h1"
