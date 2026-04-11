@@ -57,7 +57,7 @@
           "settings": {
             "image": "shopify://shop_images/free-now-ice-blanc-partnerships.jpg",
             "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
-            "text": "<p>Connecting top Asian suppliers with the UK and helping brands like FreeNow and Ice Blanc go global.</p>",
+            "text": "<p>Connecting top Asian suppliers with the UK and helping brands like <em>FreeNow</em> and <em>Ice Blanc</em> go global.</p>",
             "link_label": "",
             "link": ""
           }
