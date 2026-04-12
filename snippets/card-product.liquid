@@ -161,6 +161,62 @@
             </a>
           </h3>
           <div class="card-information">
+            <style>
+              .dietary-preferences {
+                display: flex;
+                flex-wrap: wrap;
+                max-width: 100%;
+              }
+              
+              .dietary-preferences svg {
+                {% comment %} height: 2em; {% endcomment %}
+                width: 2.5em;
+                height: 2.5em;
+                color: inherit;
+              }
+            </style>
+            <div class="caption-with-letter-spacing light dietary-preferences">
+              {% assign is_vegan = false %}
+              {% assign is_vegetarian = false %}
+              {% assign is_gluten_free = false %}
+              {% assign is_dairy_free = false %}
+              {% assign is_halal = false %}
+
+              {% for diet in card_product.metafields.shopify["dietary-preferences"].value %}
+                {% assign d = diet.label | downcase %}
+                {% if d contains "vegan" %}
+                  {% assign is_vegan = true %}
+                {% elsif d contains "vegetarian"  %}
+                  {% assign is_vegetarian = true %}
+                {% elsif d contains "gluten-free" or d contains "gluten free"  %}
+                  {% assign is_gluten_free = true %}
+                {% elsif d contains "dairy-free" or d contains "dairy free"  %}
+                  {% assign is_dairy_free = true %}
+                {% elsif d contains "halal"  %}
+                  {% assign is_halal = true %}
+                {% endif %}
+              {% endfor %}
+              {% assign diet_string = "" %}
+              {% if is_vegan %}
+                {% assign diet_string = diet_string | append: "vegan " %}
+              {% elsif is_vegetarian %}
+                {% assign diet_string = diet_string | append: "vegetarian " %}
+              {% endif %}
+
+              {% if is_gluten_free %}
+                {% assign diet_string = diet_string | append: "gluten-free " %}
+              {% endif %}
+
+              {% if is_dairy_free %}
+                {% assign diet_string = diet_string | append: "dairy-free " %}
+              {% endif %}
+
+              {% if is_halal %}
+                {% assign diet_string = diet_string | append: "halal " %}
+              {% endif %}
+
+              {{ diet_string | split: " " | join: ", " }}
+            </div>
             {{ card_product.selected_or_first_available_variant.title }}
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>

@@ -13,6 +13,22 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  {% if section.settings.columns_flow != "standard" %}
+  @media(min-width: 990px) {
+    
+    .multicolumn-list > li:nth-child({{ section.settings.columns_flow  }}) > .multicolumn-card .multicolumn-card__image-wrapper {
+      border-bottom-left-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
+      border-bottom-right-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    .multicolumn-list > li:nth-child({{ section.settings.columns_flow  }}) > .multicolumn-card  {
+      flex-direction: column-reverse;
+      display: flex;
+    }
+  }
+  {% endif %}
 {%- endstyle -%}
 
 {%- liquid
@@ -367,6 +383,26 @@
       ],
       "default": "1",
       "label": "t:sections.multicolumn.settings.columns_mobile.label"
+    },
+    {
+      "type": "select",
+      "id": "columns_flow",
+      "options": [
+        {
+          "value": "even",
+          "label": "Alternate even"
+        },
+        {
+          "value": "odd",
+          "label": "Alternate odd"
+        },
+        {
+          "value": "standard",
+          "label": "Standard"
+        }
+      ],
+      "default": "standard",
+      "label": "Column flow"
     },
     {
       "type": "checkbox",
