@@ -177,7 +177,7 @@
         "text_r79dny": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>Free delivery</strong></h3><p><strong>Free delivery on order over £300</strong></p>",
+            "text": "<h3><strong>Free delivery</strong></h3><p><strong>Free delivery on orders over £300</strong></p>",
             "text_style": "body"
           }
         },
