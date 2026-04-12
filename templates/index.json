@@ -91,7 +91,7 @@
         "background_style": "none",
         "color_scheme": "",
         "columns_mobile": "1",
-        "columns_flow": "odd",
+        "columns_flow": "even",
         "swipe_on_mobile": false,
         "padding_top": 48,
         "padding_bottom": 48
