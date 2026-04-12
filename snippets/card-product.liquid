@@ -175,6 +175,7 @@
                 color: inherit;
               }
             </style>
+            {% if true %}
             <div class="caption-with-letter-spacing light dietary-preferences">
               {% assign is_vegan = false %}
               {% assign is_vegetarian = false %}
@@ -217,7 +218,10 @@
 
               {{ diet_string | split: " " | join: ", " }}
             </div>
+            {% endif %}
+            {% if true %}
             {{ card_product.selected_or_first_available_variant.title }}
+            {% endif %}
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
               <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
