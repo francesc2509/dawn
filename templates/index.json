@@ -113,6 +113,47 @@
         "padding_bottom": 48
       }
     },
+    "image_banner_Rekq6Q": {
+      "type": "image-banner",
+      "blocks": {
+        "text_r79dny": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Free delivery</strong></h3><p><strong>Free delivery on orders over £300</strong></p>",
+            "text_style": "body"
+          }
+        },
+        "buttons_fDhLcb": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Delivery policy",
+            "button_link_1": "shopify://pages/delivery-shipping",
+            "button_style_secondary_1": true,
+            "button_label_2": "Purchase policy",
+            "button_link_2": "shopify://pages/policies-customer-information",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "text_r79dny",
+        "buttons_fDhLcb"
+      ],
+      "name": "Purchase & Delivery banner",
+      "settings": {
+        "image": "shopify://shop_images/bubble-crush-warehouse.jpg",
+        "image_overlay_opacity": 60,
+        "image_height": "small",
+        "image_behavior": "ambient",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
     "multicolumn_bGj3Ji": {
       "type": "multicolumn",
       "blocks": {
@@ -169,47 +210,6 @@
         "swipe_on_mobile": false,
         "padding_top": 48,
         "padding_bottom": 48
-      }
-    },
-    "image_banner_Rekq6Q": {
-      "type": "image-banner",
-      "blocks": {
-        "text_r79dny": {
-          "type": "text",
-          "settings": {
-            "text": "<h3><strong>Free delivery</strong></h3><p><strong>Free delivery on orders over £300</strong></p>",
-            "text_style": "body"
-          }
-        },
-        "buttons_fDhLcb": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Delivery policy",
-            "button_link_1": "shopify://pages/delivery-shipping",
-            "button_style_secondary_1": true,
-            "button_label_2": "Purchase policy",
-            "button_link_2": "shopify://pages/policies-customer-information",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "text_r79dny",
-        "buttons_fDhLcb"
-      ],
-      "name": "Purchase & Delivery banner",
-      "settings": {
-        "image": "shopify://shop_images/bubble-crush-warehouse.jpg",
-        "image_overlay_opacity": 60,
-        "image_height": "small",
-        "image_behavior": "ambient",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
       }
     },
     "featured_collection_XVDMX9": {
@@ -418,7 +418,6 @@
     },
     "featured_blog_M9iXcD": {
       "type": "featured-blog",
-      "disabled": true,
       "name": "Latest news",
       "settings": {
         "blog": "news",
