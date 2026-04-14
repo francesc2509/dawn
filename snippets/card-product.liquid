@@ -203,7 +203,7 @@
               {% else %}
                 {% if is_vegetarian %}
                 {% assign diet_string = diet_string | append: "vegetarian " %}
-                {% else if is_halal %}
+                {% elsif is_halal %}
                 {% assign diet_string = diet_string | append: "halal " %}
                 {% endif %}
                 {% if is_dairy_free %}
@@ -214,9 +214,6 @@
               {% if is_gluten_free %}
                 {% assign diet_string = diet_string | append: "gluten-free " %}
               {% endif %}
-
-              
-
               {{ diet_string | split: " " | join: ", " }}
             </div>
             {% endif %}
