@@ -177,7 +177,15 @@
         "text_r79dny": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>Free delivery</strong></h3><p><strong>Free delivery on orders over £300</strong></p>",
+            "text": "<h3><strong>Free delivery</strong></h3><p><strong>Free delivery on orders over £30</strong></p>",
+            "text_style": "body"
+          }
+        },
+        "text_KfmyX4": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>Order Handling Time:</strong> 0–1 Business Days (Monday – Friday)</p><p><strong>Transit Time:</strong> 1–3 Business Days (Monday – Friday)</p><p><strong>Order Cut-off Time:</strong> 10:00 AM</p>",
             "text_style": "body"
           }
         },
@@ -195,6 +203,7 @@
       },
       "block_order": [
         "text_r79dny",
+        "text_KfmyX4",
         "buttons_fDhLcb"
       ],
       "name": "Purchase & Delivery banner",
