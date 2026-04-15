@@ -217,7 +217,7 @@
               {{ diet_string | split: " " | join: ", " }}
             </div>
             {% endif %}
-            {% if true and card_product.selected_or_first_available_variant.title %}
+            {% if true and card_product.has_only_default_variant == false %}
             {{ card_product.selected_or_first_available_variant.title }}
             {% endif %}
             {%- if show_vendor -%}
