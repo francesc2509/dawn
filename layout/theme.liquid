@@ -283,25 +283,6 @@
           font-size: 1.6rem;
         }
       }
-
-      .banner__heading {
-  position: relative;
-  display: inline-block;
-  z-index: 1;
-}
-
-.banner__heading::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 100%;
-  height: 12px;
-  background: #ff758c; /* Change to your brand pink/orange */
-  border-radius: 10px;
-  z-index: -1;
-  opacity: 0.8;
-}
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
