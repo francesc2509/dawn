@@ -183,7 +183,11 @@
             </ul>
 
             {%- if paginate.pages > 1 -%}
-              {% render 'pagination', paginate: paginate, anchor: '' %}
+              {% render 'infinite-scroll',
+                next_page: paginate.next.url,
+                page_size: paginate.pages,
+                end_text: "You reached the end of the page..."
+              %}
             {%- endif -%}
           </div>
         {%- endif -%}
