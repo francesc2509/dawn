@@ -1,0 +1,151 @@
+{% comment %}
+  Designed for Shopify - No innerHTML version.
+  Targeting specific grid selectors commonly used in Dawn and other themes.
+{% endcomment %}
+
+<infinite-scroll 
+  data-next="{{ next_page }}" 
+  data-page-size="{{ page_size }}" 
+  data-end-text="{{ end_text | escape }}"
+>
+  {% if page_size > 1 %}
+    <div class="loading-container" aria-label="Loading products">
+      {% for i in (1..8) %}
+        <span class="loading-dot" id="loading-{{ i }}"></span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <template id="infinite-scroll-end-template">
+    <div class="end-section">
+      <h2 class="end-text"></h2>
+      <button type="button" class="scroll-to-top hidden">Retour en haut</button>
+    </div>
+  </template>
+</infinite-scroll>
+
+<style>
+  infinite-scroll { display: block; width: 100%; margin: 2rem 0; text-align: center; }
+  .loading-container { position: relative; width: 234px; height: 28px; margin: 0 auto; }
+  .loading-dot { position: absolute; background: #000; width: 28px; height: 28px; border-radius: 50%; animation: loading-wave 1.5s infinite ease-in-out; transform: scale(0.3); }
+  
+  {% for i in (0..7) %}
+    #loading-{{ i | plus: 1 }} { left: {{ i | times: 29 }}px; animation-delay: {{ i | times: 0.15 }}s; }
+  {% endfor %}
+
+  .end-section { padding: 3rem 0; }
+  .end-text { font-size: 1.5rem; margin-bottom: 1.5rem; }
+  .scroll-to-top { 
+    padding: 10px 20px; cursor: pointer; background: #000; color: #fff; border: none; border-radius: 20px;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .scroll-to-top.hidden { opacity: 0; pointer-events: none; transform: translateY(10px); }
+
+  @keyframes loading-wave {
+    0%, 100% { transform: scale(0.3); opacity: 0.3; }
+    50% { transform: scale(1); opacity: 1; }
+  }
+  
+  /* Hide standard pagination */
+  .pagination, .infinite-scroll-ignore { display: none !important; }
+</style>
+
+<script>
+  if (!customElements.get('infinite-scroll')) {
+    class InfiniteScroll extends HTMLElement {
+      constructor() {
+        super();
+        this.page = 1;
+        this.isFetching = false;
+        // The list of possible grid IDs/Classes in Shopify themes
+        this.selectors = [".ProductListWrapper", "#product-grid", ".product-grid", ".grid--view-items", ".product-list"];
+      }
+
+      connectedCallback() {
+        this.gridContainer = this.findGrid(document);
+        if (!this.gridContainer) return;
+
+        this.observer = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting && !this.isFetching) {
+            this.getNextPage();
+          }
+        }, { rootMargin: '0px 0px 400px 0px' });
+
+        this.observer.observe(this);
+        this.setupScrollToTop();
+      }
+
+      findGrid(doc) {
+        for (const selector of this.selectors) {
+          const el = doc.querySelector(selector);
+          if (el) return el;
+        }
+        return null;
+      }
+
+      async getNextPage() {
+        if (this.page >= parseInt(this.dataset.pageSize)) return;
+        
+        this.isFetching = true;
+        this.page++;
+
+        const baseUrl = window.location.pathname;
+        const url = `${baseUrl}?page=${this.page}`;
+
+        try {
+          const response = await fetch(url);
+          const htmlText = await response.text();
+          const parser = new DOMParser();
+          const fetchedDoc = parser.parseFromString(htmlText, 'text/html');
+          const newGrid = this.findGrid(fetchedDoc);
+
+          if (newGrid && this.gridContainer) {
+            // Use a fragment to move nodes safely and efficiently
+            const fragment = document.createDocumentFragment();
+            while (newGrid.firstElementChild) {
+              fragment.appendChild(newGrid.firstElementChild);
+            }
+            this.gridContainer.appendChild(fragment);
+            
+            // Re-trigger theme scripts (lazyload, etc)
+            window.dispatchEvent(new CustomEvent('resize')); 
+          }
+
+          if (this.page >= parseInt(this.dataset.pageSize)) {
+            this.renderEnd();
+          }
+        } catch (e) {
+          console.error("Infinite scroll fetch failed", e);
+        } finally {
+          this.isFetching = false;
+        }
+      }
+
+      setupScrollToTop() {
+        window.addEventListener('scroll', () => {
+          if (!this.btn) return;
+          this.btn.classList.toggle('hidden', window.scrollY < 400);
+        }, { passive: true });
+      }
+
+      renderEnd() {
+        this.observer.disconnect();
+        // Clear dots
+        while (this.firstChild && this.firstChild.id !== 'infinite-scroll-end-template') {
+            this.removeChild(this.firstChild);
+        }
+
+        const template = this.querySelector('#infinite-scroll-end-template');
+        if (!template) return;
+
+        const clone = template.content.cloneNode(true);
+        clone.querySelector('.end-text').textContent = this.dataset.endText;
+        this.btn = clone.querySelector('.scroll-to-top');
+        this.btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        
+        this.appendChild(clone);
+      }
+    }
+    customElements.define('infinite-scroll', InfiniteScroll);
+  }
+</script>
