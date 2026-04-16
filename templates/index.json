@@ -39,6 +39,64 @@
       "name": "Hero",
       "settings": {}
     },
+    "multicolumn_bGj3Ji": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_dq7cRP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/uk_partners.jpg",
+            "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
+            "text": "<p>Join <strong>200+</strong> shops, cafés and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wwJ9DT": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/free-now-ice-blanc-partnerships.jpg",
+            "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
+            "text": "<p>Connecting top Asian suppliers with the UK and helping brands like <em>FreeNow</em> and <em>Ice Blanc</em> go global.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_mwmk4N": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/unnamed_1_845e1240-75bc-4c09-b7ab-d6988334d820.jpg",
+            "title": "🚚<strong> UK Warehouse & Fast Dispatch</strong>",
+            "text": "<p>Reliable <strong>next-day</strong> delivery from our London warehouses — keeping your business stocked and running smoothly.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_dq7cRP",
+        "column_wwJ9DT",
+        "column_mwmk4N"
+      ],
+      "name": "Trust",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "columns_flow": "even",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "collection_list_VtYKTt": {
       "type": "collection-list",
       "blocks": {
@@ -108,64 +166,6 @@
         "color_scheme": "",
         "show_view_all": false,
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
-    "multicolumn_bGj3Ji": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_dq7cRP": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/uk_partners.jpg",
-            "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
-            "text": "<p>Join <strong>200+</strong> shops, cafés and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_wwJ9DT": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/free-now-ice-blanc-partnerships.jpg",
-            "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
-            "text": "<p>Connecting top Asian suppliers with the UK and helping brands like <em>FreeNow</em> and <em>Ice Blanc</em> go global.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_mwmk4N": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/unnamed_1_845e1240-75bc-4c09-b7ab-d6988334d820.jpg",
-            "title": "🚚<strong> UK Warehouse & Fast Dispatch</strong>",
-            "text": "<p>Reliable <strong>next-day</strong> delivery from our London warehouses — keeping your business stocked and running smoothly.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_dq7cRP",
-        "column_wwJ9DT",
-        "column_mwmk4N"
-      ],
-      "name": "Trust",
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "square",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "columns_flow": "even",
         "swipe_on_mobile": false,
         "padding_top": 48,
         "padding_bottom": 48
@@ -521,8 +521,8 @@
   },
   "order": [
     "carousel_tbDAmM",
-    "collection_list_VtYKTt",
     "multicolumn_bGj3Ji",
+    "collection_list_VtYKTt",
     "featured_collection_XVDMX9",
     "image_banner_akp4Yh",
     "image_banner_QYMcLG",
