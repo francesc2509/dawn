@@ -200,7 +200,7 @@
           "type": "collection",
           "settings": {
             "tab_label": "Topping",
-            "collection": "bubble-tea-dessert-toppings-tapioca-pearls-jellies-bubble-crush"
+            "collection": "topping"
           }
         },
         "collection_TgbAxg": {
