@@ -1,0 +1,38 @@
+{% comment %} {% if customer and customer.orders_count > 0 %} {% endcomment %}
+    {% assign customer_products = collections['all'].products %}
+  <div class="page-width">
+    <h2 class="h1">Restock Your Favorites</h2>
+    <ul class="grid grid--2-col grid--4-col-desktop">
+      {%- assign displayed_products = "" -%}
+      {%- assign count = 0 -%}
+      {%- assign items = "" | split: ""-%}
+      {% for prod in customer_products limit: 4 %}
+      {% comment %} {% for order in customer.orders %}
+        {% for item in order.line_items %} {% endcomment %}
+          {% comment %} {%- assign prod = item.product -%} {% endcomment %}
+          
+          {% comment %}Check if product exists, is available, and hasn't been shown yet{% endcomment %}
+
+          {% unless displayed_products contains prod.id or count >= 4 or prod == blank %}
+            <li class="grid__item">
+              {% render 'card-product',
+                card_product: prod,
+                media_aspect_ratio: block.settings.image_ratio,
+                show_secondary_image: false,
+                lazy_load: false,
+                quick_add: 'bulk',
+                section_id: section.id,
+                horizontal_quick_add: false
+              %}
+            </li>
+            {%- assign displayed_products = displayed_products | append: prod.id | append: "," -%}
+            {% assign product_as_array = prod | sort %}
+            {% assign items = custom_product_list | concat: product_as_array %}
+            {%- assign count = count | plus: 1 -%}
+          {% endunless %}
+        {% comment %} {% endfor %} {% endcomment %}
+      {% endfor %}
+    </ul>
+    {% comment %} {{ items | json }} {% endcomment %}
+  </div>
+{% comment %} {% endif %} {% endcomment %}

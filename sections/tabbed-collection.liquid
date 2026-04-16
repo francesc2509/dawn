@@ -1,0 +1,268 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+
+{%- unless section.settings.quick_add == 'none' -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endunless -%}
+
+{%- if section.settings.quick_add == 'standard' -%}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{%- if section.settings.quick_add == 'bulk' -%}
+  <script src="{{ 'quick-add-bulk.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .menu-tabs {
+    display: flex;
+    margin: 0, 15%;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .menu-tab-btn {
+    padding: 1em 2em;
+    border: 1px solid rgba(var(--color-foreground), 0.2);
+    background: transparent;
+    cursor: pointer;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 8em;
+    box-sizing: border-box;
+  }
+
+  .menu-tab-btn.active {
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+    border-color: rgb(var(--color-foreground));
+  }
+  
+  .tab-content { display: none; }
+  .tab-content.active { display: block; animation: fadeIn 0.4s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<div class="color-{{ section.settings.color_scheme }} isolate gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    <h2 class="{{ section.settings.heading_size }}">{{ section.settings.title }}</h2>
+
+    <ul class="menu-tabs">
+      {%- for block in section.blocks -%}
+        {% if block.settings.collection.products %}
+        <li>
+          <button class="menu-tab-btn{% if forloop.first %} active{% endif %}" data-tab="tab-{{ block.id }}">
+            {{ block.settings.tab_label | default: block.settings.collection.title }}
+          </button>
+        </li>
+        {% endif %}
+      {%- endfor -%}
+    </ul>
+
+    <div class="menu-tab-container{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}">
+      {%- for block in section.blocks -%}
+        {% assign products = block.settings.collection.products | where: "available", true %}
+        {% if products != blank %}
+        <div id="tab-{{ block.id }}" class="tab-content{% if forloop.first %} active{% endif %}">
+          <ul class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--2-col-tablet-down">
+            {%- for product in products limit: section.settings.products_to_show -%}
+              <li class="grid__item">
+                {% render 'card-product',
+                  card_product: product,
+                  media_aspect_ratio: section.settings.image_ratio,
+                  show_secondary_image: section.settings.show_secondary_image,
+                  show_vendor: section.settings.show_vendor,
+                  section_id: section.id,
+                  quick_add: section.settings.quick_add
+                %}
+              </li>
+            {%- endfor -%}
+          </ul>
+          
+          {%- if block.settings.collection.url != blank -%}
+            <div class="center">
+              <a href="{{ block.settings.collection.url }}" class="button">Shop {{ block.settings.tab_label }}</a>
+            </div>
+          {%- endif -%}
+        </div>
+        {% endif %}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.menu-tab-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const section = button.closest('.isolate');
+      const tabId = button.getAttribute('data-tab');
+
+      // Toggle Buttons
+      section.querySelectorAll('.menu-tab-btn').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      // Toggle Content
+      section.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+      section.querySelector(`#${tabId}`).classList.add('active');
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Tabbed Menu Builder",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Build Your Menu",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {"value": "h2", "label": "Small"},
+        {"value": "h1", "label": "Medium"},
+        {"value": "h0", "label": "Large"}
+      ],
+      "default": "h1",
+      "label": "Heading Size"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "Products to show per tab"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "Columns on desktop"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Product Card"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {"value": "adapt", "label": "Adapt to image"},
+        {"value": "portrait", "label": "Portrait"},
+        {"value": "square", "label": "Square"}
+      ],
+      "default": "square",
+      "label": "Image Ratio"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": true,
+      "label": "Show second image on hover"
+    },
+    {
+      "type": "select",
+      "id": "quick_add",
+      "default": "standard",
+      "label": "Quick Add",
+      "options": [
+        {"value": "none", "label": "None"},
+        {"value": "standard", "label": "Standard"},
+        {"value": "bulk", "label": "Bulk"}
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Tab Label",
+          "info": "Overrides collection title (e.g. 'Best Sellers')"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tabbed Menu Builder",
+      "blocks": [
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" }
+      ]
+    }
+  ]
+}
+{% endschema %}

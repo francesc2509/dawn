@@ -39,64 +39,6 @@
       "name": "Hero",
       "settings": {}
     },
-    "multicolumn_bGj3Ji": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_dq7cRP": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/uk_partners.jpg",
-            "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
-            "text": "<p>Join <strong>200+</strong> shops, cafés and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_wwJ9DT": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/free-now-ice-blanc-partnerships.jpg",
-            "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
-            "text": "<p>Connecting top Asian suppliers with the UK and helping brands like <em>FreeNow</em> and <em>Ice Blanc</em> go global.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_mwmk4N": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/unnamed_1_845e1240-75bc-4c09-b7ab-d6988334d820.jpg",
-            "title": "🚚<strong> UK Warehouse & Fast Dispatch</strong>",
-            "text": "<p>Reliable <strong>next-day</strong> delivery from our London warehouses — keeping your business stocked and running smoothly.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_dq7cRP",
-        "column_wwJ9DT",
-        "column_mwmk4N"
-      ],
-      "name": "Trust",
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "square",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "columns_flow": "even",
-        "swipe_on_mobile": false,
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
     "collection_list_VtYKTt": {
       "type": "collection-list",
       "blocks": {
@@ -157,6 +99,7 @@
         "featured_collection_LDLRQk",
         "featured_collection_6BbUMB"
       ],
+      "disabled": true,
       "name": "Categories",
       "settings": {
         "title": "Build Your Menu",
@@ -171,8 +114,151 @@
         "padding_bottom": 48
       }
     },
+    "multicolumn_bGj3Ji": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_dq7cRP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/uk_partners.jpg",
+            "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
+            "text": "<p>Join <strong>200+</strong> shops, cafés and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wwJ9DT": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/free-now-ice-blanc-partnerships.jpg",
+            "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
+            "text": "<p>Connecting top Asian suppliers with the UK and helping brands like <em>FreeNow</em> and <em>Ice Blanc</em> go global.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_mwmk4N": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/unnamed_1_845e1240-75bc-4c09-b7ab-d6988334d820.jpg",
+            "title": "🚚<strong> UK Warehouse & Fast Dispatch</strong>",
+            "text": "<p>Reliable <strong>next-day</strong> delivery from our London warehouses — keeping your business stocked and running smoothly.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_dq7cRP",
+        "column_wwJ9DT",
+        "column_mwmk4N"
+      ],
+      "name": "Trust",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "columns_flow": "even",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 0
+      }
+    },
+    "tabbed_collection_g3PXFG": {
+      "type": "tabbed-collection",
+      "blocks": {
+        "collection_i4qDQ7": {
+          "type": "collection",
+          "settings": {
+            "tab_label": "Best Sellers",
+            "collection": "hot-seller"
+          }
+        },
+        "collection_8x4JHK": {
+          "type": "collection",
+          "settings": {
+            "tab_label": "Powders",
+            "collection": "powder"
+          }
+        },
+        "collection_Ykk6be": {
+          "type": "collection",
+          "settings": {
+            "tab_label": "Syrup & Jam",
+            "collection": "bubble-tea-drink-syrups-jams-premium-flavors-for-cafes-and-shops-bubble-crush"
+          }
+        },
+        "collection_iMbpLk": {
+          "type": "collection",
+          "settings": {
+            "tab_label": "Topping",
+            "collection": "bubble-tea-dessert-toppings-tapioca-pearls-jellies-bubble-crush"
+          }
+        },
+        "collection_TgbAxg": {
+          "type": "collection",
+          "settings": {
+            "tab_label": "Tea",
+            "collection": "premium-tea-leaves-blends-for-bubble-tea-and-cafes-bubble-crush"
+          }
+        },
+        "collection_QhiqKc": {
+          "type": "collection",
+          "settings": {
+            "tab_label": "Milk Base",
+            "collection": "beverage-bases-coconut-milk-supplier-bubble-crush"
+          }
+        },
+        "collection_zBhXAW": {
+          "type": "collection",
+          "settings": {
+            "tab_label": "Packaging",
+            "collection": "bubble-tea-beverage-packaging-cups-lids-straws-more-bubble-crush"
+          }
+        },
+        "collection_Jf4E9B": {
+          "type": "collection",
+          "settings": {
+            "tab_label": "Offers",
+            "collection": "sales"
+          }
+        }
+      },
+      "block_order": [
+        "collection_i4qDQ7",
+        "collection_8x4JHK",
+        "collection_Ykk6be",
+        "collection_iMbpLk",
+        "collection_TgbAxg",
+        "collection_QhiqKc",
+        "collection_zBhXAW",
+        "collection_Jf4E9B"
+      ],
+      "name": "Tabbed Collections",
+      "settings": {
+        "title": "Build Your Menu",
+        "heading_size": "h1",
+        "products_to_show": 6,
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "quick_add": "bulk",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "featured_collection_XVDMX9": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "Best Sellers",
       "settings": {
         "collection": "hot-seller",
@@ -302,6 +388,7 @@
     },
     "featured_collection_adJ8Jc": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "Special Offers",
       "settings": {
         "collection": "sales",
@@ -326,6 +413,125 @@
         "quick_add": "bulk",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "collection_list_rJUQGQ": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_BfaMef": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "powder",
+            "collection_label": "Powder Series",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_hW7HVE": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "syrup-and-jam-for-bubble-tea",
+            "collection_label": "Syrup & Jam",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_JJd6zP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "topping",
+            "collection_label": "Topping",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_3bd8Y9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "tea",
+            "collection_label": "Tea",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_fjkE6d": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beverage-bases-coconut-milk-supplier-bubble-crush",
+            "collection_label": "Milk Base",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_7fdfNK": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "packaging",
+            "collection_label": "Packaging",
+            "collection_cta_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_BfaMef",
+        "featured_collection_hW7HVE",
+        "featured_collection_JJd6zP",
+        "featured_collection_3bd8Y9",
+        "featured_collection_fjkE6d",
+        "featured_collection_7fdfNK"
+      ],
+      "name": "Categories",
+      "settings": {
+        "title": "Our catalog",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "multicolumn_7VD4PL": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_U79ya9": {
+          "type": "column",
+          "settings": {
+            "title": "“Just enjoyed the most delicious bubble tea ingredients quickly delivered!  Huge thanks to Bubble Crush for their seamless online ordering and speedy service.”",
+            "text": "<p>Alena, London  ⭐⭐⭐⭐⭐</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Umgde9": {
+          "type": "column",
+          "settings": {
+            "title": "“Ordering was a breeze and the delivery was super fast! Great service and even better boba - 5 stars all around!”",
+            "text": "<p>James, UK ⭐⭐⭐⭐⭐</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_U79ya9",
+        "column_Umgde9"
+      ],
+      "name": "Reviews",
+      "settings": {
+        "title": "What our partners say",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "columns_flow": "standard",
+        "swipe_on_mobile": true,
         "padding_top": 48,
         "padding_bottom": 48
       }
@@ -378,51 +584,6 @@
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
         "show_text_below": false
-      }
-    },
-    "multicolumn_7VD4PL": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_U79ya9": {
-          "type": "column",
-          "settings": {
-            "title": "“Just enjoyed the most delicious bubble tea ingredients quickly delivered!  Huge thanks to Bubble Crush for their seamless online ordering and speedy service.”",
-            "text": "<p>Alena, London  ⭐⭐⭐⭐⭐</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_Umgde9": {
-          "type": "column",
-          "settings": {
-            "title": "“Ordering was a breeze and the delivery was super fast! Great service and even better boba - 5 stars all around!”",
-            "text": "<p>James, UK ⭐⭐⭐⭐⭐</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_U79ya9",
-        "column_Umgde9"
-      ],
-      "name": "Reviews",
-      "settings": {
-        "title": "What our partners say",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 2,
-        "column_alignment": "center",
-        "background_style": "none",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "columns_flow": "standard",
-        "swipe_on_mobile": true,
-        "padding_top": 48,
-        "padding_bottom": 48
       }
     },
     "featured_blog_M9iXcD": {
@@ -521,14 +682,16 @@
   },
   "order": [
     "carousel_tbDAmM",
-    "multicolumn_bGj3Ji",
     "collection_list_VtYKTt",
+    "multicolumn_bGj3Ji",
+    "tabbed_collection_g3PXFG",
     "featured_collection_XVDMX9",
     "image_banner_akp4Yh",
     "image_banner_QYMcLG",
     "featured_collection_adJ8Jc",
-    "image_banner_Rekq6Q",
+    "collection_list_rJUQGQ",
     "multicolumn_7VD4PL",
+    "image_banner_Rekq6Q",
     "featured_blog_M9iXcD",
     "image_list_RGBbkP"
   ]
