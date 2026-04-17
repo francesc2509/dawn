@@ -111,14 +111,14 @@
                       </details>
                     </div>
                   {%- when 'brand_information' -%}
-                    <div class="footer-block__brand-info">
+                    <div class="footer-block__brand-info" style="text-align: center;">
                       {%- if settings.brand_image != blank -%}
                         {%- assign brand_image_height = settings.brand_image_width
                           | divided_by: settings.brand_image.aspect_ratio
                         -%}
                         <div
                           class="footer-block__image-wrapper"
-                          style="display: flex; justify-content: center; border-radius: var(--media-radius); max-width: min(100%, {{ settings.brand_image_width }}px);"
+                          style="border-radius: var(--media-radius); max-width: min(100%, {{ settings.brand_image_width }}px);"
                         >
                           {{
                             settings.brand_image
