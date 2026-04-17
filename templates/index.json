@@ -417,6 +417,51 @@
         "padding_bottom": 48
       }
     },
+    "multicolumn_7VD4PL": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_U79ya9": {
+          "type": "column",
+          "settings": {
+            "title": "“Just enjoyed the most delicious bubble tea ingredients quickly delivered!  Huge thanks to Bubble Crush for their seamless online ordering and speedy service.”",
+            "text": "<p>Alena, London  ⭐⭐⭐⭐⭐</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Umgde9": {
+          "type": "column",
+          "settings": {
+            "title": "“Ordering was a breeze and the delivery was super fast! Great service and even better boba - 5 stars all around!”",
+            "text": "<p>James, UK ⭐⭐⭐⭐⭐</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_U79ya9",
+        "column_Umgde9"
+      ],
+      "name": "Reviews",
+      "settings": {
+        "title": "What our partners say",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "columns_flow": "standard",
+        "swipe_on_mobile": true,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "collection_list_rJUQGQ": {
       "type": "collection-list",
       "blocks": {
@@ -487,51 +532,6 @@
         "show_view_all": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
-    "multicolumn_7VD4PL": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_U79ya9": {
-          "type": "column",
-          "settings": {
-            "title": "“Just enjoyed the most delicious bubble tea ingredients quickly delivered!  Huge thanks to Bubble Crush for their seamless online ordering and speedy service.”",
-            "text": "<p>Alena, London  ⭐⭐⭐⭐⭐</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_Umgde9": {
-          "type": "column",
-          "settings": {
-            "title": "“Ordering was a breeze and the delivery was super fast! Great service and even better boba - 5 stars all around!”",
-            "text": "<p>James, UK ⭐⭐⭐⭐⭐</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_U79ya9",
-        "column_Umgde9"
-      ],
-      "name": "Reviews",
-      "settings": {
-        "title": "What our partners say",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 2,
-        "column_alignment": "center",
-        "background_style": "none",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "columns_flow": "standard",
-        "swipe_on_mobile": true,
         "padding_top": 48,
         "padding_bottom": 48
       }
@@ -689,10 +689,10 @@
     "image_banner_akp4Yh",
     "image_banner_QYMcLG",
     "featured_collection_adJ8Jc",
-    "collection_list_rJUQGQ",
     "multicolumn_7VD4PL",
-    "image_banner_Rekq6Q",
     "featured_blog_M9iXcD",
+    "image_banner_Rekq6Q",
+    "collection_list_rJUQGQ",
     "image_list_RGBbkP"
   ]
 }
