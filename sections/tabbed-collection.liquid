@@ -124,7 +124,7 @@
             {%- endfor -%}
           </ul>
           
-          {%- if block.settings.collection.url != blank -%}
+          {%- if block.settings.collection.url != blank and products.size > section.settings.products_to_show -%}
             <div class="center">
               <a href="{{ block.settings.collection.url }}" class="button">Shop {{ block.settings.tab_label }}</a>
             </div>
