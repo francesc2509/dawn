@@ -61,6 +61,12 @@
   .tab-content { display: none; }
   .tab-content.active { display: block; animation: fadeIn 0.4s ease; }
 
+  @media(max-width: 989px) {
+    .menu-tab-btn {
+      min-width: 9em;
+    }
+  }
+
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
