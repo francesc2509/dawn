@@ -102,7 +102,12 @@
     <div class="menu-tab-container{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}">
       {%- for block in section.blocks -%}
         {% assign products = block.settings.collection.products | where: "available", true %}
-        {% if products != blank %}
+        
+        {% if products.size > 0 %}
+        {% if products.size < section.settings.products_to_show %}
+        {% assign out_of_stock = block.settings.collection.products | where: "available", false %}
+        {% assign products = products | concat: out_of_stock %}
+        {% endif %}
         <div id="tab-{{ block.id }}" class="tab-content{% if forloop.first %} active{% endif %}">
           <ul class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--2-col-tablet-down">
             {%- for product in products limit: section.settings.products_to_show -%}
