@@ -105,12 +105,13 @@
 
         {%- if section.settings.collection.products.size > 0 -%}
           {% assign lazy_load = false %}
-          {% paginate section.settings.collection.products by section.settings.products_to_show %}
-            {% assign products = section.settings.collection.products | where: "available", true %}
+          {% assign products = section.settings.collection.products | where: "available", true %}
             {% if products.size < section.settings.products_to_show %}
             {% assign out_of_stock = section.settings.collection.products | where: "available", false %}
             {% assign products = products | concat: out_of_stock %}
             {% endif %}
+          {% paginate section.settings.collection.products by section.settings.products_to_show %}
+            
             {%- for product in products limit: section.settings.products_to_show -%}
               {% if lazy_load == false and forloop.index > max_columns_to_show %}
                 {% assign lazy_load = true %}
