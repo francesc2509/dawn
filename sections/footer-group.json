@@ -89,7 +89,7 @@
             "image": "shopify://shop_images/Passion_Fruit_Tea.webp",
             "url": "shopify://products/passion-fruit-coconut-jelly",
             "title": "Passion Fruit Tea",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "image_NpVcLT": {
@@ -107,7 +107,7 @@
             "image": "shopify://shop_images/Strawberry_Popping_Boba.webp",
             "url": "shopify://products/strawberry-popping-boba",
             "title": "Strawberry Fruit Tea",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "image_aeERTj": {
@@ -149,8 +149,8 @@
       "name": "Media List",
       "settings": {
         "heading": "",
-        "heading_size": "h1",
-        "color_scheme": "",
+        "heading_size": "h2",
+        "color_scheme": "scheme-33fb2062-685b-44d4-b28d-a277c4ef70d2",
         "padding_top": 0,
         "padding_bottom": 0
       }
