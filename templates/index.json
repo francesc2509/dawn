@@ -470,83 +470,6 @@
         "padding_bottom": 48
       }
     },
-    "collection_list_rJUQGQ": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_BfaMef": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "powder",
-            "collection_label": "Powder Series",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_hW7HVE": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "syrup-and-jam-for-bubble-tea",
-            "collection_label": "Syrup & Jam",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_JJd6zP": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "topping",
-            "collection_label": "Topping",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_3bd8Y9": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "tea",
-            "collection_label": "Tea",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_fjkE6d": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "beverage-bases-coconut-milk-supplier-bubble-crush",
-            "collection_label": "Milk Base",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_7fdfNK": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "packaging",
-            "collection_label": "Packaging",
-            "collection_cta_label": ""
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_BfaMef",
-        "featured_collection_hW7HVE",
-        "featured_collection_JJd6zP",
-        "featured_collection_3bd8Y9",
-        "featured_collection_fjkE6d",
-        "featured_collection_7fdfNK"
-      ],
-      "custom_css": [
-        ".grid {gap: 0.25em; justify-content: center;}"
-      ],
-      "name": "Categories",
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
-        "show_view_all": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 16,
-        "padding_bottom": 48
-      }
-    },
     "featured_collection_7xQBGD": {
       "type": "featured-collection",
       "disabled": true,
@@ -625,6 +548,83 @@
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
         "show_text_below": false
+      }
+    },
+    "collection_list_rJUQGQ": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_BfaMef": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "powder",
+            "collection_label": "Powder Series",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_hW7HVE": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "syrup-and-jam-for-bubble-tea",
+            "collection_label": "Syrup & Jam",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_JJd6zP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "topping",
+            "collection_label": "Topping",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_3bd8Y9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "tea",
+            "collection_label": "Tea",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_fjkE6d": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beverage-bases-coconut-milk-supplier-bubble-crush",
+            "collection_label": "Milk Base",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_7fdfNK": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "packaging",
+            "collection_label": "Packaging",
+            "collection_cta_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_BfaMef",
+        "featured_collection_hW7HVE",
+        "featured_collection_JJd6zP",
+        "featured_collection_3bd8Y9",
+        "featured_collection_fjkE6d",
+        "featured_collection_7fdfNK"
+      ],
+      "custom_css": [
+        ".grid {gap: 0.25em; justify-content: center;}"
+      ],
+      "name": "Categories",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "featured_blog_M9iXcD": {
@@ -732,9 +732,9 @@
     "tabbed_collection_g3PXFG",
     "image_banner_QYMcLG",
     "multicolumn_7VD4PL",
-    "collection_list_rJUQGQ",
     "featured_collection_7xQBGD",
     "image_banner_Rekq6Q",
+    "collection_list_rJUQGQ",
     "featured_blog_M9iXcD",
     "image_list_RGBbkP"
   ]
