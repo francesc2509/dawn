@@ -177,6 +177,7 @@
       "blocks": {
         "collection_i4qDQ7": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "tab_label": "Best Sellers",
             "collection": "hot-seller",
@@ -233,6 +234,7 @@
         },
         "collection_Jf4E9B": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "tab_label": "Offers",
             "collection": "sales",
@@ -266,7 +268,6 @@
     },
     "featured_collection_XVDMX9": {
       "type": "featured-collection",
-      "disabled": true,
       "name": "Best Sellers",
       "settings": {
         "collection": "hot-seller",
@@ -396,7 +397,6 @@
     },
     "featured_collection_adJ8Jc": {
       "type": "featured-collection",
-      "disabled": true,
       "name": "Special Offers",
       "settings": {
         "collection": "sales",
@@ -724,11 +724,11 @@
     "carousel_tbDAmM",
     "collection_list_VtYKTt",
     "multicolumn_bGj3Ji",
-    "tabbed_collection_g3PXFG",
     "featured_collection_XVDMX9",
+    "tabbed_collection_g3PXFG",
+    "featured_collection_adJ8Jc",
     "image_banner_akp4Yh",
     "image_banner_QYMcLG",
-    "featured_collection_adJ8Jc",
     "multicolumn_7VD4PL",
     "collection_list_rJUQGQ",
     "featured_collection_7xQBGD",
