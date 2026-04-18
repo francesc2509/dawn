@@ -233,7 +233,7 @@
         "collection_Ykk6be": {
           "type": "collection",
           "settings": {
-            "tab_label": "Syrup & Jam",
+            "tab_label": "Syrups & Jams",
             "collection": "syrup-and-jam-for-bubble-tea",
             "color_scheme": ""
           }
@@ -249,7 +249,7 @@
         "collection_iMbpLk": {
           "type": "collection",
           "settings": {
-            "tab_label": "Topping",
+            "tab_label": "Toppings",
             "collection": "topping",
             "color_scheme": ""
           }
