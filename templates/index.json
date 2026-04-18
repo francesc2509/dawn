@@ -183,14 +183,6 @@
             "color_scheme": ""
           }
         },
-        "collection_Jf4E9B": {
-          "type": "collection",
-          "settings": {
-            "tab_label": "Offers",
-            "collection": "sales",
-            "color_scheme": "scheme-1341b89c-8f87-4d55-8add-319fe8d372c5"
-          }
-        },
         "collection_8x4JHK": {
           "type": "collection",
           "settings": {
@@ -238,17 +230,25 @@
             "collection": "packaging",
             "color_scheme": ""
           }
+        },
+        "collection_Jf4E9B": {
+          "type": "collection",
+          "settings": {
+            "tab_label": "Offers",
+            "collection": "sales",
+            "color_scheme": "scheme-1341b89c-8f87-4d55-8add-319fe8d372c5"
+          }
         }
       },
       "block_order": [
         "collection_i4qDQ7",
-        "collection_Jf4E9B",
         "collection_8x4JHK",
         "collection_Ykk6be",
         "collection_iMbpLk",
         "collection_TgbAxg",
         "collection_QhiqKc",
-        "collection_zBhXAW"
+        "collection_zBhXAW",
+        "collection_Jf4E9B"
       ],
       "name": "Tabbed Collections",
       "settings": {
