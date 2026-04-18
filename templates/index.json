@@ -531,7 +531,7 @@
         "featured_collection_7fdfNK"
       ],
       "custom_css": [
-        ".grid {gap: 0.25em;}"
+        ".grid {gap: 0.25em; justify-content: center;}"
       ],
       "name": "Categories",
       "settings": {
