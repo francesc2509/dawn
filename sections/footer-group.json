@@ -107,15 +107,15 @@
             "image": "shopify://shop_images/Strawberry_Popping_Boba.webp",
             "url": "shopify://products/strawberry-popping-boba",
             "title": "Strawberry Fruit Tea",
-            "heading_size": "h2"
+            "heading_size": "h1"
           }
         },
         "image_aeERTj": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Thai_Milk_Tea.webp",
-            "url": "",
-            "title": "",
+            "url": "shopify://products/thai-milk-tea-powder",
+            "title": "Thai Milk Tea",
             "heading_size": "h1"
           }
         },
