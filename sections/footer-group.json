@@ -123,8 +123,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/matcha-latte.webp",
-            "url": "",
-            "title": "",
+            "url": "shopify://products/pure-matcha-powder-1kg-for-bubble-tea-latte-smoothie-base",
+            "title": "Matcha latte",
             "heading_size": "h1"
           }
         },
@@ -132,8 +132,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/500cc_PP_Cups_95mm.webp",
-            "url": "",
-            "title": "",
+            "url": "shopify://products/cup-500cc-95-clear-95",
+            "title": "Disposable cups",
             "heading_size": "h1"
           }
         }
