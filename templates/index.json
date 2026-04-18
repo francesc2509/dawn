@@ -214,30 +214,6 @@
             "color_scheme": ""
           }
         },
-        "collection_8x4JHK": {
-          "type": "collection",
-          "settings": {
-            "tab_label": "Powders",
-            "collection": "powder",
-            "color_scheme": ""
-          }
-        },
-        "collection_Ykk6be": {
-          "type": "collection",
-          "settings": {
-            "tab_label": "Syrup & Jam",
-            "collection": "syrup-and-jam-for-bubble-tea",
-            "color_scheme": ""
-          }
-        },
-        "collection_iMbpLk": {
-          "type": "collection",
-          "settings": {
-            "tab_label": "Topping",
-            "collection": "topping",
-            "color_scheme": ""
-          }
-        },
         "collection_TgbAxg": {
           "type": "collection",
           "settings": {
@@ -251,6 +227,30 @@
           "settings": {
             "tab_label": "Milk Bases",
             "collection": "beverage-bases-coconut-milk-supplier-bubble-crush",
+            "color_scheme": ""
+          }
+        },
+        "collection_Ykk6be": {
+          "type": "collection",
+          "settings": {
+            "tab_label": "Syrup & Jam",
+            "collection": "syrup-and-jam-for-bubble-tea",
+            "color_scheme": ""
+          }
+        },
+        "collection_8x4JHK": {
+          "type": "collection",
+          "settings": {
+            "tab_label": "Powders",
+            "collection": "powder",
+            "color_scheme": ""
+          }
+        },
+        "collection_iMbpLk": {
+          "type": "collection",
+          "settings": {
+            "tab_label": "Topping",
+            "collection": "topping",
             "color_scheme": ""
           }
         },
@@ -274,11 +274,11 @@
       },
       "block_order": [
         "collection_i4qDQ7",
-        "collection_8x4JHK",
-        "collection_Ykk6be",
-        "collection_iMbpLk",
         "collection_TgbAxg",
         "collection_QhiqKc",
+        "collection_Ykk6be",
+        "collection_8x4JHK",
+        "collection_iMbpLk",
         "collection_zBhXAW",
         "collection_Jf4E9B"
       ],
