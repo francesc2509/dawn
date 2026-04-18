@@ -461,7 +461,7 @@
   align-items: center;
 }
 
-.policies li::before {
+.policies li:not(:first-child)::before {
   content: '\00B7';
   padding: 0 0.8rem;
 }
