@@ -105,8 +105,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Strawberry_Popping_Boba.webp",
-            "url": "",
-            "title": "",
+            "url": "shopify://products/strawberry-popping-boba",
+            "title": "Strawberry Fruit Tea",
             "heading_size": "h1"
           }
         },
