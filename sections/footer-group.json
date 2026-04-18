@@ -98,7 +98,7 @@
             "image": "shopify://shop_images/fd064180-23db-4879-ab10-32b13a394c74.jpg",
             "url": "shopify://products/premium-brown-sugar-syrup",
             "title": "Brown Sugar Boba",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "image_BfDaYR": {
@@ -107,7 +107,7 @@
             "image": "shopify://shop_images/Strawberry_Popping_Boba.webp",
             "url": "shopify://products/strawberry-popping-boba",
             "title": "Strawberry Fruit Tea",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "image_aeERTj": {
@@ -116,7 +116,7 @@
             "image": "shopify://shop_images/Thai_Milk_Tea.webp",
             "url": "shopify://products/thai-milk-tea-powder",
             "title": "Thai Milk Tea",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "image_WjqFr3": {
@@ -125,7 +125,7 @@
             "image": "shopify://shop_images/matcha-latte.webp",
             "url": "shopify://products/pure-matcha-powder-1kg-for-bubble-tea-latte-smoothie-base",
             "title": "Matcha Latte",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "image_HP8PwK": {
@@ -134,7 +134,7 @@
             "image": "shopify://shop_images/500cc_PP_Cups_95mm.webp",
             "url": "shopify://products/cup-500cc-95-clear-95",
             "title": "Disposable cups",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         }
       },
