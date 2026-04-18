@@ -120,7 +120,7 @@
         "column_dq7cRP": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/uk_partners.jpg",
+            "image": "shopify://shop_images/uk_partners.webp",
             "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
             "text": "<p>Join <strong>200+</strong> shops, cafés and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
             "link_label": "",
