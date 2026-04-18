@@ -67,11 +67,13 @@
 
   @media(max-width: 989px) {
     .menu-tabs {
-      justify-items: center;
+      /*justify-items: center;
       display: grid;
       grid-template-columns: repeat(3, 1fr); /* 2 columns */
       grid-template-rows: repeat(2, 1fr);    /* 4 rows */
-      gap: 10px;
+      gap: 10px;*/
+      flex-wrap: nowrap;
+      overflow: auto;
     }
 
     .menu-tab-btn {
