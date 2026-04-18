@@ -232,6 +232,55 @@
         "padding_bottom": 48
       }
     },
+    "image_banner_akp4Yh": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_JgqMx4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Professional Bubble Tea Training",
+            "heading_size": "h2"
+          }
+        },
+        "text_j74Dd7": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Empower your business<br/></strong>Expert UK bubble tea training for beginners, new owners, and cafés. Level up your menu today.</p>",
+            "text_style": "body"
+          }
+        },
+        "buttons_PPTeXm": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Book a session",
+            "button_link_1": "shopify://pages/bubble-tea-training-partnership-uk",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_JgqMx4",
+        "text_j74Dd7",
+        "buttons_PPTeXm"
+      ],
+      "name": "Bubble Tea Training",
+      "settings": {
+        "image": "shopify://shop_images/barista-preparing-strawberry-bubble-tea.webp",
+        "image_overlay_opacity": 30,
+        "image_height": "small",
+        "image_behavior": "ambient",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-171e1f28-38da-4af1-b2e0-a2267f7a07d8",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
     "tabbed_collection_g3PXFG": {
       "type": "tabbed-collection",
       "blocks": {
@@ -324,55 +373,6 @@
         "quick_add": "bulk",
         "padding_top": 48,
         "padding_bottom": 48
-      }
-    },
-    "image_banner_akp4Yh": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_JgqMx4": {
-          "type": "heading",
-          "settings": {
-            "heading": "Professional Bubble Tea Training",
-            "heading_size": "h2"
-          }
-        },
-        "text_j74Dd7": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>Empower your business<br/></strong>Expert UK bubble tea training for beginners, new owners, and cafés. Level up your menu today.</p>",
-            "text_style": "body"
-          }
-        },
-        "buttons_PPTeXm": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Book a session",
-            "button_link_1": "shopify://pages/bubble-tea-training-partnership-uk",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_JgqMx4",
-        "text_j74Dd7",
-        "buttons_PPTeXm"
-      ],
-      "name": "Bubble Tea Training",
-      "settings": {
-        "image": "shopify://shop_images/barista-preparing-strawberry-bubble-tea.webp",
-        "image_overlay_opacity": 30,
-        "image_height": "small",
-        "image_behavior": "ambient",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-171e1f28-38da-4af1-b2e0-a2267f7a07d8",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
       }
     },
     "image_banner_QYMcLG": {
@@ -726,8 +726,8 @@
     "multicolumn_bGj3Ji",
     "featured_collection_adJ8Jc",
     "featured_collection_XVDMX9",
-    "tabbed_collection_g3PXFG",
     "image_banner_akp4Yh",
+    "tabbed_collection_g3PXFG",
     "image_banner_QYMcLG",
     "multicolumn_7VD4PL",
     "collection_list_rJUQGQ",
