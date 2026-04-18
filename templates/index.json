@@ -114,6 +114,36 @@
         "padding_bottom": 48
       }
     },
+    "featured_collection_adJ8Jc": {
+      "type": "featured-collection",
+      "name": "Special Offers",
+      "settings": {
+        "collection": "sales",
+        "products_to_show": 6,
+        "title": "Special Offers",
+        "heading_size": "h1",
+        "description": "<p>Premium Quality, Poured with Savings.</p>",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "view_all_label": "Shop Offers",
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "bulk",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "multicolumn_bGj3Ji": {
       "type": "multicolumn",
       "blocks": {
@@ -170,36 +200,6 @@
         "swipe_on_mobile": false,
         "padding_top": 48,
         "padding_bottom": 0
-      }
-    },
-    "featured_collection_adJ8Jc": {
-      "type": "featured-collection",
-      "name": "Special Offers",
-      "settings": {
-        "collection": "sales",
-        "products_to_show": 6,
-        "title": "Special Offers",
-        "heading_size": "h1",
-        "description": "<p>Premium Quality, Poured with Savings.</p>",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 3,
-        "enable_desktop_slider": true,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "view_all_label": "Shop Offers",
-        "color_scheme": "",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "bulk",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 48,
-        "padding_bottom": 48
       }
     },
     "featured_collection_XVDMX9": {
@@ -725,8 +725,8 @@
   "order": [
     "carousel_tbDAmM",
     "collection_list_VtYKTt",
-    "multicolumn_bGj3Ji",
     "featured_collection_adJ8Jc",
+    "multicolumn_bGj3Ji",
     "featured_collection_XVDMX9",
     "image_banner_akp4Yh",
     "tabbed_collection_g3PXFG",
