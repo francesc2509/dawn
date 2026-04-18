@@ -589,7 +589,7 @@
           "type": "text",
           "settings": {
             "text": "<p><strong>Order Handling Time:</strong> 0–1 Business Days (Monday – Friday)</p><p><strong>Transit Time:</strong> 1–3 Business Days (Monday – Friday)</p><p><strong>Order Cut-off Time:</strong> 10:00 AM</p>",
-            "text_style": "body"
+            "text_style": "caption-with-letter-spacing"
           }
         },
         "buttons_fDhLcb": {
