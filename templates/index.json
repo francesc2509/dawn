@@ -470,74 +470,6 @@
         "padding_bottom": 48
       }
     },
-    "featured_blog_M9iXcD": {
-      "type": "featured-blog",
-      "name": "Latest news",
-      "settings": {
-        "blog": "news",
-        "post_limit": 3,
-        "heading": "Latest News",
-        "heading_size": "h1",
-        "columns_desktop": 3,
-        "show_view_all": false,
-        "show_image": false,
-        "show_date": true,
-        "show_author": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
-    "image_banner_Rekq6Q": {
-      "type": "image-banner",
-      "blocks": {
-        "text_r79dny": {
-          "type": "text",
-          "settings": {
-            "text": "<h3><strong>Free delivery</strong></h3><p><strong>Free delivery on orders over £300</strong></p>",
-            "text_style": "body"
-          }
-        },
-        "text_KfmyX4": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p><strong>Order Handling Time:</strong> 0–1 Business Days (Monday – Friday)</p><p><strong>Transit Time:</strong> 1–3 Business Days (Monday – Friday)</p><p><strong>Order Cut-off Time:</strong> 10:00 AM</p>",
-            "text_style": "body"
-          }
-        },
-        "buttons_fDhLcb": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Delivery policy",
-            "button_link_1": "shopify://pages/delivery-shipping",
-            "button_style_secondary_1": true,
-            "button_label_2": "Purchase policy",
-            "button_link_2": "shopify://pages/policies-customer-information",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "text_r79dny",
-        "text_KfmyX4",
-        "buttons_fDhLcb"
-      ],
-      "name": "Purchase & Delivery banner",
-      "settings": {
-        "image": "shopify://shop_images/bubble-crush-warehouse.jpg",
-        "image_overlay_opacity": 60,
-        "image_height": "small",
-        "image_behavior": "ambient",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
-      }
-    },
     "collection_list_rJUQGQ": {
       "type": "collection-list",
       "blocks": {
@@ -609,7 +541,7 @@
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 48,
-        "padding_bottom": 0
+        "padding_bottom": 48
       }
     },
     "featured_collection_7xQBGD": {
@@ -640,6 +572,74 @@
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "padding_top": 24,
+        "padding_bottom": 48
+      }
+    },
+    "image_banner_Rekq6Q": {
+      "type": "image-banner",
+      "blocks": {
+        "text_r79dny": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Free delivery</strong></h3><p><strong>Free delivery on orders over £300</strong></p>",
+            "text_style": "body"
+          }
+        },
+        "text_KfmyX4": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>Order Handling Time:</strong> 0–1 Business Days (Monday – Friday)</p><p><strong>Transit Time:</strong> 1–3 Business Days (Monday – Friday)</p><p><strong>Order Cut-off Time:</strong> 10:00 AM</p>",
+            "text_style": "body"
+          }
+        },
+        "buttons_fDhLcb": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Delivery policy",
+            "button_link_1": "shopify://pages/delivery-shipping",
+            "button_style_secondary_1": true,
+            "button_label_2": "Purchase policy",
+            "button_link_2": "shopify://pages/policies-customer-information",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "text_r79dny",
+        "text_KfmyX4",
+        "buttons_fDhLcb"
+      ],
+      "name": "Purchase & Delivery banner",
+      "settings": {
+        "image": "shopify://shop_images/bubble-crush-warehouse.jpg",
+        "image_overlay_opacity": 60,
+        "image_height": "small",
+        "image_behavior": "ambient",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "featured_blog_M9iXcD": {
+      "type": "featured-blog",
+      "name": "Latest news",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "Latest News",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": false,
+        "show_image": false,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
         "padding_bottom": 48
       }
     },
@@ -730,10 +730,10 @@
     "image_banner_QYMcLG",
     "featured_collection_adJ8Jc",
     "multicolumn_7VD4PL",
-    "featured_blog_M9iXcD",
-    "image_banner_Rekq6Q",
     "collection_list_rJUQGQ",
     "featured_collection_7xQBGD",
+    "image_banner_Rekq6Q",
+    "featured_blog_M9iXcD",
     "image_list_RGBbkP"
   ]
 }
