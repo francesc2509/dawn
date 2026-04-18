@@ -530,6 +530,9 @@
         "featured_collection_fjkE6d",
         "featured_collection_7fdfNK"
       ],
+      "custom_css": [
+        ".grid {gap: 0.25em;}"
+      ],
       "name": "Categories",
       "settings": {
         "title": "",
