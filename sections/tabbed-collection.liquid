@@ -108,7 +108,7 @@
 
     <ul class="menu-tabs">
       {%- for block in section.blocks -%}
-        {% if block.settings.collection.products %}
+        {% if block.settings.collection.products.size > 0 %}
         <li class="menu-tabs-item color-{{ block.settings.color_scheme }}">
           <button class="menu-tab-btn{% if forloop.first %} active{% endif %}" data-tab="tab-{{ block.id }}">
             {{ block.settings.tab_label | default: block.settings.collection.title }}
