@@ -16,7 +16,8 @@
   {% if section.settings.columns_flow != "standard" %}
   @media(min-width: 990px) {
     
-    .multicolumn-list > li:nth-child({{ section.settings.columns_flow  }}) > .multicolumn-card .multicolumn-card__image-wrapper {
+    .multicolumn-list > li:nth-child({{ section.settings.columns_flow  }}) > .multicolumn-card .multicolumn-card__image-wrapper,
+    .multicolumn-list > li:nth-child({{ section.settings.columns_flow  }}) > .multicolumn-card .media {
       border-bottom-left-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
       border-bottom-right-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
       border-top-left-radius: 0;
