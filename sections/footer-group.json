@@ -79,9 +79,85 @@
         "padding_top": 48,
         "padding_bottom": 0
       }
+    },
+    "image_list_inqHH8": {
+      "type": "image-list",
+      "blocks": {
+        "image_ebebkf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Passion_Fruit_Tea.webp",
+            "url": "shopify://products/passion-fruit-coconut-jelly",
+            "title": "Passion Fruit Tea",
+            "heading_size": "h1"
+          }
+        },
+        "image_NpVcLT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/fd064180-23db-4879-ab10-32b13a394c74.jpg",
+            "url": "shopify://products/premium-brown-sugar-syrup",
+            "title": "Brown Sugar Boba",
+            "heading_size": "h1"
+          }
+        },
+        "image_BfDaYR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Strawberry_Popping_Boba.webp",
+            "url": "",
+            "title": "",
+            "heading_size": "h1"
+          }
+        },
+        "image_aeERTj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Thai_Milk_Tea.webp",
+            "url": "",
+            "title": "",
+            "heading_size": "h1"
+          }
+        },
+        "image_WjqFr3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/matcha-latte.webp",
+            "url": "",
+            "title": "",
+            "heading_size": "h1"
+          }
+        },
+        "image_HP8PwK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/500cc_PP_Cups_95mm.webp",
+            "url": "",
+            "title": "",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "image_ebebkf",
+        "image_NpVcLT",
+        "image_BfDaYR",
+        "image_aeERTj",
+        "image_WjqFr3",
+        "image_HP8PwK"
+      ],
+      "name": "Media List",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
-    "footer"
+    "footer",
+    "image_list_inqHH8"
   ]
 }

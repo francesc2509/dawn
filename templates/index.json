@@ -179,56 +179,64 @@
           "type": "collection",
           "settings": {
             "tab_label": "Best Sellers",
-            "collection": "hot-seller"
+            "collection": "hot-seller",
+            "color_scheme": ""
           }
         },
         "collection_8x4JHK": {
           "type": "collection",
           "settings": {
             "tab_label": "Powders",
-            "collection": "powder"
+            "collection": "powder",
+            "color_scheme": ""
           }
         },
         "collection_Ykk6be": {
           "type": "collection",
           "settings": {
             "tab_label": "Syrup & Jam",
-            "collection": "syrup-and-jam-for-bubble-tea"
+            "collection": "syrup-and-jam-for-bubble-tea",
+            "color_scheme": ""
           }
         },
         "collection_iMbpLk": {
           "type": "collection",
           "settings": {
             "tab_label": "Topping",
-            "collection": "topping"
+            "collection": "topping",
+            "color_scheme": ""
           }
         },
         "collection_TgbAxg": {
           "type": "collection",
           "settings": {
             "tab_label": "Tea",
-            "collection": "tea"
+            "collection": "tea",
+            "color_scheme": ""
           }
         },
         "collection_QhiqKc": {
           "type": "collection",
           "settings": {
             "tab_label": "Milk Base",
-            "collection": "beverage-bases-coconut-milk-supplier-bubble-crush"
+            "collection": "beverage-bases-coconut-milk-supplier-bubble-crush",
+            "color_scheme": ""
           }
         },
         "collection_zBhXAW": {
           "type": "collection",
           "settings": {
             "tab_label": "Packaging",
-            "collection": "packaging"
+            "collection": "packaging",
+            "color_scheme": ""
           }
         },
         "collection_Jf4E9B": {
           "type": "collection",
           "settings": {
             "tab_label": "Offers",
-            "collection": "sales"
+            "collection": "sales",
+            "color_scheme": ""
           }
         }
       },
@@ -670,6 +678,7 @@
         "image_JA4GrN",
         "image_Q936fT"
       ],
+      "disabled": true,
       "name": "Drinks gallery",
       "settings": {
         "heading": "",
