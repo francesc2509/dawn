@@ -110,7 +110,7 @@
           {% assign out_of_stock = section.settings.collection.products | where: "available", false %}
           {% assign products = products | concat: out_of_stock %}
           {% endif %}
-          {% paginate products by section.settings.products_to_show %}
+          {% paginate section.settings.collection.products by section.settings.products_to_show %}
             
             {%- for product in products limit: section.settings.products_to_show -%}
               {% if lazy_load == false and forloop.index > max_columns_to_show %}
