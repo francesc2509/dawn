@@ -93,7 +93,7 @@
         height: 2em;
         width: 6em;
         text-align: center;
-        background: transparent;
+        background: transparent !important;
       }
 
       @media (max-width: 768px) {
@@ -140,7 +140,7 @@
         {% endif %}
       >
         <h3 class="card-collection-title">{{ collection_label | default: card_collection.title }}</h3>
-        <span class="button button--secondary">{{ collection_cta_label | default: 'Shop now' }}</span>
+        <span class="button button--secondary card-collection-cta">{{ collection_cta_label | default: 'Shop now' }}</span>
       </a>
     </div>
     <div
