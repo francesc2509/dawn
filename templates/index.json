@@ -122,7 +122,7 @@
           "settings": {
             "image": "shopify://shop_images/uk_partners.jpg",
             "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
-            "text": "<p>Join <strong>200+</strong> shops, cafés and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
+            "text": "<p>Join <strong>200+</strong> shops, cafés and wholesale partners who trust <em>Bubble Crush</em> for value, reliability, and great service.</p>",
             "link_label": "",
             "link": ""
           }
@@ -132,7 +132,7 @@
           "settings": {
             "image": "shopify://shop_images/free-now-ice-blanc-partnerships.jpg",
             "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
-            "text": "<p>Connecting top Asian suppliers with the UK and helping brands like <em>FreeNow</em> and <em>Ice Blanc</em> go global.</p>",
+            "text": "<p>Connecting top Asian suppliers with the UK and helping brands like <em><strong>FreeNow</strong></em> and <em><strong>Ice Blanc</strong></em> go global.</p>",
             "link_label": "",
             "link": ""
           }
@@ -678,7 +678,6 @@
         "image_JA4GrN",
         "image_Q936fT"
       ],
-      "disabled": true,
       "name": "Drinks gallery",
       "settings": {
         "heading": "",
