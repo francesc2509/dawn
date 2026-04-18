@@ -453,7 +453,7 @@
       ],
       "name": "Reviews",
       "settings": {
-        "title": "What our partners say",
+        "title": "",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
