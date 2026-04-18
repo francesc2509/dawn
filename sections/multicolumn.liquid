@@ -13,6 +13,12 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .multicolumn-list > li:nth-child({{ section.settings.columns_flow  }}) > .multicolumn-card .media {
+    border-top-left-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
+    border-top-right-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
+  }
+
   {% if section.settings.columns_flow != "standard" %}
   @media(min-width: 990px) {
     
