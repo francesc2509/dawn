@@ -39,6 +39,10 @@
     display: block !important;
   }
 
+  .search-section__heading > * {
+    margin: 0;
+  }
+
   .search-section__description {
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -51,7 +55,9 @@
     <div class="search-section__content" style="text-align: {{ section.settings.alignment }};">
       
       {%- if section.settings.heading != blank -%}
-        <h2 class="{{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+        <div class="search-section__heading {{ section.settings.heading_size }} rte">
+          {{ section.settings.heading }}
+        </div>
       {%- endif -%}
 
       {%- if section.settings.description != blank -%}
@@ -126,9 +132,9 @@
   "class": "section",
   "settings": [
     {
-      "type": "text",
+      "type": "richtext",
       "id": "heading",
-      "default": "Find what you need",
+      "default": "<p>Find what you <strong>need</strong></p>",
       "label": "Heading"
     },
     {
