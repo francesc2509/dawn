@@ -111,10 +111,11 @@
       text-shadow: 0 0 10px rgba(0,0,0,0.9);
       max-width: 65%;
       margin-top: 2em;
+      padding: 0 0.5em;
     }
 
     .carousel-hero > .hero-title {
-      padding-top: 0.75em 0.5em;
+      padding-top: 0.75em;
     }
 
     .carousel-hero > .hero-title > h1 {
