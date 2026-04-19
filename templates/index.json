@@ -665,6 +665,7 @@
     },
     "search_WFBRWz": {
       "type": "search",
+      "disabled": true,
       "name": "Search Section",
       "settings": {
         "heading": "<h3>Couldn't match with your bubble tea ingredient <em><strong>crush</strong></em>?</h3>",
