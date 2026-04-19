@@ -75,7 +75,7 @@
               type="search"
               name="q"
               value="{{ search.terms | escape }}"
-              placeholder="{{ 'general.search.search' | t }}"
+              placeholder="{{ section.settings.placeholder_text | escape }}"
               role="combobox"
               aria-expanded="false"
               aria-owns="predictive-search-results-{{ section.id }}"
@@ -87,7 +87,7 @@
               autocapitalize="off"
               spellcheck="false"
             >
-            <label class="field__label" for="Search-In-Section-{{ section.id }}">Search our store</label>
+            <label class="field__label" for="Search-In-Section-{{ section.id }}">{{ section.settings.placeholder_text | escape }}</label>
             <input name="options[prefix]" type="hidden" value="last">
             
             <button class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}" type="reset" aria-label="Clear search">
@@ -153,6 +153,12 @@
       "id": "description",
       "default": "<p>Search our entire catalog of products, collections, and blog posts.</p>",
       "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_text",
+      "default": "Search our store...",
+      "label": "Placeholder text"
     },
     {
       "type": "select",
