@@ -660,6 +660,23 @@
         "padding_bottom": 48
       }
     },
+    "image_banner_KKVBaa": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/make-it-21-9.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
     "image_list_RGBbkP": {
       "type": "image-list",
       "blocks": {
@@ -751,6 +768,7 @@
     "collection_list_rJUQGQ",
     "image_banner_Rekq6Q",
     "featured_blog_M9iXcD",
+    "image_banner_KKVBaa",
     "search_WFBRWz",
     "image_list_RGBbkP"
   ]
