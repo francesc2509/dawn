@@ -100,6 +100,23 @@ predictive-search[open] .predictive-search {
   </div>
 </div>
 
+<script>
+  // This check ensures that if the browser doesn't recognize <predictive-search>, 
+  // it doesn't just sit there doing nothing.
+  if (!customElements.get('predictive-search')) {
+    console.log('Predictive Search element not found, loading script...');
+  } else {
+    console.log('Predictive Search is active.');
+  }
+
+  // Force an initialization check
+  document.querySelectorAll('predictive-search').forEach((el) => {
+    if (typeof el.setupEventListeners === 'function') {
+      el.setupEventListeners();
+    }
+  });
+</script>
+
 {% schema %}
 {
   "name": "Search Section",
