@@ -648,6 +648,7 @@
     },
     "image_banner_KKVBaa": {
       "type": "image-banner",
+      "disabled": true,
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/make-it-21-9.png",
