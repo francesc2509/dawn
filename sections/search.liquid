@@ -1,1 +1,135 @@
-{% render 'header-search', input_id: 'Search-In-Modal-footer' %}
+{{ 'component-predictive-search.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+
+<style>
+  /* Ensure the results dropdown is visible and layered correctly */
+  .predictive-search {
+    background: rgb(var(--color-background));
+    border: 1px solid rgba(var(--color-foreground), 0.1);
+    margin-top: 5px;
+    max-height: 45rem;
+    overflow-y: auto;
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: block !important; /* Force display check */
+  }
+
+  predictive-search {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 600px; /* Adjust to match your input width */
+    margin: {% if section.settings.alignment == 'center' %}0 auto{% else %}0{% endif %};
+  }
+
+  /* Fix for the loading spinner visibility */
+  .predictive-search__loading-state {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+</style>
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="search-section__content" style="text-align: {{ section.settings.alignment }};">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="{{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+
+      <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
+        <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+          <div class="field">
+            <input
+              class="search__input field__input"
+              id="Search-In-Section-{{ section.id }}"
+              type="search"
+              name="q"
+              value="{{ search.terms | escape }}"
+              placeholder="Search our store..."
+              role="combobox"
+              aria-expanded="false"
+              aria-owns="predictive-search-results"
+              aria-controls="predictive-search-results"
+              aria-haspopup="listbox"
+              aria-autocomplete="list"
+              autocorrect="off"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+            >
+            <label class="field__label" for="Search-In-Section-{{ section.id }}">Search</label>
+            <input name="options[prefix]" type="hidden" value="last">
+            <button type="submit" class="search__button field__button" aria-label="Search">
+              <svg class="icon icon-search" aria-hidden="true" focusable="false">
+                <use href="#icon-search">
+              </svg>
+            </button>
+          </div>
+
+          {%- if settings.predictive_search_enabled -%}
+            <div id="predictive-search-results" class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+              <div class="predictive-search__loading-state">
+                <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                </svg>
+              </div>
+            </div>
+            <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+          {%- endif -%}
+        </form>
+      </predictive-search>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Search Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Search our products",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "center",
+      "label": "Alignment"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Search Section"
+    }
+  ]
+}
+{% endschema %}
