@@ -31,6 +31,20 @@
     display: flex;
     justify-content: center;
   }
+
+  /* This ensures the results container expands when it has content */
+predictive-search[open] .predictive-search {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  max-height: 400px !important;
+}
+
+/* Ensure the results are not hidden behind other sections */
+.search-section__content {
+  position: relative;
+  z-index: 10;
+}
 </style>
 
 <div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
