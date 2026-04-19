@@ -1,24 +1,25 @@
 {{ 'component-predictive-search.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+  /* The Container */
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     position: relative;
     overflow: hidden;
-    min-height: 300px; /* Ensures the section has height even if content is small */
     display: flex;
     align-items: center;
+    z-index: 1; /* Create a new stacking context */
   }
 
-  /* Fixed Background Logic */
+  /* The Image Layer */
   .section-{{ section.id }}-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Background at the bottom */
+    z-index: -2; /* Lowest layer */
   }
   
   .section-{{ section.id }}-background img {
@@ -28,31 +29,38 @@
     object-position: {{ section.settings.image_position }};
   }
 
+  /* The Overlay Layer - Force visibility */
   .section-{{ section.id }}-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000000;
-    opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
-    z-index: 2; /* Overlay above image */
+    background-color: #000000 !important;
+    opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }} !important;
+    z-index: -1; /* Middle layer - above image, below text */
+    pointer-events: none; /* Allows you to still click through to the search bar */
   }
 
-  /* Ensure Content is at the very top */
+  /* The Content Layer */
   .section-{{ section.id }}-padding .page-width {
     position: relative;
-    z-index: 5; 
+    z-index: 10; /* Highest layer */
     width: 100%;
   }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+  /* Text Color Logic */
+  {%- if section.settings.image != blank -%}
+    .section-{{ section.id }}-padding .search-section__heading *,
+    .section-{{ section.id }}-padding .search-section__description * {
+      color: #ffffff !important;
     }
-  }
+    .section-{{ section.id }}-padding .search-section__heading {
+      color: #ffffff !important;
+    }
+  {%- endif -%}
 
+  /* Standard Predictive Search styles */
   predictive-search {
     position: relative;
     display: block;
@@ -73,31 +81,7 @@
     left: 0;
     text-align: left;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    color: rgb(var(--color-foreground)); /* Ensure results text is readable */
-  }
-
-  predictive-search[open] .predictive-search {
-    display: block !important;
-  }
-
-  /* Text Styling */
-  .search-section__heading > * {
-    margin: 0;
-    {% if section.settings.image != blank %}
-      color: #FFFFFF !important;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Adds readability over images */
-    {% endif %}
-  }
-
-  .search-section__description {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-    {% if section.settings.image != blank %}
-      color: #FFFFFF !important;
-      opacity: 0.9;
-    {% endif %}
+    color: rgb(var(--color-foreground));
   }
 {%- endstyle -%}
 
