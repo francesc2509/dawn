@@ -1,11 +1,18 @@
 {{ 'component-predictive-search.css' | asset_url | stylesheet_tag }}
 
-<style>
-  .search-section-wrapper {
-    padding-top: 36px;
-    padding-bottom: 36px;
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-  
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
   predictive-search {
     position: relative;
     display: block;
@@ -32,25 +39,25 @@
     display: block !important;
   }
 
+  .search-section__heading > * {
+    margin: 0;
+  }
+
   .search-section__description {
     margin-top: 1rem;
     margin-bottom: 2rem;
     line-height: 1.6;
   }
+{%- endstyle -%}
 
-  .predictive-search__loading-state {
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-  }
-</style>
-
-<div class="color-{{ section.settings.color_scheme }} gradient search-section-wrapper">
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   <div class="page-width">
     <div class="search-section__content" style="text-align: {{ section.settings.alignment }};">
       
       {%- if section.settings.heading != blank -%}
-        <h2 class="{{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+        <div class="search-section__heading {{ section.settings.heading_size }} rte">
+          {{ section.settings.heading }}
+        </div>
       {%- endif -%}
 
       {%- if section.settings.description != blank -%}
@@ -68,7 +75,7 @@
               type="search"
               name="q"
               value="{{ search.terms | escape }}"
-              placeholder="{{ 'general.search.search' | t }}"
+              placeholder="{{ section.settings.placeholder_text | escape }}"
               role="combobox"
               aria-expanded="false"
               aria-owns="predictive-search-results-{{ section.id }}"
@@ -80,7 +87,7 @@
               autocapitalize="off"
               spellcheck="false"
             >
-            <label class="field__label" for="Search-In-Section-{{ section.id }}">Search our store</label>
+            <label class="field__label" for="Search-In-Section-{{ section.id }}">{{ section.settings.placeholder_text | escape }}</label>
             <input name="options[prefix]" type="hidden" value="last">
             
             <button class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}" type="reset" aria-label="Clear search">
@@ -125,9 +132,9 @@
   "class": "section",
   "settings": [
     {
-      "type": "text",
+      "type": "richtext",
       "id": "heading",
-      "default": "Find what you need",
+      "default": "<p>Find what you <strong>need</strong></p>",
       "label": "Heading"
     },
     {
@@ -148,6 +155,12 @@
       "label": "Description"
     },
     {
+      "type": "text",
+      "id": "placeholder_text",
+      "default": "Search our store...",
+      "label": "Placeholder text"
+    },
+    {
       "type": "select",
       "id": "alignment",
       "options": [
@@ -162,6 +175,30 @@
       "id": "color_scheme",
       "label": "Color scheme",
       "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
     }
   ],
   "presets": [
