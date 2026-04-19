@@ -650,9 +650,9 @@
       "type": "search",
       "name": "Search Section",
       "settings": {
-        "heading": "Couldn't find your bubble tea ingredient crush",
+        "heading": "Couldn't find your bubble tea ingredient crush?",
         "heading_size": "h2",
-        "description": "<p>Give it another chance, searching in our full catalog</p>",
+        "description": "<p>Give it another chance by searching in our full catalog</p>",
         "alignment": "center",
         "color_scheme": "scheme-1"
       }
