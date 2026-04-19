@@ -646,6 +646,16 @@
         "padding_bottom": 48
       }
     },
+    "search_WFBRWz": {
+      "type": "search",
+      "name": "Search Section",
+      "settings": {
+        "heading": "Search our products",
+        "heading_size": "h2",
+        "alignment": "center",
+        "color_scheme": ""
+      }
+    },
     "image_list_RGBbkP": {
       "type": "image-list",
       "blocks": {
@@ -737,6 +747,7 @@
     "collection_list_rJUQGQ",
     "image_banner_Rekq6Q",
     "featured_blog_M9iXcD",
+    "search_WFBRWz",
     "image_list_RGBbkP"
   ]
 }
