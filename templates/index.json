@@ -655,8 +655,6 @@
         "description": "<p>Don't let your favourite flavour get away. Search our full catalog of boba, syrups, and more.</p>",
         "placeholder_text": "Find bubble tea supplies...",
         "alignment": "center",
-        "background_image": "shopify://shop_images/bubble_crush_logo_in_bubble_tea_cups.webp",
-        "image_overlay_opacity": 50,
         "color_scheme": "scheme-1",
         "padding_top": 48,
         "padding_bottom": 48
