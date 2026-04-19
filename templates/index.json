@@ -653,8 +653,11 @@
         "heading": "<h3>Couldn't find your bubble tea ingredient <em><strong>crush</strong></em>?</h3>",
         "heading_size": "h2",
         "description": "<p>Don't let your favourite flavour get away. Search our full catalog of boba, syrups, and more.</p>",
+        "placeholder_text": "Search our store...",
         "alignment": "center",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "image_list_RGBbkP": {
