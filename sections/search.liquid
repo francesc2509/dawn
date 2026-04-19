@@ -55,45 +55,53 @@ predictive-search[open] .predictive-search {
 
       <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
         <form action="{{ routes.search_url }}" method="get" role="search" class="search">
-          <div class="field">
-            <input
-              class="search__input field__input"
-              id="Search-In-Section-{{ section.id }}"
-              type="search"
-              name="q"
-              value="{{ search.terms | escape }}"
-              placeholder="Search our store..."
-              role="combobox"
-              aria-expanded="false"
-              aria-owns="predictive-search-results"
-              aria-controls="predictive-search-results"
-              aria-haspopup="listbox"
-              aria-autocomplete="list"
-              autocorrect="off"
-              autocomplete="off"
-              autocapitalize="off"
-              spellcheck="false"
-            >
-            <label class="field__label" for="Search-In-Section-{{ section.id }}">Search</label>
-            <input name="options[prefix]" type="hidden" value="last">
-            <button type="submit" class="search__button field__button" aria-label="Search">
-              <svg class="icon icon-search" aria-hidden="true" focusable="false">
-                <use href="#icon-search">
-              </svg>
-            </button>
-          </div>
+  <div class="field">
+    <input
+      class="search__input field__input"
+      id="Search-In-Section-{{ section.id }}"
+      type="search"
+      name="q"
+      value="{{ search.terms | escape }}"
+      placeholder="Search our store..."
+      role="combobox"
+      aria-expanded="false"
+      aria-owns="predictive-search-results"
+      aria-controls="predictive-search-results"
+      aria-haspopup="listbox"
+      aria-autocomplete="list"
+      autocorrect="off"
+      autocomplete="off"
+      autocapitalize="off"
+      spellcheck="false"
+    >
+    <label class="field__label" for="Search-In-Section-{{ section.id }}">Search</label>
+    <input name="options[prefix]" type="hidden" value="last">
+    
+    {%- comment -%} THIS BUTTON IS MANDATORY FOR THE SCRIPT {%- endcomment -%}
+    <button class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}" type="reset" aria-label="Clear search terms">
+      <svg class="icon icon-close" aria-hidden="true" focusable="false">
+        <use xlink:href="#icon-reset">
+      </svg>
+    </button>
 
-          {%- if settings.predictive_search_enabled -%}
-            <div id="predictive-search-results" class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
-              <div class="predictive-search__loading-state">
-                <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                  <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                </svg>
-              </div>
-            </div>
-            <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
-          {%- endif -%}
-        </form>
+    <button type="submit" class="search__button field__button" aria-label="Search">
+      <svg class="icon icon-search" aria-hidden="true" focusable="false">
+        <use href="#icon-search">
+      </svg>
+    </button>
+  </div>
+
+  {%- if settings.predictive_search_enabled -%}
+    <div id="predictive-search-results" class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+      <div class="predictive-search__loading-state">
+        <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+        </svg>
+      </div>
+    </div>
+    <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+  {%- endif -%}
+</form>
       </predictive-search>
     </div>
   </div>
