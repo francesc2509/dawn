@@ -653,6 +653,7 @@
         "heading": "<h3>Couldn't find your bubble tea ingredient <em>crush</em>?</h3>",
         "heading_size": "h2",
         "description": "<p>Give it another chance by searching in our full catalog</p>",
+        "placeholder_text": "Find bubble tea supplies",
         "alignment": "center",
         "color_scheme": "scheme-1",
         "padding_top": 36,
