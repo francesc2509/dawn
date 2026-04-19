@@ -341,12 +341,6 @@
       {{ 'accessibility.skip_to_text' | t }}
     </a>
 
-    <div class="whatsapp-container"> 
-      <a href="https://wa.me/+447512896659?text=Hello,I'd%20like%20to%20order%20some%20ingredients%20from%20Bubble%20Crush">
-        {% render 'icon-whatsapp' %}
-      </a>
-    </div>
-
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
     {%- endif -%}
@@ -355,6 +349,11 @@
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
+      <div class="whatsapp-container"> 
+      <a href="https://wa.me/+447512896659?text=Hello,I'd%20like%20to%20order%20some%20ingredients%20from%20Bubble%20Crush">
+        {% render 'icon-whatsapp' %}
+      </a>
+    </div>
     </main>
 
     {% sections 'footer-group' %}
