@@ -37,7 +37,9 @@
         top: 0;
         left: 0;
         z-index: 1;
+        justify-content: center;
         display: flex;
+        align-items: center;
         color: white !important;
         flex-direction: row;
         box-sizing: border-box;
@@ -130,6 +132,7 @@
 
     .hero-main {
       text-align: center;
+      padding: 0.75em;
     }
 
     .carousel-hero > p {
@@ -153,10 +156,10 @@
     }
 
     .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper :not(#header-h1-text) {
-    color: rgb(var(--color-background));
-    fill: rgb(var(--color-background));
-    stroke: rgb(var(--color-background));
-  }
+      color: rgb(var(--color-background));
+      fill: rgb(var(--color-background));
+      stroke: rgb(var(--color-background));
+    }
 
   .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper header,
   .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper {
