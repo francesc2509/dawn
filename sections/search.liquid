@@ -6,29 +6,6 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  .section-{{ section.id }}-bg-image {
-    background-image: url('{{ section.settings.background_image | image_url: width: 2000 }}');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .section-{{ section.id }}-padding::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0, {{ section.settings.image_overlay_opacity | divided_by: 100.0 }});
-    z-index: 1;
-  }
-
-  .section-{{ section.id }}-padding .page-width {
-    position: relative;
-    z-index: 2;
-  }
-
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -73,7 +50,7 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding{% if section.settings.background_image != blank %} section-{{ section.id }}-bg-image{% endif %}">
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   <div class="page-width">
     <div class="search-section__content" style="text-align: {{ section.settings.alignment }};">
       
@@ -98,7 +75,7 @@
               type="search"
               name="q"
               value="{{ search.terms | escape }}"
-              placeholder="{{ section.settings.placeholder_text | escape }}"
+              placeholder="{{ 'general.search.search' | t }}"
               role="combobox"
               aria-expanded="false"
               aria-owns="predictive-search-results-{{ section.id }}"
@@ -110,7 +87,7 @@
               autocapitalize="off"
               spellcheck="false"
             >
-            <label class="field__label" for="Search-In-Section-{{ section.id }}">{{ section.settings.placeholder_text | escape }}</label>
+            <label class="field__label" for="Search-In-Section-{{ section.id }}">Search our store</label>
             <input name="options[prefix]" type="hidden" value="last">
             
             <button class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}" type="reset" aria-label="Clear search">
@@ -178,12 +155,6 @@
       "label": "Description"
     },
     {
-      "type": "text",
-      "id": "placeholder_text",
-      "default": "Search our store...",
-      "label": "Placeholder text"
-    },
-    {
       "type": "select",
       "id": "alignment",
       "options": [
@@ -192,21 +163,6 @@
       ],
       "default": "center",
       "label": "Alignment"
-    },
-    {
-    "type": "image_picker",
-    "id": "background_image",
-    "label": "Background image"
-    },
-    {
-    "type": "range",
-    "id": "image_overlay_opacity",
-    "min": 0,
-    "max": 100,
-    "step": 10,
-    "unit": "%",
-    "label": "Image overlay opacity",
-    "default": 0
     },
     {
       "type": "color_scheme",
