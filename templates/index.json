@@ -147,22 +147,22 @@
     "multicolumn_bGj3Ji": {
       "type": "multicolumn",
       "blocks": {
-        "column_dq7cRP": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/uk_partners.webp",
-            "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
-            "text": "<p>Join <strong>200+</strong> shops, cafés and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
         "column_wwJ9DT": {
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/free-now-ice-blanc-partnerships.jpg",
             "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
             "text": "<p>Connecting top Asian suppliers with the UK and helping brands like <em><strong>FreeNow</strong></em> and <em>I</em><em><strong>ce Blanc</strong></em><strong> </strong>go global.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dq7cRP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/uk_partners.webp",
+            "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
+            "text": "<p>Join <strong>200+</strong> shops, cafés and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
             "link_label": "",
             "link": ""
           }
@@ -179,8 +179,8 @@
         }
       },
       "block_order": [
-        "column_dq7cRP",
         "column_wwJ9DT",
+        "column_dq7cRP",
         "column_mwmk4N"
       ],
       "name": "Trust",
