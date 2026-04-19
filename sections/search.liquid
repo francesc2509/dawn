@@ -73,7 +73,7 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding{% if section.settings.background_image != blank %} section-{{ section.id }}-bg-image{% endif %}">
   <div class="page-width">
     <div class="search-section__content" style="text-align: {{ section.settings.alignment }};">
       
