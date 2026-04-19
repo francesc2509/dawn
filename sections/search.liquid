@@ -1,32 +1,50 @@
 {{ 'component-predictive-search.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
+  section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    position: relative;
+    /* This ensures the background color from the scheme doesn't hide the image */
+    background-color: transparent !important; 
+    z-index: 1;
   }
 
   .section-{{ section.id }}-bg-image {
-    background-image: url('{{ section.settings.background_image | image_url: width: 2000 }}');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    /* We move the background image to a pseudo-element to control layering better */
+    position: relative;
   }
-  
-  .section-{{ section.id }}-padding::after {
+
+  .section-{{ section.id }}-bg-image::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background-image: url('{{ section.settings.background_image | image_url: width: 2000 }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2; /* Sits at the very bottom */
+  }
+
+  .section-{{ section.id }}-bg-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* This pulls the overlay color */
     background-color: rgba(0,0,0, {{ section.settings.image_overlay_opacity | divided_by: 100.0 }});
-    z-index: 1;
+    z-index: -1; /* Sits above the image, but below the text */
+    pointer-events: none;
   }
 
   .section-{{ section.id }}-padding .page-width {
     position: relative;
-    z-index: 2;
+    z-index: 10; /* Ensures search bar is on top and clickable */
   }
 
   @media screen and (min-width: 750px) {
