@@ -1,6 +1,11 @@
 {{ 'component-predictive-search.css' | asset_url | stylesheet_tag }}
 
 <style>
+  .search-section-wrapper {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  
   predictive-search {
     position: relative;
     display: block;
@@ -19,11 +24,18 @@
     position: absolute;
     width: 100%;
     left: 0;
+    text-align: left;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
   predictive-search[open] .predictive-search {
     display: block !important;
+  }
+
+  .search-section__description {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
   }
 
   .predictive-search__loading-state {
@@ -33,11 +45,18 @@
   }
 </style>
 
-<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<div class="color-{{ section.settings.color_scheme }} gradient search-section-wrapper">
   <div class="page-width">
     <div class="search-section__content" style="text-align: {{ section.settings.alignment }};">
+      
       {%- if section.settings.heading != blank -%}
         <h2 class="{{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <div class="search-section__description rte">
+          {{ section.settings.description }}
+        </div>
       {%- endif -%}
 
       <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
@@ -49,7 +68,7 @@
               type="search"
               name="q"
               value="{{ search.terms | escape }}"
-              placeholder="Search our store..."
+              placeholder="{{ 'general.search.search' | t }}"
               role="combobox"
               aria-expanded="false"
               aria-owns="predictive-search-results-{{ section.id }}"
@@ -61,15 +80,19 @@
               autocapitalize="off"
               spellcheck="false"
             >
-            <label class="field__label" for="Search-In-Section-{{ section.id }}">Search</label>
+            <label class="field__label" for="Search-In-Section-{{ section.id }}">Search our store</label>
             <input name="options[prefix]" type="hidden" value="last">
             
-            <button class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}" type="reset" aria-label="Clear search terms">
-              <svg class="icon icon-close" aria-hidden="true" focusable="false"><use xlink:href="#icon-reset"></svg>
+            <button class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}" type="reset" aria-label="Clear search">
+              <svg class="icon icon-close" aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 18 18">
+                <path d="M13.5 4.5l-9 9m0-9l9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
             </button>
 
             <button type="submit" class="search__button field__button" aria-label="Search">
-              <svg class="icon icon-search" aria-hidden="true" focusable="false"><use href="#icon-search"></svg>
+              <svg class="icon icon-search" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M19 19l-4.35-4.35M17 9A8 8 0 111 9a8 8 0 0116 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </button>
           </div>
 
@@ -90,7 +113,6 @@
 </div>
 
 <script>
-  // Re-initialize custom element listeners if already defined by global theme JS
   document.querySelectorAll('predictive-search').forEach((el) => {
     if (typeof el.setupEventListeners === 'function') el.setupEventListeners();
   });
@@ -105,7 +127,7 @@
     {
       "type": "text",
       "id": "heading",
-      "default": "Search our products",
+      "default": "Find what you need",
       "label": "Heading"
     },
     {
@@ -118,6 +140,12 @@
       ],
       "default": "h1",
       "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>Search our entire catalog of products, collections, and blog posts.</p>",
+      "label": "Description"
     },
     {
       "type": "select",
