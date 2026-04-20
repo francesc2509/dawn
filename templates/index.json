@@ -671,7 +671,7 @@
       ],
       "name": "Purchase & Delivery banner",
       "settings": {
-        "image": "shopify://shop_images/bubble-crush-warehouse.jpg",
+        "image": "shopify://shop_images/bubble-crush-warehouse-workers.jpg",
         "image_overlay_opacity": 60,
         "image_height": "small",
         "image_behavior": "ambient",
