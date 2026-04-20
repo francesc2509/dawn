@@ -144,6 +144,10 @@
       gap: 0.25em;
     }
 
+    .hero-stars svg {
+      height: 16PX;
+    }
+
     .hero-stars-text {
       font-size: 0.75em;
     }
