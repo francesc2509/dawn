@@ -138,10 +138,12 @@
     .hero-stars {
       display: flex;
       justify-content: center;
-      flex-gap: 1px;
+      gap: 1px;
     }
 
-    .hero-stars
+    .hero-stars-text {
+      
+    }
 
     .carousel-hero > p {
       word-break: keep-all;
