@@ -64,13 +64,23 @@
               </div>
             {% endif %}
 
-            <div class="hero-stars">
+            {% if block.settings.hero_stars != blank and block.settings.hero_stars > 0 %}
+              <div class="hero-stars">
                 {% for i in (1..5) %}
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#00b67a" xmlns="http://www.w3.org/2000/svg">
-                    <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/>
-                  </svg>
-                {% endfor %}
+    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      
+      <!-- green box background -->
+      <rect width="24" height="24" fill="#00b67a" rx="3" />
+      
+      <!-- white star -->
+      <polygon 
+        points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"
+        fill="#ffffff"/>
+        
+    </svg>
+  {% endfor %}
               </div>
+            {% endif %}
 
             {% if block.settings.hero_subtitle != blank %}
               <div class="hero-subtitle">
