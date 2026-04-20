@@ -114,23 +114,155 @@
         "padding_bottom": 48
       }
     },
-    "featured_collection_adJ8Jc": {
-      "type": "featured-collection",
-      "name": "Special Offers",
+    "multicolumn_nEm64N": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_pWRA4k": {
+          "type": "column",
+          "settings": {
+            "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
+            "text": "<p>Connecting top Asian suppliers with the UK and helping brands like <em><strong>FreeNow</strong></em> and <em>I</em><em><strong>ce Blanc</strong></em><strong> </strong>go global.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_GGLwwd": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
+            "text": "<p>Join <strong>200+</strong> shops, cafés and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_EkAqxY": {
+          "type": "column",
+          "settings": {
+            "title": "🚚<strong> UK Warehouse & Fast Dispatch</strong>",
+            "text": "<p>Reliable <strong>next-day</strong> delivery from our <strong>London</strong> warehouse — keeping your business stocked and running smoothly.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_pWRA4k",
+        "column_GGLwwd",
+        "column_EkAqxY"
+      ],
+      "name": "Trust",
       "settings": {
-        "collection": "sales",
-        "products_to_show": 6,
-        "title": "Special Offers",
+        "title": "",
         "heading_size": "h1",
-        "description": "<p>Premium Quality, Poured with Savings.</p>",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "columns_flow": "even",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "collection_list_rJUQGQ": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_BfaMef": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "powder",
+            "collection_label": "Powder Series",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_hW7HVE": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "syrup-and-jam-for-bubble-tea",
+            "collection_label": "Syrup & Jam",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_JJd6zP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "topping",
+            "collection_label": "Topping",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_3bd8Y9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "tea",
+            "collection_label": "Tea",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_fjkE6d": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beverage-bases-coconut-milk-supplier-bubble-crush",
+            "collection_label": "Milk Base",
+            "collection_cta_label": ""
+          }
+        },
+        "featured_collection_7fdfNK": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "packaging",
+            "collection_label": "Packaging",
+            "collection_cta_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_BfaMef",
+        "featured_collection_hW7HVE",
+        "featured_collection_JJd6zP",
+        "featured_collection_3bd8Y9",
+        "featured_collection_fjkE6d",
+        "featured_collection_7fdfNK"
+      ],
+      "custom_css": [
+        ".grid {gap: 0.25em; justify-content: center;}"
+      ],
+      "name": "Categories",
+      "settings": {
+        "title": "Our Ingredient Categories",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "featured_collection_XVDMX9": {
+      "type": "featured-collection",
+      "name": "Best Sellers",
+      "settings": {
+        "collection": "hot-seller",
+        "products_to_show": 8,
+        "title": "Best Sellers",
+        "heading_size": "h1",
+        "description": "<p>Top Picks to Keep Your Customers Crushing.</p>",
         "show_description": false,
         "description_style": "body",
-        "columns_desktop": 3,
-        "enable_desktop_slider": true,
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "view_all_label": "Shop Offers",
+        "view_all_label": "",
         "color_scheme": "",
         "image_ratio": "square",
         "image_shape": "default",
@@ -139,9 +271,58 @@
         "show_rating": false,
         "quick_add": "bulk",
         "columns_mobile": "2",
-        "swipe_on_mobile": true,
+        "swipe_on_mobile": false,
         "padding_top": 48,
         "padding_bottom": 48
+      }
+    },
+    "image_banner_akp4Yh": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_JgqMx4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Professional Bubble Tea Training",
+            "heading_size": "h2"
+          }
+        },
+        "text_j74Dd7": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Empower your business<br/></strong>Expert UK bubble tea training for beginners, new owners, and cafés.</p><p>Level up your menu today.</p>",
+            "text_style": "body"
+          }
+        },
+        "buttons_PPTeXm": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Book a session",
+            "button_link_1": "shopify://pages/bubble-tea-training-partnership-uk",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_JgqMx4",
+        "text_j74Dd7",
+        "buttons_PPTeXm"
+      ],
+      "name": "Bubble Tea Training",
+      "settings": {
+        "image": "shopify://shop_images/barista-preparing-strawberry-bubble-tea.webp",
+        "image_overlay_opacity": 30,
+        "image_height": "small",
+        "image_behavior": "ambient",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-171e1f28-38da-4af1-b2e0-a2267f7a07d8",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
       }
     },
     "multicolumn_bGj3Ji": {
@@ -184,61 +365,6 @@
         "column_mwmk4N"
       ],
       "disabled": true,
-      "name": "Trust",
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "columns_flow": "even",
-        "swipe_on_mobile": false,
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
-    "multicolumn_nEm64N": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_pWRA4k": {
-          "type": "column",
-          "settings": {
-            "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
-            "text": "<p>Connecting top Asian suppliers with the UK and helping brands like <em><strong>FreeNow</strong></em> and <em>I</em><em><strong>ce Blanc</strong></em><strong> </strong>go global.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_GGLwwd": {
-          "type": "column",
-          "settings": {
-            "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
-            "text": "<p>Join <strong>200+</strong> shops, cafés and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_EkAqxY": {
-          "type": "column",
-          "settings": {
-            "title": "🚚<strong> UK Warehouse & Fast Dispatch</strong>",
-            "text": "<p>Reliable <strong>next-day</strong> delivery from our <strong>London</strong> warehouse — keeping your business stocked and running smoothly.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_pWRA4k",
-        "column_GGLwwd",
-        "column_EkAqxY"
-      ],
       "name": "Trust",
       "settings": {
         "title": "",
@@ -353,72 +479,23 @@
         "padding_bottom": 48
       }
     },
-    "image_banner_akp4Yh": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_JgqMx4": {
-          "type": "heading",
-          "settings": {
-            "heading": "Professional Bubble Tea Training",
-            "heading_size": "h2"
-          }
-        },
-        "text_j74Dd7": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>Empower your business<br/></strong>Expert UK bubble tea training for beginners, new owners, and cafés.</p><p>Level up your menu today.</p>",
-            "text_style": "body"
-          }
-        },
-        "buttons_PPTeXm": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Book a session",
-            "button_link_1": "shopify://pages/bubble-tea-training-partnership-uk",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_JgqMx4",
-        "text_j74Dd7",
-        "buttons_PPTeXm"
-      ],
-      "name": "Bubble Tea Training",
-      "settings": {
-        "image": "shopify://shop_images/barista-preparing-strawberry-bubble-tea.webp",
-        "image_overlay_opacity": 30,
-        "image_height": "small",
-        "image_behavior": "ambient",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-171e1f28-38da-4af1-b2e0-a2267f7a07d8",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
-      }
-    },
-    "featured_collection_XVDMX9": {
+    "featured_collection_adJ8Jc": {
       "type": "featured-collection",
-      "name": "Best Sellers",
+      "name": "Special Offers",
       "settings": {
-        "collection": "hot-seller",
-        "products_to_show": 8,
-        "title": "Best Sellers",
+        "collection": "sales",
+        "products_to_show": 6,
+        "title": "Special Offers",
         "heading_size": "h1",
-        "description": "<p>Top Picks to Keep Your Customers Crushing.</p>",
+        "description": "<p>Premium Quality, Poured with Savings.</p>",
         "show_description": false,
         "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
+        "columns_desktop": 3,
+        "enable_desktop_slider": true,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "view_all_label": "",
+        "view_all_label": "Shop Offers",
         "color_scheme": "",
         "image_ratio": "square",
         "image_shape": "default",
@@ -427,7 +504,7 @@
         "show_rating": false,
         "quick_add": "bulk",
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 48,
         "padding_bottom": 48
       }
@@ -555,83 +632,6 @@
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "padding_top": 24,
-        "padding_bottom": 48
-      }
-    },
-    "collection_list_rJUQGQ": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_BfaMef": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "powder",
-            "collection_label": "Powder Series",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_hW7HVE": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "syrup-and-jam-for-bubble-tea",
-            "collection_label": "Syrup & Jam",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_JJd6zP": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "topping",
-            "collection_label": "Topping",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_3bd8Y9": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "tea",
-            "collection_label": "Tea",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_fjkE6d": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "beverage-bases-coconut-milk-supplier-bubble-crush",
-            "collection_label": "Milk Base",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_7fdfNK": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "packaging",
-            "collection_label": "Packaging",
-            "collection_cta_label": ""
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_BfaMef",
-        "featured_collection_hW7HVE",
-        "featured_collection_JJd6zP",
-        "featured_collection_3bd8Y9",
-        "featured_collection_fjkE6d",
-        "featured_collection_7fdfNK"
-      ],
-      "custom_css": [
-        ".grid {gap: 0.25em; justify-content: center;}"
-      ],
-      "name": "Categories",
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
-        "show_view_all": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 48,
         "padding_bottom": 48
       }
     },
