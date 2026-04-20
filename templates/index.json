@@ -183,6 +183,62 @@
         "column_dq7cRP",
         "column_mwmk4N"
       ],
+      "disabled": true,
+      "name": "Trust",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "columns_flow": "even",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "multicolumn_nEm64N": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_pWRA4k": {
+          "type": "column",
+          "settings": {
+            "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
+            "text": "<p>Connecting top Asian suppliers with the UK and helping brands like <em><strong>FreeNow</strong></em> and <em>I</em><em><strong>ce Blanc</strong></em><strong> </strong>go global.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_GGLwwd": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
+            "text": "<p>Join <strong>200+</strong> shops, cafés and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_EkAqxY": {
+          "type": "column",
+          "settings": {
+            "title": "🚚<strong> UK Warehouse & Fast Dispatch</strong>",
+            "text": "<p>Reliable <strong>next-day</strong> delivery from our <strong>London</strong> warehouse — keeping your business stocked and running smoothly.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_pWRA4k",
+        "column_GGLwwd",
+        "column_EkAqxY"
+      ],
       "name": "Trust",
       "settings": {
         "title": "",
@@ -757,15 +813,16 @@
   "order": [
     "carousel_tbDAmM",
     "collection_list_VtYKTt",
-    "featured_collection_adJ8Jc",
+    "multicolumn_nEm64N",
+    "collection_list_rJUQGQ",
+    "featured_collection_XVDMX9",
+    "image_banner_akp4Yh",
     "multicolumn_bGj3Ji",
     "tabbed_collection_g3PXFG",
-    "image_banner_akp4Yh",
-    "featured_collection_XVDMX9",
+    "featured_collection_adJ8Jc",
     "image_banner_QYMcLG",
     "multicolumn_7VD4PL",
     "featured_collection_7xQBGD",
-    "collection_list_rJUQGQ",
     "image_banner_Rekq6Q",
     "featured_blog_M9iXcD",
     "image_banner_KKVBaa",
