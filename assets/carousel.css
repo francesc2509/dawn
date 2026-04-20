@@ -145,7 +145,8 @@
     }
 
     .hero-stars svg {
-      
+      height: 16PX;
+      width: 16PX;
     }
 
     .hero-stars-text {
