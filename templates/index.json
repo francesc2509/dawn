@@ -64,7 +64,7 @@
           "type": "column",
           "settings": {
             "title": "🚚<strong> UK Warehouse & Fast Dispatch</strong>",
-            "text": "<p>Reliable next-day delivery from our London warehouse, keeping your business stocked and running smoothly.</p>",
+            "text": "<p>Reliable <strong>next-day</strong> delivery from our London warehouse, keeping your business stocked and running smoothly.</p>",
             "link_label": "",
             "link": ""
           }
