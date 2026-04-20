@@ -144,6 +144,13 @@
       gap: 0.25em;
     }
 
+    .hero-stars > div {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      gap: 2px;
+    }
+
     .hero-stars svg {
       height: 16PX;
       width: 16PX;
