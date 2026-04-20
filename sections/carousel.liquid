@@ -98,7 +98,8 @@
             
             {% if true %}
               <div class="hero-stars">
-                {% for i in (1..5) %}
+                <div>
+                  {% for i in (1..5) %}
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   
                   <!-- green box background -->
@@ -111,6 +112,7 @@
                     
                 </svg>
               {% endfor %}
+                </div>
                 <span class="hero-stars-text">Excellent</span>
               </div>
             {% endif %}
