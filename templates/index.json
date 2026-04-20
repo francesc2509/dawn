@@ -199,7 +199,7 @@
         "columns_flow": "even",
         "swipe_on_mobile": false,
         "padding_top": 48,
-        "padding_bottom": 0
+        "padding_bottom": 48
       }
     },
     "tabbed_collection_g3PXFG": {
