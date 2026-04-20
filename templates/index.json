@@ -558,7 +558,7 @@
       "type": "search",
       "name": "Search Section",
       "settings": {
-        "heading": "<h3>Couldn't find your bubble tea <em><strong>crush</strong></em>?</h3>",
+        "heading": "<h3>Couldn't find your bubble tea <strong>crush</strong>?</h3>",
         "heading_size": "h2",
         "description": "<p>Don't let your favourite flavour get away. Search our full catalog of boba, syrups, and more.</p>",
         "placeholder_text": "Find bubble tea supplies...",
