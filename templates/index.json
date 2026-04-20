@@ -234,7 +234,7 @@
       ],
       "name": "Categories",
       "settings": {
-        "title": "Our Ingredient Categories",
+        "title": "",
         "heading_size": "h1",
         "image_ratio": "square",
         "columns_desktop": 3,
