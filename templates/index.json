@@ -39,81 +39,6 @@
       "name": "Hero",
       "settings": {}
     },
-    "collection_list_VtYKTt": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_aNkf6h": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "powder",
-            "collection_label": "Powder Series",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_Vgym9z": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "syrup-and-jam-for-bubble-tea",
-            "collection_label": "Syrup & Jam",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_mFJ8ig": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "topping",
-            "collection_label": "Topping",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_trYQDD": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "tea",
-            "collection_label": "Tea",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_LDLRQk": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "beverage-bases-coconut-milk-supplier-bubble-crush",
-            "collection_label": "Milk Base",
-            "collection_cta_label": ""
-          }
-        },
-        "featured_collection_6BbUMB": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "packaging",
-            "collection_label": "Packaging",
-            "collection_cta_label": ""
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_aNkf6h",
-        "featured_collection_Vgym9z",
-        "featured_collection_mFJ8ig",
-        "featured_collection_trYQDD",
-        "featured_collection_LDLRQk",
-        "featured_collection_6BbUMB"
-      ],
-      "disabled": true,
-      "name": "Categories",
-      "settings": {
-        "title": "Build Your Menu",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
     "multicolumn_nEm64N": {
       "type": "multicolumn",
       "blocks": {
@@ -139,7 +64,7 @@
           "type": "column",
           "settings": {
             "title": "🚚<strong> UK Warehouse & Fast Dispatch</strong>",
-            "text": "<p>Reliable <strong>next-day</strong> delivery from our <strong>London</strong> warehouse — keeping your business stocked and running smoothly.</p>",
+            "text": "<p>Reliable next-day delivery from our London warehouse, keeping your business stocked and running smoothly.</p>",
             "link_label": "",
             "link": ""
           }
@@ -722,7 +647,6 @@
   },
   "order": [
     "carousel_tbDAmM",
-    "collection_list_VtYKTt",
     "multicolumn_nEm64N",
     "collection_list_rJUQGQ",
     "featured_collection_XVDMX9",
