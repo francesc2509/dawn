@@ -135,6 +135,10 @@
       padding: 0.75em;
     }
 
+    .hero-stars {
+      text-align: center;
+    }
+
     .carousel-hero > p {
       word-break: keep-all;
     }
