@@ -6,6 +6,8 @@
       {%- assign count = 0 -%}
       {% for order in customer.orders %}
         {% for item in order.line_items %}
+          {%- assign prod = item.product -%}
+
           {% unless displayed_products contains prod.id or count >= 4 or prod == blank %}
             <li class="grid__item">
               {% render 'card-product',
@@ -19,7 +21,6 @@
               %}
             </li>
             {%- assign displayed_products = displayed_products | append: prod.id | append: "," -%}
-            {%- assign count = count | plus: 1 -%}
           {% endunless %}
         {% endfor %}
       {% endfor %}
