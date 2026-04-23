@@ -42,20 +42,20 @@
     "multicolumn_nEm64N": {
       "type": "multicolumn",
       "blocks": {
-        "column_pWRA4k": {
-          "type": "column",
-          "settings": {
-            "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
-            "text": "<p>Connecting top Asian suppliers with the UK and helping brands like <em><strong>FreeNow</strong></em> and <em>I</em><em><strong>ce Blanc</strong></em><strong> </strong>go global.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
         "column_GGLwwd": {
           "type": "column",
           "settings": {
             "title": "<strong>🤝 Best Wholesale Prices in the UK</strong>",
             "text": "<p>Join <strong>200+</strong> shops, cafés and wholesale partners who trust Bubble Crush for value, reliability, and great service.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_pWRA4k": {
+          "type": "column",
+          "settings": {
+            "title": "🌏<strong> Trusted Asian Brand Partners</strong>",
+            "text": "<p>Connecting top Asian suppliers with the UK and helping brands like <em><strong>FreeNow</strong></em> and <em>I</em><em><strong>ce Blanc</strong></em><strong> </strong>go global.</p>",
             "link_label": "",
             "link": ""
           }
@@ -71,8 +71,8 @@
         }
       },
       "block_order": [
-        "column_pWRA4k",
         "column_GGLwwd",
+        "column_pWRA4k",
         "column_EkAqxY"
       ],
       "name": "Trust",
@@ -280,51 +280,6 @@
         "show_text_below": false
       }
     },
-    "multicolumn_7VD4PL": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_U79ya9": {
-          "type": "column",
-          "settings": {
-            "title": "“Just enjoyed the most delicious bubble tea ingredients quickly delivered!  Huge thanks to Bubble Crush for their seamless online ordering and speedy service.”",
-            "text": "<p>Alena, London  ⭐⭐⭐⭐⭐</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_Umgde9": {
-          "type": "column",
-          "settings": {
-            "title": "“Ordering was a breeze and the delivery was super fast! Great service and even better boba - 5 stars all around!”",
-            "text": "<p>James, UK ⭐⭐⭐⭐⭐</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_U79ya9",
-        "column_Umgde9"
-      ],
-      "name": "Reviews",
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 2,
-        "column_alignment": "center",
-        "background_style": "none",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "columns_flow": "standard",
-        "swipe_on_mobile": true,
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
     "tabbed_collection_g3PXFG": {
       "type": "tabbed-collection",
       "blocks": {
@@ -417,6 +372,51 @@
         "show_secondary_image": true,
         "quick_add": "bulk",
         "padding_top": 0,
+        "padding_bottom": 48
+      }
+    },
+    "multicolumn_7VD4PL": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_U79ya9": {
+          "type": "column",
+          "settings": {
+            "title": "“Just enjoyed the most delicious bubble tea ingredients quickly delivered!  Huge thanks to Bubble Crush for their seamless online ordering and speedy service.”",
+            "text": "<p>Alena, London  ⭐⭐⭐⭐⭐</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Umgde9": {
+          "type": "column",
+          "settings": {
+            "title": "“Ordering was a breeze and the delivery was super fast! Great service and even better boba - 5 stars all around!”",
+            "text": "<p>James, UK ⭐⭐⭐⭐⭐</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_U79ya9",
+        "column_Umgde9"
+      ],
+      "name": "Reviews",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "columns_flow": "standard",
+        "swipe_on_mobile": true,
+        "padding_top": 48,
         "padding_bottom": 48
       }
     },
