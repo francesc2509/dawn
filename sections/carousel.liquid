@@ -49,6 +49,24 @@
         {% endif %}
         <div class="carousel-curtain" style="background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, {{ block.settings.slide_overlay_alpha }}) 100%);">
           <div class="carousel-hero">
+            {% if true %}
+              <div class="hero-stars">
+                <div>
+                  {% for i in (1..5) %}
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <!-- green box background -->
+                      <rect width="24" height="24" fill="#00b67a" rx="3" />
+                      <!-- white star -->
+                      <polygon 
+                        points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"
+                        fill="#ffffff"/>
+                    </svg>
+                  {% endfor %}
+                </div>
+                <span class="hero-stars-text">Excellent!</span>
+              </div>
+            {% endif %}
+
             <div class="hero-title">
               {% if block.settings.hero_title_seo != blank %}
                 {{ block.settings.hero_title_seo }}
@@ -94,26 +112,7 @@
                     {{ hero_secondary_cta_label }}
                 </a>
               {% endif %}
-            </div>
-            
-            {% if true %}
-              <div class="hero-stars">
-                <div>
-                  {% for i in (1..5) %}
-                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <!-- green box background -->
-                      <rect width="24" height="24" fill="#00b67a" rx="3" />
-                      <!-- white star -->
-                      <polygon 
-                        points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"
-                        fill="#ffffff"/>
-                    </svg>
-                  {% endfor %}
-                </div>
-                <span class="hero-stars-text">Excellent!</span>
-              </div>
-            {% endif %}
-            
+            </div>        
           </div>
         </div>
       </div>
