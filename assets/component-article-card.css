@@ -107,7 +107,7 @@
 
 .article-card__header h2 {
   margin: 0 0 0.2rem;
-  min-height: 5em;
+  min-height: 6em;
 }
 
 .article-card__header h2:only-child {
