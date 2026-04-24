@@ -58,7 +58,7 @@
 }
 
 .article-card__excerpt {
-  min-height: 11em;
+  min-height: 12em;
 }
 
 .article-content:hover .article-card__title {
