@@ -46,7 +46,6 @@
   flex-direction: column;
   flex-grow: 1;
   text-align: left;
-  min-height: 10em;
 }
 
 .article-content {
@@ -56,6 +55,10 @@
   flex-direction: column;
   text-decoration: none;
   color: inherit;
+}
+
+.article-card__excerpt {
+  min-height: 10em;
 }
 
 .article-content:hover .article-card__title {
