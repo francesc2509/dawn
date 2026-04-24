@@ -46,6 +46,7 @@
   flex-direction: column;
   flex-grow: 1;
   text-align: left;
+  min-height: 10em;
 }
 
 .article-content {
