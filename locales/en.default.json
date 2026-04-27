@@ -67,7 +67,8 @@
     }
   },
   "date_formats": {
-    "month_year": "%B %Y"
+    "month_year": "%B %Y",
+    "day_month_year": "%D %B %Y"
   },
   "newsletter": {
     "label": "Email",
