@@ -457,7 +457,6 @@
       "disabled": true,
       "name": "Matcha banner",
       "settings": {
-        "image": "shopify://shop_images/matcha-latte-matcha-bubble-tea-brown-sugar-syrup.webp",
         "image_overlay_opacity": 40,
         "image_height": "medium",
         "image_behavior": "none",
@@ -541,7 +540,7 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/make-it-21-9.png",
+        "image": "shopify://shop_images/premium-bubble-tea-ingredients-search.webp",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "image_behavior": "none",
