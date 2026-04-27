@@ -23,6 +23,7 @@
         },
         "announcement_iwjBM4": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "200+ Trusted UK Partners",
             "link": ""
@@ -30,6 +31,7 @@
         },
         "announcement_ezjVrM": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Leading Brand Partnerships",
             "link": ""
@@ -37,6 +39,7 @@
         },
         "announcement_3NfFK8": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Professional Bubble Tea training",
             "link": ""
