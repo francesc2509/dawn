@@ -58,7 +58,13 @@
               {% endif %}
             </div>
 
-            {% if true %}
+            {% if block.settings.hero_main != blank %}
+              <div class="hero-main">
+                {{ block.settings.hero_main }}
+              </div>
+            {% endif %}
+
+{% if true %}
               <div class="hero-stars">
                 <div>
                   {% for i in (1..5) %}
@@ -73,12 +79,6 @@
                   {% endfor %}
                 </div>
                 <span class="hero-stars-text">Excellent!</span>
-              </div>
-            {% endif %}
-
-            {% if block.settings.hero_main != blank %}
-              <div class="hero-main">
-                {{ block.settings.hero_main }}
               </div>
             {% endif %}
 
