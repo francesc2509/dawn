@@ -124,8 +124,6 @@
     .carousel-hero > .hero-title, .carousel-hero > .hero-subtitle {
       color: inherit;
       text-align: center;
-      margin: 0;
-      margin-block-end: 0;
     }
 
     .carousel-hero > .hero-subtitle {
