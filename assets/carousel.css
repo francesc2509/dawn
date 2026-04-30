@@ -136,7 +136,7 @@
     }
 
     .hero-stars {
-      margin-top: 0.5em;
+      margin-top: 0.25em;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -153,8 +153,8 @@
     }
 
     .hero-stars svg {
-      height: 16PX;
-      width: 16PX;
+      height: 16px;
+      width: 16px;
     }
 
     .hero-stars-text {
