@@ -176,7 +176,7 @@
       "name": "Special Offers",
       "settings": {
         "collection": "sales",
-        "products_to_show": 6,
+        "products_to_show": 8,
         "title": "Special Offers",
         "heading_size": "h1",
         "description": "<p>Premium Quality, Poured with Savings.</p>",
