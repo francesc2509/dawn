@@ -165,9 +165,8 @@
 
     .carousel-hero > p {
       word-break: keep-all;
-      margin-block-start: 0;
-      margin-block-end: 0;
-      margin: 0.25em 0;
+      
+      margin: 0.5em 0;
     }
 
     .carousel-hero > .carousel-hero-cta-container {
