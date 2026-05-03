@@ -263,10 +263,6 @@
         transition: padding 0.5s ease;
       }
 
-      .carousel-hero > .carousel-hero-cta-container a {
-        flex: 1;
-      }
-
       .carousel-hero > .carousel-hero-cta-container {
         align-items: normal;
       }
