@@ -258,8 +258,4 @@
         padding-bottom: 2vh;
         transition: padding 0.5s ease;
       }
-
-      .carousel-hero > .carousel-hero-cta-container {
-        align-items: normal;
-      }
     }
