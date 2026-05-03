@@ -90,6 +90,14 @@
               {% endif %}
             </div>
 
+            
+
+            {% if block.settings.hero_subtitle != blank %}
+              <div class="hero-subtitle">
+                {{ block.settings.hero_subtitle }}
+              </div>
+            {% endif %}
+
             {% if true %}
               <div class="hero-stars">
                 <div>
@@ -105,12 +113,6 @@
                   {% endfor %}
                 </div>
                 <span class="hero-stars-text">Excellent!</span>
-              </div>
-            {% endif %}
-
-            {% if block.settings.hero_subtitle != blank %}
-              <div class="hero-subtitle">
-                {{ block.settings.hero_subtitle }}
               </div>
             {% endif %}
           </div>
