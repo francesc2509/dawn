@@ -182,10 +182,6 @@
       gap: 0.5em;
     }
 
-    .carousel-hero > .carousel-hero-cta-container a {
-      flex: 1;
-    }
-
     .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper :not(#header-h1-text) {
       color: rgb(var(--color-background));
       fill: rgb(var(--color-background));
