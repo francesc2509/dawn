@@ -175,7 +175,7 @@
       padding: 1em;
       box-sizing: border-box;
       align-items: center;
-      gap: 1.25em;
+      gap: 0.5em;
     }
 
     .carousel-hero > .carousel-hero-cta-container a {
