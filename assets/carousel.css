@@ -142,7 +142,7 @@
       align-items: center;
       gap: 0.25em;
       box-sizing: border-box;
-      padding: 0.25em;
+      margin: 1em;
     }
 
     .hero-stars > div {
