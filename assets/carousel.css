@@ -245,6 +245,10 @@
         font-size: 0.75em;
       }
 
+      .carousel-hero .hero-main {
+        font-size: 0.75em;
+      }
+
       .carousel-hero {
         max-width: initial;
         width: 100%;
