@@ -116,6 +116,7 @@
 
     .carousel-hero > .hero-title {
       padding-top: var(--header-height);
+      flex: 1;
     }
 
     .carousel-hero > .hero-title > h1 {
