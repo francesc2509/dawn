@@ -106,11 +106,11 @@
     }
 
     .carousel-hero {
-      text-align: left;
       color: rgb(var(--color-foreground));
       text-shadow: 0 0 10px rgba(0,0,0,0.9);
       max-width: 100%;
       padding: 0 0.5em;
+
     }
 
     .carousel-hero > .hero-title {
