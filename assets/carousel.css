@@ -114,9 +114,9 @@
       flex-direction: column;
     }
 
-    .carousel-hero > .hero-title {
+    /* .carousel-hero > .hero-title {
       padding-top: 3em;
-    }
+    } */
 
     .carousel-hero > .hero-title > h1 {
       font-size: 0.75em;
