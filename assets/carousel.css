@@ -43,6 +43,7 @@
         color: white !important;
         flex-direction: row;
         box-sizing: border-box;
+        padding: 0 0.25em;
     }
 
      .dawn-carousel-item img, .dawn-carousel-item > video {
