@@ -110,7 +110,6 @@
       color: rgb(var(--color-foreground));
       text-shadow: 0 0 10px rgba(0,0,0,0.9);
       width: 100%;
-      padding-top: var(--header-height);
       display: flex;
       flex-direction: column;
     }
