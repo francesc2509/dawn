@@ -23,7 +23,7 @@
             "slide_overlay_alpha": 0.6,
             "hero_title_seo": "<h1>Wholesale bubble tea ingredients supplier</h1>",
             "hero_title": "<h2>Don't just make<strong> </strong><em><strong>Bubble</strong></em><strong> </strong>Tea, <em><strong>Crush</strong></em><strong> </strong>it!</h2>",
-            "hero_subtitle": "<p><em><strong>Premium bubble tea supplies</strong></em></p><p></p><p><em>Tapioca, crystal pearls, powders, plant-based milk...</em></p><p></p><p><em>London warehouse • Fast delivery</em></p><p><em>200+ </em><em><strong>UK</strong></em><em> partners</em></p>",
+            "hero_subtitle": "<p><strong>Premium bubble tea supplies</strong></p><p></p><p>Tapioca, crystal pearls, powders, plant-based milk...</p><p></p><p><em>London warehouse • Fast delivery</em></p><p><em>200+ </em><em><strong>UK</strong></em><em> partners</em></p>",
             "hero_main": "",
             "hero_cta_label": "<strong>Shop Best Sellers</strong>",
             "hero_cta_url": "shopify://collections/hot-seller",
@@ -167,7 +167,7 @@
         "show_view_all": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 24,
+        "padding_top": 48,
         "padding_bottom": 48
       }
     },
@@ -227,8 +227,8 @@
         "quick_add": "bulk",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 48,
-        "padding_bottom": 48
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "image_banner_Rekq6Q": {
@@ -372,7 +372,7 @@
         "show_secondary_image": true,
         "quick_add": "bulk",
         "padding_top": 0,
-        "padding_bottom": 48
+        "padding_bottom": 64
       }
     },
     "multicolumn_7VD4PL": {
@@ -416,8 +416,8 @@
         "columns_mobile": "1",
         "columns_flow": "standard",
         "swipe_on_mobile": true,
-        "padding_top": 48,
-        "padding_bottom": 48
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "image_banner_QYMcLG": {
@@ -532,8 +532,8 @@
         "show_date": true,
         "show_author": false,
         "color_scheme": "scheme-1",
-        "padding_top": 48,
-        "padding_bottom": 48
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "image_banner_KKVBaa": {
