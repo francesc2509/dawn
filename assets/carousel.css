@@ -32,7 +32,7 @@
         min-height: 100%;
         min-width: 100%;
         background: transparent;
-        background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);
+        background: linear-gradient(180deg,rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.15) 0%);
         position: absolute;
         top: 0;
         left: 0;
@@ -179,6 +179,7 @@
       box-sizing: border-box;
       align-items: center;
       gap: 1em;
+      padding: 2em;
     }
 
     .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper :not(#header-h1-text) {
