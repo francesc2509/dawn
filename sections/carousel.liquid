@@ -58,11 +58,17 @@
               {% endif %}
             </div>
 
-            {% if block.settings.hero_main != blank %}
+            {% if block.settings.hero_subtitle != blank %}
+              <div class="hero-subtitle">
+                {{ block.settings.hero_subtitle }}
+              </div>
+            {% endif %}
+
+            {% comment %} {% if block.settings.hero_main != blank %}
               <div class="hero-main">
                 {{ block.settings.hero_main }}
               </div>
-            {% endif %}
+            {% endif %} {% endcomment %}
 
             <div class="carousel-hero-cta-container">
               {% assign hero_cta_url = block.settings.hero_cta_url  %}
@@ -92,11 +98,7 @@
 
             
 
-            {% if block.settings.hero_subtitle != blank %}
-              <div class="hero-subtitle">
-                {{ block.settings.hero_subtitle }}
-              </div>
-            {% endif %}
+            
 
             {% if true %}
               <div class="hero-stars">
