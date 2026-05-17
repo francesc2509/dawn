@@ -57,16 +57,17 @@
                 {{ block.settings.hero_title }}
               {% endif %}
             </div>
-
-            {% if block.settings.hero_subtitle != blank %}
-              <div class="hero-subtitle">
-                {{ block.settings.hero_subtitle }}
-              </div>
-            {% endif %}
+            
 
             {% if block.settings.hero_main != blank %}
               <div class="hero-main">
                 {{ block.settings.hero_main }}
+              </div>
+            {% endif %}
+
+            {% if block.settings.hero_subtitle != blank %}
+              <div class="hero-subtitle">
+                {{ block.settings.hero_subtitle }}
               </div>
             {% endif %}
 
