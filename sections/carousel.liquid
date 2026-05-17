@@ -64,11 +64,11 @@
               </div>
             {% endif %}
 
-            {% comment %} {% if block.settings.hero_main != blank %}
+            {% if block.settings.hero_main != blank %}
               <div class="hero-main">
                 {{ block.settings.hero_main }}
               </div>
-            {% endif %} {% endcomment %}
+            {% endif %}
 
             <div class="carousel-hero-cta-container">
               {% assign hero_cta_url = block.settings.hero_cta_url  %}
