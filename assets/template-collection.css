@@ -73,6 +73,7 @@
 
 .collection__title.title-wrapper > .title{
   border-left: 0.25em solid rgba(var(--color-button), var(--alpha-button-background));
+  padding-left: 0.25em;
 }
 
 .collection__title .title:not(:only-child) {
