@@ -40,11 +40,30 @@
         "padding_top": 48,
         "padding_bottom": 48
       }
+    },
+    "featured_blog_ainqPi": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "",
+        "post_limit": 3,
+        "heading": "Blog posts",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "contact_info_cGPXeF",
-    "form"
+    "form",
+    "featured_blog_ainqPi"
   ]
 }
