@@ -107,7 +107,7 @@
     "sale_badge_color_scheme": "scheme-a1b22bcb-4525-4f93-bc43-de1562eaf8bf",
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "About Bubble Crush",
-    "brand_description": "<p><strong>UK’s premium  B2B bubble tea wholesaler</strong>. Shop exclusive Asian brands (<em>FreeNow</em> & <em>Ice Blanc)</em>, powders, jelly, boba, crystal pearls, packaging & equipment. Fast delivery UK-wide from our London warehouse.</p>",
+    "brand_description": "<p><strong>UK’s premium  B2B bubble tea wholesaler</strong>. Shop exclusive Asian brands like <em>FreeNow (</em>菲诺) & <em>Ice Blanc</em>, powders, jelly, boba, crystal pearls, packaging & equipment. Fast delivery UK-wide from our London warehouse.</p>",
     "brand_image": "shopify://shop_images/bubble_crush_logo_in_bubble_tea_cups.webp",
     "brand_image_width": 530,
     "brand_maps_image": "shopify://shop_images/bubble-crush-supplier-london-wharehouse.webp",
@@ -201,11 +201,6 @@
           "extraHTMLToAppend": "",
           "disableAutomaticButtonAddition": false
         }
-      },
-      "12450984056772916534": {
-        "type": "shopify://apps/nexo-order-limits/blocks/limit-x-app-embed/3edaf63f-82b9-4315-9ff7-4b4a72388ad3",
-        "disabled": false,
-        "settings": {}
       }
     },
     "color_schemes": {
