@@ -524,7 +524,7 @@
       "settings": {
         "blog": "news",
         "post_limit": 3,
-        "heading": "Latest News",
+        "heading": "Latest Blogs",
         "heading_size": "h1",
         "columns_desktop": 3,
         "show_view_all": false,
