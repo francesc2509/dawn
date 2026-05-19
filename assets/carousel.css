@@ -116,6 +116,7 @@
     }
 
     .carousel-hero > .hero-title {
+      padding: 0.25em;
     }
 
     .carousel-hero > .hero-title > h1 {
