@@ -416,8 +416,8 @@
         "columns_mobile": "1",
         "columns_flow": "standard",
         "swipe_on_mobile": true,
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
     "image_banner_QYMcLG": {
