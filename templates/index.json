@@ -227,8 +227,8 @@
         "quick_add": "bulk",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 24,
-        "padding_bottom": 64
+        "padding_top": 28,
+        "padding_bottom": 32
       }
     },
     "image_banner_Rekq6Q": {
