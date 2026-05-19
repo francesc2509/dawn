@@ -71,6 +71,10 @@
   margin-bottom: 2.5rem;
 }
 
+.collection__title.title-wrapper > .title{
+  border-left: 1px solid red;
+}
+
 .collection__title .title:not(:only-child) {
   margin-bottom: 1rem;
 }
