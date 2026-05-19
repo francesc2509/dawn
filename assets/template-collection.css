@@ -72,7 +72,7 @@
 }
 
 .collection__title.title-wrapper > .title{
-  border-left: 1px solid red;
+  border-left: 0.5em solid red;
 }
 
 .collection__title .title:not(:only-child) {
