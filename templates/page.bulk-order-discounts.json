@@ -16,6 +16,16 @@
         "padding_bottom": 0
       }
     },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "contact_info_cGPXeF": {
       "type": "contact-info",
       "name": "Contact Information",
@@ -29,16 +39,6 @@
         "contact_info_map": "static",
         "contact_info_static_map_image_cta": "",
         "contact_info_interactive_map_url": ""
-      }
-    },
-    "form": {
-      "type": "contact-form",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "color_scheme": "scheme-1",
-        "padding_top": 48,
-        "padding_bottom": 48
       }
     },
     "featured_blog_ainqPi": {
@@ -62,8 +62,8 @@
   },
   "order": [
     "main",
-    "contact_info_cGPXeF",
     "form",
+    "contact_info_cGPXeF",
     "featured_blog_ainqPi"
   ]
 }
