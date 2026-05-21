@@ -374,8 +374,8 @@
         "image_ratio": "square",
         "show_secondary_image": true,
         "quick_add": "bulk",
-        "padding_top": 0,
-        "padding_bottom": 64
+        "padding_top": 24,
+        "padding_bottom": 32
       }
     },
     "multicolumn_7VD4PL": {
