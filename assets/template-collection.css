@@ -72,7 +72,7 @@
 }
 
 .collection__title.title-wrapper > .title{
-  /* border-left: 0.25em solid border-left: 0.25em solid rgba(var(--color-button), var(--alpha-button-background));; */
+  font-size: 1.75em;
 }
 
 .collection__title .title:not(:only-child) {
