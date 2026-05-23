@@ -229,6 +229,10 @@
       }
 
     @media (min-width: 992px) {
+      .carousel-curtain {
+        justify-content: flex-start;
+      }
+
     .carousel-hero {
       text-align: start;
       display: flex;
