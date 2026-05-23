@@ -310,6 +310,10 @@
       padding: 2em 0;
       align-items: flex-start;
     }
+
+     .link.link--text{
+        padding: 0 3rem;
+     }
     }
 
     @media (max-width: 768px) {
