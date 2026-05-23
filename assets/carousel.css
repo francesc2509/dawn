@@ -313,6 +313,7 @@
 
      .link.link--text{
         padding: 0 3rem;
+        justify-content: center;
      }
     }
 
