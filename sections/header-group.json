@@ -62,6 +62,11 @@
         "enable_language_selector": false
       }
     },
+    "breadcrumbs_9tTVwK": {
+      "type": "breadcrumbs",
+      "name": "Breadcrumbs",
+      "settings": {}
+    },
     "header": {
       "type": "header",
       "blocks": {
@@ -105,6 +110,7 @@
   },
   "order": [
     "announcement-bar",
+    "breadcrumbs_9tTVwK",
     "header"
   ]
 }
