@@ -314,6 +314,7 @@
      .link.link--text{
         padding: 0 3rem;
         justify-content: center;
+        min-width: calc(12rem + var(--buttons-border-width) * 2)
      }
     }
 
