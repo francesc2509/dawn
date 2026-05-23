@@ -275,10 +275,11 @@
     }
 
     .hero-stars > div {
-      align-items: center;
+      align-items: flex-start;
       display: flex;
       justify-content: center;
       gap: 2px;
+      padding: 0 3em;
     }
 
     .hero-stars svg {
@@ -290,7 +291,6 @@
       font-size: 0.75em;
       font-style: italic;
       font-weight: bold;
-      padding: 0 3em;
     }
 
     .carousel-hero > p {
