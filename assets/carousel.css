@@ -244,7 +244,7 @@
     }
 
     .carousel-hero > .hero-title, .carousel-hero > .hero-subtitle {
-      text-align: center;
+      text-align: start;
     }
 
     .carousel-hero > .hero-subtitle {
@@ -252,7 +252,7 @@
     }
 
     .hero-main {
-      text-align: center;
+      text-align: start;
       font-size: 0.85em;
       padding: 0 0.75em;
       margin-bottom: 0.5em;
