@@ -267,19 +267,19 @@
     .hero-stars {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       gap: 0.25em;
       box-sizing: border-box;
       margin: 0.5em;
+      padding: 0 3em;
     }
 
     .hero-stars > div {
       align-items: center;
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       gap: 2px;
-      padding: 0 3em;
     }
 
     .hero-stars svg {
