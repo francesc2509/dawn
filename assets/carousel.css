@@ -233,7 +233,7 @@
 
 @media (min-width: 992px) {
   .carousel-curtain {
-    justify-content: flex-start;
+    justify-content: center;
     padding: 2em;
     padding-top: var(--header-height);
   }
