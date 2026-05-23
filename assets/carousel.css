@@ -229,8 +229,8 @@
       }
 
     @media (min-width: 992px) {
-      .carousel-hero {
-      width: 100%;
+    .carousel-hero {
+      text-align: left;
       display: flex;
       flex-direction: column;
     }
