@@ -72,7 +72,7 @@
 }
 
 .collection__title.title-wrapper > .title{
-  font-size: 1.75em;
+  /* font-size: 1.75em; */
 }
 
 .collection__title .title:not(:only-child) {
