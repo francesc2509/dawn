@@ -233,6 +233,7 @@
       text-align: start;
       display: flex;
       flex-direction: column;
+      padding-left: 1em;
     }
 
     .carousel-hero > .hero-title {
