@@ -18,6 +18,7 @@
             "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
             "image": "shopify://shop_images/bubble_crush_supplier_UK_hero.png",
             "image_mobile": "shopify://shop_images/5dccbb0e-1ca1-4aa9-87b7-7522ae81f627.jpg",
+            "slide_duration": 8,
             "slide_fit": "cover",
             "slide_position": "center",
             "slide_overlay_alpha": 0.7,
@@ -37,6 +38,7 @@
           "settings": {
             "color_scheme": "background-1",
             "image": "shopify://shop_images/Bubble_Tea_E-commerce_Banner_-_Helvetica_Now.png",
+            "slide_duration": 5,
             "slide_fit": "cover",
             "slide_position": "left",
             "slide_overlay_alpha": 0.3,
