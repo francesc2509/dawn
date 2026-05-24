@@ -262,28 +262,6 @@
       }
       </style>
 
-      <div class="announcement-quick-contact-wrapper">
-        <ul class="announcement-quick-contact" role="list">
-          <li class="announcement-quick-contact-telephone">
-              <span class="svg-wrapper">
-                {{- 'icon-telephone.svg' | inline_asset_content -}}
-              </span>
-              {% assign telephones = section.settings.announcement_telephone | split: "," %}
-              <ul>
-              {% for telephone in telephones %}
-                <li>{{ telephone }}</li>  
-              {% endfor %}
-              </ul>
-          </li>
-          <li>
-            <a href="mailto:{{ section.settings.announcement_email }}">
-              <span class="svg-wrapper">
-                  {{- 'icon-mail.svg' | inline_asset_content -}}
-              </span>{{ section.settings.announcement_email }}
-            </a>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </div>
