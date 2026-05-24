@@ -17,7 +17,7 @@
         "announcement_fwJaRX": {
           "type": "announcement",
           "settings": {
-            "text": "🚚 Free Shipping on orders over <em>£300</em>",
+            "text": "🚚 Free Shipping on orders over <strong>£300</strong>",
             "link": ""
           }
         },
@@ -53,6 +53,8 @@
         "announcement_3NfFK8"
       ],
       "settings": {
+        "announcement_telephone": "Info@bubblecrushsupplier.com",
+        "announcement_email": "Info@bubblecrushsupplier.com",
         "auto_rotate": true,
         "change_slides_speed": 7,
         "color_scheme": "scheme-3bcdc089-fa06-4656-a4bc-8ee87e98a920",
