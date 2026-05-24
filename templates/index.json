@@ -35,10 +35,9 @@
         },
         "slide_hqkPUm": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
-            "image": "shopify://shop_images/Bubble_Tea_E-commerce_Banner_-_Helvetica_Now.png",
+            "image": "shopify://shop_images/Bubble_Tea_E-commerce_Banner_-_Helvetica_Now_1.png",
             "image_mobile": "shopify://shop_images/Gemini_Generated_Image_jwpmzwjwpmzwjwpm.png",
             "slide_duration": 5,
             "slide_fit": "cover",
