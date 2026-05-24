@@ -127,7 +127,7 @@
 }
 
 .carousel-hero > .hero-title > p {
-  font-size: 2em;
+  font-size: 1em;
 }
 
 .carousel-hero > .hero-title, .carousel-hero > .hero-subtitle {
@@ -255,7 +255,7 @@
   }
 
   .carousel-hero > .hero-title > p{
-    font-size: 0.75em;
+    font-size: 2em;
   }
 
   .carousel-hero > .hero-title, .carousel-hero > .hero-subtitle {
