@@ -41,7 +41,7 @@
             "image_mobile": "shopify://shop_images/Bubble_Tea_Training_Poster_-_Helvetica_Now.jpg",
             "slide_duration": 5,
             "slide_fit": "cover",
-            "slide_position": "left",
+            "slide_position": "center",
             "slide_overlay_alpha": 0.3,
             "hero_title_seo": "",
             "hero_title": "",
