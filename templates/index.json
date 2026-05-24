@@ -42,7 +42,7 @@
             "slide_duration": 5,
             "slide_fit": "cover",
             "slide_position": "center",
-            "slide_overlay_alpha": 0.3,
+            "slide_overlay_alpha": 0,
             "hero_title_seo": "",
             "hero_title": "",
             "hero_subtitle": "",
