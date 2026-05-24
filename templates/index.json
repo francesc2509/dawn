@@ -42,7 +42,7 @@
             "slide_duration": 5,
             "slide_fit": "cover",
             "slide_position": "center",
-            "slide_overlay_alpha": 0,
+            "slide_overlay_alpha": 0.4,
             "hero_title_seo": "<h2>Empower Your <strong>Business</strong></h2>",
             "hero_title": "<h3>Professional bubble tea training in the <strong>UK</strong></h3>",
             "hero_subtitle": "",
