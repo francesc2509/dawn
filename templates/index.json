@@ -42,16 +42,16 @@
             "slide_duration": 5,
             "slide_fit": "cover",
             "slide_position": "center",
-            "slide_overlay_alpha": 0.4,
+            "slide_overlay_alpha": 0.6,
             "hero_title_seo": "<h2>Empower Your <strong>Business</strong></h2>",
-            "hero_title": "<h3>Professional bubble tea training in the <strong>UK</strong></h3>",
+            "hero_title": "<h3>Professional bubble tea training</h3>",
             "hero_subtitle": "",
             "hero_main": "",
             "hero_cta_label": "Book a session",
             "hero_cta_url": "shopify://pages/bubble-tea-training-partnership-uk",
             "signed_in_hero_cta_label": "",
-            "hero_secondary_cta_label": "",
-            "hero_secondary_cta_url": ""
+            "hero_secondary_cta_label": "Book a session",
+            "hero_secondary_cta_url": "shopify://pages/bubble-tea-training-partnership-uk"
           }
         }
       },
