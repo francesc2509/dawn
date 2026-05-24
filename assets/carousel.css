@@ -44,6 +44,7 @@
   box-sizing: border-box;
   padding: 2em 1em;
   padding-top: var(--header-height);
+  background: transparent !important;
 }
 
 .dawn-carousel-item img, .dawn-carousel-item > video {
