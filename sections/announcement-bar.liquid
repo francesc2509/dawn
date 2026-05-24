@@ -158,6 +158,132 @@
           {%- endform -%}
         </localization-form>
       {%- endif -%}
+
+      <style>
+        .announcement-quick-contact-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 0.75em;
+        font-weight: 400;
+        font-size: normal;
+        margin: 0.25em;
+      }
+      
+      .announcement-quick-contact {
+        padding: 0;
+        margin: 0;
+      }
+
+      .announcement-quick-contact > li {
+        list-style-type: none;
+        text-align: end;
+        color: rgba(var(--color-foreground), 1);
+      }
+
+      .announcement-quick-contact > li a {
+        color: inherit;
+        text-decoration: none;
+        display: flex;
+        justify-content: flex-start;
+        gap: 0.25em;
+        align-items: center;
+      }
+
+      .announcement-quick-contact > li a:hover {
+        text-decoration: underline;
+      }
+
+      .announcement-quick-contact > li > span > svg {
+        height: 75%;
+        width: 75%;
+      }
+
+      .announcement-quick-contact-telephone {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .announcement-quick-contact-telephone > ul {
+        list-style-type: none;
+        padding: 0;
+        padding-left: 0.25em;
+        flex: 1;
+      }
+
+      @media(max-width: 989px) {
+        .announcement-quick-contact-wrapper {
+          display: block;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .announcement-quick-contact {
+          align-items: center;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 0;
+          flex-wrap: wrap;
+          margin: 0;
+        }
+
+        .announcement-quick-contact > li {
+          gap: 0;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      @media(max-width: 369px) {
+        .announcement-quick-contact-wrapper {
+          display: block;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .announcement-quick-contact {
+          align-items: center;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 0;
+          flex-wrap: wrap;
+          margin: 0;
+          list-style-type: none;
+          font-size: 0.75em;
+        }
+
+        .announcement-quick-contact > li {
+          gap: 0;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      </style>
+
+      <div class="announcement-quick-contact-wrapper">
+        <ul class="announcement-quick-contact" role="list">
+          <li class="announcement-quick-contact-telephone">
+              <span class="svg-wrapper">
+                {{- 'icon-telephone.svg' | inline_asset_content -}}
+              </span>
+              {% assign telephones = section.settings.announcement_telephone | split: "," %}
+              <ul>
+              {% for telephone in telephones %}
+                <li>{{ telephone }}</li>  
+              {% endfor %}
+              </ul>
+          </li>
+          <li>
+            <a href="mailto:{{ section.settings.announcement_email }}">
+              <span class="svg-wrapper">
+                  {{- 'icon-mail.svg' | inline_asset_content -}}
+              </span>{{ section.settings.announcement_email }}
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -171,6 +297,16 @@
     "groups": ["header"]
   },
   "settings": [
+    {
+      "type": "text",
+      "id": "announcement_telephone",
+      "label": "Telephone"
+    },
+    {
+      "type": "text",
+      "id": "announcement_email",
+      "label": "E-mail"
+    },
     {
       "type": "checkbox",
       "id": "auto_rotate",
