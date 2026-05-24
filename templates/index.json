@@ -36,7 +36,7 @@
         "slide_hqkPUm": {
           "type": "slide",
           "settings": {
-            "color_scheme": "background-1",
+            "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
             "image": "shopify://shop_images/Bubble_Tea_E-commerce_Banner_-_Helvetica_Now.png",
             "image_mobile": "shopify://shop_images/Gemini_Generated_Image_jwpmzwjwpmzwjwpm.png",
             "slide_duration": 5,
@@ -46,8 +46,8 @@
             "hero_title_seo": "",
             "hero_title": "",
             "hero_subtitle": "",
-            "hero_main": "<p>Book a session</p>",
-            "hero_cta_label": "",
+            "hero_main": "",
+            "hero_cta_label": "Book a session",
             "hero_cta_url": "",
             "signed_in_hero_cta_label": "",
             "hero_secondary_cta_label": "",
