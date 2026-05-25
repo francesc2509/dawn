@@ -191,7 +191,7 @@
   align-items: center;
   gap: 1em;
   padding: 2em;
-  align-self: baseline;
+  align-self: center;
 }
 
 .shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper :not(#header-h1-text) {
