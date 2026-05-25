@@ -270,18 +270,16 @@
             </span>
             {% assign telephones = section.settings.announcement_telephone | split: "," %}
             <ul>
-              <li>+44 7512 896659</li>  
-            {% comment %} {% for telephone in telephones %}
+            {% for telephone in telephones %}
               <li>{{ telephone }}</li>  
-            {% endfor %} {% endcomment %}
+            {% endfor %}
             </ul>
         </li>
         <li>
           <a href="mailto:{{ section.settings.announcement_email }}">
             <span class="svg-wrapper">
                 {{- 'icon-mail.svg' | inline_asset_content -}}
-            </span>{% comment %}{{ section.settings.announcement_email }}{% endcomment %}
-            Info@bubblecrushsupplier.com
+            </span>{{ section.settings.announcement_email }}
           </a>
         </li>
       </ul>
