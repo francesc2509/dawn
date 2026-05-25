@@ -319,6 +319,7 @@
     box-sizing: border-box;
     gap: 1em;
     align-items: flex-start;
+    align-self: baseline
   }
 
   .carousel-hero .link.link--text {
