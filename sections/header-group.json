@@ -31,15 +31,13 @@
         },
         "announcement_ezjVrM": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "Leading Brand Partnerships",
+            "text": "Leading Asian Brands",
             "link": ""
           }
         },
         "announcement_3NfFK8": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "text": "Professional Bubble Tea training",
             "link": ""
