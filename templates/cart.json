@@ -42,9 +42,9 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "hot-seller",
+        "collection": "sales",
         "products_to_show": 25,
-        "title": "Offers",
+        "title": "Special Offers",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
