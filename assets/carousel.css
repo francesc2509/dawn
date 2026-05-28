@@ -207,8 +207,8 @@
   stroke: rgb(var(--color-background));
 }
 
-.shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper ul:not(.header__submenu) svg,
-.shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper ul:not(.header__submenu) a {
+.shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper svg,
+.shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper a {
   filter: drop-shadow(0 1px 3px rgba(var(--color-foreground)));
 }
 
