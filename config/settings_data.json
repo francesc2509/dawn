@@ -211,6 +211,21 @@
         "type": "shopify://apps/brevo-pushowl/blocks/pushowl-app-embed-3d2ff2b5/fa20c3ba-38bf-43e0-ba5c-431f6ae07d95",
         "disabled": false,
         "settings": {}
+      },
+      "16215596966142545577": {
+        "type": "shopify://apps/easy-b2b-wholesale/blocks/wholesale-embed/019d9ae0-ecea-7da6-8157-8ec23ae63d2d",
+        "disabled": false,
+        "settings": {
+          "pdp_price_selector": "",
+          "pdp_sticky_selector": "",
+          "list_card_selector": "",
+          "list_link_selector": "",
+          "list_price_container_selector": "",
+          "list_price_text_selector": "",
+          "qty_input": "",
+          "qv_container_selector": "",
+          "qv_price_selector": ""
+        }
       }
     },
     "color_schemes": {
