@@ -58,9 +58,7 @@
 }
 
 .grid__item .article-card__excerpt {
-  max-height: 12em;
-  text-overflow: ellipsis ellipsis;
-  padding-bottom: 0.2rem
+  min-height: 12em;
 }
 
 .article-content:hover .article-card__title {
