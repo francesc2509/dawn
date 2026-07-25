@@ -107,6 +107,9 @@
 
 .article-card__header h2 {
   margin: 0 0 0.2rem;
+}
+
+.grid__item .article-card__header h2 {
   min-height: 6em;
 }
 
