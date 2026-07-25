@@ -57,7 +57,7 @@
   color: inherit;
 }
 
-.article-card__excerpt {
+.grid__item .article-card__excerpt {
   min-height: 12em;
 }
 
