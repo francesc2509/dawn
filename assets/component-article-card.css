@@ -59,6 +59,7 @@
 
 .grid__item .article-card__excerpt {
   min-height: 12em;
+  text-overflow: ellipsis ellipsis;
 }
 
 .article-content:hover .article-card__title {
