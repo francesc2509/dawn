@@ -58,7 +58,7 @@
 }
 
 .grid__item .article-card__excerpt {
-  min-height: 12em;
+  max-height: 12em;
   text-overflow: ellipsis ellipsis;
 }
 
