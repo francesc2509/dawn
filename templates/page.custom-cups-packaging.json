@@ -20,9 +20,9 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Bubble_Tea_Wholesale_UK_Landing_Banner.png",
+        "image": "shopify://shop_images/1_f79eb03b-e415-4ebb-a5e7-b0ba244d4d59.png",
         "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image_height": "adapt",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
@@ -33,87 +33,26 @@
         "show_text_below": true
       }
     },
-    "custom_liquid_tJfFrV": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+    "page_wPyKzD": {
+      "type": "page",
+      "name": "t:sections.page.presets.name",
       "settings": {
-        "custom_liquid": "<div class=\"about-bubblecrush-section\">\n  <div class=\"about-bubblecrush-content\">\n    <p>\n      Bubble Crush is a professional <strong>B2B bubble tea ingredient supplier</strong> headquartered in London, dedicated to serving businesses across the <strong>United Kingdom</strong>. We specialize in delivering <strong>authentic, high-quality, and cost-effective ingredients</strong>, sourced directly from <strong>Taiwan and Mainland China</strong> – bringing the best and most suitable products to the UK market.\n    </p>\n    <p>\n      With our London warehouse and efficient local logistics, we provide partners with fast delivery, consistent stock, and reduced supply risks. Today, Bubble Crush proudly works with <strong>over 100 independent bubble tea shops, cafés, and chain brands</strong> across the UK, offering reliable supply and long-term support.\n    </p>\n  </div>\n</div>\n\n<style>\n.about-bubblecrush-section {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0px auto;\n  padding: 20px 20px;\n  background-color: #f8f8f8; /* 可修改背景颜色 */\n  border-radius: 12px;\n  box-shadow: 0 4px 12px rgba(0,0,0,0.1);\n}\n\n.about-bubblecrush-content p {\n  font-size: 1.8rem;\n  line-height: 1.8;\n  color: #333;\n  margin-bottom: 10px;\n}\n\n.about-bubblecrush-content strong {\n  font-weight: 700;\n}\n\n@media (max-width: 768px) {\n  .about-bubblecrush-section {\n    padding: 10px 15px;\n  }\n\n  .about-bubblecrush-content p {\n    font-size: 1.6rem;\n    line-height: 1.6;\n  }\n}\n</style>",
+        "page": "custom-cups-packaging",
+        "heading_size": "h1",
         "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "rich_text_JWhcJq": {
-      "type": "rich-text",
-      "blocks": {
-        "button_68kTYi": {
-          "type": "button",
-          "settings": {
-            "button_label": "Our Story & Your Success",
-            "button_link": "shopify://pages/about-bubble-crush",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "button_68kTYi"
-      ],
-      "name": "t:sections.rich-text.presets.name",
+    "contact_form_M3Lqzm": {
+      "type": "contact-form",
+      "name": "t:sections.contact-form.presets.name",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "heading": "Please include your preferred product, size, quantity and artwork. We will contact you to confirm the available specifications, minimum order quantity, price and estimated lead time.",
+        "heading_size": "h2",
         "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "custom_liquid_nVa6L6": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<div class=\"boba-iwt page-width\">\n  <div class=\"boba-iwt__wrap\">\n    <div class=\"boba-iwt__media\">\n      <img\n        src=\"https://cdn.shopify.com/s/files/1/0782/7999/9817/files/b89d4682d790f368ab529fc960385640.png?v=1758032642\"\n        alt=\"Bubble Crush team\"\n        loading=\"lazy\"\n      >\n    </div>\n    <div class=\"boba-iwt__content\">\n      <h2 class=\"boba-iwt__eyebrow\">What We Offer?</h2>\n      <p class=\"boba-iwt__lead\">We supply the full range of bubble tea essentials, including:</p>\n      <ul class=\"boba-iwt__list\" role=\"list\">\n        <li>Tapioca pearls &amp; popping boba</li>\n        <li>Coconut jelly, grass jelly, and toppings</li>\n        <li>Premium tea leaves and powders</li>\n        <li>Flavored syrups and dairy products</li>\n        <li>Cups, straws, and packaging</li>\n        <li>Equipment and consumables</li>\n      </ul>\n      <p class=\"boba-iwt__note\">\n        Bubble Crush offers a one-stop solution for all bubble tea businesses in the UK,\n        whether you are running a small café or managing a multi-store chain.\n      </p>\n    </div>\n  </div>\n</div>\n\n<style>\n  .page-width { max-width: 1200px; margin: 0 auto; padding: 0 16px; }\n\n  .boba-iwt__wrap{\n    display:grid; gap: clamp(16px,3vw,28px);\n    grid-template-columns: 1fr; align-items:center;\n    padding: clamp(16px,3vw,28px);\n  }\n\n  .boba-iwt__media img{\n    width:100%; height:auto; display:block;\n    border-radius:12px;\n  }\n\n  .boba-iwt__eyebrow{\n    margin:0 0 6px; font-size: clamp(28px,3.2vw,36px);\n    font-weight:800; letter-spacing:-.02em; line-height:1.15;\n  }\n\n  .boba-iwt__lead{\n    margin:.3rem 0 1rem; color:#475569;\n    font-size: clamp(18px,1.2vw,24px); line-height:1.7;\n  }\n\n  /* 干净版序号列表 */\n  .boba-iwt__list{\n    counter-reset: boba-counter;\n    list-style:none;\n    padding:0;\n    margin:0 0 14px;\n    display:grid; gap:6px;\n  }\n  .boba-iwt__list li{\n    counter-increment: boba-counter;\n    position:relative;\n    padding-left:28px;\n    color:#0f172a;\n    font-size:clamp(15px,1.2vw,18px);\n    line-height:1.6;\n  }\n  .boba-iwt__list li::before{\n    content: counter(boba-counter) \".\";\n    position:absolute; left:0; top:0;\n    font-weight:700;\n    color:#475569; /* 紫色序号 */\n    font-size: 16px;\n  }\n\n  .boba-iwt__note{\n    margin:.25rem 0 0; color:#475569; font-size: clamp(18px,1vw,22px);\n  }\n\n  /* PC: 左图右文 & 列表两列 */\n  @media (min-width: 992px){\n    .boba-iwt__wrap{ grid-template-columns: 1.05fr 1fr; }\n    .boba-iwt__list{\n      grid-template-columns: 1fr 1fr;\n      gap:8px 20px;\n    }\n  }\n</style>",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "rich_text_NHP6cy": {
-      "type": "rich-text",
-      "blocks": {
-        "text_LnDjWc": {
-          "type": "text",
-          "settings": {
-            "text": "<h3>Get Your Business Started with Bubble Crush</h3>"
-          }
-        },
-        "button_6RLahK": {
-          "type": "button",
-          "settings": {
-            "button_label": "Explore Our Full Range",
-            "button_link": "shopify://collections",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "text_LnDjWc",
-        "button_6RLahK"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "custom_liquid_kYN6bg": {
@@ -125,92 +64,13 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
-    },
-    "image_banner_QKtWqV": {
-      "type": "image-banner",
-      "name": "t:sections.image-banner.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/landing_page_3.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true
-      }
-    },
-    "rich_text_krJLNg": {
-      "type": "rich-text",
-      "blocks": {
-        "button_dnxjp8": {
-          "type": "button",
-          "settings": {
-            "button_label": "Get a specialised pricing list for Ice Blanc & Freenow bulk orders",
-            "button_link": "shopify://collections/beverage-bases-coconut-milk-supplier",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "button_dnxjp8"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "image_banner_wQGCyt": {
-      "type": "image-banner",
-      "name": "t:sections.image-banner.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/Image_5.png",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true
-      }
-    },
-    "contact_form_M3Lqzm": {
-      "type": "contact-form",
-      "name": "t:sections.contact-form.presets.name",
-      "settings": {
-        "heading": "Fill in the form below to receive our latest price list, customized quotes, or information about Franchising & Training.",
-        "heading_size": "h1",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "main",
     "image_banner_fUGEGU",
-    "custom_liquid_tJfFrV",
-    "rich_text_JWhcJq",
-    "custom_liquid_nVa6L6",
-    "rich_text_NHP6cy",
-    "custom_liquid_kYN6bg",
-    "image_banner_QKtWqV",
-    "rich_text_krJLNg",
-    "image_banner_wQGCyt",
-    "contact_form_M3Lqzm"
+    "page_wPyKzD",
+    "contact_form_M3Lqzm",
+    "custom_liquid_kYN6bg"
   ]
 }
