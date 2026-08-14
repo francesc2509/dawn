@@ -9,23 +9,6 @@
  */
 {
   "sections": {
-    "image_banner_fUGEGU": {
-      "type": "image-banner",
-      "name": "t:sections.image-banner.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/1_f79eb03b-e415-4ebb-a5e7-b0ba244d4d59.png",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true
-      }
-    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -56,7 +39,6 @@
     }
   },
   "order": [
-    "image_banner_fUGEGU",
     "main",
     "contact_form_M3Lqzm",
     "custom_liquid_kYN6bg"
