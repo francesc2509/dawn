@@ -232,7 +232,7 @@
       "type": "featured-collection",
       "name": "Special Offers",
       "settings": {
-        "collection": "sales",
+        "collection": "bubble-tea-wholesale-offers",
         "products_to_show": 8,
         "title": "Special Offers",
         "heading_size": "h1",
