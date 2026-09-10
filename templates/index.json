@@ -440,7 +440,7 @@
           "disabled": true,
           "settings": {
             "tab_label": "Offers",
-            "collection": "sales",
+            "collection": "special-offers",
             "color_scheme": "scheme-1341b89c-8f87-4d55-8add-319fe8d372c5"
           }
         }

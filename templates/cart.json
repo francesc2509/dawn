@@ -42,7 +42,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "sales",
+        "collection": "special-offers",
         "products_to_show": 25,
         "title": "Special Offers",
         "heading_size": "h2",
