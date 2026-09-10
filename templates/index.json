@@ -280,8 +280,8 @@
         "show_text_box": false,
         "color_scheme": "",
         "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true
+        "mobile_content_alignment": "right",
+        "show_text_below": false
       }
     },
     "featured_collection_adJ8Jc": {
