@@ -251,6 +251,39 @@
         "padding_bottom": 36
       }
     },
+    "image_banner_rLyzLj": {
+      "type": "image-banner",
+      "blocks": {
+        "buttons_zhkR8L": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Get Offer",
+            "button_link_1": "shopify://products/ice-blanc-non-hydrogenated-vegetable-cream",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "buttons_zhkR8L"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Back-to-School_Stock_Up.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-right",
+        "desktop_content_alignment": "right",
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
     "featured_collection_adJ8Jc": {
       "type": "featured-collection",
       "name": "Special Offers",
@@ -279,39 +312,6 @@
         "swipe_on_mobile": true,
         "padding_top": 48,
         "padding_bottom": 48
-      }
-    },
-    "image_banner_rLyzLj": {
-      "type": "image-banner",
-      "blocks": {
-        "buttons_zhkR8L": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Get Offer",
-            "button_link_1": "shopify://products/ice-blanc-non-hydrogenated-vegetable-cream",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "buttons_zhkR8L"
-      ],
-      "name": "t:sections.image-banner.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/Back-to-School_Stock_Up.png",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "right",
-        "show_text_box": false,
-        "color_scheme": "",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true
       }
     },
     "rich_text_aAgn8r": {
