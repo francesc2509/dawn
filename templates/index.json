@@ -35,10 +35,11 @@
         },
         "slide_JiaxbK": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
             "image": "shopify://shop_images/Back-to-School_Stock_Up.png",
-            "image_mobile": "shopify://shop_images/1_a030d172-aa40-4ba7-b3db-576d9d2cef7b.png",
+            "image_mobile": "shopify://shop_images/buy_5_1_free_ice_blanc_offer.png",
             "slide_duration": 5,
             "slide_fit": "cover",
             "slide_position": "left",
