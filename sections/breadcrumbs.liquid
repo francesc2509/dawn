@@ -1,151 +1,163 @@
 {%- unless template == 'cart' or template == 'list-collections' or template == '404' -%}
-{%- assign t = template | split: '.' | first -%}
+  {%- assign t = template | split: '.' | first -%}
 
-{%- comment -%} 
-  Only render styles and markup if the user is NOT on the homepage.
-  This allows you to keep the section safely added on the homepage template 
-  in your theme customizer without it rendering any empty space or text.
-{%- endcomment -%}
-{%- if template != 'index' -%}
-<style>
-  .breadcrumbs {
-    padding: 1.5rem 0;
-    margin: 0 auto;
-    max-width: var(--page-width);
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
-  @media screen and (max-width: 749px) {
-    .breadcrumbs {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-  .breadcrumbs__list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: 1.3rem;
-  }
-  .breadcrumbs__item {
-    display: inline-flex;
-    align-items: center;
-    max-width: 10%; 
-  }
-  @media screen and (max-width: 749px) {
-    .breadcrumbs__item {
-      max-width: 33%; 
-    }
-  }
-  .breadcrumbs__item:not(:last-child)::after {
-    content: '/';
-    margin-left: 0.8rem;
-    color: rgba(var(--color-foreground), 0.5);
-    flex-shrink: 0; 
-  }
-  .breadcrumbs__link {
-    text-decoration: none;
-    color: rgba(var(--color-foreground), 0.75);
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .breadcrumbs__link:hover {
-    text-decoration: underline;
-    color: rgb(var(--color-foreground));
-  }
-  .breadcrumbs__item [aria-current="page"] {
-    color: rgb(var(--color-foreground));
-    font-weight: 500;
-    text-decoration: none;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-</style>
+  {%- comment -%}
+    Only render styles and markup if the user is NOT on the homepage.
+    This allows you to keep the section safely added on the homepage template
+    in your theme customizer without it rendering any empty space or text.
+  {%- endcomment -%}
+  {%- if template != 'index' -%}
+    <style>
+      .breadcrumbs {
+        padding: 1.5rem 0;
+        margin: 0 auto;
+        max-width: var(--page-width);
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+      @media screen and (max-width: 749px) {
+        .breadcrumbs {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+      }
+      .breadcrumbs__list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 1.3rem;
+      }
+      .breadcrumbs__item {
+        display: inline-flex;
+        align-items: center;
+        max-width: 10%;
+      }
+      @media screen and (max-width: 749px) {
+        .breadcrumbs__item {
+          max-width: 33%;
+        }
+      }
+      .breadcrumbs__item:not(:last-child)::after {
+        content: '/';
+        margin-left: 0.8rem;
+        color: rgba(var(--color-foreground), 0.5);
+        flex-shrink: 0;
+      }
+      .breadcrumbs__link {
+        text-decoration: none;
+        color: rgba(var(--color-foreground), 0.75);
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .breadcrumbs__link:hover {
+        text-decoration: underline;
+        color: rgb(var(--color-foreground));
+      }
+      .breadcrumbs__item [aria-current='page'] {
+        color: rgb(var(--color-foreground));
+        font-weight: 500;
+        text-decoration: none;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    </style>
 
-<nav class="breadcrumbs" aria-label="breadcrumbs">
-  <ul class="breadcrumbs__list">
-    <li class="breadcrumbs__item">
-      <a class="breadcrumbs__link" href="/" title="Home">Home</a>
-    </li>
-    {%- case t -%}
-      {%- when 'page' -%}
+    <nav class="breadcrumbs" aria-label="breadcrumbs">
+      <ul class="breadcrumbs__list">
         <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+          <a class="breadcrumbs__link" href="{{ routes.root_url }}" title="Home">Home</a>
         </li>
-      {%- when 'product' -%}
-        {%- if collection -%}
-          {%- comment -%} The user came from an explicit collection page {%- endcomment -%}
-          <li class="breadcrumbs__item">
-              <a class="breadcrumbs__link" href="{{ collection.url }}">{{ collection.title }}</a>
-          </li>
-        {%- elsif product.collections.size > 0 -%}
-          {%- comment -%} The user arrived directly. Loop through and grab the first manual collection {%- endcomment -%}
-          {%- assign primary_collection = null -%}
-          {%- for c in product.collections -%}
-              {%- unless c.handle == 'all' or c.handle contains 'frontpage' -%}
-              {%- assign primary_collection = c -%}
-              {%- break -%}
-              {%- endunless -%}
-          {%- endfor -%}
-
-          {%- if primary_collection -%}
+        {%- case t -%}
+          {%- when 'page' -%}
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+            </li>
+          {%- when 'product' -%}
+            {%- if collection -%}
+              {%- comment -%} The user came from an explicit collection page {%- endcomment -%}
               <li class="breadcrumbs__item">
-                  <a class="breadcrumbs__link" href="{{ primary_collection.url }}">{{ primary_collection.title }}</a>
+                <a class="breadcrumbs__link" href="{{ collection.url }}">{{ collection.title }}</a>
               </li>
-          {%- endif -%}
-        {%- endif -%}
-        <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
-        </li>
-      {%- when 'collection' and collection.handle -%}
-        {%- if current_tags -%}
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="{{ collection.url }}">{{ collection.title }}</a>
-          </li>
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="{{ collection.url }}/{{ current_tags | join: '+' }}" aria-current="page">{{ current_tags | join: " + " }}</a>
-          </li>
-        {%- else -%}
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
-          </li>
-        {%- endif -%}
-      {%- when 'blog' -%}
-        {%- if current_tags -%}
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="{{ blog.url }}">{{ blog.title }}</a>
-          </li>
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="{{ blog.url }}/tagged/{{ current_tags | join: '+' }}" aria-current="page">{{ current_tags | join: " + " }}</a>
-          </li>
-        {%- else -%}
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
-          </li>
-        {%- endif -%}
-      {%- when 'article' -%}
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="{{ blog.url }}">{{ blog.title }}</a>
-        </li>
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
-        </li>
-      {%- else -%}
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link" href="{{ request.path }}" aria-current="page">{{ page_title }}</a>
-        </li>
-    {%- endcase -%}
-  </ul>
-</nav>
-{%- endif -%}
+            {%- elsif product.collections.size > 0 -%}
+              {%- comment -%} The user arrived directly. Loop through and grab the first manual collection {%- endcomment -%}
+              {%- assign primary_collection = null -%}
+              {%- for c in product.collections -%}
+                {%- unless c.handle == 'all' or c.handle contains 'frontpage' -%}
+                  {%- assign primary_collection = c -%}
+                  {%- break -%}
+                {%- endunless -%}
+              {%- endfor -%}
+
+              {%- if primary_collection -%}
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="{{ primary_collection.url }}">{{ primary_collection.title }}</a>
+                </li>
+              {%- endif -%}
+            {%- endif -%}
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
+            </li>
+          {%- when 'collection' -%}
+            {%- if current_tags -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ collection.url }}">{{ collection.title }}</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a
+                  class="breadcrumbs__link"
+                  href="{{ collection.url }}/{{ current_tags | join: '+' }}"
+                  aria-current="page"
+                >
+                  {{- current_tags | join: ' + ' -}}
+                </a>
+              </li>
+            {%- else -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
+              </li>
+            {%- endif -%}
+          {%- when 'blog' -%}
+            {%- if current_tags -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ blog.url }}">{{ blog.title }}</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a
+                  class="breadcrumbs__link"
+                  href="{{ blog.url }}/tagged/{{ current_tags | join: '+' }}"
+                  aria-current="page"
+                >
+                  {{- current_tags | join: ' + ' -}}
+                </a>
+              </li>
+            {%- else -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
+              </li>
+            {%- endif -%}
+          {%- when 'article' -%}
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{{ blog.url }}">{{ blog.title }}</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
+            </li>
+          {%- else -%}
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{{ request.path }}" aria-current="page">{{ page_title }}</a>
+            </li>
+        {%- endcase -%}
+      </ul>
+    </nav>
+  {%- endif -%}
 {%- endunless -%}
 
 {% schema %}

@@ -184,9 +184,11 @@
 
             {%- if paginate.pages > 1 -%}
               {% render 'infinite-scroll',
-                next_page: paginate.next.url,
-                page_size: paginate.pages,
-                end_text: "You reached the end of the page..."
+                section_id: section.id,
+                current_page: paginate.current_page,
+                total_pages: paginate.pages,
+                grid_id: 'product-grid',
+                end_text: 'You reached the end of the page...'
               %}
             {%- endif -%}
           </div>
@@ -237,7 +239,7 @@
           "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
         }
       ]
-    },    
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",

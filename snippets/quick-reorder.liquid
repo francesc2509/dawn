@@ -1,29 +1,55 @@
-{% if customer and customer.orders_count > 0 %}
-  <div class="page-width">
-    <h2 class="h1">Restock Your Favorites</h2>
-    <ul class="grid grid--2-col grid--4-col-desktop">
-      {%- assign displayed_products = "" -%}
-      {%- assign count = 0 -%}
-      {% for order in customer.orders %}
-        {% for item in order.line_items %}
-          {%- assign prod = item.product -%}
+{% comment %}
+  Renders up to 4 distinct products from the customer's recent orders.
 
-          {% unless displayed_products contains prod.id or count >= 4 or prod == blank %}
-            <li class="grid__item">
-              {% render 'card-product',
-                card_product: prod,
-                media_aspect_ratio: block.settings.image_ratio,
-                show_secondary_image: false,
-                lazy_load: false,
-                quick_add: 'bulk',
-                section_id: section.id,
-                horizontal_quick_add: false
-              %}
-            </li>
-            {%- assign displayed_products = displayed_products | append: prod.id | append: "," -%}
-          {% endunless %}
-        {% endfor %}
-      {% endfor %}
-    </ul>
-  </div>
-{% endif %}
+  Performance: iterating every line item of every order is costly for customers with long
+  order histories, and the string-`contains` dedupe grows with each addition. We limit the
+  scan to the most recent orders and stop as soon as 4 distinct products are collected.
+
+  Accepts:
+  - image_ratio (optional) media aspect ratio passed to card-product (default: adapt)
+{% endcomment %}
+
+{%- if customer and customer.orders_count > 0 -%}
+  {%- assign reorder_image_ratio = image_ratio | default: section.settings.image_ratio | default: 'adapt' -%}
+  {%- assign displayed_products = '' -%}
+  {%- assign count = 0 -%}
+  {%- assign reorder_cards = '' -%}
+
+  {%- comment -%} Only scan the 5 most recent orders to bound the work. {%- endcomment -%}
+  {%- for order in customer.orders limit: 5 -%}
+    {%- if count >= 4 -%}{%- break -%}{%- endif -%}
+    {%- for item in order.line_items -%}
+      {%- if count >= 4 -%}{%- break -%}{%- endif -%}
+      {%- assign prod = item.product -%}
+      {%- if prod == blank -%}{%- continue -%}{%- endif -%}
+      {%- assign prod_key = prod.id | append: ',' -%}
+      {%- unless displayed_products contains prod_key -%}
+        {%- assign displayed_products = displayed_products | append: prod_key -%}
+        {%- assign count = count | plus: 1 -%}
+        {%- capture card -%}
+          <li class="grid__item">
+            {%- render 'card-product',
+              card_product: prod,
+              media_aspect_ratio: reorder_image_ratio,
+              show_secondary_image: false,
+              lazy_load: true,
+              quick_add: 'bulk',
+              section_id: section.id,
+              horizontal_quick_add: false
+            -%}
+          </li>
+        {%- endcapture -%}
+        {%- assign reorder_cards = reorder_cards | append: card -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  {%- endfor -%}
+
+  {%- if count > 0 -%}
+    <div class="page-width">
+      <h2 class="h1">Restock Your Favorites</h2>
+      <ul class="grid grid--2-col grid--4-col-desktop">
+        {{ reorder_cards }}
+      </ul>
+    </div>
+  {%- endif -%}
+{%- endif -%}

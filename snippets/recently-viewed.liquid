@@ -1,28 +1,45 @@
 <style>
- #recently-viewed {
+  #recently-viewed {
     margin: 2em 0;
   }
-
 </style>
 
 <div id="recently-viewed" class="quick-add-hidden">
-    <h2 class="related-products__heading h2">Recently viewed</h2>
+  <h2 class="related-products__heading h2">Recently viewed</h2>
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", async function () {
-  const container = document.getElementById("recently-viewed");
-  if (!container) return;
+  document.addEventListener('DOMContentLoaded', async function () {
+    const container = document.getElementById('recently-viewed');
+    if (!container) return;
 
-  const handles = JSON.parse(localStorage.getItem("recently_viewed")) || [];
+    let handles = [];
+    try {
+      handles = JSON.parse(localStorage.getItem('recently_viewed')) || [];
+    } catch (e) {
+      handles = [];
+    }
+    if (!Array.isArray(handles) || !handles.length) return;
 
-  if (!handles.length) return;
+    // Cap the number of handles queried to keep the request small and fast.
+    const query = handles
+      .slice(0, 4)
+      .filter((h) => typeof h === 'string' && h.length)
+      .map((h) => `handle:${h}`)
+      .join(' OR ');
 
-  const query = handles.slice(0, 4).map(h => `handle:${h}`).join(" OR ");
+    if (!query) return;
 
-  const res = await fetch(`/search?q=${encodeURIComponent(query)}&type=product&view=recently-viewed`);
-  const html = await res.text();
+    try {
+      const res = await fetch(`/search?q=${encodeURIComponent(query)}&type=product&view=recently-viewed`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-  container.innerHTML += html;
-});
+      const html = await res.text();
+      if (html.trim()) {
+        container.insertAdjacentHTML('beforeend', html);
+      }
+    } catch (e) {
+      console.error('Recently viewed fetch failed', e);
+    }
+  });
 </script>

@@ -1,137 +1,172 @@
-const carouselContainer = document.querySelector(".carousel-container");
-const carousel = carouselContainer.querySelector(".carousel");
-const carouselNavContainer = carouselContainer.querySelector(".carousel-nav-container");
-const carouselNav = carouselNavContainer.querySelector(".carousel-nav");
-const carouselCurtain = carouselContainer.querySelector(".carousel-curtain");
-const carouselNavActiveClassName = 'active';
+/**
+ * Carousel
+ *
+ * Each `.carousel-container` on the page is initialised independently, so multiple
+ * Carousel sections can coexist. Guards against missing markup (the script is loaded
+ * on every page but the section may be absent) and honours `prefers-reduced-motion`
+ * by disabling auto-advance.
+ */
+(function () {
+  const CAROUSEL_NAV_ACTIVE_CLASS = 'active';
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-if (carousel.children.length && carousel.children.length > 1) {
-  carouselNavContainer.classList.remove("hidden");
-}
+  class Carousel {
+    constructor(container) {
+      this.container = container;
+      this.carousel = container.querySelector('.carousel');
+      this.navContainer = container.querySelector('.carousel-nav-container');
+      this.nav = this.navContainer ? this.navContainer.querySelector('.carousel-nav') : null;
 
-let idx = 0;
-let selectedIdx = idx;
-let timeoutId = undefined;
+      // Bail out if the essential structure is missing.
+      if (!this.carousel || !this.nav || !this.carousel.children.length) return;
 
-let touchstartX = 0
-let touchendX = 0
-let touchstartY = 0;
-let touchendY = 0;
+      this.slides = Array.from(this.carousel.children);
+      this.navItems = Array.from(this.nav.children);
+      this.selectedIdx = 0;
+      this.timeoutId = undefined;
+      this.touchstartX = 0;
+      this.touchendX = 0;
+      this.touchstartY = 0;
+      this.touchendY = 0;
 
-carouselContainer.addEventListener('touchstart', e => {
-  touchstartX = e.changedTouches[0].screenX;
-  touchstartY = e.changedTouches[0].screenY;
-})
+      if (this.slides.length > 1 && this.navContainer) {
+        this.navContainer.classList.remove('hidden');
+      }
 
-carouselContainer.addEventListener('touchend', e => {
-  touchendX = e.changedTouches[0].screenX;
-  touchendY = e.changedTouches[0].screenY;
-  checkDirection()
-})
+      this.init();
+    }
 
-const scheduleImage = (idx, item) => {
-    const duration = Number(item.dataset?.duration) || 2;
-    const position = selectedIdx < carousel.children.length - 1 ? idx + 1: 0;
-    const currentIdx = selectedIdx;
-  
-    timeoutId = setTimeout(() => {
-        if (currentIdx !== selectedIdx) {
-          return;
+    init() {
+      this.container.addEventListener(
+        'touchstart',
+        (e) => {
+          this.touchstartX = e.changedTouches[0].screenX;
+          this.touchstartY = e.changedTouches[0].screenY;
+        },
+        { passive: true },
+      );
+
+      this.container.addEventListener(
+        'touchend',
+        (e) => {
+          this.touchendX = e.changedTouches[0].screenX;
+          this.touchendY = e.changedTouches[0].screenY;
+          this.checkDirection();
+        },
+        { passive: true },
+      );
+
+      this.slides.forEach((slide, itemIdx) => {
+        const media = slide.firstElementChild;
+        const navItem = this.navItems[itemIdx];
+
+        if (navItem) {
+          navItem.addEventListener('click', (event) => {
+            if (this.selectedIdx === itemIdx) return;
+            this.goTo(event, itemIdx);
+          });
         }
-        
-        handleCarouselChange(undefined, position, timeoutId)
-    }, duration * 1000);
-}
 
-const handleCarouselChange = (event, position, previousTimeoutId) => {
-    const firstElementChild = carousel.children[selectedIdx]?.firstElementChild
-    if (firstElementChild instanceof HTMLVideoElement) {
-      firstElementChild.pause();
-      firstElementChild.currentTime = 0;
+        if (media instanceof HTMLVideoElement) {
+          if (slide === this.carousel.firstElementChild) {
+            this.safePlay(media);
+          }
+          media.addEventListener(
+            'ended',
+            (event) => {
+              const next = itemIdx < this.slides.length - 1 ? itemIdx + 1 : 0;
+              this.goTo(event, next);
+            },
+            false,
+          );
+        } else if (
+          media instanceof HTMLPictureElement &&
+          slide === this.carousel.firstElementChild &&
+          !prefersReducedMotion
+        ) {
+          this.scheduleImage(itemIdx, slide);
+        }
+      });
     }
 
-    carouselNav.children[selectedIdx].classList.remove(carouselNavActiveClassName);
-    carousel.style.transform = `translateX(${position * -100}%)`;
-    //carousel.style.left = ((position) * -100) + '%';
-    carouselNav.children[position].classList.add(carouselNavActiveClassName);
-    selectedIdx = position;
-
-    if (carousel.children[position].firstElementChild instanceof HTMLVideoElement) {
-      carousel.children[position].firstElementChild.play();
-    } else if (carousel.children[position].firstElementChild instanceof HTMLPictureElement) {
-      scheduleImage(position, carousel.children[position]);
+    safePlay(video) {
+      const p = video.play();
+      if (p && typeof p.catch === 'function') p.catch(() => {});
     }
 
-    if (previousTimeoutId) {
-      clearTimeout(previousTimeoutId);
+    scheduleImage(idx, item) {
+      // Auto-advance is disabled when the user prefers reduced motion.
+      if (prefersReducedMotion || this.slides.length <= 1) return;
+
+      const duration = Number(item.dataset && item.dataset.duration) || 2;
+      const position = this.selectedIdx < this.slides.length - 1 ? idx + 1 : 0;
+      const currentIdx = this.selectedIdx;
+
+      this.timeoutId = setTimeout(() => {
+        // Cancel if the user navigated in the meantime.
+        if (currentIdx !== this.selectedIdx) return;
+        this.goTo(undefined, position, this.timeoutId);
+      }, duration * 1000);
     }
-} 
 
-const handlePreviousItem = (event, itemIdx) => {
-    handleCarouselChange(event, itemIdx - 1, timeoutId);
-};
+    goTo(event, position, previousTimeoutId) {
+      if (position < 0 || position >= this.slides.length) return;
 
-const handleNextItem = (event, itemIdx) => {
-    handleCarouselChange(event, itemIdx + 1, timeoutId);
-};
+      const currentMedia = this.slides[this.selectedIdx] ? this.slides[this.selectedIdx].firstElementChild : null;
+      if (currentMedia instanceof HTMLVideoElement) {
+        currentMedia.pause();
+        currentMedia.currentTime = 0;
+      }
 
-const handleGoToStart = (event) => {
-    handleCarouselChange(event, 0, timeoutId);
-};
+      if (this.navItems[this.selectedIdx]) {
+        this.navItems[this.selectedIdx].classList.remove(CAROUSEL_NAV_ACTIVE_CLASS);
+      }
 
-const handleGoToEnd = (event) => {
-    handleCarouselChange(event, carousel.children.length - 1, timeoutId);
-};
+      this.carousel.style.transform = `translateX(${position * -100}%)`;
 
-const checkDirection = () => {
-  if (Math.abs(touchstartY - touchendY) > 100) {
-    return;
+      if (this.navItems[position]) {
+        this.navItems[position].classList.add(CAROUSEL_NAV_ACTIVE_CLASS);
+      }
+      this.selectedIdx = position;
+
+      const nextMedia = this.slides[position].firstElementChild;
+      if (nextMedia instanceof HTMLVideoElement) {
+        this.safePlay(nextMedia);
+      } else if (nextMedia instanceof HTMLPictureElement) {
+        this.scheduleImage(position, this.slides[position]);
+      }
+
+      if (previousTimeoutId) clearTimeout(previousTimeoutId);
+    }
+
+    checkDirection() {
+      // Ignore mostly-vertical swipes (scrolling).
+      if (Math.abs(this.touchstartY - this.touchendY) > 100) return;
+
+      if (this.touchendX < this.touchstartX) {
+        const next = this.selectedIdx < this.slides.length - 1 ? this.selectedIdx + 1 : 0;
+        this.goTo(undefined, next, this.timeoutId);
+        return;
+      }
+
+      if (this.touchendX > this.touchstartX) {
+        const prev = this.selectedIdx > 0 ? this.selectedIdx - 1 : this.slides.length - 1;
+        this.goTo(undefined, prev, this.timeoutId);
+      }
+    }
   }
-  
-  if (touchendX < touchstartX) {
-    const handler = selectedIdx < carousel.children.length - 1 ?
-        (event) => handleNextItem(event, selectedIdx):
-        (event) => handleGoToStart(event);
-    handler();
-    return;
+
+  function initCarousels() {
+    document.querySelectorAll('.carousel-container').forEach((container) => {
+      if (container.dataset.carouselInit === 'true') return;
+      container.dataset.carouselInit = 'true';
+      new Carousel(container);
+    });
   }
 
-  if (touchendX > touchstartX) {
-    const handler = selectedIdx > 0 ?
-        (event) => handlePreviousItem(event, selectedIdx):
-        (event) => handleGoToEnd(event);
-    handler();
-    return;
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousels);
+  } else {
+    initCarousels();
   }
-}
-
-for (let carouselItem of carousel.children) {
-  const media = carouselItem.firstElementChild;
-  const itemIdx = idx;
-
-  carouselNav.children[itemIdx].addEventListener('click', (event) => {
-    if (selectedIdx === itemIdx) {
-      return;
-    }
-    
-    handleCarouselChange(event, itemIdx);
-  });
-
-  if (media instanceof HTMLVideoElement) {  
-
-    if (carouselItem === carousel.firstElementChild) {
-      media.play();
-    }
-
-    const handler = itemIdx < carousel.children.length - 1 ?
-      (event) => handleNextItem(event, itemIdx):
-      (event) => handleGoToStart(event);
-    
-    media.addEventListener('ended', (event) => {
-      handler(event);
-    },false);
-  } else if (media instanceof HTMLPictureElement && carouselItem === carousel.firstElementChild) {
-    scheduleImage(idx, carouselItem);
-  }
-  idx++;
-}
+})();

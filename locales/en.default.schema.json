@@ -3240,6 +3240,63 @@
         "name": "Slideshow"
       }
     },
+    "contact-us": {
+      "name": "Contact us",
+      "settings": {
+        "header": {
+          "content": "Map"
+        },
+        "gmap": {
+          "label": "Show map"
+        },
+        "gmap_iframe": {
+          "label": "Google Maps embed code"
+        },
+        "header_2": {
+          "content": "Contact details"
+        },
+        "contact_title": {
+          "label": "Title"
+        },
+        "contact_des": {
+          "label": "Description"
+        },
+        "contact_address": {
+          "label": "Address"
+        },
+        "contact_phone": {
+          "label": "Phone"
+        },
+        "contact_mail": {
+          "label": "Email"
+        },
+        "contact_web": {
+          "label": "Website"
+        },
+        "header_3": {
+          "content": "More information"
+        },
+        "moreinfo_title": {
+          "label": "Title"
+        }
+      },
+      "blocks": {
+        "information": {
+          "name": "Information",
+          "settings": {
+            "icon": {
+              "label": "Icon"
+            },
+            "title": {
+              "label": "Title"
+            },
+            "description": {
+              "label": "Description"
+            }
+          }
+        }
+      }
+    },
     "collapsible_content": {
       "name": "Collapsible content",
       "settings": {

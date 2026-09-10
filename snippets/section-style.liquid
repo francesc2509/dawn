@@ -1,41 +1,60 @@
-{% if section.settings.margin_desktop != blank or section.settings.padding_desktop != blank or section.settings.margin_mobile != blank or section.settings.padding_mobile != blank or section.settings.background-color != blank %}
-<style>
-  {% if section.settings.margin_desktop != blank or section.settings.padding_desktop != blank or section.settings.background-color != blank %}
-    #shopify-section-{{ section.id }} {
-      {% if section.settings.margin_desktop != blank %}
-        margin: {{ section.settings.margin_desktop }};
-      {% endif %}
-      {% if section.settings.padding_desktop != blank %}
-        padding: {{ section.settings.padding_desktop }};
-      {% endif %}
-      {% if section.settings.background-color != blank %}
-      background-color: {{ section.settings.background-color }};
-      {% endif %}
-    }
-  {% endif %}
-  {% if section.settings.margin_tablets != blank or section.settings.padding_tablets != blank %}
-    @media(max-width: 1199px){
+{% comment %}
+  Renders scoped spacing/background styles for a section.
+
+  Security: margin/padding/background values are merchant-supplied free-text and are
+  interpolated into a <style> block. A raw value could break out of the declaration or
+  the <style> element (e.g. "red} ... {" or "</style><script>"). We sanitize every value
+  by stripping the characters that allow such breakouts ( ; { } < > and parentheses ) and
+  by escaping for safety. Prefer numeric/range settings upstream where possible.
+
+  Accepts:
+  - section.settings.margin_desktop / padding_desktop
+  - section.settings.margin_tablets / padding_tablets
+  - section.settings.margin_mobile / padding_mobile
+  - section.settings.background_color  (use a `color` type setting so it is validated)
+{% endcomment %}
+
+{%- liquid
+  assign safe_margin_desktop = section.settings.margin_desktop | replace: ';', '' | replace: '{', '' | replace: '}', '' | replace: '<', '' | replace: '>', '' | replace: '(', '' | replace: ')', '' | escape
+  assign safe_padding_desktop = section.settings.padding_desktop | replace: ';', '' | replace: '{', '' | replace: '}', '' | replace: '<', '' | replace: '>', '' | replace: '(', '' | replace: ')', '' | escape
+  assign safe_margin_tablets = section.settings.margin_tablets | replace: ';', '' | replace: '{', '' | replace: '}', '' | replace: '<', '' | replace: '>', '' | replace: '(', '' | replace: ')', '' | escape
+  assign safe_padding_tablets = section.settings.padding_tablets | replace: ';', '' | replace: '{', '' | replace: '}', '' | replace: '<', '' | replace: '>', '' | replace: '(', '' | replace: ')', '' | escape
+  assign safe_margin_mobile = section.settings.margin_mobile | replace: ';', '' | replace: '{', '' | replace: '}', '' | replace: '<', '' | replace: '>', '' | replace: '(', '' | replace: ')', '' | escape
+  assign safe_padding_mobile = section.settings.padding_mobile | replace: ';', '' | replace: '{', '' | replace: '}', '' | replace: '<', '' | replace: '>', '' | replace: '(', '' | replace: ')', '' | escape
+  assign safe_background_color = section.settings.background_color | replace: ';', '' | replace: '{', '' | replace: '}', '' | replace: '<', '' | replace: '>', '' | escape
+-%}
+
+{%- if safe_margin_desktop != blank
+  or safe_padding_desktop != blank
+  or safe_margin_tablets != blank
+  or safe_padding_tablets != blank
+  or safe_margin_mobile != blank
+  or safe_padding_mobile != blank
+  or safe_background_color != blank
+-%}
+  <style>
+    {%- if safe_margin_desktop != blank or safe_padding_desktop != blank or safe_background_color != blank -%}
       #shopify-section-{{ section.id }} {
-        {% if section.settings.margin_tablets != blank %}
-          margin: {{ section.settings.margin_tablets }};
-        {% endif %}
-        {% if section.settings.padding_tablets != blank %}
-          padding: {{ section.settings.padding_tablets }};
-        {% endif %}
+        {%- if safe_margin_desktop != blank %} margin: {{ safe_margin_desktop }};{% endif -%}
+        {%- if safe_padding_desktop != blank %} padding: {{ safe_padding_desktop }};{% endif -%}
+        {%- if safe_background_color != blank %} background-color: {{ safe_background_color }};{% endif -%}
       }
-    }
-  {% endif %}
-  {% if section.settings.margin_mobile != blank or section.settings.padding_mobile != blank %}
-    @media(max-width: 767px){
-      #shopify-section-{{ section.id }} {
-        {% if section.settings.margin_mobile != blank %}
-          margin: {{ section.settings.margin_mobile }};
-        {% endif %}
-        {% if section.settings.padding_mobile != blank %}
-          padding: {{ section.settings.padding_mobile }};
-        {% endif %}
+    {%- endif -%}
+    {%- if safe_margin_tablets != blank or safe_padding_tablets != blank -%}
+      @media (max-width: 1199px) {
+        #shopify-section-{{ section.id }} {
+          {%- if safe_margin_tablets != blank %} margin: {{ safe_margin_tablets }};{% endif -%}
+          {%- if safe_padding_tablets != blank %} padding: {{ safe_padding_tablets }};{% endif -%}
+        }
       }
-    }
-  {% endif %}
-</style>
-{% endif %}
+    {%- endif -%}
+    {%- if safe_margin_mobile != blank or safe_padding_mobile != blank -%}
+      @media (max-width: 767px) {
+        #shopify-section-{{ section.id }} {
+          {%- if safe_margin_mobile != blank %} margin: {{ safe_margin_mobile }};{% endif -%}
+          {%- if safe_padding_mobile != blank %} padding: {{ safe_padding_mobile }};{% endif -%}
+        }
+      }
+    {%- endif -%}
+  </style>
+{%- endif -%}

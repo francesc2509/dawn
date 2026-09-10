@@ -1,20 +1,35 @@
 {% comment %}
-  Designed for Shopify - No innerHTML version.
-  Targeting specific grid selectors commonly used in Dawn and other themes.
+  Infinite scroll for paginated grids.
+
+  Performance: instead of fetching the entire next page (full layout: <head>, header,
+  footer, all scripts) and parsing it with DOMParser, this uses Shopify's Section
+  Rendering API (`?section_id=`), which returns ONLY this section's markup. That is a far
+  smaller response and avoids re-parsing an entire document on every scroll.
+
+  Correctness: the current query string (filters, sort_by, etc.) is preserved when
+  requesting the next page, so filtered collections paginate correctly.
+
+  Accepts:
+  - section_id   (required) the id of the section to re-render
+  - current_page (required) the current 1-based page number
+  - total_pages  (required) total number of pages
+  - grid_id      (optional) id of the grid element to append into (default: product-grid)
+  - end_text     (optional) message shown when the last page is reached
 {% endcomment %}
 
-<infinite-scroll 
-  data-next="{{ next_page }}" 
-  data-page-size="{{ page_size }}" 
+<infinite-scroll
+  class="infinite-scroll-ignore"
+  data-section-id="{{ section_id }}"
+  data-current-page="{{ current_page | default: 1 }}"
+  data-total-pages="{{ total_pages }}"
+  data-grid-id="{{ grid_id | default: 'product-grid' }}"
   data-end-text="{{ end_text | escape }}"
 >
-  {% if page_size > 1 %}
-    <div class="loading-container" aria-label="Loading products">
-      {% for i in (1..8) %}
-        <span class="loading-dot" id="loading-{{ i }}"></span>
-      {% endfor %}
-    </div>
-  {% endif %}
+  <div class="loading-container" aria-label="Loading products" role="status">
+    {% for i in (1..8) %}
+      <span class="loading-dot" id="loading-{{ i }}"></span>
+    {% endfor %}
+  </div>
 
   <template id="infinite-scroll-end-template">
     <div class="end-section">
@@ -27,24 +42,27 @@
 <style>
   infinite-scroll { display: block; width: 100%; margin: 2rem 0; text-align: center; }
   .loading-container { position: relative; width: 234px; height: 28px; margin: 0 auto; }
-  .loading-dot { position: absolute; background: #000; width: 28px; height: 28px; border-radius: 50%; animation: loading-wave 1.5s infinite ease-in-out; transform: scale(0.3); }
-  
+  .loading-dot { position: absolute; background: rgb(var(--color-foreground, 0 0 0)); width: 28px; height: 28px; border-radius: 50%; animation: loading-wave 1.5s infinite ease-in-out; transform: scale(0.3); }
+
   {% for i in (0..7) %}
     #loading-{{ i | plus: 1 }} { left: {{ i | times: 29 }}px; animation-delay: {{ i | times: 0.15 }}s; }
   {% endfor %}
 
   .end-section { padding: 3rem 0; }
   .end-text { font-size: 1.5rem; margin-bottom: 1.5rem; }
-
   .scroll-to-top.hidden { opacity: 0; pointer-events: none; transform: translateY(10px); }
 
   @keyframes loading-wave {
     0%, 100% { transform: scale(0.3); opacity: 0.3; }
     50% { transform: scale(1); opacity: 1; }
   }
-  
-  /* Hide standard pagination */
-  .pagination, .infinite-scroll-ignore { display: none !important; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .loading-dot { animation: none; transform: scale(1); opacity: 1; }
+  }
+
+  /* Hide the standard pagination only within the section that owns this component. */
+  .infinite-scroll-owner .pagination { display: none !important; }
 </style>
 
 <script>
@@ -52,95 +70,116 @@
     class InfiniteScroll extends HTMLElement {
       constructor() {
         super();
-        this.page = 1;
         this.isFetching = false;
-        // The list of possible grid IDs/Classes in Shopify themes
-        this.selectors = [".ProductListWrapper", "#product-grid", ".product-grid", ".grid--view-items", ".product-list"];
+        this.btn = null;
       }
 
       connectedCallback() {
-        this.gridContainer = this.findGrid(document);
-        if (!this.gridContainer) return;
+        this.sectionId = this.dataset.sectionId;
+        this.page = parseInt(this.dataset.currentPage, 10) || 1;
+        this.totalPages = parseInt(this.dataset.totalPages, 10) || 1;
+        this.gridId = this.dataset.gridId || 'product-grid';
 
-        this.observer = new IntersectionObserver((entries) => {
-          if (entries[0].isIntersecting && !this.isFetching) {
-            this.getNextPage();
-          }
-        }, { rootMargin: '0px 0px 400px 0px' });
+        this.grid = document.getElementById(this.gridId);
+        if (!this.grid) return;
+
+        // Scope pagination hiding to this section only.
+        const sectionRoot = this.closest('.shopify-section') || this.grid.closest('.shopify-section');
+        if (sectionRoot) sectionRoot.classList.add('infinite-scroll-owner');
+
+        if (this.page >= this.totalPages) {
+          this.renderEnd();
+          return;
+        }
+
+        this.observer = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting && !this.isFetching) {
+              this.getNextPage();
+            }
+          },
+          { rootMargin: '0px 0px 400px 0px' }
+        );
 
         this.observer.observe(this);
         this.setupScrollToTop();
       }
 
-      findGrid(doc) {
-        for (const selector of this.selectors) {
-          const el = doc.querySelector(selector);
-          if (el) return el;
-        }
-        return null;
+      buildUrl(page) {
+        // Preserve existing query params (filters, sort_by) and add section rendering params.
+        const params = new URLSearchParams(window.location.search);
+        params.set('page', page);
+        params.set('section_id', this.sectionId);
+        return `${window.location.pathname}?${params.toString()}`;
       }
 
       async getNextPage() {
-        if (this.page >= parseInt(this.dataset.pageSize)) return;
-        
-        this.isFetching = true;
-        this.page++;
+        if (this.page >= this.totalPages) return;
 
-        const baseUrl = window.location.pathname;
-        const url = `${baseUrl}?page=${this.page}`;
+        this.isFetching = true;
+        const nextPage = this.page + 1;
 
         try {
-          const response = await fetch(url);
-          const htmlText = await response.text();
-          const parser = new DOMParser();
-          const fetchedDoc = parser.parseFromString(htmlText, 'text/html');
-          const newGrid = this.findGrid(fetchedDoc);
+          const response = await fetch(this.buildUrl(nextPage));
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
-          if (newGrid && this.gridContainer) {
-            // Use a fragment to move nodes safely and efficiently
+          const html = await response.text();
+          const parser = new DOMParser();
+          const fetchedDoc = parser.parseFromString(html, 'text/html');
+          // Section Rendering API returns only this section, so the grid id is unique here.
+          const newGrid = fetchedDoc.getElementById(this.gridId);
+
+          if (newGrid) {
             const fragment = document.createDocumentFragment();
             while (newGrid.firstElementChild) {
               fragment.appendChild(newGrid.firstElementChild);
             }
-            this.gridContainer.appendChild(fragment);
-            
-            // Re-trigger theme scripts (lazyload, etc)
-            window.dispatchEvent(new CustomEvent('resize')); 
+            this.grid.appendChild(fragment);
           }
 
-          if (this.page >= parseInt(this.dataset.pageSize)) {
+          this.page = nextPage;
+
+          if (this.page >= this.totalPages) {
             this.renderEnd();
           }
         } catch (e) {
-          console.error("Infinite scroll fetch failed", e);
+          console.error('Infinite scroll fetch failed', e);
+          // Stop trying after a failure so we don't spam the endpoint.
+          if (this.observer) this.observer.disconnect();
         } finally {
           this.isFetching = false;
         }
       }
 
       setupScrollToTop() {
-        window.addEventListener('scroll', () => {
+        this.onScroll = () => {
           if (!this.btn) return;
           this.btn.classList.toggle('hidden', window.scrollY < 400);
-        }, { passive: true });
+        };
+        window.addEventListener('scroll', this.onScroll, { passive: true });
       }
 
       renderEnd() {
-        this.observer.disconnect();
-        // Clear dots
-        while (this.firstChild && this.firstChild.id !== 'infinite-scroll-end-template') {
-            this.removeChild(this.firstChild);
-        }
+        if (this.observer) this.observer.disconnect();
+
+        const loading = this.querySelector('.loading-container');
+        if (loading) loading.remove();
 
         const template = this.querySelector('#infinite-scroll-end-template');
         if (!template) return;
 
         const clone = template.content.cloneNode(true);
-        clone.querySelector('.end-text').textContent = this.dataset.endText;
+        clone.querySelector('.end-text').textContent = this.dataset.endText || '';
         this.btn = clone.querySelector('.scroll-to-top');
         this.btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-        
+
         this.appendChild(clone);
+        this.setupScrollToTop();
+      }
+
+      disconnectedCallback() {
+        if (this.observer) this.observer.disconnect();
+        if (this.onScroll) window.removeEventListener('scroll', this.onScroll);
       }
     }
     customElements.define('infinite-scroll', InfiniteScroll);
