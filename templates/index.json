@@ -39,6 +39,7 @@
             "color_scheme": "background-1",
             "image": "shopify://shop_images/Back-to-School_Stock_Up.png",
             "image_mobile": "shopify://shop_images/1_a030d172-aa40-4ba7-b3db-576d9d2cef7b.png",
+            "slide_duration": 5,
             "slide_fit": "cover",
             "slide_position": "left",
             "slide_overlay_alpha": 0.3,
