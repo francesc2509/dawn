@@ -314,18 +314,6 @@
         "padding_bottom": 48
       }
     },
-    "rich_text_aAgn8r": {
-      "type": "rich-text",
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 12
-      }
-    },
     "image_banner_Rekq6Q": {
       "type": "image-banner",
       "blocks": {
@@ -746,7 +734,6 @@
     "featured_collection_XVDMX9",
     "image_banner_rLyzLj",
     "featured_collection_adJ8Jc",
-    "rich_text_aAgn8r",
     "image_banner_Rekq6Q",
     "tabbed_collection_g3PXFG",
     "multicolumn_7VD4PL",
