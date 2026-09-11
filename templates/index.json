@@ -30,19 +30,21 @@
             "hero_cta_url": "shopify://collections/hot-seller",
             "signed_in_hero_cta_label": "",
             "hero_secondary_cta_label": "<strong>View Full Catalog</strong>",
-            "hero_secondary_cta_url": "shopify://collections/all"
+            "hero_secondary_cta_url": "shopify://collections/all",
+            "full_image_cta_enabled": false,
+            "full_image_cta_url": "",
+            "full_image_cta_label": ""
           }
         },
         "slide_JiaxbK": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
             "image": "shopify://shop_images/Back-to-School_Stock_Up.png",
             "image_mobile": "shopify://shop_images/buy_5_1_free_ice_blanc_offer.png",
             "slide_duration": 5,
             "slide_fit": "cover",
-            "slide_position": "left",
+            "slide_position": "center",
             "slide_overlay_alpha": 0.3,
             "hero_title_seo": "",
             "hero_title": "",
@@ -52,36 +54,16 @@
             "hero_cta_url": "",
             "signed_in_hero_cta_label": "",
             "hero_secondary_cta_label": "",
-            "hero_secondary_cta_url": ""
-          }
-        },
-        "slide_hqkPUm": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "color_scheme": "scheme-eb57e900-cfa3-4af3-9b1d-d7ce4355baf5",
-            "image": "shopify://shop_images/Bubble_Tea_E-commerce_Banner_-_Helvetica_Now_1.png",
-            "image_mobile": "shopify://shop_images/Gemini_Generated_Image_jwpmzwjwpmzwjwpm.png",
-            "slide_duration": 5,
-            "slide_fit": "cover",
-            "slide_position": "center",
-            "slide_overlay_alpha": 0.3,
-            "hero_title_seo": "<h2>Empower Your UK <strong>Business</strong></h2>",
-            "hero_title": "<h3>Professional bubble tea training</h3>",
-            "hero_subtitle": "<p><strong>Practical</strong> Training  •  <strong>Expert</strong> Menu & Support</p><p><strong>Franchise</strong> Opportunities</p>",
-            "hero_main": "",
-            "hero_cta_label": "Book your session",
-            "hero_cta_url": "shopify://pages/bubble-tea-training-partnership-uk",
-            "signed_in_hero_cta_label": "",
-            "hero_secondary_cta_label": "",
-            "hero_secondary_cta_url": ""
+            "hero_secondary_cta_url": "",
+            "full_image_cta_enabled": true,
+            "full_image_cta_url": "shopify://products/ice-blanc-non-hydrogenated-vegetable-cream",
+            "full_image_cta_label": ""
           }
         }
       },
       "block_order": [
         "slide_WPNnPg",
-        "slide_JiaxbK",
-        "slide_hqkPUm"
+        "slide_JiaxbK"
       ],
       "name": "Hero",
       "settings": {}
@@ -280,8 +262,8 @@
         "show_text_box": false,
         "color_scheme": "",
         "stack_images_on_mobile": true,
-        "mobile_content_alignment": "right",
-        "show_text_below": false
+        "mobile_content_alignment": "center",
+        "show_text_below": true
       }
     },
     "featured_collection_adJ8Jc": {
