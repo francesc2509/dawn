@@ -1,0 +1,16 @@
+{
+  "name": "dawn-theme-tests",
+  "version": "1.0.0",
+  "description": "Test tooling for the Dawn theme carousel feature work.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "fast-check": "4.9.0",
+    "jsdom": "26.1.0",
+    "vitest": "3.2.7"
+  }
+}

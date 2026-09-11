@@ -69,6 +69,51 @@
   object-fit: fill;
 }
 
+/* Anchor fills the slide and does not shrink to its inline content */
+.dawn-carousel-item > .dawn-carousel-cta-link {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Media inside the anchor inherits the same object-fit/position rules
+   as media directly under the slide. */
+.dawn-carousel-item > .dawn-carousel-cta-link img,
+.dawn-carousel-item > .dawn-carousel-cta-link > video {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.dawn-carousel-item.left > .dawn-carousel-cta-link img,
+.dawn-carousel-item.left > .dawn-carousel-cta-link > video {
+  object-position: left;
+}
+
+.dawn-carousel-item.right > .dawn-carousel-cta-link img,
+.dawn-carousel-item.right > .dawn-carousel-cta-link > video {
+  object-position: right;
+}
+
+.dawn-carousel-item.fill > .dawn-carousel-cta-link img,
+.dawn-carousel-item.fill > .dawn-carousel-cta-link > video {
+  object-fit: fill;
+}
+
+/* Visible keyboard focus */
+.dawn-carousel-cta-link:focus-visible {
+  outline: 3px solid rgb(var(--color-foreground));
+  outline-offset: -3px;
+}
+
 .carousel-nav-container {
   width: 100%;
   height: 1px;

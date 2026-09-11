@@ -1,4 +1,4 @@
-{{ 'carousel.css' | asset_url | stylesheet_tag: defer: "defer" }}
+{{ 'carousel.css' | asset_url | stylesheet_tag: defer: 'defer' }}
 <script src="{{ 'carousel.js' | asset_url }}" defer="defer"></script>
 
 <div class="carousel-container">
@@ -10,114 +10,156 @@
           data-duration="{{ block.settings.slide_duration }}"
         {% endif %}
       >
-        {% if block.settings.video -%}
-          
-          <video muted playsinline>
-            {% if block.settings.video_mobile %}
-              <source
-                src="{{ block.settings.video_mobile.sources.last.url }}"
-                type="video/mp4"
-                media="(max-width: 768px)"
-              >
-            {% endif %}
+        {%- liquid
+          assign has_media = false
+          if block.settings.video != blank or block.settings.image != blank
+            assign has_media = true
+          endif
 
-            {% assign desktop_video = block.settings.video %}
-          {% if desktop_video != blank %}
-            {% assign mp4_source = desktop_video.sources | where: "format", "mp4" | first %}
-            {% if mp4_source %}
-              <source src="{{ mp4_source.url }}" type="video/mp4">
-            {% endif %}
-          {% endif %}
-          </video>
-        {% elsif block.settings.image %}
-          <picture>
-            {% if block.settings.image_mobile %}
-              <source
-                media="(max-width: 768px)"
-                srcset="{{ block.settings.image_mobile | image_url: width: 768 }}"
-              >
-            {% endif %}
+          assign cta_mode = false
+          if block.settings.full_image_cta_enabled and has_media
+            assign cta_mode = true
+          endif
 
-            <img
-              src="{{ block.settings.image | image_url: width: 1440 }}"
-              alt="{{ block.settings.image.alt | escape }}"
-              {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
-              width="{{ block.settings.image.width }}"
-              height="{{ block.settings.image.height }}"
-            >
-          </picture>
-        {% endif %}
-        <div class="carousel-curtain" style="background: linear-gradient(-180deg,rgba(50, 50, 50, {{ block.settings.slide_overlay_alpha }}) 0%, rgba(0, 0, 0, 0) 100%);">
-          <div class="carousel-hero">
-            <div class="hero-title">
-              {% if block.settings.hero_title_seo != blank %}
-                {{ block.settings.hero_title_seo }}
-              {% endif %}
-              {% if block.settings.hero_title != blank %}
-                {{ block.settings.hero_title }}
-              {% endif %}
-            </div>
-            
+          assign cta_url = block.settings.full_image_cta_url
+          assign cta_has_link = false
+          if cta_mode and cta_url != blank
+            assign cta_has_link = true
+          endif
 
-            {% if block.settings.hero_main != blank %}
-              <div class="hero-main">
-                {{ block.settings.hero_main }}
-              </div>
-            {% endif %}
-
-            {% if block.settings.hero_subtitle != blank %}
-              <div class="hero-subtitle">
-                {{ block.settings.hero_subtitle }}
-              </div>
-            {% endif %}
-
-            <div class="carousel-hero-cta-container">
-              {% assign hero_cta_url = block.settings.hero_cta_url  %}
-              {% assign hero_cta_label = block.settings.hero_cta_label  %}
-              {% assign hero_secondary_cta_url = block.settings.hero_secondary_cta_url  %}
-              {% assign hero_secondary_cta_label = block.settings.hero_secondary_cta_label  %}
-              
-              {% if customer %}
-              {% endif %}
-              {% if hero_cta_url  != blank %}
-                <a
-                  href="{{ block.settings.hero_cta_url }}"
-                  class="button"
+          # accessible name: label -> image alt -> url
+          assign cta_accessible_name = block.settings.full_image_cta_label | strip_html | strip | escape
+          if cta_accessible_name == blank
+            assign cta_accessible_name = block.settings.image.alt | escape
+          endif
+          if cta_accessible_name == blank
+            assign cta_accessible_name = cta_url
+          endif
+        -%}
+        {% capture slide_media %}
+          {% if block.settings.video -%}
+            <video muted playsinline>
+              {% if block.settings.video_mobile %}
+                <source
+                  src="{{ block.settings.video_mobile.sources.last.url }}"
+                  type="video/mp4"
+                  media="(max-width: 768px)"
                 >
-                  {{ hero_cta_label }}
-                </a>
               {% endif %}
-              {% if hero_secondary_cta_url  != blank %}
-                <a
+
+              {% assign desktop_video = block.settings.video %}
+              {% if desktop_video != blank %}
+                {% assign mp4_source = desktop_video.sources | where: 'format', 'mp4' | first %}
+                {% if mp4_source %}
+                  <source src="{{ mp4_source.url }}" type="video/mp4">
+                {% endif %}
+              {% endif %}
+            </video>
+          {% elsif block.settings.image %}
+            <picture>
+              {% if block.settings.image_mobile %}
+                <source
+                  media="(max-width: 768px)"
+                  srcset="{{ block.settings.image_mobile | image_url: width: 768 }}"
+                >
+              {% endif %}
+
+              <img
+                src="{{ block.settings.image | image_url: width: 1440 }}"
+                alt="{{ block.settings.image.alt | escape }}"
+                {% if forloop.first %}
+                  fetchpriority="high"
+                {% else %}
+                  loading="lazy"
+                {% endif %}
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+              >
+            </picture>
+          {% endif %}
+        {% endcapture %}
+        {%- if cta_has_link -%}
+          <a class="dawn-carousel-cta-link" href="{{ cta_url }}" aria-label="{{ cta_accessible_name }}">
+            {{- slide_media -}}
+          </a>
+        {%- else -%}
+          {{ slide_media }}
+        {%- endif -%}
+        {%- unless cta_mode -%}
+          <div
+            class="carousel-curtain"
+            style="background: linear-gradient(-180deg,rgba(50, 50, 50, {{ block.settings.slide_overlay_alpha }}) 0%, rgba(0, 0, 0, 0) 100%);"
+          >
+            <div class="carousel-hero">
+              <div class="hero-title">
+                {% if block.settings.hero_title_seo != blank %}
+                  {{ block.settings.hero_title_seo }}
+                {% endif %}
+                {% if block.settings.hero_title != blank %}
+                  {{ block.settings.hero_title }}
+                {% endif %}
+              </div>
+
+              {% if block.settings.hero_main != blank %}
+                <div class="hero-main">
+                  {{ block.settings.hero_main }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.hero_subtitle != blank %}
+                <div class="hero-subtitle">
+                  {{ block.settings.hero_subtitle }}
+                </div>
+              {% endif %}
+
+              <div class="carousel-hero-cta-container">
+                {% assign hero_cta_url = block.settings.hero_cta_url %}
+                {% assign hero_cta_label = block.settings.hero_cta_label %}
+                {% assign hero_secondary_cta_url = block.settings.hero_secondary_cta_url %}
+                {% assign hero_secondary_cta_label = block.settings.hero_secondary_cta_label %}
+
+                {% if customer %}
+                {% endif %}
+                {% if hero_cta_url != blank %}
+                  <a
+                    href="{{ block.settings.hero_cta_url }}"
+                    class="button"
+                  >
+                    {{ hero_cta_label }}
+                  </a>
+                {% endif %}
+                {% if hero_secondary_cta_url != blank %}
+                  <a
                     href="{{ block.settings.hero_secondary_cta_url }}"
                     class="link link--text"
                   >
                     {{ hero_secondary_cta_label }}
-                </a>
+                  </a>
+                {% endif %}
+              </div>
+
+              {% if false %}
+                <div class="hero-stars">
+                  <div>
+                    {% for i in (1..5) %}
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <!-- green box background -->
+                        <rect width="24" height="24" fill="#00b67a" rx="3" />
+                        <!-- white star -->
+                        <polygon
+                          points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"
+                          fill="#ffffff"/>
+                      </svg>
+                    {% endfor %}
+                  </div>
+                  <span class="hero-stars-text">Excellent!</span>
+                </div>
               {% endif %}
             </div>
-
-            {% if false %}
-              <div class="hero-stars">
-                <div>
-                  {% for i in (1..5) %}
-                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <!-- green box background -->
-                      <rect width="24" height="24" fill="#00b67a" rx="3" />
-                      <!-- white star -->
-                      <polygon 
-                        points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"
-                        fill="#ffffff"/>
-                    </svg>
-                  {% endfor %}
-                </div>
-                <span class="hero-stars-text">Excellent!</span>
-              </div>
-            {% endif %}
           </div>
-        </div>
+        {%- endunless -%}
       </div>
-    {% endfor %}
+    {%- endfor %}
   </div>
   <div class="carousel-nav-container hidden">
     <div class="carousel-nav">
@@ -261,6 +303,24 @@
           "type": "url",
           "id": "hero_secondary_cta_url",
           "label": "Section hero secondary CTA"
+        },
+        {
+          "type": "checkbox",
+          "id": "full_image_cta_enabled",
+          "label": "Enable full-image CTA",
+          "info": "Turn the entire slide image or video into a single clickable link and hide the hero text and buttons.",
+          "default": false
+        },
+        {
+          "type": "url",
+          "id": "full_image_cta_url",
+          "label": "Full-image CTA link"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "full_image_cta_label",
+          "label": "Full-image CTA accessible label",
+          "info": "Describes where the link goes for assistive technology. Falls back to the image alt text, then the URL."
         }
       ]
     }

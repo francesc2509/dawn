@@ -57,7 +57,7 @@
       );
 
       this.slides.forEach((slide, itemIdx) => {
-        const media = slide.firstElementChild;
+        const media = this.getMedia(slide);
         const navItem = this.navItems[itemIdx];
 
         if (navItem) {
@@ -89,6 +89,10 @@
       });
     }
 
+    getMedia(slide) {
+      return slide.querySelector(':scope > a > video, :scope > a > picture, :scope > video, :scope > picture');
+    }
+
     safePlay(video) {
       const p = video.play();
       if (p && typeof p.catch === 'function') p.catch(() => {});
@@ -112,7 +116,7 @@
     goTo(event, position, previousTimeoutId) {
       if (position < 0 || position >= this.slides.length) return;
 
-      const currentMedia = this.slides[this.selectedIdx] ? this.slides[this.selectedIdx].firstElementChild : null;
+      const currentMedia = this.slides[this.selectedIdx] ? this.getMedia(this.slides[this.selectedIdx]) : null;
       if (currentMedia instanceof HTMLVideoElement) {
         currentMedia.pause();
         currentMedia.currentTime = 0;
@@ -129,7 +133,7 @@
       }
       this.selectedIdx = position;
 
-      const nextMedia = this.slides[position].firstElementChild;
+      const nextMedia = this.getMedia(this.slides[position]);
       if (nextMedia instanceof HTMLVideoElement) {
         this.safePlay(nextMedia);
       } else if (nextMedia instanceof HTMLPictureElement) {

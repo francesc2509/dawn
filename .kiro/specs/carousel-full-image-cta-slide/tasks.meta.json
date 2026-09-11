@@ -1,0 +1,432 @@
+{
+  "pbtResults": {
+    "6.6 Write property test for preserved structural settings": {
+      "status": "passed",
+      "lastRunTimestamp": 1789166352236
+    },
+    "6.4 Write property test for hero omission": {
+      "status": "passed",
+      "lastRunTimestamp": 1789166349778
+    },
+    "6.3 Write property test for anchor emission": {
+      "status": "passed",
+      "lastRunTimestamp": 1789166348403
+    },
+    "6.2 Write property test for mode selection": {
+      "status": "passed",
+      "lastRunTimestamp": 1789166347423
+    },
+    "6.5 Write property test for accessible-name fallback": {
+      "status": "passed",
+      "lastRunTimestamp": 1789166350730
+    },
+    "7.1 Write property test for `getMedia()` against a JSDOM fixture": {
+      "status": "passed",
+      "lastRunTimestamp": 1789166352932
+    }
+  },
+  "executionHistory": {
+    "1. Add the three per-slide block settings to the schema": [
+      {
+        "executionId": "5cd1d971-ab08-42cc-9e2e-988e5aecff95",
+        "chatSessionId": "sess_a63d0d9b-d068-4f37-9eaa-8e1007819743",
+        "timestamp": 1789064411635
+      },
+      {
+        "executionId": "5cd1d971-ab08-42cc-9e2e-988e5aecff95",
+        "chatSessionId": "sess_a63d0d9b-d068-4f37-9eaa-8e1007819743",
+        "timestamp": 1789064509419
+      }
+    ],
+    "3.1 Add the `getMedia(slide)` helper to the `Carousel` class": [
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064615156
+      },
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064658966
+      }
+    ],
+    "2.1 Compute the single per-slide mode decision in a `{%- liquid -%}` block": [
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064674990
+      },
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064737618
+      },
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064844178
+      }
+    ],
+    "2.2 Factor the media markup into a reusable capture and wrap it in the anchor when linked": [
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064675026
+      },
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064912206
+      },
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064977746
+      }
+    ],
+    "2.3 Gate the hero curtain on Standard_Mode": [
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064675076
+      },
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064988284
+      },
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789068649191
+      }
+    ],
+    "3.2 Replace the three `firstElementChild` reads with `this.getMedia(...)`": [
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064675104
+      },
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064855196
+      },
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064907759
+      }
+    ],
+    "4. Add the anchor and media CSS rules": [
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064675124
+      },
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064686236
+      },
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064731050
+      }
+    ],
+    "5. Checkpoint - verify rendering and behavior wiring": [
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064675149
+      },
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074226267
+      },
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074428388
+      }
+    ],
+    "6.1 Extract the `resolveSlideRender(settings)` pure function": [
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064675172
+      },
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074433406
+      },
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074762858
+      }
+    ],
+    "10. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064675192
+      },
+      {
+        "executionId": "eff307d2-b7b5-45cc-bba6-7b2ff6413a1b",
+        "chatSessionId": "sess_029e988e-2b5a-4630-8186-681bb148734d",
+        "timestamp": 1789166086460
+      },
+      {
+        "executionId": "eff307d2-b7b5-45cc-bba6-7b2ff6413a1b",
+        "chatSessionId": "sess_029e988e-2b5a-4630-8186-681bb148734d",
+        "timestamp": 1789166366463
+      }
+    ],
+    "3. Introduce `getMedia()` and replace `firstElementChild` reads in the carousel script": [
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789064907801
+      }
+    ],
+    "2. Implement the slide render-decision logic and conditional rendering in Liquid": [
+      {
+        "executionId": "36e1b707-a99d-453c-912e-df4eeabdadc8",
+        "chatSessionId": "sess_7de45692-1318-4c37-879a-dea8e8747fdd",
+        "timestamp": 1789068649240
+      }
+    ],
+    "6. Extract pure decision logic and property tests for rendering": [
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074762925
+      }
+    ],
+    "6.2 Write property test for mode selection": [
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074856366
+      },
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074954004
+      },
+      {
+        "executionId": "7b5475b3-9d7c-4589-ab6e-9cfed8e1a496",
+        "chatSessionId": "sess_6e780e00-9a43-48bf-985c-75c0ef445c47",
+        "timestamp": 1789164739255
+      },
+      {
+        "executionId": "7b5475b3-9d7c-4589-ab6e-9cfed8e1a496",
+        "chatSessionId": "sess_6e780e00-9a43-48bf-985c-75c0ef445c47",
+        "timestamp": 1789164757004
+      }
+    ],
+    "6.3 Write property test for anchor emission": [
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074857816
+      },
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074954854
+      },
+      {
+        "executionId": "b5ce181f-3cf5-4967-901e-5159f435fc50",
+        "chatSessionId": "sess_bbdb8d35-d77d-48ae-9479-dce6d7145927",
+        "timestamp": 1789165390985
+      },
+      {
+        "executionId": "b5ce181f-3cf5-4967-901e-5159f435fc50",
+        "chatSessionId": "sess_bbdb8d35-d77d-48ae-9479-dce6d7145927",
+        "timestamp": 1789165428711
+      }
+    ],
+    "6.4 Write property test for hero omission": [
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074858738
+      },
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074956271
+      },
+      {
+        "executionId": "5cb919da-c4bf-464d-945f-ac4b370bee16",
+        "chatSessionId": "sess_739050d1-2778-48dd-a828-503ae54febcf",
+        "timestamp": 1789165445495
+      },
+      {
+        "executionId": "5cb919da-c4bf-464d-945f-ac4b370bee16",
+        "chatSessionId": "sess_739050d1-2778-48dd-a828-503ae54febcf",
+        "timestamp": 1789165493145
+      }
+    ],
+    "6.5 Write property test for accessible-name fallback": [
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074859573
+      },
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074957205
+      },
+      {
+        "executionId": "b024696a-1245-436d-9ccf-a80cc1b60f9d",
+        "chatSessionId": "sess_aa645b79-7344-4d4e-b006-72fb0bdf7f4f",
+        "timestamp": 1789164900137
+      },
+      {
+        "executionId": "b024696a-1245-436d-9ccf-a80cc1b60f9d",
+        "chatSessionId": "sess_aa645b79-7344-4d4e-b006-72fb0bdf7f4f",
+        "timestamp": 1789164948225
+      }
+    ],
+    "6.6 Write property test for preserved structural settings": [
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074860738
+      },
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074958059
+      },
+      {
+        "executionId": "e6fb1fff-2732-4faa-a775-186a256df3ad",
+        "chatSessionId": "sess_9407fd09-5fc3-43e3-96b7-403e5ec9d1d2",
+        "timestamp": 1789164785543
+      },
+      {
+        "executionId": "e6fb1fff-2732-4faa-a775-186a256df3ad",
+        "chatSessionId": "sess_9407fd09-5fc3-43e3-96b7-403e5ec9d1d2",
+        "timestamp": 1789164868454
+      }
+    ],
+    "7.1 Write property test for `getMedia()` against a JSDOM fixture": [
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074962156
+      },
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789075129041
+      },
+      {
+        "executionId": "09ffe688-107e-43de-8715-eb357861e996",
+        "chatSessionId": "sess_772577e4-6266-4ec4-bf3c-98672e5e1908",
+        "timestamp": 1789165138377
+      },
+      {
+        "executionId": "09ffe688-107e-43de-8715-eb357861e996",
+        "chatSessionId": "sess_772577e4-6266-4ec4-bf3c-98672e5e1908",
+        "timestamp": 1789165188611
+      }
+    ],
+    "8.1 Write example tests for Standard_Mode and full-image renders": [
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789074962924
+      },
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789075130097
+      },
+      {
+        "executionId": "7c1a5d58-fd56-4af3-8bbe-5e3b6e00f3a6",
+        "chatSessionId": "sess_2ed75eb3-9333-44dd-9879-b9db8c5c3c7b",
+        "timestamp": 1789165215269
+      },
+      {
+        "executionId": "7c1a5d58-fd56-4af3-8bbe-5e3b6e00f3a6",
+        "chatSessionId": "sess_2ed75eb3-9333-44dd-9879-b9db8c5c3c7b",
+        "timestamp": 1789165328920
+      }
+    ],
+    "7. Property test for JS media resolution": [
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789075129065
+      }
+    ],
+    "8. Example / unit tests for concrete renders": [
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789075130121
+      }
+    ],
+    "9.1 Write integration tests for clickable area and keyboard accessibility": [
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789075136153
+      },
+      {
+        "executionId": "c6fc4b84-0c19-4823-a010-5df23aad0121",
+        "chatSessionId": "sess_63ce1144-5e80-482b-b4b7-bb4541d46fd4",
+        "timestamp": 1789166036140
+      }
+    ],
+    "9.2 Write integration tests for auto-advance across full-image slides": [
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789075136951
+      },
+      {
+        "executionId": "c6fc4b84-0c19-4823-a010-5df23aad0121",
+        "chatSessionId": "sess_63ce1144-5e80-482b-b4b7-bb4541d46fd4",
+        "timestamp": 1789166036509
+      }
+    ],
+    "9.3 Write integration tests for swipe and nav dots on full-image slides": [
+      {
+        "executionId": "37af40ab-3b3a-47f7-961c-02b9065d5976",
+        "chatSessionId": "sess_bebf24aa-a4cf-4722-895b-751a79b67f75",
+        "timestamp": 1789075139185
+      },
+      {
+        "executionId": "c6fc4b84-0c19-4823-a010-5df23aad0121",
+        "chatSessionId": "sess_63ce1144-5e80-482b-b4b7-bb4541d46fd4",
+        "timestamp": 1789166037357
+      }
+    ],
+    "9. Integration / browser tests for DOM-visual and behavior wiring": [
+      {
+        "executionId": "09c11456-88de-45a3-a09e-c4ac667769f9",
+        "chatSessionId": "sess_a7047cf9-76d2-42ec-a978-7201556d221f",
+        "timestamp": 1789165550469
+      },
+      {
+        "executionId": "09c11456-88de-45a3-a09e-c4ac667769f9",
+        "chatSessionId": "sess_a7047cf9-76d2-42ec-a978-7201556d221f",
+        "timestamp": 1789165620625
+      },
+      {
+        "executionId": "c6fc4b84-0c19-4823-a010-5df23aad0121",
+        "chatSessionId": "sess_63ce1144-5e80-482b-b4b7-bb4541d46fd4",
+        "timestamp": 1789166037384
+      }
+    ]
+  }
+}
