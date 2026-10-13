@@ -1,0 +1,191 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "explore_subnav": {
+      "type": "custom-liquid",
+      "name": "Explore subnav",
+      "settings": {
+        "custom_liquid": "{% render 'explore-subnav' %}",
+        "color_scheme": "",
+        "padding_top": 16,
+        "padding_bottom": 0
+      }
+    },
+    "image_banner_training": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_training": {
+          "type": "heading",
+          "settings": {
+            "heading": "Professional Bubble Tea Training",
+            "heading_size": "h1"
+          }
+        },
+        "text_training": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Empower your business</strong><br/>Expert UK bubble tea training for beginners, new owners, and cafés.</p><p>Level up your menu today.</p>",
+            "text_style": "body"
+          }
+        },
+        "buttons_training": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Book your session",
+            "button_link_1": "shopify://pages/book-your-session",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_training",
+        "text_training",
+        "buttons_training"
+      ],
+      "name": "Training hero",
+      "settings": {
+        "image": "shopify://shop_images/barista-preparing-strawberry-bubble-tea.webp",
+        "image_overlay_opacity": 30,
+        "image_height": "medium",
+        "image_behavior": "ambient",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-171e1f28-38da-4af1-b2e0-a2267f7a07d8",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "multicolumn_services": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_hands_on": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Hands-on training</strong>",
+            "text": "<p>Pearl cooking, tea brewing, and drink builds with our trainers in London.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_menu": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Menu & SOPs</strong>",
+            "text": "<p>Standard recipes, portioning, and workflows your team can repeat every day.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_cost": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Cost control</strong>",
+            "text": "<p>Ingredient yields and pricing guidance for healthy margins.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_partnership": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Partnership & franchise</strong>",
+            "text": "<p>Transparent support for new shop owners and brands scaling across the UK.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_hands_on",
+        "column_menu",
+        "column_cost",
+        "column_partnership"
+      ],
+      "name": "Training services",
+      "settings": {
+        "title": "What we offer",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "columns_flow": "standard",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 36
+      }
+    },
+    "contact_form_training": {
+      "type": "contact-form",
+      "name": "Training enquiry",
+      "settings": {
+        "heading": "Tell us about your shop or plans — we'll reply with training options and next steps.",
+        "heading_size": "h2",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    },
+    "rich_text_book": {
+      "type": "rich-text",
+      "blocks": {
+        "button_book": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book your session",
+            "button_link": "shopify://pages/book-your-session",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_book"
+      ],
+      "name": "Book CTA",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "explore_subnav",
+    "image_banner_training",
+    "multicolumn_services",
+    "contact_form_training",
+    "rich_text_book"
+  ]
+}

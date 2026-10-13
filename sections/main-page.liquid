@@ -14,14 +14,29 @@
   }
 {%- endstyle -%}
 
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ page.title | escape }}
-  </h1>
-  <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    {{ page.content }}
+{%- liquid
+  assign explore_fallback = false
+  if template.name == 'page' and template.suffix == blank
+    if page.handle == 'bubble-crush-academy' or page.handle == 'bubble-tea-training-partnership-uk'
+      assign explore_fallback = true
+    endif
+  endif
+-%}
+
+{%- if explore_fallback -%}
+  <div class="section-{{ section.id }}-padding">
+    {% render 'explore-page-fallback' %}
   </div>
-</div>
+{%- else -%}
+  <div class="page-width page-width--narrow section-{{ section.id }}-padding">
+    <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {{ page.title | escape }}
+    </h1>
+    <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {{ page.content }}
+    </div>
+  </div>
+{%- endif -%}
 
 {% schema %}
 {

@@ -1,6 +1,16 @@
+{%- liquid
+  assign skip_explore_contact = false
+  if template.name == 'page' and template.suffix == blank
+    if page.handle == 'bubble-crush-academy' or page.handle == 'bubble-tea-training-partnership-uk'
+      assign skip_explore_contact = true
+    endif
+  endif
+-%}
+{%- unless skip_explore_contact -%}
 <div class="page-width">
   {% render 'contact-details', iframe_enabled: true, title: section.settings.contact_info_title  %}
 </div>
+{%- endunless -%}
 {% schema %}
 {
   "name": "Contact information",
