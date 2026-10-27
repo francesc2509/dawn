@@ -1,0 +1,188 @@
+{{ 'bc-content-2026.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.show_section != false -%}
+  <div class="bc-order-contact page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2>{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    <div class="bc-order-contact__grid">
+      <div class="bc-order-contact__row bc-order-contact__row--headings">
+        <div class="bc-order-contact__cell">
+          {%- if section.settings.shipping_heading != blank -%}
+            <h3>{{ section.settings.shipping_heading }}</h3>
+          {%- endif -%}
+        </div>
+        <div class="bc-order-contact__cell">
+          {%- if section.settings.order_heading != blank -%}
+            <h3>{{ section.settings.order_heading }}</h3>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="bc-order-contact__row">
+        <div class="bc-order-contact__cell">
+          {%- if section.settings.shipping_text != blank -%}
+            <div class="rte">{{ section.settings.shipping_text }}</div>
+          {%- endif -%}
+        </div>
+        <div class="bc-order-contact__cell">
+          {%- if section.settings.website_label != blank and section.settings.website_url != blank -%}
+            <p>
+              {{ section.settings.website_label }}:
+              <a href="{{ section.settings.website_url }}" target="_blank" rel="noopener noreferrer">{{ section.settings.website_display }}</a>
+            </p>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="bc-order-contact__row bc-order-contact__row--headings">
+        <div class="bc-order-contact__cell">
+          {%- if section.settings.payment_heading != blank -%}
+            <h3>{{ section.settings.payment_heading }}</h3>
+          {%- endif -%}
+        </div>
+        <div class="bc-order-contact__cell">
+          {%- if section.settings.whatsapp_label != blank and section.settings.whatsapp_url != blank -%}
+            <p>
+              {{ section.settings.whatsapp_label }}:
+              <a href="{{ section.settings.whatsapp_url }}" target="_blank" rel="noopener noreferrer">{{ section.settings.whatsapp_display }}</a>
+            </p>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="bc-order-contact__row">
+        <div class="bc-order-contact__cell">
+          {%- if section.settings.payment_text != blank -%}
+            <div class="rte">{{ section.settings.payment_text }}</div>
+          {%- endif -%}
+        </div>
+        <div class="bc-order-contact__cell">
+          {%- if section.settings.email_label != blank and section.settings.email_address != blank -%}
+            <p>
+              {{ section.settings.email_label }}:
+              <a href="mailto:{{ section.settings.email_address }}">{{ section.settings.email_address }}</a>
+            </p>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="bc-order-contact__row bc-order-contact__row--button">
+        <div class="bc-order-contact__cell" aria-hidden="true"></div>
+        <div class="bc-order-contact__cell">
+          {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+            <p class="bc-order-contact__button-wrap">
+              <a class="button" href="{{ section.settings.button_link }}" target="_blank" rel="noopener noreferrer">{{ section.settings.button_label }}</a>
+            </p>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Order and contact",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "ORDER & CONTACT"
+    },
+    {
+      "type": "text",
+      "id": "shipping_heading",
+      "label": "Shipping heading",
+      "default": "Shipping Policy"
+    },
+    {
+      "type": "richtext",
+      "id": "shipping_text",
+      "label": "Shipping policy",
+      "default": "<p>Free delivery on orders over £300 (UK mainland)</p>"
+    },
+    {
+      "type": "text",
+      "id": "payment_heading",
+      "label": "Payment heading",
+      "default": "Payment Methods"
+    },
+    {
+      "type": "richtext",
+      "id": "payment_text",
+      "label": "Payment methods",
+      "default": "<p>Available upon enquiry</p>"
+    },
+    {
+      "type": "text",
+      "id": "order_heading",
+      "label": "How to order heading",
+      "default": "How to Order"
+    },
+    {
+      "type": "text",
+      "id": "website_label",
+      "label": "Website label",
+      "default": "Website"
+    },
+    {
+      "type": "text",
+      "id": "website_display",
+      "label": "Website display text",
+      "default": "www.bubblecrushsupplier.com"
+    },
+    {
+      "type": "url",
+      "id": "website_url",
+      "label": "Website URL"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_label",
+      "label": "WhatsApp label",
+      "default": "WhatsApp"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_display",
+      "label": "WhatsApp display text",
+      "default": "+44 7512 896659"
+    },
+    {
+      "type": "url",
+      "id": "whatsapp_url",
+      "label": "WhatsApp link"
+    },
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "Email label",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "email_address",
+      "label": "Email address",
+      "default": "info@bubblecrushsupplier.com"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "WhatsApp"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [{ "name": "Order and contact" }]
+}
+{% endschema %}

@@ -282,9 +282,54 @@
 }
 
 .bc-order-contact__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.bc-order-contact__row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2.4rem;
+  align-items: start;
+}
+
+.bc-order-contact__row + .bc-order-contact__row {
+  margin-top: 1.2rem;
+}
+
+.bc-order-contact__row--headings + .bc-order-contact__row {
+  margin-top: 0.5rem;
+}
+
+.bc-order-contact__row--headings {
+  margin-top: 0;
+}
+
+.bc-order-contact__row--headings:not(:first-child) {
+  margin-top: 1.6rem;
+}
+
+.bc-order-contact__cell h3 {
+  margin: 0;
+  font-size: inherit;
+  line-height: 1.35;
+}
+
+.bc-order-contact__cell .rte,
+.bc-order-contact__cell .rte p,
+.bc-order-contact__cell > p {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.55;
+}
+
+.bc-order-contact__cell .rte p + p {
+  margin-top: 0.6rem;
+}
+
+.bc-order-contact__button-wrap {
+  margin-top: 0.4rem;
 }
 
 .bc-order-contact a {
@@ -296,9 +341,17 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .bc-who__media,
-  .bc-order-contact__grid {
+  .bc-who__media {
     grid-template-columns: 1fr;
+  }
+
+  .bc-order-contact__row {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .bc-order-contact__row--button .bc-order-contact__cell:first-child {
+    display: none;
   }
 }
 
