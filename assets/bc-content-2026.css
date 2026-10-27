@@ -746,12 +746,56 @@
   margin: 0 0 0.8rem;
 }
 
+.bc-collection-hero__heading {
+  margin: 0 0 0.8rem;
+  font-size: 1.45rem;
+  line-height: 1.4;
+}
+
+.bc-collection-hero__heading h2 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: 700;
+  color: inherit;
+}
+
+.bc-collection-hero__columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.6rem, 4vw, 3.2rem);
+  align-items: start;
+}
+
 .bc-collection-hero__lead {
   max-width: 52rem;
   margin: 0;
   color: var(--bc-explore-muted, #555);
   font-size: 1.45rem;
   line-height: 1.6;
+}
+
+.bc-collection-hero__columns .bc-collection-hero__lead {
+  max-width: none;
+}
+
+.bc-collection-hero__highlights {
+  margin: 0;
+  color: var(--bc-explore-muted, #555);
+  font-size: 1.45rem;
+  line-height: 1.6;
+}
+
+.bc-collection-hero__highlights ul {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.bc-collection-hero__highlights li {
+  margin-bottom: 0.6rem;
+}
+
+.bc-collection-hero__highlights li:last-child {
+  margin-bottom: 0;
 }
 
 .bc-collection-hero__lead p {
@@ -832,6 +876,10 @@
 }
 
 @media screen and (max-width: 749px) {
+  .bc-collection-hero__columns {
+    grid-template-columns: 1fr;
+  }
+
   .bc-collection-hero__more-grid {
     grid-template-columns: 1fr;
   }

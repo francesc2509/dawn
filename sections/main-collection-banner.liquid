@@ -1,5 +1,6 @@
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
 {{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+{{ 'bc-content-2026.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   @media screen and (max-width: 749px) {
@@ -17,8 +18,69 @@
         {{- collection.title | escape -}}
       </h1>
 
-      {%- if section.settings.show_collection_description -%}
-        <div class="collection-hero__description rte">{{ collection.description }}</div>
+      {%- if section.settings.show_collection_description and collection.description != blank -%}
+        {%- liquid
+          assign full_description = collection.description
+          assign lead_html = full_description
+          assign detail_html = ''
+
+          if full_description contains '<h3'
+            assign description_parts = full_description | split: '<h3'
+            assign lead_html = description_parts[0]
+            assign detail_html = description_parts | slice: 1, description_parts.size | join: '<h3'
+            assign detail_html = '<h3' | append: detail_html
+          endif
+
+          assign use_compact = true
+          if section.settings.description_layout == 'full'
+            assign use_compact = false
+          endif
+        -%}
+
+        {%- if use_compact -%}
+          {%- liquid
+            assign lead_main = lead_html
+            assign lead_highlights = ''
+            assign lead_heading = ''
+            assign lead_body = lead_main
+
+            if lead_html contains '<ul'
+              assign lead_parts = lead_html | split: '<ul'
+              assign lead_main = lead_parts[0]
+              assign lead_highlights = lead_parts | slice: 1, lead_parts.size | join: '<ul'
+              assign lead_highlights = '<ul' | append: lead_highlights
+            endif
+
+            if lead_main contains '<h2'
+              assign heading_parts = lead_main | split: '</h2>'
+              assign lead_heading = heading_parts[0] | append: '</h2>'
+              assign lead_body = heading_parts | slice: 1, heading_parts.size | join: '</h2>'
+            endif
+          -%}
+          <div class="bc-collection-hero">
+            {%- if lead_heading != blank -%}
+              <div class="bc-collection-hero__heading rte">{{ lead_heading }}</div>
+            {%- endif -%}
+            {%- if lead_highlights != blank -%}
+              <div class="bc-collection-hero__columns">
+                {%- if lead_body != blank -%}
+                  <div class="bc-collection-hero__lead rte">{{ lead_body }}</div>
+                {%- endif -%}
+                <div class="bc-collection-hero__highlights rte">{{ lead_highlights }}</div>
+              </div>
+            {%- elsif lead_main != blank -%}
+              <div class="bc-collection-hero__lead rte">{{ lead_main }}</div>
+            {%- endif -%}
+            {%- if detail_html != blank -%}
+              <details class="bc-collection-hero__more">
+                <summary>{{ section.settings.read_more_label | escape }}</summary>
+                <div class="bc-collection-hero__more-grid rte">{{ detail_html }}</div>
+              </details>
+            {%- endif -%}
+          </div>
+        {%- else -%}
+          <div class="collection-hero__description rte">{{ collection.description }}</div>
+        {%- endif -%}
       {%- endif -%}
     </div>
 
@@ -59,6 +121,22 @@
       "id": "show_collection_description",
       "default": true,
       "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "select",
+      "id": "description_layout",
+      "label": "Description layout",
+      "default": "compact",
+      "options": [
+        { "value": "compact", "label": "Compact intro with read more" },
+        { "value": "full", "label": "Full description" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "read_more_label",
+      "label": "Read more label",
+      "default": "More about this range"
     },
     {
       "type": "checkbox",
