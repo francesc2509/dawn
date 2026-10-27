@@ -1,0 +1,134 @@
+{{ 'about-page-sections.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width section-{{ section.id }}-padding about-offer">
+  <div class="about-offer__wrap">
+    <div class="about-offer__media">
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 1200
+          | image_tag: loading: 'lazy', alt: section.settings.image_alt, widths: '430, 768, 900, 1200', sizes: '(max-width: 991px) 100vw, 50vw'
+        }}
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+    <div class="about-offer__content">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="about-offer__eyebrow">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.lead != blank -%}
+        <p class="about-offer__lead">{{ section.settings.lead }}</p>
+      {%- endif -%}
+      <ul class="about-offer__list" role="list">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.item != blank -%}
+            <li {{ block.shopify_attributes }}>{{ block.settings.item }}</li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+      {%- if section.settings.note != blank -%}
+        <p class="about-offer__note">{{ section.settings.note }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About — what we offer",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Bubble Crush team and ingredients"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What We Offer?"
+    },
+    {
+      "type": "text",
+      "id": "lead",
+      "label": "Lead text",
+      "default": "We supply the full range of bubble tea essentials, including:"
+    },
+    {
+      "type": "textarea",
+      "id": "note",
+      "label": "Closing note",
+      "default": "Bubble Crush offers a one-stop solution for all bubble tea businesses in the UK, whether you are running a small café or managing a multi-store chain."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "List item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "item",
+          "label": "Text",
+          "default": "Tapioca pearls & popping boba"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About — what we offer",
+      "blocks": [
+        { "type": "item", "settings": { "item": "Tapioca pearls & popping boba" } },
+        { "type": "item", "settings": { "item": "Coconut jelly, grass jelly, and toppings" } },
+        { "type": "item", "settings": { "item": "Premium tea leaves and powders" } },
+        { "type": "item", "settings": { "item": "Flavored syrups and dairy products" } },
+        { "type": "item", "settings": { "item": "Cups, straws, and packaging" } },
+        { "type": "item", "settings": { "item": "Equipment and consumables" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

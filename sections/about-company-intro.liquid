@@ -1,0 +1,59 @@
+{{ 'about-page-sections.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width section-{{ section.id }}-padding">
+  <div class="about-intro">
+    <div class="about-intro__content rte">
+      {{ section.settings.body }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About — company intro",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Intro text",
+      "default": "<p>Bubble Crush is a professional <strong>B2B bubble tea ingredient supplier</strong> headquartered in London, dedicated to serving businesses across the <strong>United Kingdom</strong>. We specialize in delivering <strong>authentic, high-quality, and cost-effective ingredients</strong>, sourced directly from <strong>Taiwan and Mainland China</strong> – bringing the best and most suitable products to the UK market.</p><p>With our London warehouse and efficient local logistics, we provide partners with fast delivery, consistent stock, and reduced supply risks. Today, Bubble Crush proudly works with <strong>over 300 independent bubble tea shops, cafés, and chain brands</strong> across the UK, offering reliable supply and long-term support.</p>"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 24
+    }
+  ],
+  "presets": [{ "name": "About — company intro" }]
+}
+{% endschema %}

@@ -1,0 +1,141 @@
+{{ 'about-page-sections.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width section-{{ section.id }}-padding about-philosophy">
+  {%- if section.settings.heading != blank -%}
+    <h2 class="about-philosophy__title">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+  {%- if section.settings.intro != blank -%}
+    <p class="about-philosophy__intro">{{ section.settings.intro }}</p>
+  {%- endif -%}
+  <ul class="about-philosophy__values" role="list">
+    {%- for block in section.blocks -%}
+      <li {{ block.shopify_attributes }}>
+        {%- if block.settings.icon != blank -%}
+          <span aria-hidden="true">{{ block.settings.icon }}</span>
+        {%- endif -%}
+        <span>{{ block.settings.text }}</span>
+      </li>
+    {%- endfor -%}
+  </ul>
+  {%- if section.settings.vision != blank -%}
+    <div class="about-philosophy__vision rte">{{ section.settings.vision }}</div>
+  {%- endif -%}
+  {%- if section.settings.closing != blank -%}
+    <p class="about-philosophy__intro">{{ section.settings.closing }}</p>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "About — philosophy",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Philosophy"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "At Bubble Crush, we believe that great drinks start with exceptional ingredients. Our philosophy is built on three core values:"
+    },
+    {
+      "type": "richtext",
+      "id": "vision",
+      "label": "Vision statement",
+      "default": "<p>Our vision is to become the most reliable and influential bubble tea ingredient supplier in the UK, helping spread authentic Asian tea culture while empowering our partners to grow.</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "closing",
+      "label": "Closing text",
+      "default": "At Bubble Crush, we go beyond being just a supplier – we are your trusted business partner, supporting your success every step of the way."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "value",
+      "name": "Core value",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (emoji)",
+          "default": "✔"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Quality First – Strict sourcing and uncompromising standards"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About — philosophy",
+      "blocks": [
+        {
+          "type": "value",
+          "settings": {
+            "icon": "✔",
+            "text": "Quality First – Strict sourcing and uncompromising standards"
+          }
+        },
+        {
+          "type": "value",
+          "settings": {
+            "icon": "🤝",
+            "text": "Customer Partnership – Long-term reliability and responsive service"
+          }
+        },
+        {
+          "type": "value",
+          "settings": {
+            "icon": "💡",
+            "text": "Innovation Driven – Introducing new flavors and trends to keep UK businesses competitive"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

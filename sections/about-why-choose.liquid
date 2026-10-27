@@ -1,0 +1,180 @@
+{{ 'about-page-sections.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width section-{{ section.id }}-padding about-why">
+  <div class="about-why__wrap">
+    <div class="about-why__content">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="about-why__title">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      <ul class="about-why__list" role="list">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != blank -%}
+              <span class="about-why__icon" aria-hidden="true">{{ block.settings.icon }}</span>
+            {%- endif -%}
+            <div>
+              {%- if block.settings.title != blank -%}
+                <strong>{{ block.settings.title }}</strong>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <br>{{ block.settings.text }}
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    <div class="about-why__media">
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 1200
+          | image_tag: loading: 'lazy', alt: section.settings.image_alt, widths: '430, 768, 900, 1200', sizes: '(max-width: 991px) 100vw, 50vw'
+        }}
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About — why choose us",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Choose Bubble Crush?"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image (warehouse / team)"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Why Choose Bubble Crush"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (emoji)",
+          "default": "✨"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "300+ Trusted UK Partners"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Supplying hundreds of independent shops and well-known chains across the UK market."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About — why choose us",
+      "blocks": [
+        {
+          "type": "point",
+          "settings": {
+            "icon": "✨",
+            "title": "300+ Trusted UK Partners",
+            "text": "Supplying hundreds of independent shops and well-known chains across the UK market."
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "icon": "🚚",
+            "title": "Local London Warehouse",
+            "text": "On-hand inventory ensures fast delivery, stable supply, and peace of mind."
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "icon": "🌏",
+            "title": "Direct Global Sourcing",
+            "text": "Imported from Taiwan and Mainland China, combining authenticity, quality, and cost-effectiveness."
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "icon": "🤝",
+            "title": "Leading Brand Partnerships",
+            "text": "Official supplier of top manufacturers such as Freenow (菲诺) and Ice Blanc (冰勃朗)."
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "icon": "🎯",
+            "title": "Custom Solutions for Chains",
+            "text": "Tailored product development and private-label solutions for UK chain operators."
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "icon": "📈",
+            "title": "Your Growth Partner",
+            "text": "We are more than a supplier – we are a long-term partner dedicated to your success."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

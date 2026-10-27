@@ -1,0 +1,157 @@
+.about-intro {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-intro__content p {
+  font-size: clamp(1.6rem, 2vw, 1.8rem);
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.about-offer__wrap,
+.about-why__wrap {
+  display: grid;
+  gap: clamp(16px, 3vw, 28px);
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: clamp(16px, 3vw, 28px) 0;
+}
+
+.about-offer__media img,
+.about-why__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.about-why__media img {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-offer__eyebrow,
+.about-why__title,
+.about-philosophy__title {
+  margin: 0 0 6px;
+  font-size: clamp(28px, 3.2vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.about-offer__lead,
+.about-offer__note,
+.about-philosophy__intro {
+  color: #475569;
+  font-size: clamp(18px, 1.2vw, 22px);
+  line-height: 1.7;
+}
+
+.about-offer__list {
+  counter-reset: about-offer-counter;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+  display: grid;
+  gap: 6px;
+}
+
+.about-offer__list li {
+  counter-increment: about-offer-counter;
+  position: relative;
+  padding-left: 28px;
+  color: #0f172a;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.6;
+}
+
+.about-offer__list li::before {
+  content: counter(about-offer-counter) '.';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  color: #475569;
+}
+
+.about-why__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.about-why__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.6;
+  color: #0f172a;
+}
+
+.about-why__list .about-why__icon {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.about-philosophy__values {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  display: grid;
+  gap: 10px;
+}
+
+.about-philosophy__values li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.6;
+}
+
+.about-philosophy__vision {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 24px 0 16px;
+}
+
+@media (min-width: 992px) {
+  .about-offer__wrap {
+    grid-template-columns: 1.05fr 1fr;
+  }
+
+  .about-offer__list {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+  }
+
+  .about-why__wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .about-why__content {
+    order: 1;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .about-why__media {
+    order: 2;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
