@@ -1,3 +1,16 @@
+.about-top-banner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.about-top-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
 .about-intro {
   width: 100%;
   max-width: 1200px;

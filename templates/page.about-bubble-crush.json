@@ -55,6 +55,17 @@
         "show_section": true
       }
     },
+    "about_top_banner": {
+      "type": "about-top-banner",
+      "settings": {
+        "show_section": true,
+        "image": "shopify://shop_images/20260917114843_714_1.png",
+        "fallback_image_url": "https://cdn.shopify.com/s/files/1/0782/7999/9817/files/20260917114843_714_1.png?v=1758033160",
+        "image_alt": "Bubble Crush team at the London warehouse",
+        "padding_top": 24,
+        "padding_bottom": 16
+      }
+    },
     "about_intro": {
       "type": "about-company-intro",
       "settings": {
@@ -232,6 +243,7 @@
   "order": [
     "about_hero",
     "about_nav",
+    "about_top_banner",
     "about_intro",
     "about_offer",
     "about_why",
