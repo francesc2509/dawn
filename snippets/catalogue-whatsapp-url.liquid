@@ -1,0 +1,15 @@
+{% comment %}
+  Builds a WhatsApp URL with a pre-filled message.
+
+  Accepts:
+  - base_url: {String} e.g. https://wa.me/447512896659
+  - message: {String} plain text message
+{% endcomment %}
+{%- liquid
+  assign wa_base = base_url | split: '?' | first | split: '#' | first
+  if wa_base == blank
+    assign wa_base = 'https://wa.me/447512896659'
+  endif
+  assign encoded_message = message | url_encode
+  assign wa_out = wa_base | append: '?text=' | append: encoded_message
+-%}{{- wa_out -}}

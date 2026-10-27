@@ -1,0 +1,413 @@
+{{ 'bc-content-2026.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign pdf_href = section.settings.pdf_link
+  if pdf_href == blank and section.settings.pdf_asset != blank
+    assign pdf_href = section.settings.pdf_asset | asset_url
+  endif
+  assign whatsapp_url = section.settings.whatsapp_url | default: 'https://wa.me/447512896659'
+  assign top_wa_message = section.settings.top_whatsapp_message | default: 'Hi, I would like to enquire about your product catalogue. Please share availability and pricing.'
+  assign category_wa_template = section.settings.category_whatsapp_message_template | default: 'Hi, I would like to enquire about your {category} category. Please share the available products and pricing.'
+  assign contact_url = section.settings.final_contact_link
+  if contact_url == blank
+    assign contact_url = whatsapp_url
+  endif
+-%}
+
+<div class="bc-catalogue color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <header class="bc-catalogue__intro">
+      {%- if section.settings.page_title != blank -%}
+        <h1>{{ section.settings.page_title }}</h1>
+      {%- endif -%}
+      {%- if section.settings.intro_heading != blank -%}
+        <h2 class="bc-catalogue__intro-subhead">{{ section.settings.intro_heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.intro_text != blank -%}
+        <div class="rte">{{ section.settings.intro_text }}</div>
+      {%- endif -%}
+      <div class="bc-catalogue__intro-actions">
+        {%- if section.settings.show_top_whatsapp and section.settings.top_whatsapp_label != blank -%}
+          {%- capture top_wa_href -%}
+            {%- render 'catalogue-whatsapp-url', base_url: whatsapp_url, message: top_wa_message -%}
+          {%- endcapture -%}
+          <a
+            class="button bc-catalogue__whatsapp-btn"
+            href="{{ top_wa_href | strip }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ section.settings.top_whatsapp_label }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.show_top_download and section.settings.download_label != blank and pdf_href != blank -%}
+          <a class="button button--secondary" href="{{ pdf_href }}" target="_blank" rel="noopener noreferrer" download>
+            {{ section.settings.download_label }}
+          </a>
+        {%- endif -%}
+      </div>
+    </header>
+
+    {%- assign category_count = 0 -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'category' and block.settings.show_category != false and block.settings.category_key != blank -%}
+        {%- assign category_count = category_count | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if category_count > 0 -%}
+      <nav class="bc-catalogue__nav" aria-label="Catalogue categories">
+        <ul class="bc-catalogue__nav-list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'category' and block.settings.show_category != false and block.settings.title != blank -%}
+              <li>
+                <a href="#catalogue-cat-{{ block.settings.category_key | escape }}">{{ block.settings.title }}</a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </nav>
+    {%- endif -%}
+
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'category' and block.settings.show_category != false -%}
+        <section
+          id="catalogue-cat-{{ block.settings.category_key | escape }}"
+          class="bc-catalogue__group"
+          {{ block.shopify_attributes }}
+        >
+          <div class="bc-catalogue__group-head">
+            {%- if block.settings.collection != blank -%}
+              <a href="{{ block.settings.collection.url }}">
+            {%- endif -%}
+            <picture>
+              {%- if block.settings.image_mobile != blank -%}
+                <source
+                  media="(max-width: 749px)"
+                  srcset="{{ block.settings.image_mobile | image_url: width: 430 }} 430w, {{ block.settings.image_mobile | image_url: width: 768 }} 768w"
+                  sizes="100vw"
+                >
+              {%- elsif block.settings.fallback_mobile_asset != blank -%}
+                <source media="(max-width: 749px)" srcset="{{ block.settings.fallback_mobile_asset | asset_url }}">
+              {%- endif -%}
+              {%- if block.settings.image_desktop != blank -%}
+                <img
+                  src="{{ block.settings.image_desktop | image_url: width: 1500 }}"
+                  srcset="{{ block.settings.image_desktop | image_url: width: 1000 }} 1000w, {{ block.settings.image_desktop | image_url: width: 1500 }} 1500w"
+                  sizes="100vw"
+                  alt="{{ block.settings.title | escape }}"
+                  width="{{ block.settings.image_desktop.width }}"
+                  height="{{ block.settings.image_desktop.height }}"
+                  loading="lazy"
+                >
+              {%- elsif block.settings.fallback_desktop_asset != blank -%}
+                <img src="{{ block.settings.fallback_desktop_asset | asset_url }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+              {%- endif -%}
+            </picture>
+            {%- if block.settings.collection != blank -%}
+              </a>
+            {%- endif -%}
+            {%- if block.settings.title != blank -%}
+              <h2 class="bc-catalogue__group-title">{{ block.settings.title }}</h2>
+            {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <div class="rte">{{ block.settings.description }}</div>
+            {%- endif -%}
+          </div>
+          <div class="bc-catalogue__grid">
+            {%- for product_block in section.blocks -%}
+              {%- if product_block.type == 'product'
+                and product_block.settings.show_product != false
+                and product_block.settings.category_key == block.settings.category_key
+              -%}
+                {% render 'catalogue-product-card',
+                  card_product: product_block.settings.product,
+                  display_title: product_block.settings.display_title,
+                  custom_description: product_block.settings.custom_description,
+                  force_enquire: product_block.settings.force_enquire
+                %}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          {%- if section.settings.category_enquire_label != blank and block.settings.title != blank -%}
+            {%- assign cat_message = category_wa_template | replace: '{category}', block.settings.title -%}
+            {%- capture cat_wa_href -%}
+              {%- render 'catalogue-whatsapp-url', base_url: whatsapp_url, message: cat_message -%}
+            {%- endcapture -%}
+            <div class="bc-catalogue__category-enquire">
+              <a
+                class="button button--secondary bc-catalogue__category-enquire-btn"
+                href="{{ cat_wa_href | strip }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ section.settings.category_enquire_label }}
+              </a>
+            </div>
+          {%- endif -%}
+        </section>
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if section.settings.show_final_enquiry -%}
+      <section class="bc-catalogue__final" aria-labelledby="bc-catalogue-final-heading">
+        {%- if section.settings.final_heading != blank -%}
+          <h2 id="bc-catalogue-final-heading">{{ section.settings.final_heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.final_text != blank -%}
+          <div class="rte">{{ section.settings.final_text }}</div>
+        {%- endif -%}
+        {%- if section.settings.final_button_label != blank -%}
+          <a class="button bc-catalogue__final-btn" href="{{ contact_url }}" target="_blank" rel="noopener noreferrer">
+            {{ section.settings.final_button_label }}
+          </a>
+        {%- endif -%}
+      </section>
+    {%- endif -%}
+
+    {%- if section.settings.show_bottom_download and section.settings.download_label != blank and pdf_href != blank -%}
+      <div class="bc-catalogue__downloads bc-catalogue__downloads--bottom">
+        <a class="button button--secondary" href="{{ pdf_href }}" target="_blank" rel="noopener noreferrer" download>
+          {{ section.settings.download_label }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product catalogue",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page title",
+      "default": "Bubble Crush Product Catalogue 2026"
+    },
+    {
+      "type": "text",
+      "id": "intro_heading",
+      "label": "Intro heading",
+      "default": "Leading Bubble Tea Ingredient Supplier in UK."
+    },
+    {
+      "type": "richtext",
+      "id": "intro_text",
+      "label": "Intro text",
+      "default": "<p>We source high-quality bubble tea ingredients from trusted manufacturers to provide reliable products for your business.</p>"
+    },
+    {
+      "type": "header",
+      "content": "WhatsApp enquiry"
+    },
+    {
+      "type": "url",
+      "id": "whatsapp_url",
+      "label": "WhatsApp base link",
+      "info": "Use your wa.me link without a pre-filled message; category messages are generated automatically."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_whatsapp",
+      "label": "Show top WhatsApp button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "top_whatsapp_label",
+      "label": "Top WhatsApp button label",
+      "default": "ENQUIRE VIA WHATSAPP"
+    },
+    {
+      "type": "textarea",
+      "id": "top_whatsapp_message",
+      "label": "Top WhatsApp pre-filled message",
+      "default": "Hi, I would like to enquire about your product catalogue. Please share availability and pricing."
+    },
+    {
+      "type": "text",
+      "id": "category_enquire_label",
+      "label": "Category enquiry button label",
+      "default": "ENQUIRE ABOUT THIS CATEGORY"
+    },
+    {
+      "type": "textarea",
+      "id": "category_whatsapp_message_template",
+      "label": "Category WhatsApp message template",
+      "info": "Use {category} as placeholder for the category title.",
+      "default": "Hi, I would like to enquire about your {category} category. Please share the available products and pricing."
+    },
+    {
+      "type": "header",
+      "content": "PDF download"
+    },
+    {
+      "type": "text",
+      "id": "download_label",
+      "label": "PDF download button label",
+      "default": "Download 2026 Product Catalogue"
+    },
+    {
+      "type": "url",
+      "id": "pdf_link",
+      "label": "PDF download link"
+    },
+    {
+      "type": "text",
+      "id": "pdf_asset",
+      "label": "PDF asset filename fallback",
+      "default": "bubble-crush-product-catalogue-2026.pdf"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_download",
+      "label": "Show top download button",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bottom_download",
+      "label": "Show bottom download button",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Final enquiry block"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_final_enquiry",
+      "label": "Show final enquiry block",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "final_heading",
+      "label": "Final enquiry heading",
+      "default": "Need Help Choosing the Right Ingredients?"
+    },
+    {
+      "type": "richtext",
+      "id": "final_text",
+      "label": "Final enquiry description",
+      "default": "<p>Contact our team for product availability, pricing and ingredient enquiries.</p>"
+    },
+    {
+      "type": "text",
+      "id": "final_button_label",
+      "label": "Final enquiry button label",
+      "default": "CONTACT OUR TEAM"
+    },
+    {
+      "type": "url",
+      "id": "final_contact_link",
+      "label": "Final enquiry button link",
+      "info": "Defaults to WhatsApp base link if empty."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Catalogue category",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_category",
+          "label": "Show this category",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "category_key",
+          "label": "Category key",
+          "info": "Product blocks must use the same key. Used for anchor IDs."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Category title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Category description"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Desktop image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_desktop_asset",
+          "label": "Desktop image fallback filename"
+        },
+        {
+          "type": "text",
+          "id": "fallback_mobile_asset",
+          "label": "Mobile image fallback filename"
+        }
+      ]
+    },
+    {
+      "type": "product",
+      "name": "Catalogue product",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_product",
+          "label": "Show this product",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "category_key",
+          "label": "Category key"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "display_title",
+          "label": "Display title override"
+        },
+        {
+          "type": "textarea",
+          "id": "custom_description",
+          "label": "Custom description"
+        },
+        {
+          "type": "checkbox",
+          "id": "force_enquire",
+          "label": "Show as available upon enquiry",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Product catalogue" }]
+}
+{% endschema %}

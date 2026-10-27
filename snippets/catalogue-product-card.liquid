@@ -1,0 +1,60 @@
+{% comment %}
+  Renders a product card for the Product Catalogue page.
+
+  Accepts:
+  - card_product: {Object} Product Liquid object (optional)
+  - display_title: {String} Override title
+  - custom_description: {String} Optional description
+  - force_enquire: {Boolean} Show enquiry state even if product exists
+{% endcomment %}
+
+{%- liquid
+  assign show_enquire = force_enquire
+  if card_product == blank or card_product == empty
+    assign show_enquire = true
+  endif
+  assign card_title = display_title
+  if card_title == blank and card_product != blank
+    assign card_title = card_product.title
+  endif
+-%}
+
+<article class="bc-catalogue__card">
+  <div class="bc-catalogue__card-media">
+    {%- if show_enquire == false and card_product.featured_media -%}
+      <a href="{{ card_product.url }}">
+        {{
+          card_product.featured_media
+          | image_url: width: 600
+          | image_tag:
+            widths: '165, 330, 535, 750',
+            sizes: '(max-width: 749px) 100vw, 25vw',
+            alt: card_title,
+            loading: 'lazy',
+            width: card_product.featured_media.width,
+            height: card_product.featured_media.height
+        }}
+      </a>
+    {%- else -%}
+      <div class="bc-catalogue__card-placeholder" aria-hidden="true"></div>
+    {%- endif -%}
+  </div>
+  <div class="bc-catalogue__card-body">
+    <h3 class="bc-catalogue__card-title">
+      {%- if show_enquire == false -%}
+        <a href="{{ card_product.url }}">{{ card_title }}</a>
+      {%- else -%}
+        {{ card_title }}
+      {%- endif -%}
+    </h3>
+    {%- if custom_description != blank -%}
+      <p class="bc-catalogue__card-note">{{ custom_description }}</p>
+    {%- endif -%}
+    {%- if show_enquire -%}
+      <p class="bc-catalogue__card-status">{{ 'Available upon enquiry' }}</p>
+    {%- else -%}
+      {% render 'price', product: card_product, price_class: 'bc-catalogue__price', show_compare_at_price: true %}
+      <a class="button bc-catalogue__card-link" href="{{ card_product.url }}">{{ 'View product' }}</a>
+    {%- endif -%}
+  </div>
+</article>
