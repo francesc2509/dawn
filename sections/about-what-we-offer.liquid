@@ -22,6 +22,14 @@
           | image_url: width: 1200
           | image_tag: loading: 'lazy', alt: section.settings.image_alt, widths: '430, 768, 900, 1200', sizes: '(max-width: 991px) 100vw, 50vw'
         }}
+      {%- elsif section.settings.fallback_image_url != blank -%}
+        <img
+          src="{{ section.settings.fallback_image_url }}"
+          alt="{{ section.settings.image_alt | escape }}"
+          loading="lazy"
+          width="1200"
+          height="800"
+        >
       {%- else -%}
         {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
       {%- endif -%}
@@ -57,6 +65,12 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "fallback_image_url",
+      "label": "Default image URL (used when no image is selected)",
+      "default": "https://cdn.shopify.com/s/files/1/0782/7999/9817/files/b89d4682d790f368ab529fc960385640.png?v=1758032642"
     },
     {
       "type": "text",

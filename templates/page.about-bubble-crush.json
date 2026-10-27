@@ -112,6 +112,7 @@
         "item_6"
       ],
       "settings": {
+        "fallback_image_url": "https://cdn.shopify.com/s/files/1/0782/7999/9817/files/b89d4682d790f368ab529fc960385640.png?v=1758032642",
         "image_alt": "Bubble Crush team and ingredients",
         "heading": "What We Offer?",
         "lead": "We supply the full range of bubble tea essentials, including:",
@@ -182,6 +183,7 @@
       ],
       "settings": {
         "heading": "Why Choose Bubble Crush?",
+        "fallback_image_url": "https://cdn.shopify.com/s/files/1/0782/7999/9817/files/a30c9f0acbdd8fe39367cfb039606f58_2ef8d3fe-50e8-4173-98ea-f8ba517136ac.png?v=1758033160",
         "image_alt": "Why Choose Bubble Crush",
         "padding_top": 40,
         "padding_bottom": 40
