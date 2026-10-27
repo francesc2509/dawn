@@ -43,44 +43,53 @@
             assign lead_highlights = ''
             assign lead_heading = ''
             assign lead_body = lead_main
+            assign use_intro_columns = false
 
-            if lead_html contains '<ul'
+            if section.settings.intro_layout == 'two_column'
+              assign use_intro_columns = true
+            elsif section.settings.intro_layout == 'single'
+              assign use_intro_columns = false
+            elsif collection.handle == 'sales' and lead_html contains '<ul' and lead_html contains '<li'
+              assign use_intro_columns = true
+            endif
+
+            if use_intro_columns and lead_html contains '<ul'
               assign lead_parts = lead_html | split: '<ul'
               assign lead_main = lead_parts[0]
               assign lead_highlights = lead_parts | slice: 1, lead_parts.size | join: '<ul'
               assign lead_highlights = '<ul' | append: lead_highlights
-            endif
 
-            if lead_main contains '<h2'
-              assign heading_parts = lead_main | split: '</h2>'
-              assign lead_heading = heading_parts[0] | append: '</h2>'
-              assign lead_body = heading_parts | slice: 1, heading_parts.size | join: '</h2>'
-            endif
+              if lead_main contains '<h2'
+                assign heading_parts = lead_main | split: '</h2>'
+                assign lead_heading = heading_parts[0] | append: '</h2>'
+                assign lead_body = heading_parts | slice: 1, heading_parts.size | join: '</h2>'
+              endif
 
-            if lead_highlights != blank and lead_heading == blank and lead_body contains '<p'
-              assign paragraph_chunks = lead_body | split: '<p'
-              assign paragraph_count = paragraph_chunks.size | minus: 1
-              if paragraph_count > 1
-                assign paragraph_parts = lead_body | split: '</p>'
-                assign lead_heading = paragraph_parts[0] | append: '</p>'
-                assign lead_body = paragraph_parts | slice: 1, paragraph_parts.size | join: '</p>'
-                assign lead_body = lead_body | strip
+              if lead_heading == blank and lead_body contains '<p'
+                assign paragraph_chunks = lead_body | split: '<p'
+                assign paragraph_count = paragraph_chunks.size | minus: 1
+                if paragraph_count > 1
+                  assign paragraph_parts = lead_body | split: '</p>'
+                  assign lead_heading = paragraph_parts[0] | append: '</p>'
+                  assign lead_body = paragraph_parts | slice: 1, paragraph_parts.size | join: '</p>'
+                  assign lead_body = lead_body | strip
+                endif
               endif
             endif
           -%}
           <div class="bc-collection-hero">
-            {%- if lead_heading != blank -%}
-              <div class="bc-collection-hero__heading rte">{{ lead_heading }}</div>
-            {%- endif -%}
-            {%- if lead_highlights != blank -%}
+            {%- if use_intro_columns and lead_highlights != blank -%}
+              {%- if lead_heading != blank -%}
+                <div class="bc-collection-hero__heading rte">{{ lead_heading }}</div>
+              {%- endif -%}
               <div class="bc-collection-hero__columns">
                 {%- if lead_body != blank -%}
                   <div class="bc-collection-hero__lead rte">{{ lead_body }}</div>
                 {%- endif -%}
                 <div class="bc-collection-hero__highlights rte">{{ lead_highlights }}</div>
               </div>
-            {%- elsif lead_main != blank -%}
-              <div class="bc-collection-hero__lead rte">{{ lead_main }}</div>
+            {%- elsif lead_html != blank -%}
+              <div class="bc-collection-hero__lead bc-collection-hero__lead--full rte">{{ lead_html }}</div>
             {%- endif -%}
             {%- if detail_html != blank -%}
               <details class="bc-collection-hero__more">
@@ -141,6 +150,18 @@
       "options": [
         { "value": "compact", "label": "Compact intro with read more" },
         { "value": "full", "label": "Full description" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "intro_layout",
+      "label": "Intro column layout",
+      "default": "auto",
+      "info": "Auto uses two columns only on the Sales collection (short text + bullet list). Other collections use a single full-width intro.",
+      "options": [
+        { "value": "auto", "label": "Auto" },
+        { "value": "single", "label": "Single column (full width)" },
+        { "value": "two_column", "label": "Two columns (text + list)" }
       ]
     },
     {

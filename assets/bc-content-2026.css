@@ -810,6 +810,36 @@
   margin: 0;
 }
 
+.bc-collection-hero__lead--full {
+  max-width: none;
+  width: 100%;
+}
+
+.bc-collection-hero__lead--full p {
+  margin: 0 0 1.1rem;
+}
+
+.bc-collection-hero__lead--full p:last-child {
+  margin-bottom: 0;
+}
+
+.bc-collection-hero__lead--full ul {
+  margin: 0.8rem 0 1.1rem;
+  padding-left: 1.4em;
+}
+
+.bc-collection-hero__lead--full li {
+  margin-bottom: 0.45rem;
+}
+
+.collection-hero__text-wrapper .bc-collection-hero {
+  width: 100%;
+}
+
+.collection-hero__title {
+  max-width: 100%;
+}
+
 .bc-collection-hero__more {
   margin-top: 1rem;
   max-width: 78rem;
