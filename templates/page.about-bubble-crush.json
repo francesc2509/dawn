@@ -1,0 +1,238 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "about_hero": {
+      "type": "explore-support-hero",
+      "settings": {
+        "show_section": true,
+        "image_overlay_opacity": 35,
+        "banner_height": "medium",
+        "content_alignment": "center",
+        "text_on_image": "auto",
+        "eyebrow": "About Us",
+        "heading": "About Bubble Crush",
+        "heading_size": "h1",
+        "intro": "<p>UK-based. Globally connected. Your trusted bubble tea wholesale partner in London.</p>",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "about_nav": {
+      "type": "explore-support-nav",
+      "blocks": {
+        "nav_story": {
+          "type": "link",
+          "settings": {
+            "show_link": true,
+            "icon": "🏢",
+            "label": "Our Story",
+            "link": "/pages/about-bubble-crush"
+          }
+        },
+        "nav_contact": {
+          "type": "link",
+          "settings": {
+            "show_link": true,
+            "icon": "✉️",
+            "label": "Contact Us",
+            "link": "/pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "nav_story",
+        "nav_contact"
+      ],
+      "settings": {
+        "show_section": true
+      }
+    },
+    "about_intro": {
+      "type": "about-company-intro",
+      "settings": {
+        "body": "<p>Bubble Crush is a professional <strong>B2B bubble tea ingredient supplier</strong> headquartered in London, dedicated to serving businesses across the <strong>United Kingdom</strong>. We specialize in delivering <strong>authentic, high-quality, and cost-effective ingredients</strong>, sourced directly from <strong>Taiwan and Mainland China</strong> – bringing the best and most suitable products to the UK market.</p><p>With our London warehouse and efficient local logistics, we provide partners with fast delivery, consistent stock, and reduced supply risks. Today, Bubble Crush proudly works with <strong>over 300 independent bubble tea shops, cafés, and chain brands</strong> across the UK, offering reliable supply and long-term support.</p>",
+        "padding_top": 40,
+        "padding_bottom": 24
+      }
+    },
+    "about_offer": {
+      "type": "about-what-we-offer",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "item": "Tapioca pearls & popping boba"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "item": "Coconut jelly, grass jelly, and toppings"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "item": "Premium tea leaves and powders"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "item": "Flavored syrups and dairy products"
+          }
+        },
+        "item_5": {
+          "type": "item",
+          "settings": {
+            "item": "Cups, straws, and packaging"
+          }
+        },
+        "item_6": {
+          "type": "item",
+          "settings": {
+            "item": "Equipment and consumables"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5",
+        "item_6"
+      ],
+      "settings": {
+        "image_alt": "Bubble Crush team and ingredients",
+        "heading": "What We Offer?",
+        "lead": "We supply the full range of bubble tea essentials, including:",
+        "note": "Bubble Crush offers a one-stop solution for all bubble tea businesses in the UK, whether you are running a small café or managing a multi-store chain.",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "about_why": {
+      "type": "about-why-choose",
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "icon": "✨",
+            "title": "300+ Trusted UK Partners",
+            "text": "Supplying hundreds of independent shops and well-known chains across the UK market."
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "icon": "🚚",
+            "title": "Local London Warehouse",
+            "text": "On-hand inventory ensures fast delivery, stable supply, and peace of mind."
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "icon": "🌏",
+            "title": "Direct Global Sourcing",
+            "text": "Imported from Taiwan and Mainland China, combining authenticity, quality, and cost-effectiveness."
+          }
+        },
+        "point_4": {
+          "type": "point",
+          "settings": {
+            "icon": "🤝",
+            "title": "Leading Brand Partnerships",
+            "text": "Official supplier of top manufacturers such as Freenow (菲诺) and Ice Blanc (冰勃朗)."
+          }
+        },
+        "point_5": {
+          "type": "point",
+          "settings": {
+            "icon": "🎯",
+            "title": "Custom Solutions for Chains",
+            "text": "Tailored product development and private-label solutions for UK chain operators."
+          }
+        },
+        "point_6": {
+          "type": "point",
+          "settings": {
+            "icon": "📈",
+            "title": "Your Growth Partner",
+            "text": "We are more than a supplier – we are a long-term partner dedicated to your success."
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3",
+        "point_4",
+        "point_5",
+        "point_6"
+      ],
+      "settings": {
+        "heading": "Why Choose Bubble Crush?",
+        "image_alt": "Why Choose Bubble Crush",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "about_philosophy": {
+      "type": "about-philosophy",
+      "blocks": {
+        "value_1": {
+          "type": "value",
+          "settings": {
+            "icon": "✔",
+            "text": "Quality First – Strict sourcing and uncompromising standards"
+          }
+        },
+        "value_2": {
+          "type": "value",
+          "settings": {
+            "icon": "🤝",
+            "text": "Customer Partnership – Long-term reliability and responsive service"
+          }
+        },
+        "value_3": {
+          "type": "value",
+          "settings": {
+            "icon": "💡",
+            "text": "Innovation Driven – Introducing new flavors and trends to keep UK businesses competitive"
+          }
+        }
+      },
+      "block_order": [
+        "value_1",
+        "value_2",
+        "value_3"
+      ],
+      "settings": {
+        "heading": "Our Philosophy",
+        "intro": "At Bubble Crush, we believe that great drinks start with exceptional ingredients. Our philosophy is built on three core values:",
+        "vision": "<p>Our vision is to become the most reliable and influential bubble tea ingredient supplier in the UK, helping spread authentic Asian tea culture while empowering our partners to grow.</p>",
+        "closing": "At Bubble Crush, we go beyond being just a supplier – we are your trusted business partner, supporting your success every step of the way.",
+        "padding_top": 40,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "about_hero",
+    "about_nav",
+    "about_intro",
+    "about_offer",
+    "about_why",
+    "about_philosophy"
+  ]
+}

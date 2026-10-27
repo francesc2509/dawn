@@ -1,0 +1,237 @@
+{{ 'bc-content-2026.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.show_section != false -%}
+  {%- liquid
+    assign banner_image = section.settings.image
+    assign banner_mobile = section.settings.image_mobile
+    if banner_mobile == blank
+      assign banner_mobile = banner_image
+    endif
+    assign has_banner = false
+    if banner_image != blank
+      assign has_banner = true
+    endif
+    assign text_on_image = section.settings.text_on_image
+    if text_on_image == 'auto'
+      if has_banner
+        assign text_on_image = 'light'
+      else
+        assign text_on_image = 'dark'
+      endif
+    endif
+    assign fetch_priority = 'auto'
+    if section.index == 1
+      assign fetch_priority = 'high'
+    endif
+  -%}
+
+  <div
+    id="bc-explore-hero-{{ section.id }}"
+    class="bc-explore bc-explore-hero{% if has_banner %} bc-explore-hero--banner bc-explore-hero--height-{{ section.settings.banner_height }}{% endif %} bc-explore-hero--text-{{ text_on_image }} bc-explore-hero--align-{{ section.settings.content_alignment }} section-{{ section.id }}-padding"
+  >
+    {%- if has_banner -%}
+      <div class="bc-explore-hero__media" aria-hidden="true">
+        <picture>
+          {%- if banner_mobile != blank and banner_mobile != banner_image -%}
+            <source
+              media="(max-width: 749px)"
+              srcset="
+                {%- if banner_mobile.width >= 375 -%}{{ banner_mobile | image_url: width: 375 }} 375w,{%- endif -%}
+                {%- if banner_mobile.width >= 750 -%}{{ banner_mobile | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if banner_mobile.width >= 1100 -%}{{ banner_mobile | image_url: width: 1100 }} 1100w,{%- endif -%}
+                {{ banner_mobile | image_url }} {{ banner_mobile.width }}w
+              "
+              sizes="100vw"
+            >
+          {%- endif -%}
+          {{
+            banner_image
+            | image_url: width: 3840
+            | image_tag:
+              class: 'bc-explore-hero__img',
+              sizes: '100vw',
+              widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+              fetchpriority: fetch_priority
+          }}
+        </picture>
+        <span class="bc-explore-hero__overlay"></span>
+      </div>
+    {%- endif -%}
+
+    <div class="bc-explore-hero__inner page-width">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="bc-explore-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h1 class="bc-explore-hero__title {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h1>
+      {%- elsif page.title != blank -%}
+        <h1 class="bc-explore-hero__title h1">{{ page.title | escape }}</h1>
+      {%- elsif blog.title != blank -%}
+        <h1 class="bc-explore-hero__title h1">{{ blog.title | escape }}</h1>
+      {%- endif -%}
+      {%- if section.settings.intro != blank -%}
+        <div class="bc-explore-hero__intro rte">{{ section.settings.intro }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  {%- if section.settings.image != blank -%}
+    #bc-explore-hero-{{ section.id }} .bc-explore-hero__overlay {
+      opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
+    }
+
+    {%- if section.settings.banner_height == 'adapt' -%}
+      #bc-explore-hero-{{ section.id }}.bc-explore-hero--banner {
+        --bc-explore-hero-ratio: {{ section.settings.image.aspect_ratio }};
+      }
+    {%- endif -%}
+  {%- endif -%}
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Page hero with banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Banner image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image",
+      "info": "Recommended wide image (e.g. 2400×900). Leave empty for gradient background only."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile banner image (optional)"
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "label": "Image overlay darkness",
+      "default": 35
+    },
+    {
+      "type": "select",
+      "id": "banner_height",
+      "label": "Banner height",
+      "default": "medium",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "adapt", "label": "Adapt to image" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Text position on banner",
+      "default": "center",
+      "options": [
+        { "value": "center", "label": "Centre" },
+        { "value": "bottom-left", "label": "Bottom left" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_on_image",
+      "label": "Text colour on banner",
+      "default": "auto",
+      "options": [
+        { "value": "auto", "label": "Auto (light on photo, dark on gradient)" },
+        { "value": "light", "label": "Light (white)" },
+        { "value": "dark", "label": "Dark" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Explore & Support"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Leave blank to use page or blog title"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h0", "label": "Display" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Explore support hero"
+    }
+  ]
+}
+{% endschema %}
