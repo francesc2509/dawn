@@ -56,6 +56,17 @@
               assign lead_heading = heading_parts[0] | append: '</h2>'
               assign lead_body = heading_parts | slice: 1, heading_parts.size | join: '</h2>'
             endif
+
+            if lead_highlights != blank and lead_heading == blank and lead_body contains '<p'
+              assign paragraph_chunks = lead_body | split: '<p'
+              assign paragraph_count = paragraph_chunks.size | minus: 1
+              if paragraph_count > 1
+                assign paragraph_parts = lead_body | split: '</p>'
+                assign lead_heading = paragraph_parts[0] | append: '</p>'
+                assign lead_body = paragraph_parts | slice: 1, paragraph_parts.size | join: '</p>'
+                assign lead_body = lead_body | strip
+              endif
+            endif
           -%}
           <div class="bc-collection-hero">
             {%- if lead_heading != blank -%}

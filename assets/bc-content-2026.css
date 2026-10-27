@@ -785,6 +785,14 @@
   line-height: 1.6;
 }
 
+.bc-collection-hero__columns .bc-collection-hero__lead > :first-child {
+  margin-top: 0;
+}
+
+.bc-collection-hero__highlights > :first-child {
+  margin-top: 0;
+}
+
 .bc-collection-hero__highlights ul {
   margin: 0;
   padding-left: 1.4em;
