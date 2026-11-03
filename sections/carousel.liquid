@@ -4,124 +4,221 @@
 <div class="carousel-container">
   <div class="carousel">
     {% for block in section.blocks %}
+      {% if block.settings.show_slide == false %}
+        {% continue %}
+      {% endif %}
       <div
-        class="dawn-carousel-item{% if block.settings.slide_position %} {{ block.settings.slide_position }}{% endif %}{% if block.settings.slide_fit %} {{ block.settings.slide_fit }}{% endif %} color-{{ block.settings.color_scheme }}"
+        class="dawn-carousel-item bc-hero-slide--{{ block.id }}{% if block.settings.slide_position %} {{ block.settings.slide_position }}{% endif %}{% if block.settings.slide_fit %} {{ block.settings.slide_fit }}{% endif %} color-{{ block.settings.color_scheme }}"
+        {{ block.shopify_attributes }}
         {% if block.settings.slide_duration %}
           data-duration="{{ block.settings.slide_duration }}"
         {% endif %}
+        {% if block.settings.text_color != blank %}
+          style="--bc-hero-text: {{ block.settings.text_color }};"
+        {% endif %}
       >
-        {% if block.settings.video -%}
-          
-          <video muted playsinline>
-            {% if block.settings.video_mobile %}
-              <source
-                src="{{ block.settings.video_mobile.sources.last.url }}"
-                type="video/mp4"
-                media="(max-width: 768px)"
-              >
-            {% endif %}
-
-            {% assign desktop_video = block.settings.video %}
-          {% if desktop_video != blank %}
-            {% assign mp4_source = desktop_video.sources | where: "format", "mp4" | first %}
-            {% if mp4_source %}
-              <source src="{{ mp4_source.url }}" type="video/mp4">
-            {% endif %}
-          {% endif %}
-          </video>
-        {% elsif block.settings.image %}
-          <picture>
-            {% if block.settings.image_mobile %}
-              <source
-                media="(max-width: 768px)"
-                srcset="{{ block.settings.image_mobile | image_url: width: 768 }}"
-              >
-            {% endif %}
-
-            <img
-              src="{{ block.settings.image | image_url: width: 1440 }}"
-              alt="{{ block.settings.image.alt | escape }}"
-              {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
-              width="{{ block.settings.image.width }}"
-              height="{{ block.settings.image.height }}"
+        {%- liquid
+          assign hero_poster = blank
+          if block.settings.image != blank
+            assign hero_poster = block.settings.image | image_url: width: 1920
+          elsif block.settings.fallback_desktop_asset != blank
+            assign hero_poster = block.settings.fallback_desktop_asset | asset_url
+          endif
+          assign hero_video_loop = block.settings.video_loop
+          if hero_video_loop == nil
+            assign hero_video_loop = true
+          endif
+        -%}
+        {% if block.settings.video != blank or block.settings.video_mp4_url != blank -%}
+          {%- if block.settings.video_mobile != blank -%}
+            <video
+              class="bc-hero__video bc-hero__video--mobile"
+              muted
+              playsinline
+              webkit-playsinline
+              {% if block.settings.video_autoplay != false %}autoplay{% endif %}
+              {% if hero_video_loop %}loop{% endif %}
+              {% if hero_poster != blank %}poster="{{ hero_poster }}"{% endif %}
+              preload="auto"
+              data-video-loop="{{ hero_video_loop }}"
             >
+              {%- assign mobile_mp4 = block.settings.video_mobile.sources | where: 'format', 'mp4' | first -%}
+              {%- if mobile_mp4 -%}
+                <source src="{{ mobile_mp4.url }}" type="video/mp4">
+              {%- endif -%}
+            </video>
+          {%- endif -%}
+          <video
+            class="bc-hero__video{% if block.settings.video_mobile != blank %} bc-hero__video--desktop{% endif %}"
+            muted
+            playsinline
+            webkit-playsinline
+            {% if block.settings.video_autoplay != false %}autoplay{% endif %}
+            {% if hero_video_loop %}loop{% endif %}
+            {% if hero_poster != blank %}poster="{{ hero_poster }}"{% endif %}
+            preload="auto"
+            data-video-loop="{{ hero_video_loop }}"
+          >
+            {%- if block.settings.video != blank -%}
+              {%- assign desktop_mp4 = block.settings.video.sources | where: 'format', 'mp4' | first -%}
+              {%- if desktop_mp4 -%}
+                <source src="{{ desktop_mp4.url }}" type="video/mp4">
+              {%- endif -%}
+            {%- elsif block.settings.video_mp4_url != blank -%}
+              <source src="{{ block.settings.video_mp4_url }}" type="video/mp4">
+            {%- endif -%}
+          </video>
+        {% elsif block.settings.image != blank or block.settings.fallback_desktop_asset != blank %}
+          {%- liquid
+            assign desktop_img = block.settings.image
+            assign mobile_img = block.settings.image_mobile
+            assign desktop_asset = block.settings.fallback_desktop_asset
+            assign mobile_asset = block.settings.fallback_mobile_asset
+            assign img_alt = block.settings.image_alt | default: block.settings.image.alt | escape
+          -%}
+          <picture>
+            {%- if mobile_img != blank -%}
+              <source
+                media="(max-width: 768px)"
+                srcset="{{ mobile_img | image_url: width: 430 }} 430w, {{ mobile_img | image_url: width: 768 }} 768w"
+                sizes="100vw"
+              >
+            {%- elsif mobile_asset != blank -%}
+              <source
+                media="(max-width: 768px)"
+                srcset="{{ mobile_asset | asset_url }}"
+              >
+            {%- endif -%}
+            {%- if desktop_img != blank -%}
+              <img
+                src="{{ desktop_img | image_url: width: 1920 }}"
+                srcset="{{ desktop_img | image_url: width: 1440 }} 1440w, {{ desktop_img | image_url: width: 1920 }} 1920w"
+                sizes="100vw"
+                alt="{{ img_alt }}"
+                width="{{ desktop_img.width }}"
+                height="{{ desktop_img.height }}"
+                {% if forloop.first %}
+                  fetchpriority="high"
+                  loading="eager"
+                {% else %}
+                  loading="lazy"
+                {% endif %}
+              >
+            {%- else -%}
+              <img
+                src="{{ desktop_asset | asset_url }}"
+                alt="{{ img_alt }}"
+                {% if forloop.first %}
+                  fetchpriority="high"
+                  loading="eager"
+                {% else %}
+                  loading="lazy"
+                {% endif %}
+              >
+            {%- endif -%}
           </picture>
         {% endif %}
-        <div class="carousel-curtain" style="background: linear-gradient(-180deg,rgba(50, 50, 50, {{ block.settings.slide_overlay_alpha }}) 0%, rgba(0, 0, 0, 0) 100%);">
-          <div class="carousel-hero">
-            <div class="hero-title">
+        <div class="carousel-curtain bc-hero-curtain" style="background: linear-gradient(-180deg,rgba(50, 50, 50, {{ block.settings.slide_overlay_alpha }}) 0%, rgba(0, 0, 0, 0) 100%);">
+          <div class="carousel-hero bc-hero">
+            <div class="bc-hero__content">
               {% if block.settings.hero_title_seo != blank %}
-                {{ block.settings.hero_title_seo }}
+                <div class="bc-hero__eyebrow hero-title">
+                  {{ block.settings.hero_title_seo }}
+                </div>
               {% endif %}
+
               {% if block.settings.hero_title != blank %}
-                {{ block.settings.hero_title }}
+                <div class="bc-hero__headline hero-title">
+                  {{ block.settings.hero_title }}
+                </div>
               {% endif %}
-            </div>
-            
 
-            {% if block.settings.hero_main != blank %}
-              <div class="hero-main">
-                {{ block.settings.hero_main }}
-              </div>
-            {% endif %}
-
-            {% if block.settings.hero_subtitle != blank %}
-              <div class="hero-subtitle">
-                {{ block.settings.hero_subtitle }}
-              </div>
-            {% endif %}
-
-            <div class="carousel-hero-cta-container">
-              {% assign hero_cta_url = block.settings.hero_cta_url  %}
-              {% assign hero_cta_label = block.settings.hero_cta_label  %}
-              {% assign hero_secondary_cta_url = block.settings.hero_secondary_cta_url  %}
-              {% assign hero_secondary_cta_label = block.settings.hero_secondary_cta_label  %}
-              
-              {% if customer %}
+              {% if block.settings.hero_main != blank %}
+                <div class="bc-hero__lede hero-main">
+                  {{ block.settings.hero_main }}
+                </div>
               {% endif %}
-              {% if hero_cta_url  != blank %}
-                <a
-                  href="{{ block.settings.hero_cta_url }}"
-                  class="button"
-                >
-                  {{ hero_cta_label }}
-                </a>
+
+              {% if block.settings.hero_subtitle != blank %}
+                <div class="bc-hero__features hero-subtitle">
+                  {{ block.settings.hero_subtitle }}
+                </div>
               {% endif %}
-              {% if hero_secondary_cta_url  != blank %}
-                <a
-                    href="{{ block.settings.hero_secondary_cta_url }}"
-                    class="link link--text"
+
+              <div class="carousel-hero-cta-container bc-hero__actions">
+                {% assign hero_cta_url = block.settings.hero_cta_url %}
+                {% assign hero_cta_label = block.settings.hero_cta_label %}
+                {% assign hero_secondary_cta_url = block.settings.hero_secondary_cta_url %}
+                {% assign hero_secondary_cta_label = block.settings.hero_secondary_cta_label %}
+
+                {% if block.settings.show_primary_button and hero_cta_url != blank and hero_cta_label != blank %}
+                  <a
+                    href="{{ hero_cta_url }}"
+                    class="button bc-hero__button"
+                    {% if block.settings.primary_button_new_tab %}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    {% endif %}
+                  >
+                    {{ hero_cta_label }}
+                  </a>
+                {% endif %}
+                {% if block.settings.show_secondary_button and hero_secondary_cta_url != blank and hero_secondary_cta_label != blank %}
+                  <a
+                    href="{{ hero_secondary_cta_url }}"
+                    class="link link--text bc-hero__link"
+                    {% if block.settings.secondary_button_new_tab %}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    {% endif %}
                   >
                     {{ hero_secondary_cta_label }}
-                </a>
+                  </a>
+                {% endif %}
+              </div>
+
+              {% if block.settings.show_review %}
+                <div class="hero-review bc-hero__review">
+                  <div class="hero-stars bc-hero__stars">
+                    <div>
+                      {% for i in (1..5) %}
+                        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <rect width="24" height="24" fill="#00b67a" rx="3" />
+                          <polygon
+                            points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"
+                            fill="#ffffff"/>
+                        </svg>
+                      {% endfor %}
+                    </div>
+                  </div>
+                  {% if block.settings.review_quote != blank %}
+                    <blockquote>{{ block.settings.review_quote }}</blockquote>
+                  {% endif %}
+                  {% if block.settings.review_cite != blank %}
+                    <cite>{{ block.settings.review_cite }}</cite>
+                  {% endif %}
+                </div>
               {% endif %}
             </div>
-
-            {% if false %}
-              <div class="hero-stars">
-                <div>
-                  {% for i in (1..5) %}
-                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <!-- green box background -->
-                      <rect width="24" height="24" fill="#00b67a" rx="3" />
-                      <!-- white star -->
-                      <polygon 
-                        points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"
-                        fill="#ffffff"/>
-                    </svg>
-                  {% endfor %}
-                </div>
-                <span class="hero-stars-text">Excellent!</span>
-              </div>
-            {% endif %}
           </div>
         </div>
       </div>
     {% endfor %}
   </div>
+  <div class="carousel-arrows hidden">
+    <button type="button" class="carousel-arrow carousel-arrow--prev" aria-label="Previous slide">
+      <span class="svg-wrapper">{% render 'icon-arrow' %}</span>
+    </button>
+    <button type="button" class="carousel-arrow carousel-arrow--next" aria-label="Next slide">
+      <span class="svg-wrapper">{% render 'icon-arrow' %}</span>
+    </button>
+  </div>
   <div class="carousel-nav-container hidden">
     <div class="carousel-nav">
       {% for block in section.blocks %}
+        {% if block.settings.show_slide == false %}
+          {% continue %}
+        {% endif %}
         <div class="carousel-nav-item {% if forloop.index == 1 %} active{% endif %}"></div>
       {% endfor %}
     </div>
@@ -130,15 +227,27 @@
 
 {% schema %}
 {
-  "name": "Carousel",
+  "name": "Homepage Hero",
   "tag": "section",
   "class": "section",
   "presets": [{ "name": "Carousel" }],
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "First screen video: open Hero slide 1 → upload Desktop video (or MP4 URL). Video replaces the slide image when set. Use poster/fallback image while the file loads."
+    }
+  ],
   "blocks": [
     {
       "type": "slide",
-      "name": "t:sections.slideshow.blocks.slide.name",
+      "name": "Hero slide",
       "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_slide",
+          "label": "Show this slide",
+          "default": true
+        },
         {
           "type": "color_scheme",
           "id": "color_scheme",
@@ -149,17 +258,58 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "t:sections.slideshow.blocks.slide.settings.image.label"
+          "label": "Desktop image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_desktop_asset",
+          "label": "Desktop image fallback filename",
+          "info": "Used until a Desktop image is chosen. Example: hero-slide-1-desktop.png"
         },
         {
           "type": "video",
           "id": "video",
-          "label": "t:sections.video.settings.video.label"
+          "label": "Desktop background video",
+          "info": "When set, this slide plays video instead of the desktop image."
+        },
+        {
+          "type": "text",
+          "id": "video_mp4_url",
+          "label": "Desktop video MP4 URL (optional)",
+          "info": "Alternative to Shopify video upload. Paste a direct .mp4 link from Settings → Files."
+        },
+        {
+          "type": "checkbox",
+          "id": "video_autoplay",
+          "label": "Autoplay video",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "video_loop",
+          "label": "Loop video",
+          "default": true
         },
         {
           "type": "image_picker",
           "id": "image_mobile",
-          "label": "Image mobile"
+          "label": "Mobile image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_mobile_asset",
+          "label": "Mobile image fallback filename"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#ffffff"
         },
         {
           "type": "video",
@@ -220,32 +370,44 @@
         {
           "type": "richtext",
           "id": "hero_title_seo",
-          "label": "Section hero titre"
+          "label": "Eyebrow / SEO heading"
         },
         {
           "type": "richtext",
           "id": "hero_title",
-          "label": "Section hero titre"
+          "label": "Headline"
         },
         {
           "type": "richtext",
           "id": "hero_subtitle",
-          "label": "Section hero sous-titre"
+          "label": "Subtitle"
         },
         {
           "type": "richtext",
           "id": "hero_main",
-          "label": "Section hero"
+          "label": "Supporting text"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_primary_button",
+          "label": "Show primary button",
+          "default": true
         },
         {
           "type": "inline_richtext",
           "id": "hero_cta_label",
-          "label": "Section hero CTA label"
+          "label": "Primary button label"
         },
         {
           "type": "url",
           "id": "hero_cta_url",
-          "label": "Section hero CTA"
+          "label": "Primary button link"
+        },
+        {
+          "type": "checkbox",
+          "id": "primary_button_new_tab",
+          "label": "Open primary button in new tab",
+          "default": false
         },
         {
           "type": "inline_richtext",
@@ -255,12 +417,40 @@
         {
           "type": "inline_richtext",
           "id": "hero_secondary_cta_label",
-          "label": "Section hero secondary CTA label"
+          "label": "Secondary button label"
         },
         {
           "type": "url",
           "id": "hero_secondary_cta_url",
-          "label": "Section hero secondary CTA"
+          "label": "Secondary button link"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_secondary_button",
+          "label": "Show secondary button",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "secondary_button_new_tab",
+          "label": "Open secondary button in new tab",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_review",
+          "label": "Show review quote",
+          "default": false
+        },
+        {
+          "type": "textarea",
+          "id": "review_quote",
+          "label": "Review quote"
+        },
+        {
+          "type": "text",
+          "id": "review_cite",
+          "label": "Review citation"
         }
       ]
     }

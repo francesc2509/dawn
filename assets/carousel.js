@@ -1,13 +1,36 @@
 const carouselContainer = document.querySelector(".carousel-container");
+if (!carouselContainer) {
+  /* Homepage hero not on this page */
+} else {
 const carousel = carouselContainer.querySelector(".carousel");
 const carouselNavContainer = carouselContainer.querySelector(".carousel-nav-container");
 const carouselNav = carouselNavContainer.querySelector(".carousel-nav");
+const carouselArrows = carouselContainer.querySelector(".carousel-arrows");
+const carouselPrev = carouselContainer.querySelector(".carousel-arrow--prev");
+const carouselNext = carouselContainer.querySelector(".carousel-arrow--next");
 const carouselCurtain = carouselContainer.querySelector(".carousel-curtain");
 const carouselNavActiveClassName = 'active';
 
 if (carousel.children.length && carousel.children.length > 1) {
   carouselNavContainer.classList.remove("hidden");
+  carouselArrows?.classList.remove("hidden");
 }
+
+carouselPrev?.addEventListener("click", () => {
+  if (selectedIdx > 0) {
+    handlePreviousItem(undefined, selectedIdx);
+  } else {
+    handleGoToEnd(undefined);
+  }
+});
+
+carouselNext?.addEventListener("click", () => {
+  if (selectedIdx < carousel.children.length - 1) {
+    handleNextItem(undefined, selectedIdx);
+  } else {
+    handleGoToStart(undefined);
+  }
+});
 
 let idx = 0;
 let selectedIdx = idx;
@@ -43,21 +66,43 @@ const scheduleImage = (idx, item) => {
     }, duration * 1000);
 }
 
-const handleCarouselChange = (event, position, previousTimeoutId) => {
-    const firstElementChild = carousel.children[selectedIdx]?.firstElementChild
-    if (firstElementChild instanceof HTMLVideoElement) {
-      firstElementChild.pause();
-      firstElementChild.currentTime = 0;
+const getSlideVideos = (slideEl) => {
+  if (!slideEl) return [];
+  return Array.from(slideEl.querySelectorAll("video.bc-hero__video"));
+};
+
+const pauseSlideVideos = (slideEl) => {
+  getSlideVideos(slideEl).forEach((video) => {
+    video.pause();
+    try {
+      video.currentTime = 0;
+    } catch (e) {
+      /* ignore seek errors */
     }
+  });
+};
+
+const playSlideVideos = (slideEl) => {
+  getSlideVideos(slideEl).forEach((video) => {
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {});
+    }
+  });
+};
+
+const slideUsesVideo = (slideEl) => getSlideVideos(slideEl).length > 0;
+
+const handleCarouselChange = (event, position, previousTimeoutId) => {
+    pauseSlideVideos(carousel.children[selectedIdx]);
 
     carouselNav.children[selectedIdx].classList.remove(carouselNavActiveClassName);
     carousel.style.transform = `translateX(${position * -100}%)`;
-    //carousel.style.left = ((position) * -100) + '%';
     carouselNav.children[position].classList.add(carouselNavActiveClassName);
     selectedIdx = position;
 
-    if (carousel.children[position].firstElementChild instanceof HTMLVideoElement) {
-      carousel.children[position].firstElementChild.play();
+    if (slideUsesVideo(carousel.children[position])) {
+      playSlideVideos(carousel.children[position]);
     } else if (carousel.children[position].firstElementChild instanceof HTMLPictureElement) {
       scheduleImage(position, carousel.children[position]);
     }
@@ -106,7 +151,6 @@ const checkDirection = () => {
 }
 
 for (let carouselItem of carousel.children) {
-  const media = carouselItem.firstElementChild;
   const itemIdx = idx;
 
   carouselNav.children[itemIdx].addEventListener('click', (event) => {
@@ -117,21 +161,27 @@ for (let carouselItem of carousel.children) {
     handleCarouselChange(event, itemIdx);
   });
 
-  if (media instanceof HTMLVideoElement) {  
-
+  const videos = getSlideVideos(carouselItem);
+  if (videos.length) {
     if (carouselItem === carousel.firstElementChild) {
-      media.play();
+      playSlideVideos(carouselItem);
     }
 
     const handler = itemIdx < carousel.children.length - 1 ?
       (event) => handleNextItem(event, itemIdx):
       (event) => handleGoToStart(event);
-    
-    media.addEventListener('ended', (event) => {
-      handler(event);
-    },false);
-  } else if (media instanceof HTMLPictureElement && carouselItem === carousel.firstElementChild) {
+
+    videos.forEach((media) => {
+      media.addEventListener('ended', () => {
+        if (media.loop || media.dataset.videoLoop === 'true') {
+          return;
+        }
+        handler();
+      });
+    });
+  } else if (carouselItem.firstElementChild instanceof HTMLPictureElement && carouselItem === carousel.firstElementChild) {
     scheduleImage(idx, carouselItem);
   }
   idx++;
+}
 }
