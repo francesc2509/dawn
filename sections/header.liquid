@@ -75,7 +75,7 @@
 {%- style -%}
   .header {
     margin: 0;
-    padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
+    padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 0 {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 0;
   }
 
   .section-header {
@@ -115,7 +115,7 @@
   endif
 %}
 
-<{{ header_tag }} {% if header_tag == 'sticky-header' %}data-sticky-type="{{ section.settings.sticky_header_type }}"{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+<{{ header_tag }} {% if header_tag == 'sticky-header' %}data-sticky-type="{{ section.settings.sticky_header_type }}"{% endif %} class="header-wrapper bc-wholesale-header color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
   {%- liquid
     assign social_links = false
     assign localization_forms = false
@@ -128,88 +128,48 @@
       assign localization_forms = true
     endif
   -%}
-  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
-    {%- liquid
-      if section.settings.menu != blank
-        render 'header-drawer'
-      endif
+  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }}{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+    <div class="bc-header__main">
+      <div class="bc-header__row bc-header__row--top">
+        {%- if section.settings.menu != blank -%}
+          {% render 'header-drawer' %}
+        {%- endif -%}
 
-      if section.settings.logo_position == 'top-center' or section.settings.menu == blank
-        render 'header-search', input_id: 'Search-In-Modal-1'
-      endif
-    -%}
+        {%- if section.settings.logo_position == 'top-center' or section.settings.menu == blank -%}
+          {% render 'header-search', input_id: 'Search-In-Modal-1' %}
+        {%- endif -%}
 
-    {%- if section.settings.logo_position != 'middle-center' -%}
-      {%- if request.page_type == 'index' -%}
-        <h2 class="header__heading">
-      {%- endif -%}
-          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {%- if settings.logo != blank -%}
-              <div class="header__heading-logo-wrapper">
-                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-                {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
-                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                {{ settings.logo | image_url: width: 600 | image_tag:
-                  class: 'header__heading-logo motion-reduce',
-                  widths: widths,
-                  height: logo_height,
-                  width: settings.logo_width,
-                  alt: logo_alt,
-                  sizes: sizes,
-                  preload: true
-                }}
-              </div>
+        <div class="bc-header__logo">
+          {%- if request.page_type == 'index' -%}
+            <h1 class="header__heading">
+          {%- else -%}
+            <div class="header__heading">
+          {%- endif -%}
+              <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+                {% render 'header-logo' %}
+              </a>
+          {%- if request.page_type == 'index' -%}
+            </h1>
+          {%- else -%}
+            </div>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.menu != blank and section.settings.menu_type_desktop != 'drawer' -%}
+          <div class="bc-header__nav medium-hide small-hide">
+            {%- if section.settings.menu_type_desktop == 'dropdown' -%}
+              {% render 'header-dropdown-menu' %}
             {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
+              {% render 'header-mega-menu' %}
             {%- endif -%}
-          </a>
-      {%- if request.page_type == 'index' -%}
-        </h2>
-      {%- endif -%}
-    {%- endif -%}
+          </div>
+        {%- endif -%}
 
-    {%- liquid
-      if section.settings.menu != blank
-        if section.settings.menu_type_desktop == 'dropdown'
-          render 'header-dropdown-menu'
-        elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
-        endif
-      endif
-    %}
+        <div class="header__inline-search bc-header__search medium-hide small-hide">
+          {% render 'header-search-form', input_id: 'Search-In-Header' %}
+        </div>
 
-    {%- if section.settings.logo_position == 'middle-center' -%}
-      {%- if request.page_type == 'index' -%}
-        <h2 class="header__heading">
-      {%- endif -%}
-          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {%- if settings.logo != blank -%}
-              <div class="header__heading-logo-wrapper">
-                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-                {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
-                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                {{ settings.logo | image_url: width: 600 | image_tag:
-                  class: 'header__heading-logo',
-                  widths: widths,
-                  height: logo_height,
-                  width: settings.logo_width,
-                  alt: logo_alt,
-                  sizes: sizes,
-                  preload: true
-                }}
-              </div>
-            {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
-            {%- endif -%}
-          </a>
-      {%- if request.page_type == 'index' -%}
-        </h2>
-      {%- endif -%}
-    {%- endif -%}
-
-    <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+        <div class="bc-header__utilities header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <localization-form class="small-hide medium-hide" data-prevent-hide>
@@ -233,6 +193,25 @@
           </localization-form>
         {%- endif -%}
       </div>
+      {%- liquid
+        assign header_phone = section.settings.header_phone | default: ''
+        assign header_email = section.settings.header_email | default: shop.email
+      -%}
+      {%- if header_phone != blank or header_email != blank -%}
+        <div class="header__contact bc-header__contact small-hide">
+          {%- if header_phone != blank -%}
+            <a class="header__contact-phone bc-header__phone" href="tel:{{ header_phone | replace: ' ', '' }}">{{ header_phone }}</a>
+          {%- endif -%}
+          {%- if header_email != blank -%}
+            <span class="header__contact-email bc-header__email">
+              or you can
+              <a href="mailto:{{ header_email }}">email us here</a>
+            </span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <div class="bc-header__icon-group">
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
       {%- if shop.customer_accounts_enabled -%}
@@ -287,6 +266,9 @@
           </div>
         {%- endif -%}
       </a>
+      </div>
+        </div>
+      </div>
     </div>
   </header>
 </{{ header_tag }}>
@@ -306,9 +288,12 @@
       this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always' || this.getAttribute('data-sticky-type') === 'reduce-logo-size';
       this.headerBounds = {};
 
+      this.onResizeHeaderHeight = this.setHeaderHeight.bind(this);
       this.setHeaderHeight();
+      requestAnimationFrame(this.setHeaderHeight.bind(this));
 
-      window.matchMedia('(max-width: 990px)').addEventListener('change', this.setHeaderHeight.bind(this));
+      window.matchMedia('(max-width: 990px)').addEventListener('change', this.onResizeHeaderHeight);
+      window.addEventListener('resize', this.onResizeHeaderHeight);
 
       if (this.headerIsAlwaysSticky) {
         this.header.classList.add('shopify-section-header-sticky');
@@ -329,11 +314,18 @@
 
     setHeaderHeight() {
       document.documentElement.style.setProperty('--header-height', `${this.header.offsetHeight}px`);
+      const main = document.querySelector('main');
+      if (main) {
+        document.documentElement.style.setProperty('--header-offset-top', `${main.offsetTop}px`);
+      }
     }
 
     disconnectedCallback() {
       this.removeEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
       window.removeEventListener('scroll', this.onScrollHandler);
+      if (this.onResizeHeaderHeight) {
+        window.removeEventListener('resize', this.onResizeHeaderHeight);
+      }
     }
 
     createObserver() {
@@ -570,6 +562,39 @@
       "type": "text",
       "id": "header_title",
       "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "header_phone",
+      "label": "Header phone",
+      "default": "07512 896659"
+    },
+    {
+      "type": "text",
+      "id": "header_email",
+      "label": "Header email",
+      "default": "info@bubblecrushsupplier.com"
+    },
+    {
+      "type": "header",
+      "content": "Product Catalogue navigation"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_catalogue_nav_link",
+      "label": "Show Product Catalogue under All Products menu",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "catalogue_nav_label",
+      "label": "Catalogue link label",
+      "default": "Product Catalogue"
+    },
+    {
+      "type": "url",
+      "id": "catalogue_nav_url",
+      "label": "Catalogue link URL"
     },
     {
       "type": "header",

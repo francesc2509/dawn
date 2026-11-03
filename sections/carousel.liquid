@@ -1,7 +1,20 @@
 {{ 'carousel.css' | asset_url | stylesheet_tag: defer: "defer" }}
 <script src="{{ 'carousel.js' | asset_url }}" defer="defer"></script>
 
-<div class="carousel-container">
+{%- liquid
+  assign bc_video_hero = false
+  for block in section.blocks
+    if block.settings.show_slide == false
+      continue
+    endif
+    if block.settings.video != blank or block.settings.video_mp4_url != blank
+      assign bc_video_hero = true
+    endif
+    break
+  endfor
+-%}
+
+<div class="carousel-container{% if bc_video_hero %} carousel-container--video-hero{% endif %}">
   <div class="carousel">
     {% for block in section.blocks %}
       {% if block.settings.show_slide == false %}
