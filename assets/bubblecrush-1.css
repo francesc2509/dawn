@@ -158,12 +158,12 @@ body {
   --color-foreground: 28, 27, 27;
 }
 
-.shopify-section.section-header + main > section > .carousel-container:first-of-type:not(.carousel-container--video-hero),
-.shopify-section.shopify-section-group-header-group.section-header + main > section > .carousel-container:first-of-type:not(.carousel-container--video-hero) {
+.shopify-section.section-header + main > section > .carousel-container:first-of-type,
+.shopify-section.shopify-section-group-header-group.section-header + main > section > .carousel-container:first-of-type {
   margin-top: 0 !important;
 }
 
-.carousel-container:not(.carousel-container--video-hero) .carousel-curtain {
+.carousel-container .carousel-curtain {
   padding-top: var(--header-height) !important;
 }
 
@@ -354,35 +354,21 @@ body {
   height: 0.9rem;
 }
 
-/* Homepage image carousel — solid white wholesale header */
-.shopify-section.shopify-section-group-header-group.section-header:not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container:not(.carousel-container--video-hero)) > .header-wrapper.bc-wholesale-header,
-.shopify-section.shopify-section-group-header-group.section-header:not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container:not(.carousel-container--video-hero)) > .header-wrapper.bc-wholesale-header header {
+/* Homepage carousel overlay forces white header text — keep wholesale header readable */
+.shopify-section.shopify-section-group-header-group.section-header:not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper.bc-wholesale-header,
+.shopify-section.shopify-section-group-header-group.section-header:not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper.bc-wholesale-header header {
   background: #fff !important;
   background-image: none !important;
   color: var(--bc-ink) !important;
 }
 
-.shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container:not(.carousel-container--video-hero)) > .header-wrapper.bc-wholesale-header :not(#header-h1-text):not(.bc-header__phone):not(.bc-header__email a),
-.shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container:not(.carousel-container--video-hero)) > .header-wrapper.bc-wholesale-header a:not(.bc-header__phone):not(.bc-header__email a),
-.shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container:not(.carousel-container--video-hero)) > .header-wrapper.bc-wholesale-header svg {
+.shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper.bc-wholesale-header :not(#header-h1-text):not(.bc-header__phone):not(.bc-header__email a),
+.shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper.bc-wholesale-header a:not(.bc-header__phone):not(.bc-header__email a),
+.shopify-section.shopify-section-group-header-group.section-header:not(:has(header details-modal.header__search > details[open])):not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container) > .header-wrapper.bc-wholesale-header svg {
   color: var(--bc-ink) !important;
   fill: var(--bc-ink) !important;
   stroke: var(--bc-ink) !important;
   filter: none !important;
-}
-
-/* Video hero — header floats over full-bleed video */
-.shopify-section.shopify-section-group-header-group.section-header:not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container--video-hero) > .header-wrapper.bc-wholesale-header,
-.shopify-section.shopify-section-group-header-group.section-header:not(.scrolled-past-header):not(.menu-open):has(+ main .carousel-container--video-hero) > .header-wrapper.bc-wholesale-header header {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.55) 70%, rgba(255, 255, 255, 0) 100%) !important;
-  background-image: none !important;
-  box-shadow: none !important;
-}
-
-.announcement-bar-section:has(~ .section-header + main .carousel-container--video-hero):not(:has(~ .section-header.scrolled-past-header)) .utility-bar,
-.announcement-bar-section:has(~ .section-header + main .carousel-container--video-hero):not(:has(~ .section-header.scrolled-past-header)) .utility-bar.gradient {
-  background: linear-gradient(180deg, rgba(244, 224, 77, 0.95) 0%, rgba(244, 224, 77, 0.75) 100%) !important;
-  background-image: none !important;
 }
 
 .bc-wholesale-header .header__menu-item:hover,
