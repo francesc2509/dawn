@@ -166,13 +166,12 @@ for (let carouselItem of carousel.children) {
     videos.forEach((media) => {
       const applyRatio = () => {
         if (!media.videoWidth || !media.videoHeight) return;
-        carouselContainer.style.setProperty("--bc-hero-video-ratio", `${media.videoWidth} / ${media.videoHeight}`);
-        const top = Math.max(0, Math.round(carouselContainer.getBoundingClientRect().top + window.scrollY));
-        carouselContainer.style.setProperty("--bc-hero-top", `${top}px`);
+        const ratio = `${media.videoWidth} / ${media.videoHeight}`;
+        carouselContainer.style.setProperty("--bc-hero-video-ratio", ratio);
+        media.style.aspectRatio = ratio;
       };
       if (media.readyState >= 1) applyRatio();
       else media.addEventListener("loadedmetadata", applyRatio);
-      window.addEventListener("resize", applyRatio);
     });
 
     if (carouselItem === carousel.firstElementChild) {
