@@ -163,6 +163,17 @@ for (let carouselItem of carousel.children) {
 
   const videos = getSlideVideos(carouselItem);
   if (videos.length) {
+    videos.forEach((media) => {
+      const applyRatio = () => {
+        if (!media.videoWidth || !media.videoHeight) return;
+        const ratio = `${media.videoWidth} / ${media.videoHeight}`;
+        carouselItem.style.aspectRatio = ratio;
+        carouselContainer.style.setProperty("--bc-hero-video-ratio", ratio);
+      };
+      if (media.readyState >= 1) applyRatio();
+      else media.addEventListener("loadedmetadata", applyRatio);
+    });
+
     if (carouselItem === carousel.firstElementChild) {
       playSlideVideos(carouselItem);
     }
