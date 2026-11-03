@@ -11,22 +11,23 @@
   overflow: hidden;
 }
 
-/* Video hero: height follows the video so the frame is not cropped */
+/* Video hero: fit the whole frame into the first screen below the header */
 .carousel-container:has(.bc-hero__video) {
-  height: auto;
+  height: calc(100vh - var(--bc-hero-top, 0px));
   min-height: 0;
+  max-height: calc(100vh - var(--bc-hero-top, 0px));
 }
 
 .carousel-container:has(.bc-hero__video) .carousel {
-  height: auto;
+  height: 100%;
   min-height: 0;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .carousel-container:has(.bc-hero__video) .dawn-carousel-item {
-  height: auto;
+  height: 100%;
   min-height: 0;
-  aspect-ratio: var(--bc-hero-video-ratio, 16 / 9);
+  aspect-ratio: auto;
 }
 
 .carousel-container:has(.bc-hero__video) .carousel-curtain {
